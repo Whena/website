@@ -1,8 +1,13 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
+  },
+  bannerContainer: {
+    backgroundColor: 'rgb(237, 237, 237)',
+    backgroundImage: 'url(https://icon-library.net/images/no-image-available-icon/no-image-available-icon-6.jpg)',
+    backgroundSize: 'cover',
   },
   headerJumbotron: {
     marginBottom: 40
@@ -15,21 +20,28 @@ const useStyles = makeStyles({
     height: 75,
     backgroundColor: 'red',
     color: '#fff',
-    textTransform: 'none'
+    textTransform: 'none',
+    [theme.breakpoints.down('xs')]: {
+      width: 200,
+      height: 68,
+    },
   },
   buttonSeeVideo: {
     width: 250,
     height: 75,
     backgroundColor: 'transparent',
-    textTransform: 'none'
+    textTransform: 'none',
+    [theme.breakpoints.down('xs')]: {
+      width: 200,
+      height: 68,
+    },
   },
   homeJumbotron: {
     height: '600px',
-    marginRight: 90
   },
   playIcon: {
     marginRight: 10
   }
-})
+}));
 
-export default useStyles
+export default useStyles; 
