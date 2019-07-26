@@ -1,4 +1,4 @@
-  import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
   root: {
@@ -35,4 +35,4 @@ const useStyles = makeStyles({
   },
 });
 
-export default useStyles
+export default useStyles;
