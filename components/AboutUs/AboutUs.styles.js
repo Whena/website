@@ -5,8 +5,6 @@ const useStyles = makeStyles({
     flexGrow: 1
   },
   container: {
-    // display: 'flex',
-    // justifyContent: 'space-around',
     marginTop: 100,
     marginBottom: 100,
   },
