@@ -7,32 +7,30 @@ import Grid from '@material-ui/core/Grid';
 
 // Externals
 // import PropTypes from 'prop-types';
-import classNames from 'classnames';
-
+import cx from 'clsx';
 
 // Component styles
 const useStyles = makeStyles(theme => ({
   company: {
-    marginTop: theme.spacing.unit * 2,
-    marginBottom: theme.spacing.unit * 0.5,
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(2),
   },
   headingFooter: {
     fontWeight: 700,
     marginBottom: theme.spacing(4),
-    marginLeft: theme.spacing(2),
+    // marginLeft: theme.spacing(2),
   },
   footerContent: {
-    paddingRight: theme.spacing(2),
-    paddingTop: theme.spacing(2),
+    // paddingRight: theme.spacing(2),
+    // paddingTop: theme.spacing(2),
   },
   textFooter: {
-    marginLeft: theme.spacing(2),
     marginTop: theme.spacing(4),
     marginBottom: theme.spacing(4),
   },
   image: {
     height: 52,
-    marginRight: theme.spacing(8),
+    // marginRight: theme.spacing(8),
   }
 }));
 
@@ -41,7 +39,7 @@ function Footer() {
   return (
     <Box px={8} py={15}>
       <Divider />
-      <Grid container>
+      <Grid container spacing={4}>
         <Grid item xs={12} md={6} lg={3}>
           <div className={classes.footerContent}>
             <Typography variant="h4" className={classes.headingFooter}>INFORMATION</Typography>
@@ -53,7 +51,7 @@ function Footer() {
         </Grid>
         <Grid item xs={12} md={6} lg={3}>
           <div className={classes.footerContent}>
-            <Typography variant="h4" className={classNames(classes.headingFooter)}>SERVICES</Typography>
+            <Typography variant="h4" className={cx(classes.headingFooter)}>SERVICES</Typography>
             <Typography variant="h5" className={classes.textFooter}>BoostPlay</Typography>
             <Typography variant="h5" className={classes.textFooter}>BoostPenjual</Typography>
             <Typography variant="h5" className={classes.textFooter}>BoostPreneur</Typography>

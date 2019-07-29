@@ -20,14 +20,16 @@
   "license": "ISC",
   "dependencies": {
     "@material-ui/core": "^4.2.1",
+    "@material-ui/icons": "^4.2.1",
     "@material-ui/styles": "^4.2.1",
     "axios": "^0.19.0",
-    "classnames": "^2.2.6",
     "clsx": "^1.0.4",
     "next": "^9.0.2",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-gesture-gallery": "^1.0.1",
+    "react-gesture-responder": "^2.1.0"
   },
   "devDependencies": {
     "babel-eslint": "9.x",
