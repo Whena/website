@@ -1,18 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    keys: ['xs', 'sm', 'sme', 'md', 'ml', 'lg', 'xl'],
-    values: {
-      xs: 0,
-      sm: 600,
-      sme: 800,
-      md: 960,
-      ml: 1000,
-      lg: 1280,
-      xl: 1920
-    }
-  },
   container: {
     marginTop: 100,
     marginBottom: 100,
@@ -20,15 +8,19 @@ const useStyles = makeStyles(theme => ({
   imageContainer: {
     borderRadius: '50%',
     backgroundColor: '#000',
-    width: 450,
-    height: 450,
-    [theme.breakpoints.down('xs')]: {
+    width: 400,
+    height: 400,
+    [theme.breakpoints.down('md')]: {
+      width: 300,
+      height: 300,
+    },
+    [theme.breakpoints.down('sm')]: {
       width: 200,
-      height: 68,
+      height: 200,
     },
   },
   contentImage: {
-    width: 350,
+    width: 600,
     height: 350,
   },
   contentWording: {
@@ -41,6 +33,10 @@ const useStyles = makeStyles(theme => ({
   description: {
     marginTop: 20,
     color: '#565e6b',
+    [theme.breakpoints.down('sm')]: {
+      // marginLeft: 10,
+      // marginRight: 10
+    },
   },
   knowMoreHereLink: {
     textDecoration: 'none',

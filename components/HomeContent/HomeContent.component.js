@@ -1,14 +1,49 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
 import Link from 'next/link';
 import { 
-  Grid
+  Grid,
+  Typography,
+  useMediaQuery
 } from '@material-ui/core';
+import { 
+  useTheme
+} from '@material-ui/core/styles';
 
 import styles from './HomeContent.styles';
 
 export default function HomeContent() {
   const classes = styles();
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up('sm'));
+
+  const Description = () => (
+    <>
+      <Typography className={classes.description} variant="h6" color="inherit">
+        The fundamental challenge of Indonesia's Financial Inclusion is literacy of the underserved segments. To address literacy, users must be educated. Boost disrupt financial literacy education through gamification to make the process more fun.
+      </Typography>
+      <Typography className={classes.knowMoreHereLinkContainer} variant="h6" color="inherit">
+        <Link href="#">
+          <p className={classes.knowMoreHereLink}>Know More Here -></p>
+        </Link>
+      </Typography>
+    </>
+  );
+
+  const HeadDescription = () => (
+    <>
+      <Typography className={classes.heading} variant="h3" color="inherit">
+        Meet Boost, the Digital Economy Platform
+      </Typography>
+    </>
+  );
+
+  const DescriptionMinified = () => (
+    <Link href="/">
+      <Typography className={classes.heading} variant="h3" color="inherit">
+        <a href="/">Meet Boost, the Digital Economy Platform</a>
+      </Typography>
+    </Link>
+  );
 
   return (
     <Grid container spacing={5} className={classes.container} justify="space-around">
@@ -22,17 +57,16 @@ export default function HomeContent() {
       <Grid item xs={12} lg={6}>
         <Grid container justify="center">
           <Grid item className={classes.contentWording}>
-            <Typography className={classes.heading} variant="h3" color="inherit">
-              Meet Boost, the Digital Economy Platform
-            </Typography>
-            <Typography className={classes.description} variant="h6" color="inherit">
+            {/* {mat} */}
+            {matches ? <><HeadDescription /> <Description /></> : <DescriptionMinified />}
+            {/* <Typography className={classes.description} variant="h6" color="inherit">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </Typography>
-            <Typography className={classes.knowMoreHereLinkContainer} variant="h6" color="inherit">
+            </Typography> */}
+            {/* <Typography className={classes.knowMoreHereLinkContainer} variant="h6" color="inherit">
               <Link href="#">
                 <p className={classes.knowMoreHereLink}>Know More Here -></p>
               </Link>
-            </Typography>
+            </Typography> */}
           </Grid>
         </Grid>
       </Grid>

@@ -19,7 +19,7 @@ export default function AboutUs() {
               About Us
             </Typography>
             <Typography className={classes.description} variant="h6" color="inherit">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Boost is a digital economy platform which provides digital interaction between merchant and consumers (B2C) over a QR Code as a medium to initiate - process - record are interaction through a mobile application at both merchant and consumer end.
             </Typography>
             <Typography className={classes.seeDetailHereContainer} variant="h6" color="inherit">
               <Link href="#">
@@ -28,12 +28,15 @@ export default function AboutUs() {
             </Typography>
           </Grid>
         </Grid>
-        {/* </div> */}
       </Grid>
-      <Grid item xs={12} lg={6} >
-        <div className={classes.imageContainer}>
-          {/* <img className={classes.contentImage} src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/No_image_available_600_x_450.svg/1200px-No_image_available_600_x_450.svg.png"  /> */}
-        </div>
+      <Grid item xs={12} lg={6}>
+        <Grid container justify="center">
+          <Grid item>
+            <div className={classes.imageContainer}>
+              <img className={classes.contentImage} src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/No_image_available_600_x_450.svg/1200px-No_image_available_600_x_450.svg.png" alt="about us" />
+            </div>
+          </Grid>
+        </Grid>
       </Grid>
     </Grid>
   );
