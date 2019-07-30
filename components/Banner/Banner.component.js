@@ -19,13 +19,13 @@ export default function Banner() {
         <Grid container className={classes.homeJumbotron} direction="column" justify="center">
           <Grid item>
             <Typography className={classes.headerJumbotron} variant="h3" component="h1" gutterBottom>
-              {/* {matches ? `Main Message Boost` : minSize()} */}
-              {'Main Message Boost'}
+              <span>Everyone Deserves Growth</span>
             </Typography>
           </Grid>
           <Grid item>
             <Typography className={classes.description} variant="h5" component="h1" gutterBottom>
-              {'Description'}
+              {/* {'Description'} */}
+              <span>The fundamental challenge of Indonesia's Financial Inclusion is literacy of the underserved segments.</span>
             </Typography>
           </Grid>
           <Grid item>
