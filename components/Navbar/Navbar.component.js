@@ -44,7 +44,6 @@ export default function SimpleAppBar() {
   const list = () => {
     return (
       <div
-        // className={classes.list}
         role="presentation"
         onClick={toggleDrawer(false)}
         onKeyDown={toggleDrawer(false)}
@@ -75,7 +74,7 @@ export default function SimpleAppBar() {
               <IconButton onClick={toggleDrawer(true)} edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                 <Menu />
               </IconButton>
-              <Drawer anchor="top" open={state.open} onClose={toggleDrawer(false)}>
+              <Drawer anchor="right" open={state.open} onClose={toggleDrawer(false)}>
                 {list()}
               </Drawer>
             </Grid>
@@ -92,7 +91,9 @@ export default function SimpleAppBar() {
           <Grid container spacing={5} justify="space-around" alignItems="center">
             <Grid item xs={1}>
               <Typography style={{marginRight: 45}} variant="h6" color="inherit">
-                Boost
+                <Link href="/">
+                  <a href="/">Boost</a>
+                </Link>
               </Typography>
             </Grid>
             <Grid item xs={6}>
@@ -120,7 +121,7 @@ export default function SimpleAppBar() {
                 </Grid>
                 <Grid item>
                   <Typography className={classes.menus} variant="h6" color="inherit">
-                    <Link href="#">
+                    <Link href="/faq">
                       <p className={classes.menuWord}>FAQ</p>
                     </Link>
                   </Typography>
@@ -132,14 +133,18 @@ export default function SimpleAppBar() {
                 <Grid item>
                   <Grid container justify="space-between">
                     <Grid item>
-                      <Button color="primary" variant="contained" className={classes.joinAsMerchantButton}>
+                      <Button color="primary" variant="outlined" className={classes.joinAsMerchantButton}>
                         <span className={classes.joinAsMerchantWordingSpace}>Join As Merchant</span>
                         <img src="https://img.icons8.com/ios/25/000000/expand-arrow--v2.png" alt="down-arrow-icon" />
                       </Button>
                     </Grid>
-                    <Grid item>
-                      <Button color="primary" className={classes.langButton} variant="contained">
-                        ENG
+                    {/* <Grid item>
+                      <img src="https://img.icons8.com/ios/30/000000/vertical-line.png" alt="vertical icon" style={{height: 100}} />
+                    </Grid> */}
+                    <Grid item className={classes.borderLangButton}>
+                      <Button color="primary" className={classes.langButton} >
+                        <span className={classes.langText}>ENG</span>
+                        <img src="https://img.icons8.com/ios/25/000000/expand-arrow--v2.png" alt="down-arrow-icon" />
                       </Button>
                     </Grid>
                   </Grid>

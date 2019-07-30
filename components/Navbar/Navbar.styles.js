@@ -8,22 +8,33 @@ const useStyles = makeStyles({
   joinAsMerchantButton: {
     height: 60,
     width: 250,
-    backgroundColor: 'transparent',
+    // backgroundColor: 'transparent',
     textTransform: 'none',
     fontSize: 20,
-    color: '#565e6b'
+    border: '2px solid rgb(220, 68, 51)',
+    marginRight: 20,
+
+    "&:hover": {
+      backgroundColor: '#fff',
+      border: '2px solid rgb(220, 68, 51)',
+    }
   },
   joinAsMerchantWordingSpace: {
-    marginRight: 5
+    marginRight: 10,
+    color: 'rgb(220, 68, 51)'
   },
   langButton: {
     height: 60,
     width: 80,
     backgroundColor: 'transparent',
-    marginLeft: 30,
+    marginLeft: 20,
     fontSize: 18,
     fontWeight: 800,
-    color: '#000'
+    color: '#000',
+  },
+  borderLangButton: {
+    borderLeft: '2px solid rgb(70,70,70)', 
+    // height: '100%'
   },
   menuWord: {
     textDecoration: 'none',
@@ -33,6 +44,9 @@ const useStyles = makeStyles({
   toolbarConf: {
     height: 120
   },
+  langText: {
+    fontSize: 22
+  }
 });
 
 export default useStyles;
