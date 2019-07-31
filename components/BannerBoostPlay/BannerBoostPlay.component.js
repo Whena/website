@@ -11,7 +11,7 @@ import styles from './BannerBoostPlay.styles';
 export default function BannerBoostPlay() {
   const classes = styles();
   const matches = useMediaQuery('(min-width:960px)');
-  const mobile = useMediaQuery('(max-width:650px)')
+  const mobile = useMediaQuery('(max-width:650px)');
   const windowSize = matches ? "flex-start" : "center";
 
   const DownloadNow = () => (
