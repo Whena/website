@@ -1,19 +1,26 @@
 import React from 'react';
-import { Typography, Box, Card, CardActions, CardMedia, Grid, Button } from '@material-ui/core';
+import { 
+  Typography,
+  Box,
+  Card,
+  CardActions,
+  CardMedia,
+  Grid,
+  Button,
+  Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import red from '@material-ui/core/colors/red';
 import Layout from '../components/Layout';
-import BoostContainer from '../components/BoostContainer';
 
 const useStyles = makeStyles({
   card: {
-    maxWidth: 350,
+    maxWidth: 345,
   },
   media: {
-    minHeight: 350,
-    minWidth: 350,
-    maxHeight: 350,
-    maxWidth: 350,
+    minHeight: 345,
+    minWidth: 345,
+    // maxHeight: 350,
+    // maxWidth: 350,
   },
   button: {
     color: '#d32f2f',
@@ -42,13 +49,13 @@ export default function Gallery() {
   
   return (
     <Layout>
-      <BoostContainer>
+      <Container maxWidth="lg">
         <Box py={4}>
           <Typography variant="h2" style={{ fontWeight: 700 }}>
             Gallery
           </Typography>
         </Box>
-        <Box py={4}>
+        <Box py={5}>
           <Typography variant="h5">
             'Then you've heard more than I can speak to,' answered the Gaffer. I 
             know nothing about jools. Mr. Bilbo is free with his money, and there seems 
@@ -93,7 +100,7 @@ export default function Gallery() {
             </Button>
           </Grid>
         </Grid>
-      </BoostContainer>
+      </Container>
     </Layout>
   );
 }
