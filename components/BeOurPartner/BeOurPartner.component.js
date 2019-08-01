@@ -20,7 +20,7 @@ export default function BeOurPartner() {
         </Grid>
         <Grid item xs={7}>
           <Typography variant="h6">
-            <span className={classes.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            <span className={classes.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
               {/* text decoration gabisa diambil dari class jadi dibikin inline dulu */}
               <Link href="/" style={{textDecoration: 'none'}}>
                 <span className={classes.joinNow}> Join Now</span>
