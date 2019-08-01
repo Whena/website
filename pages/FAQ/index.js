@@ -4,12 +4,15 @@ import SearchBar from '../../components/SearchBarFAQ/SearchBarFAQ.component';
 import FaqContent from '../../components/FaqContent/FaqContent.component';
 import ContactUs from '../../components/ContactUsFaq/ContactsUsFaq.component';
 
+import BeOurPartner from '../../components/BeOurPartner/BeOurPartner.component';
+
 export default function Index() {
   return (
     <Layout>
       <SearchBar />
       <FaqContent />
       <ContactUs />
+      <BeOurPartner />
     </Layout>
   );
 }
