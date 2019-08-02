@@ -1,8 +1,11 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
+  },
+  headContainer: {
+    margin: '20px auto'
   },
   bannerContainer: {
     backgroundColor: 'rgb(237, 237, 237)',
@@ -16,32 +19,40 @@ const useStyles = makeStyles(theme => ({
   head: {
     marginBottom: 40,
     fontWeight: 600,
-    fontSize: 60,
-    [theme.breakpoints.down('xs')]: {
+    fontSize: 50,
+    [theme.breakpoints.down('md')]: {
       fontWeight: 500,
       fontSize: 45
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontWeight: 500,
+      fontSize: 40
     }
   },
   description: {
     marginBottom: 40,
-    fontSize: 40,
-    [theme.breakpoints.down('xs')]: {
-      fontSize: 25
-    } 
-  },
-  downloadNowButton: {
-    width: 500,
-    height: 90,
-    [theme.breakpoints.down('xs')]: {
-      width: 280,
-      height: 75
+    fontSize: 27.5,
+    [theme.breakpoints.down('md')]: {
+      fontSize: 22.5
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: 17.5
     }
   },
-  buttonText: {
-    fontSize: 25,
-    [theme.breakpoints.down('xs')]: {
-      fontSize: 15
-    }
+  downloadButtonContainer: {
+    marginTop: 15
+  },
+  imageDownloadButton: {
+    width: '80%',
+    height: '90%',
+    [theme.breakpoints.down('md')]: {
+      width: 150,
+      height: 45,
+    },
+    [theme.breakpoints.down('sm')]: {
+      width: 125,
+      height: 40,
+    },
   }
 }));
 

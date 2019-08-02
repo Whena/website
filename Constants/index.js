@@ -1,4 +1,4 @@
-import { Constants } from './Constants';
+import { Constants } from './Constant';
 
 export {
   Constants

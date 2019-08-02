@@ -5,6 +5,7 @@ import {
   Button,
   useMediaQuery
 } from '@material-ui/core';
+import { Constants } from '../../constants';
 
 import styles from './Banner.styles';
 
@@ -12,20 +13,20 @@ export default function Banner() {
   const classes = styles();
   const matches = useMediaQuery('(min-width:960px)');
   const windowSize = matches ? "flex-end" : "center";
+  const { HOME_BANNER } = Constants;
 
   return (
     <Grid container justify={windowSize} className={classes.bannerContainer}>
-      <Grid item xs={9} md={6} lg={5}>
+      <Grid item xs={9} md={6} lg={6}>
         <Grid container className={classes.homeJumbotron} direction="column" justify="center">
           <Grid item>
             <Typography className={classes.headerJumbotron} variant="h3" component="h1" gutterBottom>
-              <span>Everyone Deserves Growth</span>
+              <span>{HOME_BANNER.HEADER}</span>
             </Typography>
           </Grid>
           <Grid item>
             <Typography className={classes.description} variant="h5" component="h1" gutterBottom>
-              {/* {'Description'} */}
-              <span>The fundamental challenge of Indonesia's Financial Inclusion is literacy of the underserved segments.</span>
+              <span>{HOME_BANNER.DESCRIPTION}</span>
             </Typography>
           </Grid>
           <Grid item>
@@ -34,13 +35,13 @@ export default function Banner() {
                 <Grid container justify="space-between" spacing={5}>
                   <Grid item xs={6} sm={6}>
                     <Button variant="contained" component="span" className={classes.buttonViewMore}>
-                      <font size="6.5">View More</font>
+                      <span className={classes.buttonText}>{HOME_BANNER.LEFT_BUTTON}</span>
                     </Button>
                   </Grid>
                   <Grid item xs={6} sm={6}>
                     <Button variant="contained" component="span" className={classes.buttonSeeVideo}>
                       <img className={classes.playIcon} src="https://img.icons8.com/ios-filled/30/000000/circled-play.png" alt="rendering error" />
-                      <font size="6.5">See Video</font>
+                      <span className={classes.buttonText}>{HOME_BANNER.RIGHT_BUTTON}</span>
                     </Button>
                   </Grid>
                 </Grid>

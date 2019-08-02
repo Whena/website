@@ -1,14 +1,16 @@
 import React from 'react';
 import { 
-  Grid, 
-  Typography 
+  Grid,
+  Typography
 } from '@material-ui/core';
 import Link from 'next/link';
+import { Constants } from '../../constants';
 
 import styles from './AboutUs.styles';
 
 export default function AboutUs() {
   const classes = styles();
+  const { HOME_ABOUT_US } = Constants;
 
   return (
     <Grid container spacing={5} className={classes.container} justify="space-around">
@@ -16,14 +18,14 @@ export default function AboutUs() {
         <Grid container justify="center">
           <Grid item className={classes.contentWording}>
             <Typography className={classes.heading} variant="h3" color="inherit">
-              About Us
+              {HOME_ABOUT_US.HEADER}
             </Typography>
             <Typography className={classes.description} variant="h6" color="inherit">
-              Boost is a digital economy platform which provides digital interaction between merchant and consumers (B2C) over a QR Code as a medium to initiate - process - record are interaction through a mobile application at both merchant and consumer end.
+              {HOME_ABOUT_US.DESCRIPTION}
             </Typography>
             <Typography className={classes.seeDetailHereContainer} variant="h6" color="inherit">
               <Link href="#">
-                <p className={classes.seeDetailHere}>See detail here -></p>
+                <p className={classes.seeDetailHere}>{HOME_ABOUT_US.MORE_BUTTON}</p>
               </Link>
             </Typography>
           </Grid>

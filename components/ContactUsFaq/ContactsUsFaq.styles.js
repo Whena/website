@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
       fontSize: '0.8em'
     },
     [theme.breakpoints.down('sm')]: {
-      fontSize: '0.7em'
+      fontSize: '0.4em'
     },
   },
   buttonText: {
@@ -37,12 +37,20 @@ const useStyles = makeStyles(theme => ({
   contactUsButton: {
     backgroundColor: 'red',
     width: 300,
-    height: '100%',
+    // height: '100%',
     
     [theme.breakpoints.down('md')]: {
       width: 275,
-      height: '100%'
-    },//79
+      height: 73
+    },
+    // [theme.breakpoints.down('md')]: {
+    //   width: 275,
+    //   height: '100%'
+    // },
+  },
+  contactUsButtonMinified: {
+    width: 230,
+    backgroundColor: 'red',
   }
 }));
 

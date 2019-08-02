@@ -5,7 +5,7 @@ import {
   Button,
   useMediaQuery,
   FormControl,
-  InputLabel
+  // InputLabel
 } from '@material-ui/core';
 
 import {

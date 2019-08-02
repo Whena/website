@@ -18,7 +18,8 @@ const useStyles = makeStyles(theme => ({
     margin: '15px auto'
   },
   listContainer: {
-    width: 300
+    width: 300,
+    margin: 'auto 50px'
   }
 }));
 

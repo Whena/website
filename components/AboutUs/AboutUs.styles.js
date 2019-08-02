@@ -36,6 +36,6 @@ const useStyles = makeStyles({
   seeDetailHereContainer: {
     marginTop: 15
   }
-})
+});
 
-export default useStyles
+export default useStyles;

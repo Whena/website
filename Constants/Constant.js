@@ -32,6 +32,19 @@ const Constants = {
     HEADER: "About Us",
     DESCRIPTION: "Boost is a digital economy platform which provides digital interaction between merchant and consumers (B2C) over a QR Code as a medium to initiate - process - record are interaction through a mobile application at both merchant and consumer end.",
     MORE_BUTTON: "See Detail Here ->"
+  },
+  BOOSTPLAY_BANNER: {
+    HEADER: "Boost Your Day with BoostPlay",
+    DESCRIPTION: "With BoostPlay, enrich your fun experience and get the delightful benefit",
+    LEFT_BUTTON: "Google Play",
+    RIGHT_BUTTON: "App Store"
+  },
+  BOOSTPLAY_FAQ: {
+    HEADER: 'FAQs',
+    QUESTION_1: "Apa itu BoostPlay",
+    QUESTION_2: "Bagaimana mengaktifkan BoostCash saya?",
+    QUESTION_3: "Bagaimana membeli voucher di PromoZone",
+    QUESTION_4: "Bagaimana cara top up BoostCash"
   }
 };
 

@@ -1,6 +1,25 @@
 import React from 'react';
+import { 
+  Button, 
+  Typography 
+} from '@material-ui/core';
 
 function Carousel() {
+
+  const dummy = [
+    {
+      id: 1,
+      image: "https://images.unsplash.com/photo-1559666126-84f389727b9a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1356&q=80",
+      description: "abcdefghijklmnopqrstuvwxyz",
+      menu: "menu 1"
+    },
+    {
+      id: 2,
+      image: "https://images.unsplash.com/photo-1557389352-e721da78ad9f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+      description: "zyxwvutsrqonmlkjihgfedcba",
+      menu: "menu 2"
+    } 
+  ];
 
   const images = [
     "https://images.unsplash.com/photo-1559666126-84f389727b9a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1356&q=80",
@@ -11,6 +30,9 @@ function Carousel() {
   ];
 
   const [index, setIndex] = React.useState(0);
+  const [state, setState] = React.useState({
+    menu: dummy[0]
+  });
 
   React.useEffect(() => {
     const timer = setInterval(() => {
@@ -84,28 +106,53 @@ function Carousel() {
     </svg>
   );
 
+  const MenuCarousel = () => (
+    <div>
+      {/* <p>{JSON.stringify(props)}</p> */}
+      <Button variant="contained" component="span">
+        {state.menu.menu}
+      </Button>
+    </div>
+  );
+
+  const ImgOutput = () => (
+    <div className={{
+      height: '100%',
+      width: '80%',
+      // transition: 'background-image .3s ease-in-out'
+      ...sliderStyle
+    }}
+    key={index}
+    style={{
+      backgroundImage: `url(${state.menu.image})`,//`url(${images[index]})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      minHeight: '75vh',
+      // ...sliderStyle
+    }}>{JSON.stringify(state.menu.image)}</div>
+  );
+
+  const carouselToggle = (data) => event => {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
+    setState({
+      menu: data
+    });
+  };
+
   return (
     <div className={{
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center'
     }}>
-      <div className={{
-        height: '100%',
-        width: '80%',
-        // transition: 'background-image .3s ease-in-out'
-        ...sliderStyle
-      }}
-      key={index}
-      style={{
-        backgroundImage: `url(${images[index]})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        minHeight: '75vh',
-        // ...sliderStyle
-      }}></div>
+      <ImgOutput />
       <ArrowLeft />
       <ArrowRight />
+      {/* <MenuCarousel data={dummy[0]} />
+      <MenuCarousel onClick={() =>carouselToggle(dummy[1])} /> */}
+      {/* <p>{JSON.stringify(state)}</p> */}
     </div>
   );
 

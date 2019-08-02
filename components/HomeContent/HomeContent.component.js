@@ -8,6 +8,7 @@ import {
 import { 
   useTheme
 } from '@material-ui/core/styles';
+import { Constants } from '../../constants';
 
 import styles from './HomeContent.styles';
 
@@ -15,15 +16,16 @@ export default function HomeContent() {
   const classes = styles();
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up('sm'));
+  const { HOME_CONTENT } = Constants;
 
   const Description = () => (
     <>
       <Typography className={classes.description} variant="h6" color="inherit">
-        The fundamental challenge of Indonesia's Financial Inclusion is literacy of the underserved segments. To address literacy, users must be educated. Boost disrupt financial literacy education through gamification to make the process more fun.
+        {HOME_CONTENT.DESCRIPTION}
       </Typography>
       <Typography className={classes.knowMoreHereLinkContainer} variant="h6" color="inherit">
         <Link href="#">
-          <p className={classes.knowMoreHereLink}>Know More Here -></p>
+          <p className={classes.knowMoreHereLink}>{HOME_CONTENT.MORE_BUTTON}</p>
         </Link>
       </Typography>
     </>
@@ -32,7 +34,7 @@ export default function HomeContent() {
   const HeadDescription = () => (
     <>
       <Typography className={classes.heading} variant="h3" color="inherit">
-        Meet Boost, the Digital Economy Platform
+        {HOME_CONTENT.HEADER}
       </Typography>
     </>
   );
@@ -40,7 +42,7 @@ export default function HomeContent() {
   const DescriptionMinified = () => (
     <Link href="/">
       <Typography className={classes.heading} variant="h3" color="inherit">
-        <a href="/">Meet Boost, the Digital Economy Platform</a>
+        <a href="/">{HOME_CONTENT.HEADER}</a>
       </Typography>
     </Link>
   );

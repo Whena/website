@@ -1,25 +1,22 @@
 import React, { useState } from 'react';
-import {
-  AppBar,
-  Toolbar,
-  Grid,
-  Typography,
+import { 
+  AppBar, 
+  Toolbar, 
+  Grid, 
+  Typography, 
   Button ,
   useMediaQuery,
   IconButton,
   Drawer,
   List,
-  // Divider,
   ListItem,
   ListItemText
 } from '@material-ui/core';
-// import {
-// useTheme
-// } from '@material-ui/core/styles';
 import {
   Menu,
 } from '@material-ui/icons';
 import Link from 'next/link';
+import { Constants } from '../../constants';
 
 import styles from './Navbar.styles';
 
@@ -27,10 +24,31 @@ export default function SimpleAppBar() {
   const classes = styles();
   // const theme = useTheme();
   const matches = useMediaQuery('(min-width:1000px)');
+  const { NAVBAR, LANGUAGE, LANG_CODES } = Constants;
 
   const [state, setState] = useState({
     open: false
   });
+
+  const menus = [{
+    name: NAVBAR.MENU_1,
+    url: '/aboutus'
+  }, {
+    name: NAVBAR.MENU_2,
+    url: '/services'
+  }, {
+    name: NAVBAR.MENU_3,
+    url: '/blog'
+  }, {
+    name: NAVBAR.MENU_4,
+    url: '/faq'
+  }, {
+    name: NAVBAR.BUTTON_LEFT,
+    url: '/'
+  }, {
+    name: LANGUAGE.LANG_1,
+    url: '/'
+  }];
 
   const toggleDrawer = (toggleOpen) => event => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -41,24 +59,23 @@ export default function SimpleAppBar() {
     });
   };
 
-  const list = () => {
-    return (
-      <div
-        role="presentation"
-        onClick={toggleDrawer(false)}
-        onKeyDown={toggleDrawer(false)}
-      >
-        <List>
-          {['About Us', 'Services', 'Blog', 'FAQ'].map((text, index) => (
-            <ListItem button key={text}>
-              {/* <ListItemIcon>{index % 2 === 0 ? <p>hehe</p> : <p>123123</p>}</ListItemIcon> */}
-              <ListItemText primary={text} />
+  const BurgerList = () => (
+    <div
+      role="presentation"
+      onClick={toggleDrawer(false)}
+      onKeyDown={toggleDrawer(false)}
+    >
+      <List>
+        {menus.map((menu, index) => (
+          <Link href={menu.url}>
+            <ListItem button key={index}>
+              <ListItemText primary={menu.name} />
             </ListItem>
-          ))}
-        </List>
-      </div>
-    );
-  };
+          </Link>
+        ))}
+      </List>
+    </div>
+  );
 
   const minisizeNavbar = () => {
     return (
@@ -67,15 +84,15 @@ export default function SimpleAppBar() {
           <Grid container spacing={5} justify="space-between" alignItems="center">
             <Grid item xs={1}>
               <Typography style={{marginRight: 45}} variant="h6" color="inherit">
-                Boost
+                {NAVBAR.BRAND_LOGO}
               </Typography>
             </Grid>
             <Grid item>
               <IconButton onClick={toggleDrawer(true)} edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                 <Menu />
               </IconButton>
-              <Drawer anchor="right" open={state.open} onClose={toggleDrawer(false)}>
-                {list()}
+              <Drawer anchor="top" open={state.open} onClose={toggleDrawer(false)}>
+                <BurgerList />
               </Drawer>
             </Grid>
           </Grid>
@@ -92,7 +109,7 @@ export default function SimpleAppBar() {
             <Grid item xs={1}>
               <Typography style={{marginRight: 45}} variant="h6" color="inherit">
                 <Link href="/">
-                  <a href="/">Boost</a>
+                  <a href="/">{NAVBAR.BRAND_LOGO}</a>
                 </Link>
               </Typography>
             </Grid>
@@ -101,28 +118,28 @@ export default function SimpleAppBar() {
                 <Grid item>
                   <Typography className={classes.menus} variant="h6" color="inherit">
                     <Link href="#">
-                      <p className={classes.menuWord}>About Us</p>
+                      <p className={classes.menuWord}>{NAVBAR.MENU_1}</p>
                     </Link>
                   </Typography>
                 </Grid>
                 <Grid item>
                   <Typography className={classes.menus} variant="h6" color="inherit">
                     <Link href="#">
-                      <p className={classes.menuWord}>Service</p>
+                      <p className={classes.menuWord}>{NAVBAR.MENU_2}</p>
                     </Link>
                   </Typography>
                 </Grid>
                 <Grid item>
                   <Typography className={classes.menus} variant="h6" color="inherit">
                     <Link href="#">
-                      <p className={classes.menuWord}>Blog</p>
+                      <p className={classes.menuWord}>{NAVBAR.MENU_3}</p>
                     </Link>
                   </Typography>
                 </Grid>
                 <Grid item>
                   <Typography className={classes.menus} variant="h6" color="inherit">
                     <Link href="/faq">
-                      <p className={classes.menuWord}>FAQ</p>
+                      <p className={classes.menuWord}>{NAVBAR.MENU_4}</p>
                     </Link>
                   </Typography>
                 </Grid>
@@ -134,7 +151,7 @@ export default function SimpleAppBar() {
                   <Grid container justify="space-between">
                     <Grid item>
                       <Button color="primary" variant="outlined" className={classes.joinAsMerchantButton}>
-                        <span className={classes.joinAsMerchantWordingSpace}>Join As Merchant</span>
+                        <span className={classes.joinAsMerchantWordingSpace}>{NAVBAR.BUTTON_LEFT}</span>
                         <img src="https://img.icons8.com/ios/25/000000/expand-arrow--v2.png" alt="down-arrow-icon" />
                       </Button>
                     </Grid>
@@ -143,7 +160,7 @@ export default function SimpleAppBar() {
                     </Grid> */}
                     <Grid item className={classes.borderLangButton}>
                       <Button color="primary" className={classes.langButton} >
-                        <span className={classes.langText}>ENG</span>
+                        <span className={classes.langText}>{LANG_CODES.LANG_1}</span>
                         <img src="https://img.icons8.com/ios/25/000000/expand-arrow--v2.png" alt="down-arrow-icon" />
                       </Button>
                     </Grid>

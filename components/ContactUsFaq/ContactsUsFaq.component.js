@@ -15,29 +15,52 @@ export default function ContactUsFaq() {
   const classes = styles();
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down('sm'));
-  const contentConfiguration = matches ? 'center' : 'space-evenly';
-  const wordingConfiguration = matches ? 'center' : 'flex-start';
+  // const xsMatches = useMediaQuery(theme.breakpoints.down('xs'));
 
   const ContactUsButton = () => (
-    <Grid item xs={6} md={4}>
-      <Button variant="contained" component="span" className={classes.contactUsButton}>
-        <span className={classes.buttonText}>Contact Us Now</span>
-      </Button>
+    <Button variant="contained" component="span" className={classes.contactUsButton}>
+      <span className={classes.buttonText}>Contact Us Now</span>
+    </Button>
+  );
+
+  const AnyQuestionButton = () => (
+    <Button variant="contained" component="span" className={classes.contactUsButtonMinified}>
+      <span className={classes.buttonText}>Any Question?</span>
+    </Button>
+  );
+
+  const Question = () => (
+    <Typography className={classes.wordingContainer} variant="h3" component="h1" gutterBottom>
+      <span className={classes.wording}>Still have a question?</span>
+    </Typography>
+  );
+
+  const ContentContainer = () => (
+    <Grid container justify="space-evenly" alignItems="center">
+      <Grid item md={7}>
+        <Question />
+      </Grid>
+      <Grid item md={5}>
+        <ContactUsButton />
+      </Grid>
     </Grid>
+  );
+
+  const ContentContainerMinified = () => (
+    <Grid container justify="center">
+      <Grid item xs={12} style={{textAlign: 'center'}}>
+        <AnyQuestionButton />
+        {/* <Typography variant="h5" style={{textAlign: 'center'}}>
+          <span className={classes.buttonText}>Any Question?</span>
+        </Typography> */}
+      </Grid>
+    </Grid>    
   );
 
   return (
     <Grid container className={classes.container} justify="center" alignContent="center">
       <Grid item xs={7}>
-        <Grid container justify="space-evenly" alignContent="center">
-          <Grid item xs={12} md={8}>
-            <Typography className={classes.wordingContainer} variant="h3" component="h1" gutterBottom>
-              <span className={classes.wording}>Still have a question?</span>
-            </Typography>
-          </Grid>
-          {/* {matches ? <></> : <ContactUsButton />} */}
-          <ContactUsButton />
-        </Grid>
+        {matches ? <ContentContainerMinified /> : <ContentContainer />}
       </Grid>
     </Grid>
   );

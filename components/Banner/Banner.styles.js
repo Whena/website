@@ -21,9 +21,16 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: 'red',
     color: '#fff',
     textTransform: 'none',
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('lg')]: {
+      marginRight: 10
+    },
+    [theme.breakpoints.down('md')]: {
       width: 200,
       height: 68,
+    },
+    [theme.breakpoints.down('xs')]: {
+      width: 175,
+      height: 63,
     },
   },
   buttonSeeVideo: {
@@ -31,9 +38,16 @@ const useStyles = makeStyles(theme => ({
     height: 75,
     backgroundColor: 'transparent',
     textTransform: 'none',
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('lg')]: {
+      marginLeft: 10
+    },
+    [theme.breakpoints.down('md')]: {
       width: 200,
       height: 68,
+    },
+    [theme.breakpoints.down('xs')]: {
+      width: 175,
+      height: 63,
     },
   },
   homeJumbotron: {
@@ -41,7 +55,14 @@ const useStyles = makeStyles(theme => ({
   },
   playIcon: {
     marginRight: 10
-  }
+  },
+  buttonText: {
+    fontSize: 25,
+    [theme.breakpoints.down('xs')]: {
+      fontSize: 17
+    },
+  },
+
 }));
 
 export default useStyles; 
