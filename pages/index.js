@@ -6,8 +6,8 @@ import AboutUs from '../components/AboutUs/AboutUs.component';
 export default function Index() {
   return (
     <Layout>
-      <Banner />
       <AboutUs />
+      <Banner />
     </Layout>
   );
 }
