@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   Typography,
   Box,
@@ -6,20 +6,21 @@ import {
   CardMedia,
   Grid,
   Button
-} from "@material-ui/core";
+} from '@material-ui/core';
+// import axios from 'axios';
 
-import useStyles from "./imageGallery.style";
+import useStyles from './imageGallery.style';
 
 const images = [
-  "/static/assets/boost.jpg",
-  "/static/assets/boost.jpg",
-  "/static/assets/boost.jpg",
-  "/static/assets/boost.jpg",
-  "/static/assets/boost.jpg",
-  "/static/assets/boost.jpg",
-  "/static/assets/boost.jpg",
-  "/static/assets/boost.jpg",
-  "/static/assets/boost.jpg",
+  '/static/assets/boost.jpg',
+  '/static/assets/boost.jpg',
+  '/static/assets/boost.jpg',
+  '/static/assets/boost.jpg',
+  '/static/assets/boost.jpg',
+  '/static/assets/boost.jpg',
+  '/static/assets/boost.jpg',
+  '/static/assets/boost.jpg',
+  '/static/assets/boost.jpg',
 ];
 
 function ImageGallery() {
@@ -27,7 +28,7 @@ function ImageGallery() {
   return (
     <>
       <Box py={4}>
-        <Typography variant="h2" style={{ fontWeight: 700 }}>
+        <Typography variant="h4" style={{ fontWeight: 700 }}>
           Gallery
         </Typography>
       </Box>
@@ -77,10 +78,5 @@ function ImageGallery() {
     </>
   );
 }
-
-ImageGallery.getInitialProps = async () => {
-  // const res = await axios.get('https://rickandmortyapi.com/api/character/');
-  return {};
-};
 
 export default ImageGallery;

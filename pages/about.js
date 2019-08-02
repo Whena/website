@@ -7,7 +7,7 @@ export default function Index() {
     <Layout>
       <Container maxWidth="lg">
         <Box py={4}>
-          <Typography variant="h2" style={{ fontWeight: 700 }}>
+          <Typography variant="h4" style={{ fontWeight: 700 }}>
             Mission
           </Typography>
         </Box>
