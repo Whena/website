@@ -1,14 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
-import { 
+import {
   Grid,
   Typography,
   useMediaQuery
 } from '@material-ui/core';
-import { 
+import {
   useTheme
 } from '@material-ui/core/styles';
-import { Constants } from '../../constants';
+import { Constants } from '../../Constants';
 
 import styles from './HomeContent.styles';
 

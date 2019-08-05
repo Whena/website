@@ -16,7 +16,7 @@ import {
   Menu,
 } from '@material-ui/icons';
 import Link from 'next/link';
-import { Constants } from '../../constants';
+import { Constants } from '../../Constants';
 
 import styles from './Navbar.styles';
 
