@@ -1,12 +1,10 @@
 import { makeStyles } from '@material-ui/core/styles';
+// import ImageBackground from ''
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    // backgroundColor: 'rgb(237, 237, 237)',
-  },
   bannerContainer: {
     // backgroundColor: 'rgb(237, 237, 237)',
-    backgroundImage: 'url(https://icon-library.net/images/no-image-available-icon/no-image-available-icon-6.jpg)',
+    backgroundImage: `url(/static/assets/bg-header-homepage.png)`,//'url(https://icon-library.net/images/no-image-available-icon/no-image-available-icon-6.jpg)',
     backgroundSize: 'cover',
   },
   headerJumbotron: {

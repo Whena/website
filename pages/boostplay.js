@@ -11,10 +11,11 @@ export default function Index() {
   return (
     <Layout>
       <BannerBoostPlay />
-      <BoostPlayFAQs />
       <Benefits
-        menus={[...BOOSTPLAY_FOR_YOU]}
+        heading={BOOSTPLAY_FOR_YOU[0]}
+        menus={[...BOOSTPLAY_FOR_YOU[1]]}
       />
+      <BoostPlayFAQs />
     </Layout>
   );
 }

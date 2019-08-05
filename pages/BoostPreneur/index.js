@@ -15,7 +15,8 @@ export default function Index() {
         description={BOOSTPRENEUR_BANNER.DESCRIPTION}
       />
       <Benefits
-        menus={[BEING_A_BOOSTPRENEUR.BENEFIT_A, BEING_A_BOOSTPRENEUR.BENEFIT_B, BEING_A_BOOSTPRENEUR.BENEFIT_C]}
+        heading={BEING_A_BOOSTPRENEUR[0]}
+        menus={[...BEING_A_BOOSTPRENEUR[1]]}
       />
     </Layout>
   );

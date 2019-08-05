@@ -76,21 +76,18 @@ const Constants = {
     HEADER: "Connect Potential Customer",
     DESCRIPTION: "With BoostPenjual, digitalize your business to gain footfall through quest that connects you to your potential customer."
   },
-  BEING_A_BOOSTPRENEUR: {
-    BENEFIT_A: {
+  BEING_A_BOOSTPRENEUR: ["Benefit being a BoostPreneur", [
+    {
       TITLE: "Benefit A",
       DESCRIPTION: "Limitless game and quiz experience"
-    },
-    BENEFIT_B: {
+    }, {
       TITLE: "Benefit B",
       DESCRIPTION: "Easily scan to pay at merchant"
-    },
-    BENEFIT_C: {
+    }, {
       TITLE: "Benefit C",
       DESCRIPTION: "Get interesting voucher from some brand"
-    }
-  },
-  BOOSTPLAY_FOR_YOU: [
+    }]],
+  BOOSTPLAY_FOR_YOU: ["BoostPlay for you", [
     {
       TITLE: "Fun gamification",
       DESCRIPTION: "Limitless game and quiz experience"
@@ -100,8 +97,7 @@ const Constants = {
     }, {
       TITLE: "Delightful voucher",
       DESCRIPTION: "Get interesting voucher from some brand"
-    }
-  ],
+    }]],
   BOOSTPLAY_FEATURES: [
     {
       TITLE: "Featured",

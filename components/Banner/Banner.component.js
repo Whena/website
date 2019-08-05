@@ -8,6 +8,7 @@ import {
 } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import { Constants } from '../../constants';
+// import ImageBanner from '../../static/assets/boost.jpg';
 
 import styles from './Banner.styles';
 
@@ -29,14 +30,13 @@ function Banner({
             <Grid container className={classes.homeJumbotron} direction="column" justify="center">
               <Grid item>
                 <Typography className={classes.headerJumbotron} variant="h3" component="h1" gutterBottom>
-                  {/* <span>{HOME_BANNER.HEADER}</span> */}
                   <span>{header}</span>
                 </Typography>
               </Grid>
               <Grid item>
                 <Typography className={classes.description} variant="h5" component="h1" gutterBottom>
-                  {/* <span>{HOME_BANNER.DESCRIPTION}</span> */}
                   <span>{description}</span>
+                  {/* <img src={ImageBanner} alt="123" /> */}
                 </Typography>
               </Grid>
               <Grid item>

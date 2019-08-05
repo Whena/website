@@ -1,7 +1,5 @@
 import { makeStyles } from '@material-ui/styles';
 
-// let questionButtonWidth = 300;
-
 const useStyles = makeStyles(theme => ({
   questionBox: {
     width: '100%',

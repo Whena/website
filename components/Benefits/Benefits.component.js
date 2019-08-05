@@ -10,11 +10,19 @@ import PropTypes from 'prop-types';
 
 import styles from './Benefits.styles';
 
-function Benefits({menus}) {
+function Benefits({
+  heading,
+  menus
+}) {
   const classes = styles();
 
   return (
     <Container maxWidth="lg">
+      <Typography variant="h4" className={classes.heading}>
+        <Box component="span">
+          {heading}
+        </Box>
+      </Typography>
       <Grid container justify="space-around">
         {menus.map((menu, index) => (
           <Grid item key={index} xs={3}>
@@ -34,7 +42,8 @@ function Benefits({menus}) {
 }
 
 Benefits.propTypes = {
-  menus: PropTypes.arrayOf(PropTypes.string),
+  heading: PropTypes.string,
+  menus: PropTypes.arrayOf(PropTypes.string)
 };
 
 export default Benefits;
