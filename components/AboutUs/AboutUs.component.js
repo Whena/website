@@ -1,10 +1,10 @@
 import React from 'react';
-import { 
+import {
   Grid,
   Typography
 } from '@material-ui/core';
 import Link from 'next/link';
-import { Constants } from '../../constants';
+import { Constants } from '../../Constants';
 
 import styles from './AboutUs.styles';
 
