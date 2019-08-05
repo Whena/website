@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Grid, Typography, Box } from '@material-ui/core';
+import { Container, Typography, Box } from '@material-ui/core';
 import Layout from '../components/Layout';
 // import AboutUs from '../components/AboutUs/AboutUs.component';
 import TestSide from '../components/testSide.reusablecomponent';
