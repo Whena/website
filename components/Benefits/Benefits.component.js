@@ -17,7 +17,7 @@ function Benefits({menus}) {
     <Container maxWidth="lg">
       <Grid container justify="space-around">
         {menus.map((menu, index) => (
-          <Grid item key={index}>
+          <Grid item key={index} xs={3}>
             <Box component="span">
               <Typography variant="h5" className={classes.title}>
                 {menu.TITLE}
@@ -34,7 +34,7 @@ function Benefits({menus}) {
 }
 
 Benefits.propTypes = {
-  menus: PropTypes.array
+  menus: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default Benefits;

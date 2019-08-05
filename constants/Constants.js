@@ -90,33 +90,71 @@ const Constants = {
       DESCRIPTION: "Get interesting voucher from some brand"
     }
   },
-  BOOSTPLAY_FOR_YOU: {
-    DESC_1: {
+  BOOSTPLAY_FOR_YOU: [
+    {
       TITLE: "Fun gamification",
       DESCRIPTION: "Limitless game and quiz experience"
-    },
-    DESC_2: {
+    }, {
       TITLE: "Transact to merchant",
       DESCRIPTION: "Easily scan to pay at merchant"
-    },
-    DESC_3: {
+    }, {
       TITLE: "Delightful voucher",
       DESCRIPTION: "Get interesting voucher from some brand"
     }
-  },
-  BOOSTPLAY_FEATURES: {
-    HEADER: {
+  ],
+  BOOSTPLAY_FEATURES: [
+    {
       TITLE: "Featured",
       DESCRIPTION: "Some features that you can enjoy and play in your device"
-    },
-    BOOST_BATTLE: {
+    }, {
       TITLE: "Boost Battle",
       DESCRIPTION: "Game dikotomi yang ditujukan untuk mengklasifikasikan pengguna BoostPlay berdasarkan pilihan atas ketertarikan tertentu"
-    },
-    BOOST_QUIZ: {
+    }, {
       TITLE: "Boot Quiz",
       DESCRIPTION: "Konten berbentuk kuis yang berguna untuk mengetahui perilaku pengguna, minat/ketertarikan dan pengetahuan pengguna"
     }
+  ],
+  BOOST_PENJUAL_MISSION: {
+    TITLE: "Mission",
+    MISSION: "Mempercepat pertumbuhan usaha supplier dengan menyediakan jaringan yang lebih luas"
+  },
+  BOOST_PENJUAL_WHY_US: [
+    {
+      TITLE: "1 x 24 settlement",
+      DESCRIPTION: ""
+    }, {
+      TITLE: "Market competitive",
+      DESCRIPTION: ""
+    }, {
+      TITLE: "24/7 hotline",
+      DESCRIPTION: ""
+    }
+  ],
+  BOOST_PENJUAL_BANNER: {
+    HEADER: "Digitalize Business",
+    DESCRIPTION: "Digitalize your business and increasing business volume by connecting to Boost merchant",
+    BUTTON: "Join Now"
+  },
+  KOL_BANNER: {
+    HEADER: "Boost Community Influencer",
+    DESCRIPTION: "Freedom to organize event suitable with your community needs, and there will always opportunity to hold that event together with Boost",
+    BUTTON: "Sign up now"
+  },
+  KOL_BENEFITS: [
+    {
+      TITLE: "Manage Community",
+      DESCRIPTION: "Limitless game and quiz experience"
+    }, {
+      TITLE: "Community engagement",
+      DESCRIPTION: "Easily scan to pay at merchant"
+    }, {
+      TITLE: "Special Rewards",
+      DESCRIPTION: "Get interesting voucher from some brand"
+    }
+  ],
+  KOL_WHY_US: {
+    TITLE: "Why us?",
+    REASON: "Have you ever developed a community? Feeling bored with your flat activities? Having difficulties to arrange community meet up? Register your community at Boost, since we provide features that simplify you to manage your community and will help you to support your community activity to make it consistently active, positive, and productive."
   }
 };
 

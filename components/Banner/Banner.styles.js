@@ -2,10 +2,10 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 1
+    // backgroundColor: 'rgb(237, 237, 237)',
   },
   bannerContainer: {
-    backgroundColor: 'rgb(237, 237, 237)',
+    // backgroundColor: 'rgb(237, 237, 237)',
     backgroundImage: 'url(https://icon-library.net/images/no-image-available-icon/no-image-available-icon-6.jpg)',
     backgroundSize: 'cover',
   },
@@ -62,7 +62,6 @@ const useStyles = makeStyles(theme => ({
       fontSize: 17
     },
   },
-
 }));
 
-export default useStyles; 
+export default useStyles;

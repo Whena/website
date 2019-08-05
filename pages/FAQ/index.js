@@ -1,4 +1,4 @@
-import React from 'react';
+import React from './node_modules/react';
 import Layout from '../../components/Layout';
 import SearchBar from '../../components/SearchBarFAQ/SearchBarFAQ.component';
 import FaqContent from '../../components/FaqContent/FaqContent.component';
