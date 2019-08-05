@@ -10,7 +10,6 @@ export default function Index() {
       <Banner />
       <HomeContent />
       <AboutUs />
-      <Banner />
     </Layout>
   );
 }
