@@ -10,7 +10,7 @@ import {
 } from '@material-ui/core';
 
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { Constants } from '../../Constants';
+import { Constants } from '../../constants';
 
 import styles from './BoostPlayFAQs.styles';
 

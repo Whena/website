@@ -4,7 +4,7 @@ import {
   Typography
 } from '@material-ui/core';
 import Link from 'next/link';
-import { Constants } from '../../Constants';
+import { Constants } from '../../constants';
 
 import styles from './AboutUs.styles';
 

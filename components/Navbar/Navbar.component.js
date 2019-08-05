@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { 
+import {
   AppBar, 
-  Toolbar, 
-  Grid, 
-  Typography, 
+  Toolbar,
+  Grid,
+  Typography,
   Button ,
   useMediaQuery,
   IconButton,
@@ -16,7 +16,7 @@ import {
   Menu,
 } from '@material-ui/icons';
 import Link from 'next/link';
-import { Constants } from '../../Constants';
+import { Constants } from '../../constants';
 
 import styles from './Navbar.styles';
 

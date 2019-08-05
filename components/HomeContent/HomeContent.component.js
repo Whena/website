@@ -8,7 +8,7 @@ import {
 import {
   useTheme
 } from '@material-ui/core/styles';
-import { Constants } from '../../Constants';
+import { Constants } from '../../constants';
 
 import styles from './HomeContent.styles';
 

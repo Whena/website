@@ -5,7 +5,7 @@ import {
   Button,
   useMediaQuery
 } from '@material-ui/core';
-import { Constants } from '../../Constants';
+import { Constants } from '../../constants';
 
 import styles from './Banner.styles';
 
