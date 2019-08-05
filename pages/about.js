@@ -1,6 +1,8 @@
 import React from 'react';
-import { Container, Grid, Typography, Box } from '@material-ui/core';
+import { Container, Typography, Box } from '@material-ui/core';
 import Layout from '../components/Layout';
+// import AboutUs from '../components/AboutUs/AboutUs.component';
+import ShortDescription from '../components/ShortDescription.component';
 
 export default function Index() {
   return (
@@ -22,11 +24,8 @@ export default function Index() {
             culpa qui officia deserunt mollit anim id est laborum.
           </Typography>
         </Box>
-        <Grid container spacing={4}>
-          <Grid item xs={12}>
-          </Grid>
-        </Grid>
       </Container>
+      <ShortDescription />
     </Layout>
   );
 }

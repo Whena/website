@@ -21,7 +21,7 @@ export default function SearchBar() {
     <Grid container direction="row">
       <Grid item>
         <FormControl className={classes.margin}>
-          <BootstrapInput 
+          <BootstrapInput
             // defaultValue="react-bootstrap" 
             placeholder="Cari Bantuan"
             id="bootstrap-input"
@@ -33,15 +33,14 @@ export default function SearchBar() {
           <span className={classes.buttonText}>Cari</span>
         </Button>
       </Grid>
-    </Grid>    
+    </Grid>
   );
 
   const MinifiedPosition = () => (
     <Grid container direction="column">
       <Grid item xs={12}>
         <FormControl className={classes.margin}>
-          <BootstrapInput 
-            // defaultValue="react-bootstrap" 
+          <BootstrapInput
             placeholder="Cari Bantuan"
             id="bootstrap-input"
           />
@@ -56,7 +55,7 @@ export default function SearchBar() {
           </Grid>
         </Grid>
       </Grid>
-    </Grid>   
+    </Grid>
   );
 
   return (

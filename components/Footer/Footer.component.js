@@ -14,18 +14,18 @@ import Grid from "@material-ui/core/Grid";
 // Externals
 import cx from "clsx";
 
-function useWidth() {
-// hooks
-  const theme = useTheme();
-  const keys = [...theme.breakpoints.keys].reverse();
-  return (
-    keys.reduce((output, key) => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-      const matches = useMediaQuery(theme.breakpoints.only(key));
-      return !output && matches ? key : output;
-    }, null) || "md"
-  );
-}
+// function useWidth() {
+// // hooks
+//   const theme = useTheme();
+//   const keys = [...theme.breakpoints.keys].reverse();
+//   return (
+//     keys.reduce((output, key) => {
+//     // eslint-disable-next-line react-hooks/rules-of-hooks
+//       const matches = useMediaQuery(theme.breakpoints.only(key));
+//       return !output && matches ? key : output;
+//     }, null) || "md"
+//   );
+// }
 
 // Component styles
 const useStyles = makeStyles(theme => ({
@@ -63,7 +63,6 @@ const useStyles = makeStyles(theme => ({
 
 function Footer() {
   const classes = useStyles();
-  const width = useWidth();
 
   return (
     <Container maxWidth="lg">
@@ -81,7 +80,7 @@ function Footer() {
                 Career
               </Typography>
               <Typography variant="h5" className={classes.textFooter}>
-                Media Gallery
+                <a href="/gallery">Media Gallery</a>
               </Typography>
               <Typography variant="h5" className={classes.textFooter}>
                 FAQs

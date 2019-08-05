@@ -34,7 +34,7 @@ function ImageGallery() {
       </Box>
       <Box py={5}>
         <Typography variant="h5">
-          'Then you've heard more than I can speak to,' answered the Gaffer. I
+          {/* 'Then you've heard more than I can speak to,' answered the Gaffer. I
           know nothing about jools. Mr. Bilbo is free with his money, and there
           seems no lack of it; but I know of no tunnel -making. I saw Mr. Bilbo
           when he came back, a matter of sixty years ago, when I was a lad. I'd
@@ -48,7 +48,8 @@ function ImageGallery() {
           But my lad Sam will know more about that. He's in and out of Bag End.
           Crazy about stories of the old days he is, and he listens to all Mr.
           Bilbo's tales. Mr. Bilbo has learned him his letters - meaning no
-          harm, mark you, and I hope no harm will come of it.
+          harm, mark you, and I hope no harm will come of it. */}
+          {/* { props.content } */}
         </Typography>
       </Box>
       <Box py={4}>

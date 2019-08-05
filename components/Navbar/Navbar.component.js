@@ -32,7 +32,7 @@ export default function SimpleAppBar() {
 
   const menus = [{
     name: NAVBAR.MENU_1,
-    url: '/aboutus'
+    url: '/about'
   }, {
     name: NAVBAR.MENU_2,
     url: '/services'
@@ -117,7 +117,7 @@ export default function SimpleAppBar() {
               <Grid container justify="space-around">
                 <Grid item>
                   <Typography className={classes.menus} variant="h6" color="inherit">
-                    <Link href="#">
+                    <Link href="/about">
                       <p className={classes.menuWord}>{NAVBAR.MENU_1}</p>
                     </Link>
                   </Typography>
