@@ -19,7 +19,7 @@ Gallery.getInitialProps = async () => {
     const res = await axios.get('https://api.buttercms.com/v2/pages/*/homepage/', {
       params: {
         'auth_token': process.env.BUTTER_TOKEN,
-        // locale: 'en',
+        locale: 'en',
       },
     });
     return { stars: res.data };

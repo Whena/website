@@ -11,6 +11,7 @@ export default function Index() {
       <HomeContent />
       <AboutUs />
       <Banner />
+      <AboutUs />
     </Layout>
   );
 }
