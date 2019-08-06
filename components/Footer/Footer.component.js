@@ -70,7 +70,7 @@ function Footer() {
         <Grid container spacing={4}>
           <Grid item xs={12} md={6} lg={3}>
             <div>
-              <Typography variant="h4" className={classes.headingFooter}>
+              <Typography variant="h5" className={classes.headingFooter}>
                 INFORMATION
               </Typography>
               <Typography variant="h5" className={classes.textFooter}>
@@ -89,7 +89,7 @@ function Footer() {
           </Grid>
           <Grid item xs={12} md={6} lg={3}>
             <div>
-              <Typography variant="h4" className={cx(classes.headingFooter)}>
+              <Typography variant="h5" className={cx(classes.headingFooter)}>
                 SERVICES
               </Typography>
               <Typography variant="h5" className={classes.textFooter}>
@@ -105,7 +105,7 @@ function Footer() {
           </Grid>
           <Grid item xs={12} md={12} lg={6}>
             <div>
-              <Typography variant="h4" className={classes.headingFooter}>
+              <Typography variant="h5" className={classes.headingFooter}>
                 SOCIAL MEDIA
               </Typography>
             </div>

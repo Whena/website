@@ -79,24 +79,30 @@ const Constants = {
   BEING_A_BOOSTPRENEUR: ["Benefit being a BoostPreneur", [
     {
       TITLE: "Benefit A",
-      DESCRIPTION: "Limitless game and quiz experience"
+      DESCRIPTION: "Limitless game and quiz experience",
+      ICON: "/static/assets/boost.jpg"
     }, {
       TITLE: "Benefit B",
-      DESCRIPTION: "Easily scan to pay at merchant"
+      DESCRIPTION: "Easily scan to pay at merchant",
+      ICON: "/static/assets/boost.jpg"
     }, {
       TITLE: "Benefit C",
-      DESCRIPTION: "Get interesting voucher from some brand"
+      DESCRIPTION: "Get interesting voucher from some brand",
+      ICON: "/static/assets/boost.jpg"
     }]],
   BOOSTPLAY_FOR_YOU: ["BoostPlay for you", [
     {
       TITLE: "Fun gamification",
-      DESCRIPTION: "Limitless game and quiz experience"
+      DESCRIPTION: "Limitless game and quiz experience",
+      ICON: "/static/assets/boost.jpg"
     }, {
       TITLE: "Transact to merchant",
-      DESCRIPTION: "Easily scan to pay at merchant"
+      DESCRIPTION: "Easily scan to pay at merchant",
+      ICON: "/static/assets/boost.jpg"
     }, {
       TITLE: "Delightful voucher",
-      DESCRIPTION: "Get interesting voucher from some brand"
+      DESCRIPTION: "Get interesting voucher from some brand",
+      ICON: "/static/assets/boost.jpg"
     }]],
   BOOSTPLAY_FEATURES: [
     {
@@ -136,22 +142,61 @@ const Constants = {
     DESCRIPTION: "Freedom to organize event suitable with your community needs, and there will always opportunity to hold that event together with Boost",
     BUTTON: "Sign up now"
   },
-  KOL_BENEFITS: [
+  KOL_BENEFITS: ["Benefit", [
     {
       TITLE: "Manage Community",
-      DESCRIPTION: "Limitless game and quiz experience"
+      DESCRIPTION: "Limitless game and quiz experience",
+      ICON: "/static/assets/boost.jpg"
     }, {
       TITLE: "Community engagement",
-      DESCRIPTION: "Easily scan to pay at merchant"
+      DESCRIPTION: "Easily scan to pay at merchant",
+      ICON: "/static/assets/boost.jpg"
     }, {
       TITLE: "Special Rewards",
-      DESCRIPTION: "Get interesting voucher from some brand"
-    }
-  ],
+      DESCRIPTION: "Get interesting voucher from some brand",
+      ICON: "/static/assets/boost.jpg"
+    }]],
   KOL_WHY_US: {
     TITLE: "Why us?",
     REASON: "Have you ever developed a community? Feeling bored with your flat activities? Having difficulties to arrange community meet up? Register your community at Boost, since we provide features that simplify you to manage your community and will help you to support your community activity to make it consistently active, positive, and productive."
-  }
+  },
+  BOOST_PENJUAL_BANNER: {
+    HEADER: "Grow Your Business With Us",
+    DESCRIPTION: "Digitalize your business to gain footfall through quest that connects you to your customer",
+    LEFT_BUTTON: "Google Play",
+    RIGHT_BUTTON: "App Store"
+  },
+  BOOST_PENJUAL_BENEFITS: ["Why Us", [
+    {
+      TITLE: "Additional income",
+      DESCRIPTION: "Limitless game and quiz experience",
+      ICON: "/static/assets/boost.jpg"
+    }, {
+      TITLE: "Business growth",
+      DESCRIPTION: "Easily scan to pay at merchant",
+      ICON: "/static/assets/boost.jpg"
+    }, {
+      TITLE: "Digital ecosystem",
+      DESCRIPTION: "Get interesting voucher from some brand",
+      ICON: "/static/assets/boost.jpg"
+    }
+  ]],
+  BOOST_PENJUAL_SHORT_DESCRIPTION: {
+    HEADER: "Growing business in digital era",
+    DESCRIPTION: "Have you ever developed a community? Feeling bored with your flat activities? Having difficulties to arrange community meet up? Registere your community at Boost, since we provide features that simplify you to manage your comminity and will help you to support your comminity activity to make it consistently active, positive, and productive."
+  },
+  BOOST_PENJUAL_FEATURES: [
+    {
+      TITLE: "Featured",
+      DESCRIPTION: "Some features that you can enjoy and play in your device"
+    }, {
+      TITLE: "Boost Proteksi",
+      DESCRIPTION: "Game dikotomi yang ditujukan untuk mengklasifikasikan pengguna BoostPlay berdasarkan pilihan atas ketertarikan tertentu"
+    }, {
+      TITLE: "Digital Product",
+      DESCRIPTION: "Konten berbentuk kuis yang berguna untuk mengetahui perilaku pengguna, minat/ketertarikan dan pengetahuan pengguna"
+    }
+  ]
 };
 
 export { Constants };

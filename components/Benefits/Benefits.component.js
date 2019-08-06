@@ -26,6 +26,11 @@ function Benefits({
       <Grid container justify="space-around">
         {menus.map((menu, index) => (
           <Grid item key={index} xs={3}>
+            <Grid container justify="center">
+              <Grid item>
+                <img className={classes.icon} src={menu.ICON} alt={menu.TITLE} />
+              </Grid>
+            </Grid>
             <Box component="span">
               <Typography variant="h5" className={classes.title}>
                 {menu.TITLE}

@@ -8,7 +8,8 @@ const useStyles = makeStyles(theme => ({
     backgroundSize: 'cover',
   },
   headerJumbotron: {
-    marginBottom: 40
+    marginBottom: 40,
+    fontWeight: 700
   },
   description: {
     marginBottom: 40
@@ -59,6 +60,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('xs')]: {
       fontSize: 17
     },
+    color: '#fff'
   },
 }));
 

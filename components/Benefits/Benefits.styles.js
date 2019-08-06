@@ -6,7 +6,11 @@ const useStyles = makeStyles(theme => ({
     fontWeight: 500
   },
   description: {
-    textAlign: 'center'
+    textAlign: 'center',
+    // color: '#fff'
+  },
+  icon: {
+    width: 100
   },
   heading: {
     textAlign: 'center',

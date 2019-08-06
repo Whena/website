@@ -33,7 +33,8 @@ export default function HomeContent() {
 
   const HeadDescription = () => (
     <>
-      <Typography className={classes.heading} variant="h3" color="inherit">
+      <Typography className={classes.heading} variant="h4" color="inherit">
+        {/* <span style={{fontSize: 32}}>{HOME_CONTENT.HEADER}</span> */}
         {HOME_CONTENT.HEADER}
       </Typography>
     </>
