@@ -4,7 +4,7 @@ import { Constants } from '../constants';
 import Banner from '../components/Banner/Banner.component';
 import Benefits from '../components/Benefits/Benefits.component';
 import {
-  Grid,
+  // Grid,
   Button
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';

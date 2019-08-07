@@ -2,13 +2,10 @@ import React from 'react';
 import {
   Grid,
   Typography,
-  Button,
   useMediaQuery,
   Container
 } from '@material-ui/core';
 import PropTypes from 'prop-types';
-import { Constants } from '../../constants';
-// import ImageBanner from '../../static/assets/boost.jpg';
 
 import styles from './Banner.styles';
 
@@ -22,13 +19,12 @@ function Banner({
   const classes = styles();
   const matches = useMediaQuery('(min-width:960px)');
   const windowSize = matches ? contentPosition : "center";
-  const { HOME_BANNER } = Constants;
 
   return (
-    <div className={classes.bannerContainer}>
+    <div className={classes.bannerContainer} style={{backgroundImage: `url(${backgroundImage})`}}>
       <Container maxWidth="lg">
         <Grid container justify={windowSize}>
-          <Grid item xs={10} lg={6}>
+          <Grid item xs={10} lg={5}>
             <Grid container className={classes.homeJumbotron} direction="column" justify="center">
               <Grid item>
                 <Typography className={classes.headerJumbotron} variant="h3" component="h1" color="secondary" gutterBottom>
@@ -54,7 +50,8 @@ function Banner({
 Banner.propTypes = {
   contentPosition: PropTypes.string,
   header: PropTypes.string,
-  description: PropTypes.string
+  description: PropTypes.string,
+  backgroundImage: PropTypes.string
 };
 
 export default Banner;

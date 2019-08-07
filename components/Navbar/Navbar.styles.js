@@ -2,8 +2,8 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
   root: {
-    flexGrow: 1,
-    height: 120
+    height: 120,
+    width: '100vw'
   },
   joinAsMerchantButton: {
     height: 60,

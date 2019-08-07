@@ -20,6 +20,7 @@ export default function Index() {
         contentPosition="flex-end"
         header={HOME_BANNER.HEADER}
         description={HOME_BANNER.DESCRIPTION}
+        backgroundImage="/static/assets/bg-header-homepage.png"
       >
         <Grid container justify="flex-start">
           <Grid item>
@@ -59,8 +60,8 @@ const useStyles = makeStyles(theme => ({
     marginBottom: 40
   },
   buttonViewMore: {
-    width: 250,
-    height: 75,
+    width: 157,
+    height: 53,
     backgroundColor: 'red',
     color: '#fff',
     textTransform: 'none',
@@ -77,9 +78,11 @@ const useStyles = makeStyles(theme => ({
     },
   },
   buttonSeeVideo: {
-    width: 250,
-    height: 75,
-    backgroundColor: 'transparent',
+    width: 194,
+    height: 53,
+    borderRadius: '4px',
+    boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.5)',
+    backgroundColor: 'rgba(7, 7, 7, 0.25)',
     textTransform: 'none',
     [theme.breakpoints.down('lg')]: {
       marginLeft: 10

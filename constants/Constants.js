@@ -94,15 +94,15 @@ const Constants = {
     {
       TITLE: "Fun gamification",
       DESCRIPTION: "Limitless game and quiz experience",
-      ICON: "/static/assets/boost.jpg"
+      ICON: "/static/assets/boostplay/fun_games/asset-benefit-1-boostplay@3x.png"
     }, {
       TITLE: "Transact to merchant",
       DESCRIPTION: "Easily scan to pay at merchant",
-      ICON: "/static/assets/boost.jpg"
+      ICON: "/static/assets/boostplay/transact_with_merchant/asset-benefit-2-boostplay@3x.png"
     }, {
       TITLE: "Delightful voucher",
       DESCRIPTION: "Get interesting voucher from some brand",
-      ICON: "/static/assets/boost.jpg"
+      ICON: "/static/assets/boostplay/delightful_voucher/asset-benefit-3-boostplay@2x.png"
     }]],
   BOOSTPLAY_FEATURES: [
     {
@@ -166,7 +166,7 @@ const Constants = {
     LEFT_BUTTON: "Google Play",
     RIGHT_BUTTON: "App Store"
   },
-  BOOST_PENJUAL_BENEFITS: ["Why Us", [
+  BOOST_PENJUAL_BENEFITS: ["Why us?", [
     {
       TITLE: "Additional income",
       DESCRIPTION: "Limitless game and quiz experience",
@@ -196,7 +196,63 @@ const Constants = {
       TITLE: "Digital Product",
       DESCRIPTION: "Konten berbentuk kuis yang berguna untuk mengetahui perilaku pengguna, minat/ketertarikan dan pengetahuan pengguna"
     }
-  ]
+  ],
+  FAQ_BOOSTPRENEUR: [
+    {
+      QUESTION: "Apa itu Aplikasi BoostPreneur?",
+      ANSWER: "Aplikasi BoostPreneur adalah aplikasi yang dipergunakan oleh BoostPreneur untuk melakukan akuisisi/ registrasi merchant serta melakukan pengecekan terhadap performance pencapaian kinerja BoostPreneur."
+    }, {
+      QUESTION: "Ditujukan untuk siapa aplikasi BoostPreneur?",
+      ANSWER: "Para BoostPreneur yang telah terdaftar di BTP"
+    }, {
+      QUESTION: "Apa tujuan penggunaan aplikasi BoostPreneur?",
+      ANSWER: "Agar mempermudah BoostPreneur dalam melakukan akuisisi serta memantau kinerja mereka dalam melakukan akuisisi merchant dan mempermudah reporting di admin BTP serta management Boost"
+    }, {
+      QUESTION: "Apakah semua tipe handphone bisa download dan menggunakan aplikasi BoostPreneur?",
+      ANSWER: "Untuk saat ini hanya bisa untuk smartphone Android saja dengan OS minimal 4.1 sedangkan untuk iOS akan diinformasikan kembali nanti"
+    }, {
+      QUESTION: "Bagaimana cara mendownload aplikasi BoostPreneur?",
+      ANSWER: `(1) Buka Playstore, 
+      (2) Cari BoostPreneur, 
+      (3) Klik INSTALL, 
+      (4) Klik OPEN untuk membuka aplikasi BoostPreneur, (5) Pastikan proses instalasi berhasil dan ikon BoostPreneur sudah tersedia.`
+    }, {
+      QUESTION: "Bagaimana cara melakukan akuisisi merchant dengan apliaksi BoostPreneur?",
+      ANSWER: `
+      (1) Masukan username dan password, 
+      (2) Klik ADD NEW BOOSTSPOT, 
+      (3) Isi data toko/ merchant, 
+      (4) Isi data pemilik toko, 
+      (5) Scan QRCode Merchant, 
+      (6) Klik OK saat mendapat notifikasi, 
+      (7) Klik REGISTER BOOST SPOT, 
+      (8) Klik VERIFY MSISDN, 
+      (9) Masukan OTP lalu klik OK.
+      `
+    }
+  ],
+  HOW_TO_ACTIVATE_BOOSTCASH: ["How to activate BoostCash", [
+    {
+      ASSET: "",
+      TITLE: "Click Activation",
+      DETAIL: "Step 1"
+    }, {
+      ASSET: "",
+      TITLE: "Fill Data",
+      DETAIL: "Step 2"
+    }, {
+      ASSET: "",
+      TITLE: "Fill Data",
+      DETAIL: "Step 3"
+    }, {
+      ASSET: "",
+      TITLE: "Create PIN",
+      DETAIL: " Step 4"
+    }, {
+      ASSET: "",
+      TITLE: "BoostCash is Ready!",
+      DETAIL: "Step 5"
+    }]]
 };
 
 export { Constants };

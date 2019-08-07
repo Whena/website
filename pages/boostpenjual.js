@@ -5,7 +5,7 @@ import Banner from '../components/Banner/Banner.component';
 import Benefits from '../components/Benefits/Benefits.component';
 import {
   Grid,
-  Button
+  // Button
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 

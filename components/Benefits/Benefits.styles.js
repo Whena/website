@@ -12,11 +12,15 @@ const useStyles = makeStyles(theme => ({
   icon: {
     width: 100
   },
+  iconContainer: {
+    height: 102,
+    width: '100%'
+  },
   heading: {
     textAlign: 'center',
     fontWeight: 700,
-    width: '30%',
-    borderBottom: '2px solid red',
+    // width: '30%',
+    // borderBottom: '2px solid red',
     paddingBottom: '1.25%',
     margin: '20px auto'
   }

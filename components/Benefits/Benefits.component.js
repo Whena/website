@@ -6,7 +6,7 @@ import {
   Container
 } from '@material-ui/core';
 import PropTypes from 'prop-types';
-// import { Constants } from '../../constants'
+import BottomLiner from '../BottomLiner/BottomLiner.component';
 
 import styles from './Benefits.styles';
 
@@ -19,14 +19,15 @@ function Benefits({
   return (
     <Container maxWidth="lg">
       <Typography variant="h4" className={classes.heading}>
+        <span>{heading}</span>
         <Box component="span">
-          {heading}
+          <BottomLiner />
         </Box>
       </Typography>
       <Grid container justify="space-around">
         {menus.map((menu, index) => (
-          <Grid item key={index} xs={3}>
-            <Grid container justify="center">
+          <Grid item key={index} xs={12} md={3}>
+            <Grid container justify="center" alignItems="center" className={classes.iconContainer}>
               <Grid item>
                 <img className={classes.icon} src={menu.ICON} alt={menu.TITLE} />
               </Grid>

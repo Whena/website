@@ -18,9 +18,7 @@ const useStyles = makeStyles(theme => ({
   headerContainer: {
     textAlign: 'center',
     margin: '20px auto',
-    width: '20%',
-    paddingBottom: '2%',
-    borderBottom: '2px solid red'
+    width: '20%'
   },
   fake: {
     backgroundColor: 'grey',
