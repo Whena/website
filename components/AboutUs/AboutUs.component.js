@@ -1,45 +1,51 @@
 import React from 'react';
 import {
-  Grid,
-  Typography
+  Typography,
+  Hidden
 } from '@material-ui/core';
 import Link from 'next/link';
 import { Constants } from '../../constants';
 
-import styles from './AboutUs.styles';
+// import styles from './AboutUs.styles';
+// import styles from '../Reusable/MiniInformation.styles';
+import MiniInformation from '../Reusable/MiniInformation.component';
 
 export default function AboutUs() {
-  const classes = styles();
+  // const classes = styles();
   const { HOME_ABOUT_US } = Constants;
 
+  const leftComponent = (classes, HOME_ABOUT_US) => (
+    <div className={classes.description}>
+      <Typography variant="h4" color="inherit" gutterBottom>
+        {HOME_ABOUT_US.HEADER}
+      </Typography>
+      <Typography variant="body1" paragraph={true}>
+        {HOME_ABOUT_US.DESCRIPTION}
+      </Typography>
+      <Typography variant="h5">
+        <Link href="#">
+          {HOME_ABOUT_US.MORE_BUTTON}
+        </Link>
+      </Typography>
+    </div>
+  );
+
+  const rightComponent = (classes) => (
+    <Hidden smDown>
+      <img
+        className={classes.infoImage}
+        src="/static/assets/bg-section-2-homepage.svg"
+        alt="video-homepage"
+      />
+    </Hidden>
+  );
+
   return (
-    <Grid container spacing={5} className={classes.container} justify="space-around">
-      <Grid item xs={12} lg={6}>
-        <Grid container justify="center">
-          <Grid item className={classes.contentWording}>
-            <Typography className={classes.heading} variant="h3" color="inherit">
-              {HOME_ABOUT_US.HEADER}
-            </Typography>
-            <Typography className={classes.description} variant="h6" color="inherit">
-              {HOME_ABOUT_US.DESCRIPTION}
-            </Typography>
-            <Typography className={classes.seeDetailHereContainer} variant="h6" color="inherit">
-              <Link href="#">
-                <p className={classes.seeDetailHere}>{HOME_ABOUT_US.MORE_BUTTON}</p>
-              </Link>
-            </Typography>
-          </Grid>
-        </Grid>
-      </Grid>
-      <Grid item xs={12} lg={6}>
-        <Grid container justify="center">
-          <Grid item>
-            <div className={classes.imageContainer}>
-              <img className={classes.contentImage} src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/No_image_available_600_x_450.svg/1200px-No_image_available_600_x_450.svg.png" alt="about us" />
-            </div>
-          </Grid>
-        </Grid>
-      </Grid>
-    </Grid>
+    <MiniInformation
+      leftGrid={8}
+      leftComponent={leftComponent}
+      rightComponent={rightComponent}
+      constants={HOME_ABOUT_US}
+    />
   );
 }

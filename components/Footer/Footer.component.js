@@ -8,6 +8,7 @@ import {
   Box,
   Container,
   useMediaQuery,
+  Link
 } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 
@@ -80,7 +81,7 @@ function Footer() {
                 Career
               </Typography>
               <Typography variant="h5" className={classes.textFooter}>
-                <a href="/gallery">Media Gallery</a>
+                <Link href="/gallery">Media Gallery</Link>
               </Typography>
               <Typography variant="h5" className={classes.textFooter}>
                 FAQs

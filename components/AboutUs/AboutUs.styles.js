@@ -5,8 +5,7 @@ const useStyles = makeStyles({
     flexGrow: 1
   },
   container: {
-    marginTop: 100,
-    marginBottom: 100,
+    marginBottom: '3.5rem',
   },
   contentImage: {
     width: 350,

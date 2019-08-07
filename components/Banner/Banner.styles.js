@@ -6,6 +6,7 @@ const useStyles = makeStyles(theme => ({
     // backgroundColor: 'rgb(237, 237, 237)',
     backgroundImage: `url(/static/assets/bg-header-homepage.png)`,//'url(https://icon-library.net/images/no-image-available-icon/no-image-available-icon-6.jpg)',
     backgroundSize: 'cover',
+    marginBottom: '3.5rem',
   },
   headerJumbotron: {
     marginBottom: 40,

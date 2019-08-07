@@ -1,34 +1,30 @@
 import React from 'react';
 import {
-  Typography,
+  Typography
 } from '@material-ui/core';
-import { Constants } from '../../constants';
 
-// import styles from './HomeContent.styles';
-// import styles2 from '../Reusable/MiniInformation.styles';
 import MiniInformation from '../Reusable/MiniInformation.component';
 
-export default function HomeContent() {
-  const { HOME_CONTENT } = Constants;
+export default function DigitalEconomy() {
 
   const leftComponent = (classes) => (
     <img
       className={classes.infoImage}
       src="/static/assets/asset-digitaleconomy-homepage@2x.jpg"
-      alt="digitaleconomy"
+      alt="digital-economy"
     />
   );
 
-  const rightComponent = (classes, HOME_CONTENT) => (
+  const rightComponent = (classes) => (
     <div className={classes.description}>
       <Typography variant="h4" color="inherit" gutterBottom>
-        {HOME_CONTENT.HEADER}
+        About Us
       </Typography>
       <Typography variant="body1" paragraph={true}>
-        {HOME_CONTENT.DESCRIPTION}
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </Typography>
       <Typography variant="h5">
-        {HOME_CONTENT.MORE_BUTTON}
+        Know more here...
       </Typography>
     </div>
   );
@@ -38,7 +34,6 @@ export default function HomeContent() {
       leftGrid={4}
       leftComponent={leftComponent}
       rightComponent={rightComponent}
-      constants={HOME_CONTENT}
     />
   );
 }
