@@ -6,6 +6,8 @@ const Constants = {
     MENU_3: "Blog",
     MENU_4: "FAQ",
     BUTTON_LEFT: "Join As Merchant",
+    JOIN_US: "Join Us",
+    LANG: "Language"
   },
   HOME_BANNER: {
     HEADER: "Everyone Deserves Growth",

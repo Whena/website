@@ -48,9 +48,8 @@ export default function Index() {
 
 const useStyles = makeStyles(theme => ({
   bannerContainer: {
-    // backgroundColor: 'rgb(237, 237, 237)',
     backgroundImage: `url(/static/assets/bg-header-homepage.png)`,//'url(https://icon-library.net/images/no-image-available-icon/no-image-available-icon-6.jpg)',
-    backgroundSize: 'cover',
+    backgroundSize: 'cover'
   },
   headerJumbotron: {
     marginBottom: 40,
@@ -89,11 +88,11 @@ const useStyles = makeStyles(theme => ({
     },
     [theme.breakpoints.down('md')]: {
       width: 200,
-      height: 68,
+      height: 68
     },
     [theme.breakpoints.down('xs')]: {
       width: 175,
-      height: 63,
+      height: 63
     },
   },
   homeJumbotron: {

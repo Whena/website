@@ -43,10 +43,10 @@ export default function SimpleAppBar() {
     name: NAVBAR.MENU_4,
     url: '/faq'
   }, {
-    name: NAVBAR.BUTTON_LEFT,
+    name: NAVBAR.JOIN_US,
     url: '/'
   }, {
-    name: LANGUAGE.LANG_1,
+    name: NAVBAR.LANG,
     url: '/'
   }];
 
@@ -66,6 +66,18 @@ export default function SimpleAppBar() {
       onKeyDown={toggleDrawer(false)}
     >
       <List>
+        <Grid container justify="space-between" className={classes.minifiedAppBar}>
+          <Grid item>
+            <Button className={classes.minifiedLogoButton} href="/">
+              <img className={classes.minifiedLogoConfiguration} src="/static/assets/boost_logo/asset-logoboost@3x.png" alt="logo" />
+            </Button>
+          </Grid>
+          <Grid item>
+            <Button disableRipple className={classes.toggleContainer}>
+              <img className={classes.toggleCloseNavbar} src="/static/assets/navbar_toggle_close/ic-close-24-px.png" alt="close toggle" />
+            </Button>
+          </Grid>
+        </Grid>
         {menus.map((menu, index) => (
           <Link href={menu.url}>
             <ListItem button key={index}>
@@ -79,13 +91,13 @@ export default function SimpleAppBar() {
 
   const minisizeNavbar = () => {
     return (
-      <AppBar position="static" color="default">
+      <AppBar position="static" color="default" className={classes.minifiedAppBar}>
         <Toolbar className={classes.toolbarConf}>
           <Grid container spacing={5} justify="space-between" alignItems="center">
             <Grid item xs={1}>
-              <Typography style={{marginRight: 45}} variant="h6" color="inherit">
-                {NAVBAR.BRAND_LOGO}
-              </Typography>
+              <Button disableRipple className={classes.minifiedLogoButton} href="/">
+                <img className={classes.minifiedLogoConfiguration} src="/static/assets/boost_logo/asset-logoboost@3x.png" alt="logo" />
+              </Button>
             </Grid>
             <Grid item>
               <IconButton onClick={toggleDrawer(true)} edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
@@ -108,9 +120,9 @@ export default function SimpleAppBar() {
           <Grid container spacing={5} justify="space-around" alignItems="center">
             <Grid item xs={1}>
               <Typography style={{marginRight: 45}} variant="h6" color="inherit">
-                <Link href="/">
-                  <a href="/">{NAVBAR.BRAND_LOGO}</a>
-                </Link>
+                <Button disableRipple className={classes.minifiedLogoButton} href="/">
+                  <img className={classes.minifiedLogoConfiguration} src="/static/assets/boost_logo/asset-logoboost@3x.png" alt="logo" />
+                </Button>
               </Typography>
             </Grid>
             <Grid item xs={6}>
@@ -146,25 +158,18 @@ export default function SimpleAppBar() {
               </Grid>
             </Grid>
             <Grid item>
-              <Grid container spacing={2} justify="center" direction="column">
+              <Grid container spacing={2} justify="center" direction="row">
                 <Grid item>
-                  <Grid container justify="space-between">
-                    <Grid item>
-                      <Button color="primary" variant="outlined" className={classes.joinAsMerchantButton}>
-                        <span className={classes.joinAsMerchantWordingSpace}>{NAVBAR.BUTTON_LEFT}</span>
-                        <img src="https://img.icons8.com/ios/25/000000/expand-arrow--v2.png" alt="down-arrow-icon" />
-                      </Button>
-                    </Grid>
-                    {/* <Grid item>
-                      <img src="https://img.icons8.com/ios/30/000000/vertical-line.png" alt="vertical icon" style={{height: 100}} />
-                    </Grid> */}
-                    <Grid item className={classes.borderLangButton}>
-                      <Button color="primary" className={classes.langButton} >
-                        <span className={classes.langText}>{LANG_CODES.LANG_1}</span>
-                        <img src="https://img.icons8.com/ios/25/000000/expand-arrow--v2.png" alt="down-arrow-icon" />
-                      </Button>
-                    </Grid>
-                  </Grid>
+                  <Button color="primary" variant="outlined" className={classes.joinAsMerchantButton}>
+                    <span className={classes.joinAsMerchantWordingSpace}>{NAVBAR.BUTTON_LEFT}</span>
+                    <img src="https://img.icons8.com/ios/15/000000/expand-arrow--v2.png" alt="down-arrow-icon" />
+                  </Button>
+                </Grid>
+                <Grid item className={classes.borderLangButton}>
+                  <Button color="primary" disableRipple className={classes.langButton} >
+                    <span className={classes.langText}>{LANG_CODES.LANG_1}</span>
+                    <img src="https://img.icons8.com/ios/15/000000/expand-arrow--v2.png" alt="down-arrow-icon" />
+                  </Button>
                 </Grid>
               </Grid>
             </Grid>
