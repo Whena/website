@@ -81,7 +81,7 @@ function Footer() {
                 Career
               </Typography>
               <Typography variant="h5" className={classes.textFooter}>
-                <Link href="/gallery">Media Gallery</Link>
+                <Link href="/gallery"><p>Media Gallery</p></Link>
               </Typography>
               <Typography variant="h5" className={classes.textFooter}>
                 FAQs

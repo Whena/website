@@ -15,7 +15,7 @@ export default function AboutUs() {
   const { HOME_ABOUT_US } = Constants;
 
   const leftComponent = (classes, HOME_ABOUT_US) => (
-    <div className={classes.description}>
+    <div className={classes.descriptionLeft}>
       <Typography variant="h4" color="inherit" gutterBottom>
         {HOME_ABOUT_US.HEADER}
       </Typography>

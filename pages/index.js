@@ -1,14 +1,16 @@
 import React from 'react';
-import Layout from '../components/Layout';
-import Banner from '../components/Banner/Banner.component';
-import HomeContent from '../components/HomeContent/HomeContent.component';
-import AboutUs from '../components/AboutUs/AboutUs.component';
-import { Constants } from '../constants';
 import {
   Grid,
   Button
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+
+import Layout from '../components/Layout';
+import Banner from '../components/Banner/Banner.component';
+import HomeContent from '../components/HomeContent/HomeContent.component';
+import AboutUs from '../components/AboutUs/AboutUs.component';
+import { Constants } from '../constants';
+import AsNumber from '../components/AsNumber/AsNumber.component';
 
 export default function Index() {
   const { HOME_BANNER } = Constants;
@@ -42,6 +44,7 @@ export default function Index() {
       </Banner>
       <HomeContent />
       <AboutUs />
+      <AsNumber />
     </Layout>
   );
 }

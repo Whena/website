@@ -13,11 +13,11 @@ export default function MiniInformation({
 
   return (
     <Container maxWidth="lg" className={classes.container}>
-      <Grid container alignItems="center">
-        <Grid item md={leftGrid}>
+      <Grid container alignItems="center" justify="center">
+        <Grid item sm={12} md={leftGrid}>
           { leftComponent(classes, constants) }
         </Grid>
-        <Grid item md={12-leftGrid}>
+        <Grid item sm={12} md={12-leftGrid}>
           { rightComponent(classes, constants) }
         </Grid>
       </Grid>

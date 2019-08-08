@@ -11,13 +11,28 @@ const useStyles = makeStyles(theme => ({
       paddingRight: 0,
     }
   },
+  descriptionLeft: {
+    padding: theme.spacing(3),
+    [theme.breakpoints.up('md')]: {
+      padding: theme.spacing(6),
+      paddingLeft: 0,
+    }
+  },
   infoImage: {
     width: '100%',
     [theme.breakpoints.down('md')]: {
       display: 'block',
       width: '90%',
       marginRight: 'auto',
-      marginLeft: 'auto'
+      marginLeft: 'auto',
+    }
+  },
+  box: {
+    marginBottom: '3.5rem',
+    // paddingLeft: 40,
+    // paddingRight: 40,
+    [theme.breakpoints.down('md')]: {
+      padding: theme.spacing(6),
     }
   }
 }));
