@@ -1,16 +1,12 @@
-import React from "react";
-import { makeStyles } from "@material-ui/styles";
-import { useTheme } from "@material-ui/styles";
+import React from 'react';
 
 // Material components
-import {
-  Typography,
-  Box,
-  Container,
-  useMediaQuery
-} from "@material-ui/core";
-import Link from '../../components/Link';
-import Grid from "@material-ui/core/Grid";
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
+import Box from '@material-ui/core/Box';
+import Grid from '@material-ui/core/Grid';
+import makeStyles from '@material-ui/styles/makeStyles';
+import Link from '../Link';
 
 // Externals
 import cx from "clsx";
@@ -30,6 +26,9 @@ import cx from "clsx";
 
 // Component styles
 const useStyles = makeStyles(theme => ({
+  footer: {
+    backgroundColor: 'black',
+  },
   company: {
     marginTop: theme.spacing(2),
     marginBottom: theme.spacing(2)
@@ -43,7 +42,9 @@ const useStyles = makeStyles(theme => ({
     marginBottom: theme.spacing(4)
   },
   image: {
-    height: 52
+    margin: theme.spacing(1),
+    // height: 52,
+    // objectFit: 'contain',
     // marginRight: theme.spacing(8),
   },
   socialMediaLogo: {
@@ -66,90 +67,95 @@ function Footer() {
   const classes = useStyles();
 
   return (
-    <Container maxWidth="lg">
-      <Box mt={10}>
-        <Grid container spacing={4}>
-          <Grid item xs={12} md={6} lg={3}>
-            <div>
-              <Typography variant="h5" className={classes.headingFooter}>
-                INFORMATION
-              </Typography>
-              <Typography variant="h5" className={classes.textFooter}>
-                Our Contacts
-              </Typography>
-              <Typography variant="h5" className={classes.textFooter}>
-                Career
-              </Typography>
-              <Typography variant="h5" className={classes.textFooter}>
-                <Link href="/gallery"><p>Media Gallery</p></Link>
-              </Typography>
-              <Typography variant="h5" className={classes.textFooter}>
-                FAQs
-              </Typography>
-            </div>
-          </Grid>
-          <Grid item xs={12} md={6} lg={3}>
-            <div>
-              <Typography variant="h5" className={cx(classes.headingFooter)}>
-                SERVICES
-              </Typography>
-              <Typography variant="h5" className={classes.textFooter}>
-                BoostPlay
-              </Typography>
-              <Typography variant="h5" className={classes.textFooter}>
-                BoostPenjual
-              </Typography>
-              <Typography variant="h5" className={classes.textFooter}>
-                BoostPreneur
-              </Typography>
-            </div>
-          </Grid>
-          <Grid item xs={12} md={12} lg={6}>
-            <div>
-              <Typography variant="h5" className={classes.headingFooter}>
-                SOCIAL MEDIA
-              </Typography>
-            </div>
-            <Grid container>
-              <Grid item xs={12} md={3}>
-                <div>
-                  <img
-                    src="/static/assets/Socmed.png"
-                    className={classes.image}
-                    alt="instagram"
-                  />
-                </div>
-              </Grid>
-              <Grid item xs={12} md={3}>
-                <div>
-                  <img
-                    src="/static/assets/Socmed.png"
-                    className={classes.image}
-                    alt="facebook"
-                  />
-                </div>
-              </Grid>
-              <Grid item xs={12} md={3}>
-                <Box component="div" display="inline">
-                  <img
-                    src="/static/assets/Socmed.png"
-                    className={classes.image}
-                    alt="twitter"
-                  />
-                </Box>
+    <div className={classes.footer}>
+      <Container maxWidth="lg">
+        <Box mt={10}>
+          <Grid container spacing={4}>
+            <Grid item xs={12} md={6} lg={3}>
+              <div>
+                <Typography variant="h5" color="secondary" className={classes.headingFooter}>
+                  INFORMATION
+                </Typography>
+                <Typography variant="h5" color="secondary" className={classes.textFooter}>
+                  Our Contacts
+                </Typography>
+                <Typography variant="h5" color="secondary" className={classes.textFooter}>
+                  Career
+                </Typography>
+                <Typography variant="h5" color="secondary" className={classes.textFooter}>
+                  <Link href="/gallery">Media Gallery</Link>
+                </Typography>
+                <Typography variant="h5" color="secondary" className={classes.textFooter}>
+                  <Link href="/FAQ">FAQs</Link>
+                </Typography>
+              </div>
+            </Grid>
+            <Grid item xs={12} md={6} lg={3}>
+              <div>
+                <Typography variant="h5" color="secondary" className={cx(classes.headingFooter)}>
+                  SERVICES
+                </Typography>
+                <Typography variant="h5" color="secondary" className={classes.textFooter}>
+                  BoostPlay
+                </Typography>
+                <Typography variant="h5" color="secondary" className={classes.textFooter}>
+                  BoostPenjual
+                </Typography>
+                <Typography variant="h5" color="secondary" className={classes.textFooter}>
+                  BoostPreneur
+                </Typography>
+              </div>
+            </Grid>
+            <Grid item xs={12} md={12} lg={6}>
+              <div>
+                <Typography variant="h5" color="secondary" className={classes.headingFooter}>
+                  SOCIAL MEDIA
+                </Typography>
+              </div>
+              <Grid container>
+                <Grid item xs={4} md={3}>
+                  <Box disp>
+                    <img
+                      src="/static/assets/asset-fb-homepage.png"
+                      srcset="/static/assets/asset-fb-homepage@2x.png 1x, /static/assets/asset-fb-homepage@3x.png 2x"
+                      className={classes.image}
+                      alt="instagram"
+                    />
+                  </Box>
+                </Grid>
+                <Grid item xs={4} md={3}>
+                  <Box>
+                    <img
+                      src="/static/assets/asset-whatsapp-homepage.png"
+                      srcset="/static/assets/asset-whatsapp-homepage@2x.png 1x, /static/assets/asset-whatsapp-homepage@3x.png 2x"
+                      className={classes.image}
+                      alt="facebook"
+                    />
+                  </Box>
+                </Grid>
+                <Grid item xs={4} md={3}>
+                  <Box>
+                    <img
+                      src="/static/assets/asset-homepage-instagram.png"
+                      srcset="/static/assets/asset-homepage-instagram@2x.png 1x, /static/assets/asset-homepage-instagram@3x.png 2x"
+                      className={classes.image}
+                      alt="instagram"
+                    />
+                  </Box>
+                </Grid>
               </Grid>
             </Grid>
           </Grid>
-        </Grid>
-        <Box py={4}>
-          <div>
-            <Typography className={classes.company} variant="h4" align="right">
-              #NGEBOOSTBENTAR
-            </Typography>
-          </div>
+          <Box py={4}>
+            <div>
+              <Typography className={classes.company} variant="h4" align="right">
+                #NGEBOOSTBENTAR
+              </Typography>
+            </div>
+          </Box>
         </Box>
-      </Box>
-    </Container>
+      </Container>
+    </div>
   );
 }
 
