@@ -7,9 +7,9 @@ import {
   Typography,
   Box,
   Container,
-  useMediaQuery,
-  Link
+  useMediaQuery
 } from "@material-ui/core";
+import Link from '../../components/Link';
 import Grid from "@material-ui/core/Grid";
 
 // Externals

@@ -73,6 +73,9 @@ const useStyles = makeStyles({
     "&:hover": {
       backgroundColor: 'transparent'
     }
+  },
+  hamburgerList: {
+    width: '100vw'
   }
 });
 

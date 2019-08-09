@@ -1,14 +1,95 @@
 const Constants = {
-  NAVBAR: {
-    BRAND_LOGO: "Boost",
-    MENU_1: "About Us",
-    MENU_2: "Services",
-    MENU_3: "Blog",
-    MENU_4: "FAQ",
-    BUTTON_LEFT: "Join As Merchant",
-    JOIN_US: "Join Us",
-    LANG: "Language"
-  },
+  NAVBAR_MENU: [
+    {
+      BRAND_LOGO: "/static/assets/boost_logo/asset-logoboost@3x.png",
+      CAPTION: "Boost Logo"
+    }, {
+      NAME: "About Us",
+      URL: "/about"
+    }, {
+      NAME: "Services",
+      URL: "/"
+    }, {
+      NAME: "Blog",
+      URL: "/"
+    }, {
+      NAME: "FAQ",
+      URL: "/faq"
+    }, {
+      NAME: "Join As Merchant",
+      URL: "/"
+    }, {
+      NAME: "ENG",
+      URL: "/"
+    }
+  ],
+  NAVBAR_MINIFIED_MENUS: [
+    {
+      NAME: "About Us",
+      URL: "/about"
+    }, {
+      NAME: "Services",
+      URL: "/"
+    }, {
+      NAME: "Blog",
+      URL: "/"
+    }, {
+      NAME: "FAQ",
+      URL: "/faq"
+    }, {
+      NAME: "Join Us",
+      REF: [
+        {
+          ICON: "",
+          MENU: "As a Merchant"
+        }, {
+          ICON: "",
+          MENU: "As a Boostpreneur"
+        }, {
+          ICON: "",
+          MENU: "As a Boost Territory Partner"
+        }, {
+          ICON: "",
+          MENU: "As a Boost Business Partner"
+        }
+      ]
+    }, {
+      NAME: "Language",
+      REF: [
+        {
+          ICON: "/static/assets/languages/ic-english-24-px.svg",
+          MENU: "English"
+        }, {
+          ICON: "/static/assets/languages/ic-indonesia-24-px.svg",
+          MENU: "Indonesia"
+        }
+      ]
+    }
+  ],
+  NAVBAR_JOIN_US: [
+    {
+      ICON: "",
+      MENU: "As a Merchant"
+    }, {
+      ICON: "",
+      MENU: "As a Boostpreneur"
+    }, {
+      ICON: "",
+      MENU: "As a Boost Territory Partner"
+    }, {
+      ICON: "",
+      MENU: "As a Boost Business Partner"
+    }
+  ],
+  NAVBAR_LANGUAGE: [
+    {
+      ICON: "/static/assets/languages/ic-english-24-px.svg",
+      MENU: "English"
+    }, {
+      ICON: "/static/assets/languages/ic-indonesia-24-px.svg",
+      MENU: "Indonesia"
+    }
+  ],
   HOME_BANNER: {
     HEADER: "Everyone Deserves Growth",
     DESCRIPTION: "The fundamental challenge of Indonesia's Financial Inclusion is literacy of the underserved segments.",

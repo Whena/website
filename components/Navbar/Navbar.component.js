@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
-import {
-  AppBar,
-  Toolbar,
-  Grid,
-  Typography,
-  Button,
-  useMediaQuery,
-  IconButton,
-  Drawer,
-  List,
-  ListItem,
-  ListItemText
-} from '@material-ui/core';
-import {
-  Menu,
-} from '@material-ui/icons';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import IconButton from '@material-ui/core/IconButton';
+import Drawer from '@material-ui/core/Drawer';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import Collapse from '@material-ui/core/Collapse';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+
+import Menu from '@material-ui/icons/Menu';
+import ExpandMore from '@material-ui/icons/ExpandMore';
+import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
+
 import Link from 'next/link';
 import { Constants } from '../../constants';
 
@@ -22,69 +24,117 @@ import styles from './Navbar.styles';
 
 export default function SimpleAppBar() {
   const classes = styles();
-  // const theme = useTheme();
   const matches = useMediaQuery('(min-width:1000px)');
-  const { NAVBAR, LANGUAGE, LANG_CODES } = Constants;
+  const {
+    NAVBAR_MENU,
+    // LANGUAGE,
+    LANG_CODES,
+    NAVBAR_LANGUAGE,
+    NAVBAR_JOIN_US,
+    NAVBAR_MINIFIED_MENUS
+  } = Constants;
 
-  const [state, setState] = useState({
-    open: false
-  });
+  const [joinUsToggle, setjoinUsToggle] = useState(false);
+  const [langToggle, setLangToggle] = useState(false);
+  const [state, setState] = useState(false);
 
-  const menus = [{
-    name: NAVBAR.MENU_1,
-    url: '/about'
-  }, {
-    name: NAVBAR.MENU_2,
-    url: '/services'
-  }, {
-    name: NAVBAR.MENU_3,
-    url: '/blog'
-  }, {
-    name: NAVBAR.MENU_4,
-    url: '/faq'
-  }, {
-    name: NAVBAR.JOIN_US,
-    url: '/'
-  }, {
-    name: NAVBAR.LANG,
-    url: '/'
-  }];
+  const handleJoinUsToggle = () => {
+    setjoinUsToggle(!joinUsToggle);
+  };
 
-  const toggleDrawer = (toggleOpen) => event => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-      return;
-    }
-    setState({
-      open: toggleOpen
-    });
+  const handleLangToggle = () => {
+    setLangToggle(!langToggle);
+  };
+
+  const openDrawer = () => {
+    setState(true);
+  };
+
+  const closeDrawer = () => {
+    setState(false);
   };
 
   const BurgerList = () => (
-    <div
-      role="presentation"
-      onClick={toggleDrawer(false)}
-      onKeyDown={toggleDrawer(false)}
-    >
-      <List>
+    <div role="presentation">
+      <List className={classes.hamburgerList}>
         <Grid container justify="space-between" className={classes.minifiedAppBar}>
           <Grid item>
             <Button className={classes.minifiedLogoButton} href="/">
               <img className={classes.minifiedLogoConfiguration} src="/static/assets/boost_logo/asset-logoboost@3x.png" alt="logo" />
             </Button>
           </Grid>
-          <Grid item>
+          <Grid item onClick={closeDrawer}>
             <Button disableRipple className={classes.toggleContainer}>
               <img className={classes.toggleCloseNavbar} src="/static/assets/navbar_toggle_close/ic-close-24-px.png" alt="close toggle" />
             </Button>
           </Grid>
         </Grid>
-        {menus.map((menu, index) => (
-          <Link href={menu.url}>
-            <ListItem button key={index}>
-              <ListItemText primary={menu.name} />
-            </ListItem>
-          </Link>
-        ))}
+        {NAVBAR_MINIFIED_MENUS.map((menu, index) => {
+          if (index < 4) {
+            return (
+              <Link key={index} href={menu.URL}>
+                <ListItem button key={index}>
+                  <ListItemText primary={menu.NAME} />
+                </ListItem>
+              </Link>
+            );
+          } else {
+          //   return (
+          //     <>
+          //       <ListItem button onClick={handleJoinUsToggle}>
+          //         <ListItemText primary={menu.NAME} />
+          //         {joinUsToggle ? <ExpandMore /> : <KeyboardArrowRight />}
+          //       </ListItem>
+          //       <Collapse in={joinUsToggle} timeout="auto" unmountOnExit>
+          //         <List component="div" disablePadding>
+          //           {menu.REF.map((button, index) => (
+          //             <ListItem key={index} button className={classes.nested}>
+          //               <ListItemIcon>
+          //                 <img src={button.ICON} alt={button.MENU} />
+          //               </ListItemIcon>
+          //               <ListItemText primary={button.MENU} />
+          //             </ListItem>
+          //           ))}
+          //         </List>
+          //       </Collapse>
+          //     </>
+          //   );
+          }
+        })}
+
+        <ListItem button onClick={handleJoinUsToggle}>
+          <ListItemText primary={NAVBAR_MINIFIED_MENUS[4].NAME} />
+          {joinUsToggle ? <ExpandMore /> : <KeyboardArrowRight />}
+        </ListItem>
+        <Collapse in={joinUsToggle} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding>
+            {NAVBAR_JOIN_US.map((button, index) => (
+              <ListItem key={index} button className={classes.nested}>
+                <ListItemIcon>
+                  <div style={{  width: 24, height: 24, backgroundColor: '#d8d8d8'}}></div>
+                </ListItemIcon>
+                <ListItemText primary={button.MENU} />
+              </ListItem>
+            ))}
+          </List>
+        </Collapse>
+
+        <ListItem button onClick={handleLangToggle}>
+          <ListItemText primary={NAVBAR_MINIFIED_MENUS[5].NAME} />
+          {langToggle ? <ExpandMore /> : <KeyboardArrowRight />}
+        </ListItem>
+        <Collapse in={langToggle} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding>
+            {NAVBAR_LANGUAGE.map((menu, index) => (
+              <ListItem key={index} button className={classes.nested}>
+                <ListItemIcon>
+                  <img src={menu.ICON} alt={menu.LANG} />
+                </ListItemIcon>
+                <ListItemText primary={menu.LANG} />
+              </ListItem>
+            ))}
+          </List>
+        </Collapse>
       </List>
     </div>
   );
@@ -96,14 +146,14 @@ export default function SimpleAppBar() {
           <Grid container spacing={5} justify="space-between" alignItems="center">
             <Grid item xs={1}>
               <Button disableRipple className={classes.minifiedLogoButton} href="/">
-                <img className={classes.minifiedLogoConfiguration} src="/static/assets/boost_logo/asset-logoboost@3x.png" alt="logo" />
+                <img className={classes.minifiedLogoConfiguration} src={NAVBAR_MENU[0].BRAND_LOGO} alt={NAVBAR_MENU[0].CAPTION} />
               </Button>
             </Grid>
             <Grid item>
-              <IconButton onClick={toggleDrawer(true)} edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                <Menu />
+              <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+                <Menu onClick={openDrawer} />
               </IconButton>
-              <Drawer anchor="top" open={state.open} onClose={toggleDrawer(false)}>
+              <Drawer anchor="left" open={state}>
                 <BurgerList />
               </Drawer>
             </Grid>
@@ -121,47 +171,32 @@ export default function SimpleAppBar() {
             <Grid item xs={1}>
               <Typography style={{marginRight: 45}} variant="h6" color="inherit">
                 <Button disableRipple className={classes.minifiedLogoButton} href="/">
-                  <img className={classes.minifiedLogoConfiguration} src="/static/assets/boost_logo/asset-logoboost@3x.png" alt="logo" />
+                  <img className={classes.minifiedLogoConfiguration} src={NAVBAR_MENU[0].BRAND_LOGO} alt={NAVBAR_MENU[0].CAPTION} />
                 </Button>
               </Typography>
             </Grid>
             <Grid item xs={6}>
               <Grid container justify="space-around">
-                <Grid item>
-                  <Typography className={classes.menus} variant="h6" color="inherit">
-                    <Link href="/about">
-                      <p className={classes.menuWord}>{NAVBAR.MENU_1}</p>
-                    </Link>
-                  </Typography>
-                </Grid>
-                <Grid item>
-                  <Typography className={classes.menus} variant="h6" color="inherit">
-                    <Link href="#">
-                      <p className={classes.menuWord}>{NAVBAR.MENU_2}</p>
-                    </Link>
-                  </Typography>
-                </Grid>
-                <Grid item>
-                  <Typography className={classes.menus} variant="h6" color="inherit">
-                    <Link href="#">
-                      <p className={classes.menuWord}>{NAVBAR.MENU_3}</p>
-                    </Link>
-                  </Typography>
-                </Grid>
-                <Grid item>
-                  <Typography className={classes.menus} variant="h6" color="inherit">
-                    <Link href="/faq">
-                      <p className={classes.menuWord}>{NAVBAR.MENU_4}</p>
-                    </Link>
-                  </Typography>
-                </Grid>
+                {NAVBAR_MENU.map((menu, index) => {
+                  if (index > 0 && index < 5) {
+                    return (
+                      <Grid item key={index}>
+                        <Typography className={classes.menus} variant="h6" color="inherit">
+                          <Link href={menu.URL}>
+                            <p className={classes.menuWord}>{menu.NAME}</p>
+                          </Link>
+                        </Typography>
+                      </Grid>
+                    );
+                  }
+                })}
               </Grid>
             </Grid>
             <Grid item>
               <Grid container spacing={2} justify="center" direction="row">
                 <Grid item>
                   <Button color="primary" variant="outlined" className={classes.joinAsMerchantButton}>
-                    <span className={classes.joinAsMerchantWordingSpace}>{NAVBAR.BUTTON_LEFT}</span>
+                    <span className={classes.joinAsMerchantWordingSpace}>{NAVBAR_MENU[5].NAME}</span>
                     <img src="https://img.icons8.com/ios/15/000000/expand-arrow--v2.png" alt="down-arrow-icon" />
                   </Button>
                 </Grid>
