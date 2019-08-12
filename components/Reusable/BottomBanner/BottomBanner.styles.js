@@ -8,7 +8,7 @@ const useStyles = makeStyles(theme => ({
   alignment: {
     [theme.breakpoints.down('xs')]: {
       textAlign: 'center'
-    },
+    }
   }
 }));
 

@@ -33,6 +33,7 @@ export default function Index() {
         right={<RightInfo />}
         containerHeight={200}
         layoutColor="rgb(158, 158, 158)"
+        leftAlignment="center"
       />
     </Layout>
   );

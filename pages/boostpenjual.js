@@ -14,13 +14,15 @@ export default function Boostpenjual() {
   const { BOOST_PENJUAL_BANNER, BOOST_PENJUAL_BENEFITS } = Constants;
 
   const LeftButton = () => (
-    <Button variant="contained" component="span" className={classes.contactUsButton}>
-      <span className={classes.buttonText}>Join Now</span>
-    </Button>
+    <div className={classes.buttonContainer}>
+      <Button variant="contained" component="span" className={classes.joinNowButton}>
+        <span className={classes.buttonText}>Join Now</span>
+      </Button>
+    </div>
   );
 
   const RightInfo = () => (
-    <Typography className={classes.wordingContainer} variant="h3" component="h1" gutterBottom>
+    <Typography className={classes.wordingContainer} variant="h6" gutterBottom>
       <p className={classes.wording}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
     </Typography>
   );
@@ -77,18 +79,25 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('xs')]: {
       textAlign: 'center'
     },
-    padding: theme.spacing(3)
+    [theme.breakpoints.up('sm')]: {
+      padding: theme.spacing(3)
+    },
+    paddingRight: theme.spacing(3),
+    paddingLeft: theme.spacing(3)
   },
   wording: {
     color: '#fff',
-    fontSize: 17,
+    // fontSize:'0.4em',
     lineHeight: 1.5,
-    [theme.breakpoints.down('md')]: {
-      fontSize: '0.7em'
-    },
-    [theme.breakpoints.down('xs')]: {
-      fontSize: '0.7em'
-    },
+    // [theme.breakpoints.down('md')]: {
+    //   fontSize: '1.0rem'
+    // },
+    // [theme.breakpoints.down('xs')]: {
+    //   fontSize: '0.25em'
+    // }
+  },
+  buttonContainer: {
+    textAlign: 'center'
   },
   buttonText: {
     color: 'red',
@@ -102,12 +111,21 @@ const useStyles = makeStyles(theme => ({
       fontSize: '1.7em'
     },
   },
-  contactUsButton: {
+  joinNowButton: {
     backgroundColor: '#fff',
-    width: 300,
+    width: 250,
     [theme.breakpoints.down('md')]: {
       width: 230,
       height: 70
+    },
+    [theme.breakpoints.down('sm')]: {
+      width: 200,
+      height: 50
+    },
+    [theme.breakpoints.down('xs')]: {
+      marginTop: 10,
+      width: 180,
+      height: 50
     },
     marginLeft: 20
   },
