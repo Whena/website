@@ -3,7 +3,6 @@ import Footer from './Footer/Footer.component';
 
 const Layout = props => (
   <>
-    <CssBaseline />
     <Navbar />
     { props.children }
     <Footer />
