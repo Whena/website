@@ -31,7 +31,7 @@ export default function SimpleAppBar() {
     LANG_CODES,
     NAVBAR_LANGUAGE,
     NAVBAR_JOIN_US,
-    NAVBAR_MINIFIED_MENUS
+    NAVBAR_MOBILE_MENUS
   } = Constants;
 
   const [joinUsToggle, setjoinUsToggle] = useState(false);
@@ -69,7 +69,7 @@ export default function SimpleAppBar() {
             </Button>
           </Grid>
         </Grid>
-        {NAVBAR_MINIFIED_MENUS.map((menu, index) => {
+        {NAVBAR_MOBILE_MENUS.map((menu, index) => {
           if (index < 4) {
             return (
               <Link key={index} href={menu.URL}>
@@ -103,7 +103,7 @@ export default function SimpleAppBar() {
         })}
 
         <ListItem button onClick={handleJoinUsToggle}>
-          <ListItemText primary={NAVBAR_MINIFIED_MENUS[4].NAME} />
+          <ListItemText primary={NAVBAR_MOBILE_MENUS[4].NAME} />
           {joinUsToggle ? <ExpandMore /> : <KeyboardArrowRight />}
         </ListItem>
         <Collapse in={joinUsToggle} timeout="auto" unmountOnExit>
@@ -120,7 +120,7 @@ export default function SimpleAppBar() {
         </Collapse>
 
         <ListItem button onClick={handleLangToggle}>
-          <ListItemText primary={NAVBAR_MINIFIED_MENUS[5].NAME} />
+          <ListItemText primary={NAVBAR_MOBILE_MENUS[5].NAME} />
           {langToggle ? <ExpandMore /> : <KeyboardArrowRight />}
         </ListItem>
         <Collapse in={langToggle} timeout="auto" unmountOnExit>
@@ -128,9 +128,9 @@ export default function SimpleAppBar() {
             {NAVBAR_LANGUAGE.map((menu, index) => (
               <ListItem key={index} button className={classes.nested}>
                 <ListItemIcon>
-                  <img src={menu.ICON} alt={menu.LANG} />
+                  <img src={menu.ICON} alt={menu.MENU} />
                 </ListItemIcon>
-                <ListItemText primary={menu.LANG} />
+                <ListItemText primary={menu.MENU} />
               </ListItem>
             ))}
           </List>

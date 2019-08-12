@@ -10,7 +10,11 @@ import {
 import { makeStyles } from '@material-ui/core/styles';
 
 export default function Index() {
-  const { BEING_A_BOOSTPRENEUR, BOOSTPRENEUR_BANNER } = Constants;
+  const { 
+    BEING_A_BOOSTPRENEUR,
+    BOOSTPRENEUR_BANNER,
+    BANNER_BUTTONS
+  } = Constants;
   const classes = useStyles();
 
   return (
@@ -22,10 +26,10 @@ export default function Index() {
       >
         <Grid container className={classes.downloadButtonContainer} justify="flex-start" spacing={3}>
           <Grid item xs={3} sm={5} md={5}>
-            <img className={classes.imageDownloadButton} src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Get_it_on_Google_play.svg/1280px-Get_it_on_Google_play.svg.png" alt="Google Play" />
+            <img className={classes.imageDownloadButton} src={BANNER_BUTTONS.GOOGLE_PLAY} alt="Google Play" />
           </Grid>
           <Grid item xs={3} sm={5} md={5}>
-            <img className={classes.imageDownloadButton} src="https://static.ring.com/assets/static/get_the_app/ios-app-badge-fd60a24e3e78e27dcb40a055bcc4240d.png" alt="App Store" />
+            <img className={classes.imageDownloadButton} src={BANNER_BUTTONS.APP_STORE} alt="App Store" />
           </Grid>
         </Grid>
       </Banner>

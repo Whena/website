@@ -32,7 +32,9 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-gesture-gallery": "^1.0.1",
-    "react-gesture-responder": "^2.1.0"
+    "react-gesture-responder": "^2.1.0",
+    "react-slick": "^0.25.0",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "babel-eslint": "9.x",

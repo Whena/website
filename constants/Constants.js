@@ -23,7 +23,7 @@ const Constants = {
       URL: "/"
     }
   ],
-  NAVBAR_MINIFIED_MENUS: [
+  NAVBAR_MOBILE_MENUS: [
     {
       NAME: "About Us",
       URL: "/about"
@@ -103,6 +103,10 @@ const Constants = {
   LANG_CODES: {
     LANG_1: "ENG",
     LANG_2: "BAHASA"
+  },
+  BANNER_BUTTONS: {
+    APP_STORE: "/static/assets/banner-buttons/app-store/asset-appstore-homepage@3x.png",
+    GOOGLE_PLAY: "/static/assets/banner-buttons/google-play/asset-playstore-homepage@3x.png"
   },
   HOME_CONTENT: {
     LEFT_CONTENT: "",
@@ -335,7 +339,21 @@ const Constants = {
       ASSET: "",
       TITLE: "BoostCash is Ready!",
       DETAIL: "Step 5"
-    }]]
+    }]],
+  WHATTHEYSAY: [
+    {
+      TESTIMONIAL: "Limitless game and quiz experience",
+      USER: "User"
+    }, {
+      TESTIMONIAL: "Limitless game and quiz experience",
+      USER: "User"
+    }, {
+      TESTIMONIAL: "Limitless game and quiz experience",
+      USER: "User"
+    }, {
+      TESTIMONIAL: "Limitless game and quiz experience",
+      USER: "User"
+    }]
 };
 
 export { Constants };

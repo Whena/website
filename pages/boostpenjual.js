@@ -11,7 +11,10 @@ import { makeStyles } from '@material-ui/styles';
 
 export default function Boostpenjual() {
   const classes = useStyles();
-  const { BOOST_PENJUAL_BANNER, BOOST_PENJUAL_BENEFITS } = Constants;
+  const {
+    BOOST_PENJUAL_BANNER,
+    BOOST_PENJUAL_BENEFITS
+  } = Constants;
 
   const LeftButton = () => (
     <div className={classes.buttonContainer}>

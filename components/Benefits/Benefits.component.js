@@ -17,7 +17,7 @@ function Benefits({
   const classes = styles();
 
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="lg" className={classes.container}>
       <Typography variant="h4" className={classes.heading}>
         <span>{heading}</span>
         <Box component="span">
