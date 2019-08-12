@@ -1,4 +1,3 @@
-import React from 'react';
 import { Container, Typography, Box } from '@material-ui/core';
 import Layout from '../components/Layout';
 import DigitalEconomyAboutUs from '../components/DigitalEconomyAboutUs/DigitalEconomy.component';

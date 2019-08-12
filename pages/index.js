@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   Grid,
   Button
@@ -17,7 +16,7 @@ export default function Index() {
   const classes = useStyles();
 
   return (
-    <Layout>
+    <Layout title={"My Boost"}>
       <Banner
         contentPosition="flex-end"
         header={HOME_BANNER.HEADER}

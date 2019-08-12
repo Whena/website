@@ -1,4 +1,3 @@
-import React from 'react';
 import Layout from '../components/Layout';
 import Banner from '../components/Banner/Banner.component';
 import BoostPlayFAQs from '../components/BoostPlayFAQs/BoostPlayFAQs.component';

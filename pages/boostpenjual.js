@@ -1,4 +1,3 @@
-import React from 'react';
 import Layout from '../components/Layout';
 import { Constants } from '../constants';
 import Banner from '../components/Banner/Banner.component';

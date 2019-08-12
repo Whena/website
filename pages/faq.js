@@ -1,4 +1,3 @@
-import React from 'react';
 import Layout from '../components/Layout';
 import SearchBar from '../components/SearchBarFAQ/SearchBarFAQ.component';
 import FaqContent from '../components/FaqContent/FaqContent.component';

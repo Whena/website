@@ -1,10 +1,9 @@
-import React from 'react';
 import { Container } from '@material-ui/core';
 import Layout from '../components/Layout';
 import ImageGallery from '../components/GalleryContent/ImageGallery.component';
 import axios from 'axios';
 
-function Gallery(props) {
+function Gallery() {
   return (
     <Layout>
       <Container maxWidth="lg">
@@ -22,7 +21,7 @@ Gallery.getInitialProps = async () => {
         locale: 'en',
       },
     });
-    console.log(res.data)
+    console.log(res.data);
     return { content: res.data };
   } catch (error) {
     console.log(error.response);
