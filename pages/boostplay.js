@@ -1,17 +1,16 @@
+import React from 'react';
 import Layout from '../components/Layout';
 import Banner from '../components/Banner/Banner.component';
 import BoostPlayFAQs from '../components/BoostPlayFAQs/BoostPlayFAQs.component';
 import Benefits from '../components/Benefits/Benefits.component';
 import HowToActivate from '../components/HowToActivate/HowToActivate.component';
 import { Constants } from '../constants';
-import {
-  Grid,
-  Button
-} from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 
 export default function Index() {
-  const { 
+  const {
     BOOSTPLAY_FOR_YOU,
     BOOSTPLAY_BANNER,
     BANNER_BUTTONS

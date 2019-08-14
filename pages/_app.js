@@ -1,6 +1,6 @@
 // import React from 'react';
 import App, { Container } from 'next/app';
-// import Head from 'next/head';
+import Head from 'next/head';
 import ThemeProvider from '@material-ui/styles/ThemeProvider';
 import responsiveFontSizes from '@material-ui/core/styles/responsiveFontSizes';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -20,9 +20,9 @@ class MyApp extends App {
 
     return (
       <Container>
-        {/* <Head>
-          <title>My page</title>
-        </Head> */}
+        <Head>
+          <title>Boost Indonesia</title>
+        </Head>
         <ThemeProvider theme={responsiveFontSizes(theme)}>
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />

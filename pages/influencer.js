@@ -1,13 +1,11 @@
+import React from 'react';
 import Layout from '../components/Layout';
 import { Constants } from '../constants';
 import Banner from '../components/Banner/Banner.component';
 import Benefits from '../components/Benefits/Benefits.component';
 import WhayTheySay from '../components/Reusable/WhatTheySay/WhatTheySay.component';
 
-import {
-  // Grid,
-  Button
-} from '@material-ui/core';
+import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import WhatTheySay from '../components/Reusable/WhatTheySay/WhatTheySay.component';
 

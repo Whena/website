@@ -1,12 +1,11 @@
 import React from 'react';
-import Head from 'next/head';
 import Container from '@material-ui/core/Container';
-import Slider from 'react-slick';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import styles from './WhatTheySay.styles';
+import Slider from '../Slider';
 import { Constants } from '../../../constants';
 import BottomLiner from '../../BottomLiner/BottomLiner.component';
 
@@ -23,19 +22,6 @@ function WhatTheySay(props) {
 
   return (
     <Container maxWidth="lg" className={classes.container}>
-      <Head>
-        <link
-          rel="stylesheet"
-          type="text/css"
-          charset="UTF-8"
-          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
-        />
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
-        />
-      </Head>
       <Typography variant="h4" className={classes.title}>
         What they say?
       </Typography>

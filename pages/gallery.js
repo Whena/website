@@ -1,4 +1,5 @@
-import { Container } from '@material-ui/core';
+import React from 'react';
+import Container from '@material-ui/core/Container';
 import Layout from '../components/Layout';
 import ImageGallery from '../components/GalleryContent/ImageGallery.component';
 import axios from 'axios';

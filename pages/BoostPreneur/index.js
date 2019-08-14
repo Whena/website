@@ -1,15 +1,13 @@
+import React from 'react';
+import Grid from '@material-ui/core/Grid';
+import { makeStyles } from '@material-ui/core/styles';
 import Layout from '../../components/Layout';
 import Banner from '../../components/Banner/Banner.component';
 import Benefits from '../../components/Benefits/Benefits.component';
 import { Constants } from '../../constants';
-import {
-  Grid,
-  // Button
-} from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
 
 export default function Index() {
-  const { 
+  const {
     BEING_A_BOOSTPRENEUR,
     BOOSTPRENEUR_BANNER,
     BANNER_BUTTONS
