@@ -11,14 +11,15 @@ import BottomLiner from '../../BottomLiner/BottomLiner.component';
 
 const { WHATTHEYSAY } = Constants;
 
+const settings = {
+  dots: true,
+  speed: 500,
+  slidesToShow: 2,
+  slidesToScroll: 2
+};
+
 function WhatTheySay(props) {
   const classes = styles();
-  const settings = {
-    dots: true,
-    speed: 500,
-    slidesToShow: 2,
-    slidesToScroll: 2
-  };
 
   return (
     <Container maxWidth="lg" className={classes.container}>

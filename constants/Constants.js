@@ -196,9 +196,11 @@ const Constants = {
       TITLE: "Featured",
       DESCRIPTION: "Some features that you can enjoy and play in your device"
     }, {
+      ASSET: "/static/assets/boostplay/features/boost-battle/asset-card-boostbattle@3x.png",
       TITLE: "Boost Battle",
       DESCRIPTION: "Game dikotomi yang ditujukan untuk mengklasifikasikan pengguna BoostPlay berdasarkan pilihan atas ketertarikan tertentu"
     }, {
+      ASSET: "/static/assets/boostplay/features/boost-battle/asset-card-boostbattle@3x.png",
       TITLE: "Boot Quiz",
       DESCRIPTION: "Konten berbentuk kuis yang berguna untuk mengetahui perilaku pengguna, minat/ketertarikan dan pengetahuan pengguna"
     }
@@ -219,11 +221,11 @@ const Constants = {
       DESCRIPTION: ""
     }
   ],
-  BOOST_PENJUAL_BANNER: {
-    HEADER: "Digitalize Business",
-    DESCRIPTION: "Digitalize your business and increasing business volume by connecting to Boost merchant",
-    BUTTON: "Join Now"
-  },
+  // BOOST_PENJUAL_BANNER: {
+  //   HEADER: "Digitalize Business",
+  //   DESCRIPTION: "Digitalize your business and increasing business volume by connecting to Boost merchant",
+  //   BUTTON: "Join Now"
+  // },
   KOL_BANNER: {
     HEADER: "Boost Community Influencer",
     DESCRIPTION: "Freedom to organize event suitable with your community needs, and there will always opportunity to hold that event together with Boost",

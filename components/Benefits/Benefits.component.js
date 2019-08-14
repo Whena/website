@@ -49,7 +49,7 @@ function Benefits({
 
 Benefits.propTypes = {
   heading: PropTypes.string,
-  menus: PropTypes.arrayOf(PropTypes.string)
+  menus: PropTypes.arrayOf(PropTypes.object)
 };
 
 export default Benefits;

@@ -4,6 +4,7 @@ import Banner from '../components/Banner/Banner.component';
 import BoostPlayFAQs from '../components/BoostPlayFAQs/BoostPlayFAQs.component';
 import Benefits from '../components/Benefits/Benefits.component';
 import HowToActivate from '../components/HowToActivate/HowToActivate.component';
+import PersonaFeatures from '../components/Reusable/PersonaFeatures/PersonaFeatures.component';
 import { Constants } from '../constants';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
@@ -13,7 +14,8 @@ export default function Index() {
   const {
     BOOSTPLAY_FOR_YOU,
     BOOSTPLAY_BANNER,
-    BANNER_BUTTONS
+    BANNER_BUTTONS,
+    BOOSTPLAY_FEATURES
   } = Constants;
   const classes = useStyles();
 
@@ -42,7 +44,10 @@ export default function Index() {
         heading={BOOSTPLAY_FOR_YOU[0]}
         menus={[...BOOSTPLAY_FOR_YOU[1]]}
       />
-      <HowToActivate />
+      {/* <HowToActivate /> */}
+      <PersonaFeatures
+        features={BOOSTPLAY_FEATURES}
+      />
       <BoostPlayFAQs />
     </Layout>
   );
@@ -61,11 +66,11 @@ const useStyles = makeStyles(theme => ({
     margin: '5px auto',
     [theme.breakpoints.down('md')]: {
       width: 150,
-      height: 45,
+      height: 45
     },
     [theme.breakpoints.down('sm')]: {
       width: 125,
-      height: 40,
-    },
+      height: 40
+    }
   }
 }));

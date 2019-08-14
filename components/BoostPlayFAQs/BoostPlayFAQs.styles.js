@@ -1,6 +1,9 @@
 import { makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles(theme => ({
+  container: {
+    marginBottom: 50
+  },
   questionBox: {
     width: '100%',
   },
@@ -18,7 +21,8 @@ const useStyles = makeStyles(theme => ({
   headerContainer: {
     textAlign: 'center',
     margin: '20px auto',
-    width: '20%'
+    width: '20%',
+    minWidth: 140
   },
   fake: {
     backgroundColor: 'grey',
