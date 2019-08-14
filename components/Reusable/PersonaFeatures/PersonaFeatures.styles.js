@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
     // height: '100%'
   },
   headerContainer: {
-    height: '100%',
+    height: '100%'
   },
   slider: {
     height: '100%',
@@ -43,7 +43,7 @@ const useStyles = makeStyles(theme => ({
   },
   card: {
     height: 310,// '100%',
-    width: '284px !important',
+    width: '284px !important'
     // backgroundColor: '#000'
     // marginLeft: 20
   },

@@ -45,7 +45,7 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'right',
     [theme.breakpoints.down('xs')]: {
       textAlign: 'center'
-    },
+    }
   },
   wording: {
     color: '#fff',
@@ -55,7 +55,7 @@ const useStyles = makeStyles(theme => ({
     },
     [theme.breakpoints.down('xs')]: {
       fontSize: '0.7em'
-    },
+    }
   },
   buttonText: {
     color: '#fff',
@@ -67,7 +67,7 @@ const useStyles = makeStyles(theme => ({
     },
     [theme.breakpoints.down('xs')]: {
       fontSize: '1.7em'
-    },
+    }
   },
   contactUsButton: {
     backgroundColor: 'red',
@@ -77,5 +77,5 @@ const useStyles = makeStyles(theme => ({
       height: 70
     },
     marginLeft: 20
-  },
+  }
 }));
