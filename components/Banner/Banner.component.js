@@ -1,10 +1,8 @@
 import React from 'react';
-import {
-  Grid,
-  Typography,
-  useMediaQuery,
-  Container
-} from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import Container from '@material-ui/core/Container';
 import PropTypes from 'prop-types';
 
 import styles from './Banner.styles';
@@ -21,7 +19,7 @@ function Banner({
   const windowSize = matches ? contentPosition : "center";
 
   return (
-    <div className={classes.bannerContainer} style={backgroundImage}>
+    <div className={classes.bannerContainer} style={{backgroundImage}}>
       <Container maxWidth="lg">
         <Grid container justify={windowSize}>
           <Grid item xs={10} lg={5}>
