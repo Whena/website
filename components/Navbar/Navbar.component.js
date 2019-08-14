@@ -17,7 +17,7 @@ import Menu from '@material-ui/icons/Menu';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 
-import Link from 'next/link';
+import Link from '../Link';
 import { Constants } from '../../constants';
 
 import styles from './Navbar.styles';
@@ -73,7 +73,7 @@ export default function SimpleAppBar() {
           if (index < 4) {
             return (
               <Link key={index} href={menu.URL}>
-                <ListItem button key={index}>
+                <ListItem button key={menu.NAME}>
                   <ListItemText primary={menu.NAME} />
                 </ListItem>
               </Link>
@@ -111,7 +111,7 @@ export default function SimpleAppBar() {
             {NAVBAR_JOIN_US.map((button, index) => (
               <ListItem key={index} button className={classes.nested}>
                 <ListItemIcon>
-                  <div style={{  width: 24, height: 24, backgroundColor: '#d8d8d8'}}></div>
+                  <div style={{ width: 24, height: 24, backgroundColor: '#d8d8d8'}}></div>
                 </ListItemIcon>
                 <ListItemText primary={button.MENU} />
               </ListItem>
@@ -170,8 +170,10 @@ export default function SimpleAppBar() {
           <Grid container spacing={5} justify="space-around" alignItems="center">
             <Grid item xs={1}>
               <Typography style={{marginRight: 45}} variant="h6" color="inherit">
-                <Button disableRipple className={classes.minifiedLogoButton} href="/">
-                  <img className={classes.minifiedLogoConfiguration} src={NAVBAR_MENU[0].BRAND_LOGO} alt={NAVBAR_MENU[0].CAPTION} />
+                <Button disableRipple className={classes.minifiedLogoButton}>
+                  <Link href="/">
+                    <img className={classes.minifiedLogoConfiguration} src={NAVBAR_MENU[0].BRAND_LOGO} alt={NAVBAR_MENU[0].CAPTION} />
+                  </Link>
                 </Button>
               </Typography>
             </Grid>

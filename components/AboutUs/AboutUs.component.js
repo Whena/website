@@ -3,7 +3,8 @@ import {
   Typography,
   Hidden
 } from '@material-ui/core';
-import Link from 'next/link';
+// import Link from 'next/link';//'../Link';
+import Link from '../Link';
 import { Constants } from '../../constants';
 
 // import styles from './AboutUs.styles';
@@ -23,7 +24,7 @@ export default function AboutUs() {
         {HOME_ABOUT_US.DESCRIPTION}
       </Typography>
       <Typography variant="h5">
-        <Link href="#">
+        <Link href="/about">
           {HOME_ABOUT_US.MORE_BUTTON}
         </Link>
       </Typography>

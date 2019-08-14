@@ -98,7 +98,7 @@ const Constants = {
   },
   LANGUAGE: {
     LANG_1: "English",
-    LANG_2: "Indonesian",
+    LANG_2: "Indonesian"
   },
   LANG_CODES: {
     LANG_1: "ENG",

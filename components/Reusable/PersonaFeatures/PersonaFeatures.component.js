@@ -14,7 +14,7 @@ const settings = {
   dots: false,
   speed: 500,
   slidesToShow: 2,
-  slidesToScroll: 2,
+  slidesToScroll: 2
   // variableWidth: true
   // fade: true
 };

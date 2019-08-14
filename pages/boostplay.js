@@ -3,7 +3,7 @@ import Layout from '../components/Layout';
 import Banner from '../components/Banner/Banner.component';
 import BoostPlayFAQs from '../components/BoostPlayFAQs/BoostPlayFAQs.component';
 import Benefits from '../components/Benefits/Benefits.component';
-import HowToActivate from '../components/HowToActivate/HowToActivate.component';
+// import HowToActivate from '../components/HowToActivate/HowToActivate.component';
 import PersonaFeatures from '../components/Reusable/PersonaFeatures/PersonaFeatures.component';
 import { Constants } from '../constants';
 import Grid from '@material-ui/core/Grid';

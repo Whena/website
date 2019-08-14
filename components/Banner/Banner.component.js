@@ -21,7 +21,7 @@ function Banner({
   const windowSize = matches ? contentPosition : "center";
 
   return (
-    <div className={classes.bannerContainer} style={{backgroundImage: `url(${backgroundImage})`}}>
+    <div className={classes.bannerContainer} style={backgroundImage}>
       <Container maxWidth="lg">
         <Grid container justify={windowSize}>
           <Grid item xs={10} lg={5}>
@@ -51,7 +51,7 @@ Banner.propTypes = {
   contentPosition: PropTypes.string,
   header: PropTypes.string,
   description: PropTypes.string,
-  backgroundImage: PropTypes.string
+  backgroundImage: PropTypes.object
 };
 
 export default Banner;
