@@ -1,28 +1,60 @@
-{ 
-  "env": {
-    "browser": true,
-    "es6": true,
-    "commonjs": true
-  },
-  "extends": ["eslint:recommended"],
-  "parserOptions": {
-    "ecmaVersion": 9,
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "sourceType": "module"
-  },
-  "plugins": ["react"],
+{
+  "extends": ["react-app", "plugin:jsx-a11y/recommended"],
+  "plugins": ["jsx-a11y"],
   "rules": {
-		"semi": ["error", "always"],
-		"indent": [2, 2],
-    "no-trailing-spaces": ["error", { "ignoreComments": true }],
-    "no-unused-vars": ["error"],
-    "react/prop-types": 0,
-    "react/jsx-uses-vars": [2],
-    "no-console": 0
-  },
-  "globals": {
-    "process": true
+    "no-unused-vars": [
+      "error",
+      {
+        "args": "none"
+      }
+    ],
+    "no-extra-boolean-cast": 2,
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "no-else-return": 1,
+    "key-spacing": [
+      "error",
+      {
+        "mode": "minimum"
+      }
+    ],
+    "arrow-body-style": 0,
+    "comma-dangle": [1, "never"],
+    "no-multi-spaces": [
+      "error",
+      {
+        "ignoreEOLComments": true
+      }
+    ],
+    "no-plusplus": [
+      "error",
+      {
+        "allowForLoopAfterthoughts": true
+      }
+    ],
+    "react/no-string-refs": 0,
+    "react/jsx-wrap-multilines": 0,
+    "react/forbid-prop-types": ["any"],
+    "react/jsx-pascal-case": 2,
+    "react/no-array-index-key": 1,
+    "jsx-a11y/no-autofocus": 0,
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["to"]
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ]
   }
 }
