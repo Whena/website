@@ -13,7 +13,8 @@ export default function Boostpenjual() {
   const classes = useStyles();
   const {
     BOOST_PENJUAL_BANNER,
-    BOOST_PENJUAL_BENEFITS
+    BOOST_PENJUAL_BENEFITS,
+    BANNER_BUTTONS
   } = Constants;
 
   const LeftButton = () => (
@@ -37,12 +38,16 @@ export default function Boostpenjual() {
         header={BOOST_PENJUAL_BANNER.HEADER}
         description={BOOST_PENJUAL_BANNER.DESCRIPTION}
       >
-        <Grid container className={classes.downloadButtonContainer} justify="flex-start" spacing={3}>
-          <Grid item xs={3} sm={5} md={5}>
-            <img className={classes.imageDownloadButton} src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Get_it_on_Google_play.svg/1280px-Get_it_on_Google_play.svg.png" alt={BOOST_PENJUAL_BANNER.LEFT_BUTTON} />
+        <Grid container justify="flex-start" spacing={3}>
+          <Grid item xs={12} md={3} lg={6}>
+            <Button disableRipple className={classes.buttonConfiguration}>
+              <img className={classes.imageDownloadButton} src={BANNER_BUTTONS.GOOGLE_PLAY} alt={BOOST_PENJUAL_BANNER.LEFT_BUTTON} />
+            </Button>
           </Grid>
-          <Grid item xs={3} sm={5} md={5}>
-            <img className={classes.imageDownloadButton} src="https://static.ring.com/assets/static/get_the_app/ios-app-badge-fd60a24e3e78e27dcb40a055bcc4240d.png" alt={BOOST_PENJUAL_BANNER.RIGHT_BUTTON} />
+          <Grid item xs={12} md={3} lg={6}>
+            <Button disableRipple className={classes.buttonConfiguration}>
+              <img className={classes.imageDownloadButton} src={BANNER_BUTTONS.APP_STORE} alt={BOOST_PENJUAL_BANNER.RIGHT_BUTTON} />
+            </Button>
           </Grid>
         </Grid>
       </Banner>
@@ -65,9 +70,16 @@ const useStyles = makeStyles(theme => ({
   downloadButtonContainer: {
     marginTop: 15
   },
+  buttonConfiguration: {
+    // width: '80%'
+    "&:hover": {
+      backgroundColor: 'transparent'
+    }
+  },
   imageDownloadButton: {
     width: '80%',
     height: '90%',
+    margin: '5px auto',
     [theme.breakpoints.down('md')]: {
       width: 150,
       height: 45,

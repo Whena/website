@@ -48,13 +48,14 @@ export default function BoostPlayFAQs() {
         <span className={classes.header}>{BOOSTPLAY_FAQ.HEADER}</span>
         <BottomLiner />
       </Typography>
-      <Grid container justify="center">
+      <Grid container justify="center" className={classes.container}>
         <Grid item xs={8}>
           <div className={classes.questionBox}>
-            {FAQ_BOOSTPRENEUR.map(faq => (
+            {FAQ_BOOSTPRENEUR.map((faq, index) => (
               <QuestionBox
                 question={faq.QUESTION}
                 details={faq.ANSWER}
+                key={index}
               />
             ))}
             {/* <QuestionBox question={BOOSTPLAY_FAQ.QUESTION_1} details="HEHEHEH" />

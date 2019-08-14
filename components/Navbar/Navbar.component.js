@@ -150,8 +150,8 @@ export default function SimpleAppBar() {
               </Button>
             </Grid>
             <Grid item>
-              <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                <Menu onClick={openDrawer} />
+              <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" onClick={openDrawer}>
+                <Menu />
               </IconButton>
               <Drawer anchor="left" open={state}>
                 <BurgerList />

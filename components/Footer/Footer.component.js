@@ -1,4 +1,5 @@
 // Material components
+import React from 'react';
 import responsiveFontSizes from '@material-ui/core/styles/responsiveFontSizes';
 import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 import ThemeProvider from '@material-ui/styles/ThemeProvider';
@@ -118,7 +119,7 @@ function Footer() {
                 </div>
                 <Grid container>
                   <Grid item xs={4} md={3}>
-                    <Box disp>
+                    <Box>
                       <img
                         src="/static/assets/asset-fb-homepage.png"
                         srcSet="/static/assets/asset-fb-homepage@2x.png 1x, /static/assets/asset-fb-homepage@3x.png 2x"
