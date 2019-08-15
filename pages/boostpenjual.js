@@ -9,27 +9,45 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
-export default function Boostpenjual() {
-  const classes = useStyles();
-  const {
-    BOOST_PENJUAL_BANNER,
-    BOOST_PENJUAL_BENEFITS,
-    BANNER_BUTTONS
-  } = Constants;
+const {
+  BOOST_PENJUAL_BANNER,
+  BOOST_PENJUAL_BENEFITS,
+  BANNER_BUTTONS
+} = Constants;
 
-  const LeftButton = () => (
+const LeftButton = () => {
+  const classes = useStyles();
+  return (
     <div className={classes.buttonContainer}>
-      <Button variant="contained" component="span" className={classes.joinNowButton}>
+      <Button
+        variant="contained"
+        component="span"
+        className={classes.joinNowButton}
+      >
         <span className={classes.buttonText}>Join Now</span>
       </Button>
     </div>
   );
+};
 
-  const RightInfo = () => (
+const RightInfo = () => {
+  const classes = useStyles();
+
+  return (
     <Typography className={classes.wordingContainer} variant="h6" gutterBottom>
-      <p className={classes.wording}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      <p className={classes.wording}>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur.
+      </p>
     </Typography>
   );
+};
+
+export default function Boostpenjual() {
+  const classes = useStyles();
 
   return (
     <Layout>
@@ -41,12 +59,20 @@ export default function Boostpenjual() {
         <Grid container justify="flex-start" spacing={3}>
           <Grid item xs={12} md={3} lg={6}>
             <Button disableRipple className={classes.buttonConfiguration}>
-              <img className={classes.imageDownloadButton} src={BANNER_BUTTONS.GOOGLE_PLAY} alt={BOOST_PENJUAL_BANNER.LEFT_BUTTON} />
+              <img
+                className={classes.imageDownloadButton}
+                src={BANNER_BUTTONS.GOOGLE_PLAY}
+                alt={BOOST_PENJUAL_BANNER.LEFT_BUTTON}
+              />
             </Button>
           </Grid>
           <Grid item xs={12} md={3} lg={6}>
             <Button disableRipple className={classes.buttonConfiguration}>
-              <img className={classes.imageDownloadButton} src={BANNER_BUTTONS.APP_STORE} alt={BOOST_PENJUAL_BANNER.RIGHT_BUTTON} />
+              <img
+                className={classes.imageDownloadButton}
+                src={BANNER_BUTTONS.APP_STORE}
+                alt={BOOST_PENJUAL_BANNER.RIGHT_BUTTON}
+              />
             </Button>
           </Grid>
         </Grid>
@@ -66,13 +92,13 @@ export default function Boostpenjual() {
   );
 }
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   downloadButtonContainer: {
     marginTop: 15
   },
   buttonConfiguration: {
     // width: '80%'
-    "&:hover": {
+    '&:hover': {
       backgroundColor: 'transparent'
     }
   },
@@ -82,12 +108,12 @@ const useStyles = makeStyles(theme => ({
     margin: '5px auto',
     [theme.breakpoints.down('md')]: {
       width: 150,
-      height: 45,
+      height: 45
     },
     [theme.breakpoints.down('sm')]: {
       width: 125,
-      height: 40,
-    },
+      height: 40
+    }
   },
   wordingContainer: {
     textAlign: 'left',
@@ -103,7 +129,7 @@ const useStyles = makeStyles(theme => ({
   wording: {
     color: '#fff',
     // fontSize:'0.4em',
-    lineHeight: 1.5,
+    lineHeight: 1.5
     // [theme.breakpoints.down('md')]: {
     //   fontSize: '1.0rem'
     // },
@@ -116,7 +142,7 @@ const useStyles = makeStyles(theme => ({
   },
   buttonText: {
     color: 'red',
-    fontSize: '2.2em',//20
+    fontSize: '2.2em', //20
     textTransform: 'none',
 
     [theme.breakpoints.down('md')]: {
@@ -124,7 +150,7 @@ const useStyles = makeStyles(theme => ({
     },
     [theme.breakpoints.down('xs')]: {
       fontSize: '1.7em'
-    },
+    }
   },
   joinNowButton: {
     backgroundColor: '#fff',
@@ -143,5 +169,5 @@ const useStyles = makeStyles(theme => ({
       height: 50
     },
     marginLeft: 20
-  },
+  }
 }));
