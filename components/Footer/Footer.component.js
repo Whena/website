@@ -39,11 +39,13 @@ const useStyles = makeStyles(theme => ({
   },
   headingFooter: {
     fontWeight: 700,
-    marginBottom: theme.spacing(4)
+    marginBottom: theme.spacing(4),
+    color: '#fff'
   },
   textFooter: {
     marginTop: theme.spacing(4),
-    marginBottom: theme.spacing(4)
+    marginBottom: theme.spacing(4),
+    color: '#fff'
   },
   image: {
     margin: theme.spacing(1),
@@ -64,6 +66,9 @@ const useStyles = makeStyles(theme => ({
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center"
+  },
+  ngeBoostBentar: {
+    color: '#ee3124'
   }
 }));
 
@@ -153,7 +158,7 @@ function Footer() {
             </Grid>
             <Box py={4}>
               <div>
-                <Typography className={classes.company} variant="h4" align="right">
+                <Typography className={classes.company} variant="h4" align="right" className={classes.ngeBoostBentar}>
                   #NGEBOOSTBENTAR
                 </Typography>
               </div>

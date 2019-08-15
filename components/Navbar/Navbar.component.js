@@ -12,6 +12,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Collapse from '@material-ui/core/Collapse';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
+import { useRouter } from 'next/router'
 
 import Menu from '@material-ui/icons/Menu';
 import ExpandMore from '@material-ui/icons/ExpandMore';
@@ -33,6 +34,7 @@ export default function SimpleAppBar() {
     NAVBAR_JOIN_US,
     NAVBAR_MOBILE_MENUS
   } = Constants;
+  const router = useRouter();
 
   const [joinUsToggle, setjoinUsToggle] = useState(false);
   const [langToggle, setLangToggle] = useState(false);
@@ -72,7 +74,7 @@ export default function SimpleAppBar() {
         {NAVBAR_MOBILE_MENUS.map((menu, index) => {
           if (index < 4) {
             return (
-              <Link key={index} href={menu.URL}>
+              <Link key={menu.NAME} href={menu.URL}>
                 <ListItem button key={menu.NAME}>
                   <ListItemText primary={menu.NAME} />
                 </ListItem>
@@ -109,7 +111,7 @@ export default function SimpleAppBar() {
         <Collapse in={joinUsToggle} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
             {NAVBAR_JOIN_US.map((button, index) => (
-              <ListItem key={index} button className={classes.nested}>
+              <ListItem key={button.MENU} button className={classes.nested}>
                 <ListItemIcon>
                   <div style={{ width: 24, height: 24, backgroundColor: '#d8d8d8'}}></div>
                 </ListItemIcon>

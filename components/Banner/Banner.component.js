@@ -19,7 +19,7 @@ function Banner({
   const windowSize = matches ? contentPosition : "center";
 
   return (
-    <div className={classes.bannerContainer} style={{backgroundImage}}>
+    <div className={classes.bannerContainer} style={backgroundImage}>
       <Container maxWidth="lg">
         <Grid container justify={windowSize}>
           <Grid item xs={10} lg={5}>

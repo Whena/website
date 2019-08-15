@@ -7,6 +7,8 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardActionArea from '@material-ui/core/CardActionArea';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import BottomLiner from '../../BottomLiner/BottomLiner.component';
 import styles from './PersonaFeatures.styles';
 
 const settings = {
@@ -15,21 +17,24 @@ const settings = {
   speed: 500,
   slidesToShow: 2,
   slidesToScroll: 2
-  // variableWidth: true
-  // fade: true
 };
 
 function PersonaFeatures({ features }) {
   const classes = styles();
+  const matches = useMediaQuery('(max-width:960px)');
 
   const FeaturesHeader = () => (
     <div className={classes.titleContainer}>
       <Typography variant="h4" className={classes.title}>
         {features[0].TITLE}
       </Typography>
-      <Typography variant="body1" className={classes.titleDescription}>
-        {features[0].DESCRIPTION}
-      </Typography>
+      {matches ?
+        <></>
+        :
+        <Typography variant="body1" className={classes.titleDescription}>
+          {features[0].DESCRIPTION}
+        </Typography>
+      }
     </div>
   );
 
@@ -37,10 +42,11 @@ function PersonaFeatures({ features }) {
     <div className={classes.container} id="hehe">
       <Container maxWidth="lg" className={classes.headerContainer}>
         <Grid container justify="space-around" className={classes.gridContainer} alignItems="center">
-          <Grid item lg={4} className={classes.leftSide}>
+          <Grid item xs={12} lg={4} className={classes.leftSide}>
             <FeaturesHeader />
+            { matches ? <BottomLiner /> : <></> }
           </Grid>
-          <Grid item lg={8} className={classes.rightSide}>
+          <Grid item xs={12} lg={8} className={classes.rightSide}>
             <Slider {...settings} className={classes.slider}>
               <Card className={classes.card}>
                 <CardActionArea className={classes.cardAction}>

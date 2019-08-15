@@ -8,6 +8,7 @@ import PersonaFeatures from '../components/Reusable/PersonaFeatures/PersonaFeatu
 import { Constants } from '../constants';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { makeStyles } from '@material-ui/core/styles';
 
 export default function Index() {
@@ -19,13 +20,16 @@ export default function Index() {
   } = Constants;
   const classes = useStyles();
 
+  const mobile = useMediaQuery('(min-width:600px)');
+  let backgroundBanner = mobile ? { backgroundImage: "url(/static/assets/boostplay/banner/header-boostplay@3x.png)" } : { backgroundImage: "url(/static/assets/boostplay/banner/header-boostplay@3x.png)" }
+
   return (
     <Layout>
       <Banner
         contentPosition="flex-start"
         header={BOOSTPLAY_BANNER.HEADER}
         description={BOOSTPLAY_BANNER.DESCRIPTION}
-        backgroundImage="/static/assets/boostplay/banner/header-boostplay@3x.png"
+        backgroundImage={backgroundBanner}
       >
         <Grid container justify="flex-start">
           <Grid item xs={12} md={3} lg={6}>
