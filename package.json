@@ -34,9 +34,13 @@
     "react-slick": "^0.25.0"
   },
   "devDependencies": {
+    "@svgr/webpack": "^4.3.2",
     "babel-eslint": "9.x",
     "eslint": "5.x",
     "eslint-config-react-app": "^5.0.1",
-    "eslint-plugin-react": "^7.14.3"
+    "eslint-plugin-react": "^7.14.3",
+    "file-loader": "^4.2.0",
+    "next-images": "^1.1.2",
+    "url-loader": "^2.1.0"
   }
 }

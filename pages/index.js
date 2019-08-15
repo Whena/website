@@ -10,6 +10,7 @@ import HomeContent from '../components/HomeContent/HomeContent.component';
 import AboutUs from '../components/AboutUs/AboutUs.component';
 import { Constants } from '../constants';
 import AsNumber from '../components/AsNumber/AsNumber.component';
+import ProductSlider from '../components/ProductSlider/ProductSlider';
 
 export default function Index() {
   const { HOME_BANNER } = Constants;
@@ -46,6 +47,7 @@ export default function Index() {
       <HomeContent />
       <AboutUs />
       <AsNumber />
+      <ProductSlider />
     </Layout>
   );
 }
