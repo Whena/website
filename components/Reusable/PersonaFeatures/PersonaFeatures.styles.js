@@ -32,6 +32,9 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('md')]: {
       width: '100%'
       //nanti ganti uga ukuran cardnya biar lebih gede
+    },
+    [theme.breakpoints.down('xs')]: {
+      width: 700//'100%'
     }
   },
   gridContainer: {
@@ -67,11 +70,17 @@ const useStyles = makeStyles(theme => ({
       width:'90% !important'
     },
     [theme.breakpoints.down('xs')]: {
-      width:'300px !important'
+      width:'80% !important'
     }
   },
-  cardAction: {
-    // width: 284
+  // cardAction: {
+  //   "&:hover": {
+  //     backgroundColor: 'rgba(255,255,255,0.9)'
+  //   }
+  // },
+  cardActionHighlight: {
+    opacity: 0,
+    backgroundColor: '#fff'
   },
   media: {
     height: 106,

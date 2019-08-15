@@ -44,12 +44,15 @@ function PersonaFeatures({ features }) {
         <Grid container justify="space-around" className={classes.gridContainer} alignItems="center">
           <Grid item xs={12} lg={4} className={classes.leftSide}>
             <FeaturesHeader />
-            { matches ? <BottomLiner /> : <></> }
+            {matches ? <BottomLiner /> : <></>}
           </Grid>
           <Grid item xs={12} lg={8} className={classes.rightSide}>
             <Slider {...settings} className={classes.slider}>
               <Card className={classes.card}>
-                <CardActionArea className={classes.cardAction}>
+                <CardActionArea disableRipple disableTouchRipple className={classes.cardAction} classes={{
+                  focusHighlight: classes.cardActionHighlight,
+                  focusVisible: classes.cardActionHighlight
+                }}>
                   <CardMedia
                     className={classes.media}
                     image="/static/assets/boostplay/features/boost-battle/asset-card-boostbattle@3x.png"
@@ -66,7 +69,10 @@ function PersonaFeatures({ features }) {
                 </CardActionArea>
               </Card>
               <Card className={classes.card}>
-                <CardActionArea className={classes.cardAction}>
+                <CardActionArea disableRipple disableTouchRipple className={classes.cardAction} classes={{
+                  focusHighlight: classes.cardActionHighlight,
+                  focusVisible: classes.cardActionHighlight
+                }}>
                   <CardMedia
                     className={classes.media}
                     image="/static/assets/boostplay/features/boost-battle/asset-card-boostbattle@3x.png"
@@ -83,7 +89,10 @@ function PersonaFeatures({ features }) {
                 </CardActionArea>
               </Card>
               <Card className={classes.card}>
-                <CardActionArea className={classes.cardAction}>
+                <CardActionArea disableRipple disableTouchRipple className={classes.cardAction} classes={{
+                  focusHighlight: classes.cardActionHighlight,
+                  focusVisible: classes.cardActionHighlight
+                }}>
                   <CardMedia
                     className={classes.media}
                     image="/static/assets/boostplay/features/boost-battle/asset-card-boostbattle@3x.png"
