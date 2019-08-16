@@ -6,7 +6,7 @@ import Slider from '../Reusable/Slider';
 import { makeStyles } from '@material-ui/core/styles';
 // import buttercms from 'buttercms'
 
-const butter = require('buttercms')(process.env.BUTTER_TOKEN);
+// const butter = require('buttercms')(process.env.BUTTER_TOKEN);
 
 const products = [
   {
@@ -54,15 +54,15 @@ const sliderOptions = {
 
 function ProductSlider() {
   const classes = useStyles();
-  useEffect(() => {
-    butter.content.retrieve(['product_carousel'], {locale: 'en'})
-    .then(function(res) {
-      console.log(res)
-      console.log(res.data.data.product_carousel)
-    }).catch(function(resp) {
-      console.log(resp)
-    });
-  }, [])
+  // useEffect(() => {
+  //   butter.content.retrieve(['product_carousel'], {locale: 'en'})
+  //   .then(function(res) {
+  //     console.log(res)
+  //     console.log(res.data.data.product_carousel)
+  //   }).catch(function(resp) {
+  //     console.log(resp)
+  //   });
+  // }, [])
 
   return (
     <BackgroundProductSlider className={classes.slider}>
