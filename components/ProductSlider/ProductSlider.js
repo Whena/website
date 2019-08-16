@@ -1,49 +1,37 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
 import BackgroundProductSlider from './BackgroundProductSlider';
 import ProductSliderItem from './ProductSliderItem';
-import boostPlay from '../../static/assets/products/boost-play.png';
 import Slider from '../Reusable/Slider';
-import { makeStyles } from '@material-ui/core/styles';
-// import buttercms from 'buttercms'
-
-// const butter = require('buttercms')(process.env.BUTTER_TOKEN);
-
-const products = [
-  {
-    title: 'BoostPlay',
-    description: `BoostPlay is designed in a gamification format
-to create a hybrid experience of both physical
-and digital interaction/transaction between users
-and participating Boost merchants`,
-    imageUrl: boostPlay,
-    googlePlayUrl:
-      'https://play.google.com/store/apps/details?id=com.dialog.boost.client.android&hl=en_US',
-    appleStoreUrl: 'https://apps.apple.com/id/app/boostplay/id1402493560?l=id'
-  },
-  {
-    title: 'BoostPenjual',
-    description: `BoostPenjual is designed in a gamification format
-to create a hybrid experience of both physical
-and digital interaction/transaction between users
-and participating Boost merchants`,
-    imageUrl: boostPlay,
-    googlePlayUrl:
-      'https://play.google.com/store/apps/details?id=com.dialog.boost.client.android&hl=en_US',
-    appleStoreUrl: 'https://apps.apple.com/id/app/boostplay/id1402493560?l=id'
-  }
-];
 
 const useStyles = makeStyles((theme) => ({
   slider: {
-    '& .slick-next:before, & .slick-prev:before': {
-      fontSize: 35
+    '& .slick-arrow': {
+      width: 30,
+      height: 30
+    },
+    '& .slick-arrow:not(:hover)': {
+      opacity: 0.5
+    },
+    '& .slick-arrow:before': {
+      fontSize: 35,
+      [theme.breakpoints.up('sm')]: {
+        fontSize: 60
+      }
     },
     '& .slick-next': {
-      right: 30
+      right: 55,
+      [theme.breakpoints.down('xs')]: {
+        right: 5
+      }
     },
     '& .slick-prev': {
+      zIndex: 1,
       left: 30,
-      zIndex: 1
+      [theme.breakpoints.down('xs')]: {
+        left: 2
+      }
     }
   }
 }));
@@ -52,27 +40,30 @@ const sliderOptions = {
   infinite: true
 };
 
-function ProductSlider() {
+function ProductSlider(props) {
   const classes = useStyles();
-  // useEffect(() => {
-  //   butter.content.retrieve(['product_carousel'], {locale: 'en'})
-  //   .then(function(res) {
-  //     console.log(res)
-  //     console.log(res.data.data.product_carousel)
-  //   }).catch(function(resp) {
-  //     console.log(resp)
-  //   });
-  // }, [])
+  const { products } = props;
 
   return (
     <BackgroundProductSlider className={classes.slider}>
       <Slider {...sliderOptions}>
         {products.map((product) => (
-          <ProductSliderItem key={product.title} data={product} />
+          <ProductSliderItem
+            key={product.title}
+            title={product.title}
+            description={product.description}
+            imageUrl={product.image_banner}
+            googlePlayUrl={product.google_play_url}
+            appleStoreUrl={product.app_store_url}
+          />
         ))}
       </Slider>
     </BackgroundProductSlider>
   );
 }
+
+ProductSlider.propTypes = {
+  products: PropTypes.arrayOf(PropTypes.shape(ProductSliderItem.type.propTypes))
+};
 
 export default ProductSlider;

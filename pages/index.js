@@ -2,6 +2,7 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
+import getLodash from 'lodash/get';
 import Layout from '../components/Layout';
 import Banner from '../components/Banner/Banner.component';
 import HomeContent from '../components/HomeContent/HomeContent.component';
@@ -16,6 +17,9 @@ const { HOME_BANNER } = Constants;
 
 function Index(props) {
   const classes = useStyles();
+  const { data } = props;
+
+  const products = getLodash(data, 'fields.services', []);
 
   return (
     <Layout title={'My Boost'}>
@@ -62,7 +66,7 @@ function Index(props) {
       <HomeContent />
       <AboutUs />
       <AsNumber />
-      <ProductSlider />
+      {products.length > 0 && <ProductSlider products={products} />}
     </Layout>
   );
 }

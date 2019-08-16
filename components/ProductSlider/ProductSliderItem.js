@@ -14,12 +14,17 @@ const useStyles = makeStyles((theme) => ({
     display: 'inline-block !important',
     width: '100%',
     height: 'auto',
-    maxWidth: 125
+    maxWidth: 170
   },
   imageContainer: {
     display: 'inline-block',
     padding: '10px',
     textAlign: 'right'
+  },
+  descriptionContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center'
   },
   title: {
     color: '#FFF',
@@ -38,14 +43,13 @@ const useStyles = makeStyles((theme) => ({
       '& > img': {
         maxHeight: 40,
         [theme.breakpoints.down('xs')]: {
-          height: 30
+          height: 20
         }
       }
     }
   },
   body: {
     color: '#FFF',
-    fontSize: '0.8rem',
     [theme.breakpoints.down('xs')]: {
       fontSize: '0.6rem',
       overflow: 'hidden',
@@ -54,35 +58,41 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-function ProductSliderItem({ data }) {
+function ProductSliderItem(props) {
   const classes = useStyles();
 
   return (
     <Grid
       container
       className={classes.container}
-      alignItems="center"
+      alignItems="stretch"
       justify="center"
-      alignContent="center"
     >
       <Grid item xs={3} sm={3} className={classes.imageContainer}>
-        <img className={classes.image} src={data.imageUrl} alt={data.title} />
+        <img className={classes.image} src={props.imageUrl} alt={props.title} />
       </Grid>
-      <Grid container item xs={8} sm={7} md={6} lg={5}>
+      <Grid
+        item
+        xs={8}
+        sm={7}
+        md={6}
+        lg={5}
+        className={classes.descriptionContainer}
+      >
         <Typography variant="h1" gutterBottom className={classes.title}>
-          {data.title}
+          {props.title}
         </Typography>
         <Typography variant="body1" gutterBottom className={classes.body}>
-          {data.description}
+          {props.description}
         </Typography>
         <div className={classes.appLink}>
-          {data.googlePlayUrl && (
-            <a href={data.googlePlayUrl} target="__blank">
+          {props.googlePlayUrl && (
+            <a href={props.googlePlayUrl} target="__blank">
               <img src={googlePlayImage} alt="GooglePlay Link" />
             </a>
           )}
-          {data.appleStoreUrl && (
-            <a href={data.appleStoreUrl} target="__blank">
+          {props.appleStoreUrl && (
+            <a href={props.appleStoreUrl} target="__blank">
               <img src={appleStoreImage} alt="Apple Store Link" />
             </a>
           )}
@@ -93,13 +103,11 @@ function ProductSliderItem({ data }) {
 }
 
 ProductSliderItem.propTypes = {
-  data: PropTypes.shape({
-    title: PropTypes.string,
-    description: PropTypes.string,
-    imageUrl: PropTypes.string,
-    googlePlayUrl: PropTypes.string,
-    appleStoreUrl: PropTypes.string
-  }).isRequired
+  title: PropTypes.string,
+  description: PropTypes.string,
+  imageUrl: PropTypes.string,
+  googlePlayUrl: PropTypes.string,
+  appleStoreUrl: PropTypes.string
 };
 
 export default React.memo(ProductSliderItem);
