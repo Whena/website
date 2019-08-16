@@ -116,7 +116,7 @@ const Constants = {
   },
   HOME_ABOUT_US: {
     RIGHT_CONTENT: "",
-    HEADER: "About Us",
+    HEADER: "Step Closer With Us",
     DESCRIPTION: "Boost is a digital economy platform which provides digital interaction between merchant and consumers (B2C) over a QR Code as a medium to initiate - process - record are interaction through a mobile application at both merchant and consumer end.",
     MORE_BUTTON: "See Detail Here ->"
   },

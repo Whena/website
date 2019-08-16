@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import BackgroundProductSlider from './BackgroundProductSlider';
 import ProductSliderItem from './ProductSliderItem';
 import boostPlay from '../../static/assets/products/boost-play.png';
 import Slider from '../Reusable/Slider';
 import { makeStyles } from '@material-ui/core/styles';
+// import buttercms from 'buttercms'
+
+const butter = require('buttercms')(process.env.BUTTER_TOKEN);
 
 const products = [
   {
@@ -49,8 +52,18 @@ const sliderOptions = {
   infinite: true
 };
 
-export default function ProductSlider() {
+function ProductSlider() {
   const classes = useStyles();
+  useEffect(() => {
+    butter.content.retrieve(['product_carousel'], {locale: 'en'})
+    .then(function(res) {
+      console.log(res)
+      console.log(res.data.data.product_carousel)
+    }).catch(function(resp) {
+      console.log(resp)
+    });
+  }, [])
+
   return (
     <BackgroundProductSlider className={classes.slider}>
       <Slider {...sliderOptions}>
@@ -61,3 +74,5 @@ export default function ProductSlider() {
     </BackgroundProductSlider>
   );
 }
+
+export default ProductSlider;

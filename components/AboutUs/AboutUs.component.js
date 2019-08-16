@@ -38,6 +38,7 @@ export default function AboutUs() {
 
   return (
     <MiniInformation
+      // className={classes.container}
       leftGrid={8}
       leftComponent={leftComponent}
       rightComponent={rightComponent}

@@ -5,6 +5,9 @@ const useStyles = makeStyles({
     flexGrow: 1
   },
   container: {
+    backgroundImage: 'url(/static/assets/bg-section-2-homepage.svg)'
+  },
+  container: {
     marginBottom: '3.5rem',
   },
   contentImage: {

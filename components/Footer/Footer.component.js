@@ -79,7 +79,7 @@ function Footer() {
     <ThemeProvider theme={theme}>
       <div className={classes.footer}>
         <Container maxWidth="lg">
-          <Box mt={10}>
+          <Box>
             <Grid container spacing={4}>
               <Grid item xs={12} md={6} lg={3}>
                 <div>

@@ -10,7 +10,7 @@ export default function DigitalEconomy() {
   const leftComponent = (classes) => (
     <img
       className={classes.infoImage}
-      src="/static/assets/asset-section-2-aboutus.jpg"
+      src="/static/assets/asset-section-2-aboutus@3x.jpg"
       alt="digital-economy"
     />
   );

@@ -14,7 +14,7 @@ export default function HomeContent() {
   const leftComponent = (classes) => (
     <img
       className={classes.infoImage}
-      src="/static/assets/asset-digitaleconomy-homepage@2x.jpg"
+      src="/static/assets/asset-digitaleconomy-homepage@3x.jpg"
       alt="digitaleconomy"
     />
   );
