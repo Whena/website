@@ -1,43 +1,24 @@
-// Material components
 import React from 'react';
-import responsiveFontSizes from '@material-ui/core/styles/responsiveFontSizes';
-import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
-import ThemeProvider from '@material-ui/styles/ThemeProvider';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import makeStyles from '@material-ui/styles/makeStyles';
+import facebookIcon from '../../static/assets/asset-fb-homepage.svg';
+import whatsappIcon from '../../static/assets/asset-whatsapp-homepage.svg';
+import instagramIcon from '../../static/assets/asset-homepage-instagram.svg';
 import Link from '../Link';
 import { Constants } from '../../constants';
 
 // Externals
-import cx from "clsx";
+import cx from 'clsx';
 
-// function useWidth() {
-// // hooks
-//   const theme = useTheme();
-//   const keys = [...theme.breakpoints.keys].reverse();
-//   return (
-//     keys.reduce((output, key) => {
-//     // eslint-disable-next-line react-hooks/rules-of-hooks
-//       const matches = useMediaQuery(theme.breakpoints.only(key));
-//       return !output && matches ? key : output;
-//     }, null) || "md"
-//   );
-// }
-
-const theme = responsiveFontSizes(createMuiTheme());
 const { SOCIAL_MEDIAS } = Constants;
 
 // Component styles
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   footer: {
-    backgroundColor: 'black',
-  },
-  company: {
-    marginTop: theme.spacing(2),
-    marginBottom: theme.spacing(2)
+    backgroundColor: 'black'
   },
   headingFooter: {
     fontWeight: 700,
@@ -51,33 +32,19 @@ const useStyles = makeStyles(theme => ({
   },
   links: {
     color: '#fff',
-    "&:hover": {
+    '&:hover': {
       textDecoration: 'none',
       color: '#D3D3D3'
     }
   },
   image: {
     margin: theme.spacing(1),
-    // height: 52,
-    // objectFit: 'contain',
-    // marginRight: theme.spacing(8),
-  },
-  socialMediaLogo: {
-    backgroundImage: 'url("../../static/assets/boost.jpg")',
-    backgroundSize: "cover"
-  },
-  paper: {
-    position: "relative",
-    backgroundColor: theme.palette.grey[800],
-    color: theme.palette.common.white,
-    marginBottom: theme.spacing(4),
-    backgroundImage: "url(https://source.unsplash.com/user/erondu)",
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center"
+    height: 52
   },
   ngeBoostBentar: {
-    color: '#ee3124'
+    color: '#ee3124',
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(2)
   }
 }));
 
@@ -85,101 +52,142 @@ function Footer() {
   const classes = useStyles();
 
   return (
-    <ThemeProvider theme={theme}>
-      <div className={classes.footer}>
-        <Container maxWidth="lg">
-          <Box>
-            <Grid container spacing={4}>
-              <Grid item xs={12} md={6} lg={3}>
-                <div>
-                  <Typography variant="h5" color="secondary" className={classes.headingFooter}>
-                    INFORMATION
-                  </Typography>
-                  <Typography variant="h5" color="secondary" className={classes.textFooter}>
-                    <Link className={classes.links} href="/comingsoon">Our Contacts</Link>
-                  </Typography>
-                  <Typography variant="h5" color="secondary" className={classes.textFooter}>
-                    <Link className={classes.links} href="/comingsoon">Career</Link>
-                  </Typography>
-                  <Typography variant="h5" color="secondary" className={classes.textFooter}>
-                    <Link className={classes.links} href="/gallery">Media Gallery</Link>
-                  </Typography>
-                  <Typography variant="h5" color="secondary" className={classes.textFooter}>
-                    <Link className={classes.links} href="/FAQ">FAQs</Link>
-                  </Typography>
-                </div>
-              </Grid>
-              <Grid item xs={12} md={6} lg={3}>
-                <div>
-                  <Typography variant="h5" color="secondary" className={cx(classes.headingFooter)}>
-                    SERVICES
-                  </Typography>
-                  <Typography variant="h5" color="secondary" className={classes.textFooter}>
-                    <Link className={classes.links} href="/boostplay">BoostPlay</Link>
-                  </Typography>
-                  <Typography variant="h5" color="secondary" className={classes.textFooter}>
-                    <Link className={classes.links} href="/boostpenjual">BoostPenjual</Link>
-                  </Typography>
-                  <Typography variant="h5" color="secondary" className={classes.textFooter}>
-                    <Link className={classes.links} href="/boostpreneur">BoostPreneur</Link>
-                  </Typography>
-                </div>
-              </Grid>
-              <Grid item xs={12} md={12} lg={6}>
-                <div>
-                  <Typography variant="h5" color="secondary" className={classes.headingFooter}>
-                    SOCIAL MEDIA
-                  </Typography>
-                </div>
-                <Grid container>
-                  <Grid item xs={4} md={3}>
-                    <Box>
-                      <Link href={SOCIAL_MEDIAS.FACEBOOK}>
-                        <img
-                          src="/static/assets/asset-fb-homepage.png"
-                          srcSet="/static/assets/asset-fb-homepage@2x.png 1x, /static/assets/asset-fb-homepage@3x.png 2x"
-                          className={classes.image}
-                          alt="facebook"
-                        />
-                      </Link>
-                    </Box>
-                  </Grid>
-                  <Grid item xs={4} md={3}>
-                    <Box>
-                      <img
-                        src="/static/assets/asset-whatsapp-homepage.png"
-                        srcSet="/static/assets/asset-whatsapp-homepage@2x.png 1x, /static/assets/asset-whatsapp-homepage@3x.png 2x"
-                        className={classes.image}
-                        alt="whatsapp"
-                      />
-                    </Box>
-                  </Grid>
-                  <Grid item xs={4} md={3}>
-                    <Box>
-                      <Link href={SOCIAL_MEDIAS.INSTAGRAM}>
-                        <img
-                          src="/static/assets/asset-homepage-instagram.png"
-                          srcSet="/static/assets/asset-homepage-instagram@2x.png 1x, /static/assets/asset-homepage-instagram@3x.png 2x"
-                          className={classes.image}
-                          alt="instagram"
-                        />
-                      </Link>
-                    </Box>
-                  </Grid>
+    <div className={classes.footer}>
+      <Container maxWidth="lg">
+        <Box>
+          <Grid container spacing={4}>
+            <Grid item xs={6} sm={4}>
+              <Typography
+                variant="h5"
+                color="secondary"
+                className={classes.headingFooter}
+              >
+                INFORMATION
+              </Typography>
+              <Typography
+                variant="h5"
+                color="secondary"
+                className={classes.textFooter}
+              >
+                <Link className={classes.links} href="/comingsoon">
+                  Our Contacts
+                </Link>
+              </Typography>
+              <Typography
+                variant="h5"
+                color="secondary"
+                className={classes.textFooter}
+              >
+                <Link className={classes.links} href="/comingsoon">
+                  Career
+                </Link>
+              </Typography>
+              <Typography
+                variant="h5"
+                color="secondary"
+                className={classes.textFooter}
+              >
+                <Link className={classes.links} href="/gallery">
+                  Media Gallery
+                </Link>
+              </Typography>
+              <Typography
+                variant="h5"
+                color="secondary"
+                className={classes.textFooter}
+              >
+                <Link className={classes.links} href="/FAQ">
+                  FAQs
+                </Link>
+              </Typography>
+            </Grid>
+            <Grid item xs={6} sm={4}>
+              <Typography
+                variant="h5"
+                color="secondary"
+                className={cx(classes.headingFooter)}
+              >
+                SERVICES
+              </Typography>
+              <Typography
+                variant="h5"
+                color="secondary"
+                className={classes.textFooter}
+              >
+                <Link className={classes.links} href="/boostplay">
+                  BoostPlay
+                </Link>
+              </Typography>
+              <Typography
+                variant="h5"
+                color="secondary"
+                className={classes.textFooter}
+              >
+                <Link className={classes.links} href="/boostpenjual">
+                  BoostPenjual
+                </Link>
+              </Typography>
+              <Typography
+                variant="h5"
+                color="secondary"
+                className={classes.textFooter}
+              >
+                <Link className={classes.links} href="/boostpreneur">
+                  BoostPreneur
+                </Link>
+              </Typography>
+            </Grid>
+            <Grid item xs={6} sm={4}>
+              <Typography
+                variant="h5"
+                color="secondary"
+                className={classes.headingFooter}
+              >
+                SOCIAL MEDIA
+              </Typography>
+              <Grid container>
+                <Grid item xs={4} md={3}>
+                  <a href={SOCIAL_MEDIAS.FACEBOOK} target="__blank">
+                    <img
+                      src={facebookIcon}
+                      className={classes.image}
+                      alt="whatsapp"
+                    />
+                  </a>
+                </Grid>
+                <Grid item xs={4} md={3}>
+                  <img
+                    src={whatsappIcon}
+                    className={classes.image}
+                    alt="whatsapp"
+                  />
+                </Grid>
+                <Grid item xs={4} md={3}>
+                  <a href={SOCIAL_MEDIAS.INSTAGRAM} target="__blank">
+                    <img
+                      src={instagramIcon}
+                      className={classes.image}
+                      alt="instagram"
+                    />
+                  </a>
                 </Grid>
               </Grid>
             </Grid>
-            <Box py={4}>
-              <div>
-                <Typography className={classes.company} variant="h4" align="right" className={classes.ngeBoostBentar}>
-                  #NGEBOOSTBENTAR
-                </Typography>
-              </div>
-            </Box>
+          </Grid>
+          <Box py={4}>
+            <div>
+              <Typography
+                variant="h4"
+                align="right"
+                className={classes.ngeBoostBentar}
+              >
+                #NGEBOOSTBENTAR
+              </Typography>
+            </div>
           </Box>
-        </Container>
-      </div>
-    </ThemeProvider>
+        </Box>
+      </Container>
+    </div>
   );
 }
 
