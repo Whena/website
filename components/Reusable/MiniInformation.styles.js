@@ -2,7 +2,12 @@ import { makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles(theme => ({
   container: {
-    marginBottom: '3.5rem',
+    marginBottom: '3.5rem'
+    // backgroundImage: 'url(/static/assets/bg-section-2-homepage.svg)',
+    // backgroundColor: '#000'
+  },
+  gridContainer: {
+    backgroundImage: 'url(/static/assets/bg-section-2-homepage.svg)'
   },
   description: {
     padding: theme.spacing(3),

@@ -1,15 +1,16 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
 import Hidden from '@material-ui/core/Hidden';
 import Link from '../Link';
 import { Constants } from '../../constants';
 
-// import styles from './AboutUs.styles';
+import styles from './AboutUs.styles';
 // import styles from '../Reusable/MiniInformation.styles';
 import MiniInformation from '../Reusable/MiniInformation.component';
 
 export default function AboutUs() {
-  // const classes = styles();
+  const classes = styles();
   const { HOME_ABOUT_US } = Constants;
 
   const leftComponent = (classes, HOME_ABOUT_US) => (
@@ -30,19 +31,21 @@ export default function AboutUs() {
     <Hidden smDown>
       <img
         className={classes.infoImage}
-        src="/static/assets/bg-section-2-homepage.svg"
+        // src="/static/assets/bg-section-2-homepage.svg"
+        src="/static/assets/asset-digitaleconomy-homepage@3x.jpg"
         alt="video-homepage"
       />
     </Hidden>
   );
 
   return (
-    <MiniInformation
-      // className={classes.container}
-      leftGrid={8}
-      leftComponent={leftComponent}
-      rightComponent={rightComponent}
-      constants={HOME_ABOUT_US}
-    />
+    <Container maxWidth="xl" className={classes.container}>
+      <MiniInformation
+        leftGrid={8}
+        leftComponent={leftComponent}
+        rightComponent={rightComponent}
+        constants={HOME_ABOUT_US}
+      />
+    </Container>
   );
 }

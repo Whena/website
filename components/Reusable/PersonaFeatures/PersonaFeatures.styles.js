@@ -31,7 +31,6 @@ const useStyles = makeStyles(theme => ({
     width: 820,
     [theme.breakpoints.down('md')]: {
       width: '100%'
-      //nanti ganti uga ukuran cardnya biar lebih gede
     },
     [theme.breakpoints.down('xs')]: {
       width: 700//'100%'

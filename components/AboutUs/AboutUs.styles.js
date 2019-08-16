@@ -1,15 +1,28 @@
 import { makeStyles } from '@material-ui/core/styles';
+import background from '../../static/assets/bg-section-2-homepage.svg';
 
 const useStyles = makeStyles({
   root: {
     flexGrow: 1
   },
   container: {
-    backgroundImage: 'url(/static/assets/bg-section-2-homepage.svg)'
+    backgroundImage: `url(${background})`,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'bottom',
+    // '&::after': {
+    //   opacity: 0.1,
+    //   top: 0,
+    //   left: 0,
+    //   bottom: 0,
+    //   right: 0,
+    //   position: 'absolute',
+    //   zIndex: -1,  
+    // }
   },
-  container: {
-    marginBottom: '3.5rem',
-  },
+  // container: {
+  //   marginBottom: '3.5rem',
+  // },
   contentImage: {
     width: 350,
     height: 350,
