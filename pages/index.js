@@ -7,6 +7,8 @@ import Layout from '../components/Layout';
 import Banner from '../components/Banner/Banner.component';
 import HomeContent from '../components/HomeContent/HomeContent.component';
 import AboutUs from '../components/AboutUs/AboutUs.component';
+import PlayCircleFilled from '@material-ui/icons/PlayCircleFilled';
+import Link from '../components/Link';
 import { Constants } from '../constants';
 import AsNumber from '../components/AsNumber/AsNumber.component';
 import ProductSlider from '../components/ProductSlider/ProductSlider';
@@ -33,31 +35,33 @@ function Index(props) {
           <Grid item>
             <Grid container justify="space-between" spacing={5}>
               <Grid item xs={12} sm={6}>
-                <Button
-                  variant="contained"
-                  component="span"
-                  className={classes.buttonViewMore}
-                >
-                  <span className={classes.buttonText}>
-                    {HOME_BANNER.LEFT_BUTTON}
-                  </span>
-                </Button>
+                <Link href="/comingsoon" className={classes.links}>
+                  <Button
+                    variant="contained"
+                    component="span"
+                    className={classes.buttonViewMore}
+                  >
+                    <span className={classes.buttonText}>
+                      {HOME_BANNER.LEFT_BUTTON}
+                    </span>
+                  </Button>
+                </Link>
               </Grid>
               <Grid item xs={12} sm={6}>
-                <Button
-                  variant="contained"
-                  component="span"
-                  className={classes.buttonSeeVideo}
-                >
-                  <img
-                    className={classes.playIcon}
-                    src="https://img.icons8.com/ios-filled/30/000000/circled-play.png"
-                    alt="rendering error"
-                  />
-                  <span className={classes.buttonText}>
-                    {HOME_BANNER.RIGHT_BUTTON}
-                  </span>
-                </Button>
+                <Link href="/comingsoon" className={classes.links}>
+                  <Button
+                    variant="contained"
+                    component="span"
+                    className={classes.buttonSeeVideo}
+                  >
+                    <PlayCircleFilled  
+                      className={classes.playIcon}
+                    />
+                    <span className={classes.buttonText}>
+                      {HOME_BANNER.RIGHT_BUTTON}
+                    </span>
+                  </Button>
+                </Link>
               </Grid>
             </Grid>
           </Grid>
@@ -95,7 +99,7 @@ const useStyles = makeStyles((theme) => ({
   buttonViewMore: {
     width: 157,
     height: 53,
-    backgroundColor: 'red',
+    backgroundColor: 'rgb(220, 68, 51)',
     color: '#fff',
     textTransform: 'none',
     [theme.breakpoints.down('lg')]: {
@@ -108,6 +112,15 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       width: 175,
       height: 63
+    },
+    "&:hover": {
+      backgroundColor: 'rgb(240, 68, 51)'
+    }
+  },
+  links: {
+    "&:hover": {
+      textDecoration: 'none',
+      color: 'black'
     }
   },
   buttonSeeVideo: {
@@ -127,19 +140,26 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       width: 175,
       height: 63
+    },
+    "&:hover": {
+      backgroundColor: 'rgba(7, 7, 7, 0.6)'
     }
   },
   homeJumbotron: {
     height: '600px'
   },
   playIcon: {
-    marginRight: 10
+    marginRight: 10,
+    fontSize: 34
   },
   buttonText: {
     fontSize: 24,
     [theme.breakpoints.down('xs')]: {
       fontSize: 16
     },
+    // "&:hover": {
+    //   color: 'black'
+    // },
     color: '#fff'
   }
 }));

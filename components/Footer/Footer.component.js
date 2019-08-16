@@ -9,6 +9,7 @@ import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import makeStyles from '@material-ui/styles/makeStyles';
 import Link from '../Link';
+import { Constants } from '../../constants';
 
 // Externals
 import cx from "clsx";
@@ -27,6 +28,7 @@ import cx from "clsx";
 // }
 
 const theme = responsiveFontSizes(createMuiTheme());
+const { SOCIAL_MEDIAS } = Constants;
 
 // Component styles
 const useStyles = makeStyles(theme => ({
@@ -46,6 +48,13 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(4),
     marginBottom: theme.spacing(4),
     color: '#fff'
+  },
+  links: {
+    color: '#fff',
+    "&:hover": {
+      textDecoration: 'none',
+      color: '#D3D3D3'
+    }
   },
   image: {
     margin: theme.spacing(1),
@@ -87,16 +96,16 @@ function Footer() {
                     INFORMATION
                   </Typography>
                   <Typography variant="h5" color="secondary" className={classes.textFooter}>
-                    Our Contacts
+                    <Link className={classes.links} href="/comingsoon">Our Contacts</Link>
                   </Typography>
                   <Typography variant="h5" color="secondary" className={classes.textFooter}>
-                    Career
+                    <Link className={classes.links} href="/comingsoon">Career</Link>
                   </Typography>
                   <Typography variant="h5" color="secondary" className={classes.textFooter}>
-                    <Link href="/gallery">Media Gallery</Link>
+                    <Link className={classes.links} href="/gallery">Media Gallery</Link>
                   </Typography>
                   <Typography variant="h5" color="secondary" className={classes.textFooter}>
-                    <Link href="/FAQ">FAQs</Link>
+                    <Link className={classes.links} href="/FAQ">FAQs</Link>
                   </Typography>
                 </div>
               </Grid>
@@ -106,13 +115,13 @@ function Footer() {
                     SERVICES
                   </Typography>
                   <Typography variant="h5" color="secondary" className={classes.textFooter}>
-                    BoostPlay
+                    <Link className={classes.links} href="/boostplay">BoostPlay</Link>
                   </Typography>
                   <Typography variant="h5" color="secondary" className={classes.textFooter}>
-                    BoostPenjual
+                    <Link className={classes.links} href="/boostpenjual">BoostPenjual</Link>
                   </Typography>
                   <Typography variant="h5" color="secondary" className={classes.textFooter}>
-                    BoostPreneur
+                    <Link className={classes.links} href="/boostpreneur">BoostPreneur</Link>
                   </Typography>
                 </div>
               </Grid>
@@ -125,12 +134,14 @@ function Footer() {
                 <Grid container>
                   <Grid item xs={4} md={3}>
                     <Box>
-                      <img
-                        src="/static/assets/asset-fb-homepage.png"
-                        srcSet="/static/assets/asset-fb-homepage@2x.png 1x, /static/assets/asset-fb-homepage@3x.png 2x"
-                        className={classes.image}
-                        alt="instagram"
-                      />
+                      <Link href={SOCIAL_MEDIAS.FACEBOOK}>
+                        <img
+                          src="/static/assets/asset-fb-homepage.png"
+                          srcSet="/static/assets/asset-fb-homepage@2x.png 1x, /static/assets/asset-fb-homepage@3x.png 2x"
+                          className={classes.image}
+                          alt="facebook"
+                        />
+                      </Link>
                     </Box>
                   </Grid>
                   <Grid item xs={4} md={3}>
@@ -139,18 +150,20 @@ function Footer() {
                         src="/static/assets/asset-whatsapp-homepage.png"
                         srcSet="/static/assets/asset-whatsapp-homepage@2x.png 1x, /static/assets/asset-whatsapp-homepage@3x.png 2x"
                         className={classes.image}
-                        alt="facebook"
+                        alt="whatsapp"
                       />
                     </Box>
                   </Grid>
                   <Grid item xs={4} md={3}>
                     <Box>
-                      <img
-                        src="/static/assets/asset-homepage-instagram.png"
-                        srcSet="/static/assets/asset-homepage-instagram@2x.png 1x, /static/assets/asset-homepage-instagram@3x.png 2x"
-                        className={classes.image}
-                        alt="instagram"
-                      />
+                      <Link href={SOCIAL_MEDIAS.INSTAGRAM}>
+                        <img
+                          src="/static/assets/asset-homepage-instagram.png"
+                          srcSet="/static/assets/asset-homepage-instagram@2x.png 1x, /static/assets/asset-homepage-instagram@3x.png 2x"
+                          className={classes.image}
+                          alt="instagram"
+                        />
+                      </Link>
                     </Box>
                   </Grid>
                 </Grid>

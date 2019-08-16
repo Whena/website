@@ -12,7 +12,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Collapse from '@material-ui/core/Collapse';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
-import { useRouter } from 'next/router'
+// import { useRouter } from 'next/router'
 
 import Menu from '@material-ui/icons/Menu';
 import ExpandMore from '@material-ui/icons/ExpandMore';
@@ -34,7 +34,7 @@ export default function SimpleAppBar() {
     NAVBAR_JOIN_US,
     NAVBAR_MOBILE_MENUS
   } = Constants;
-  const router = useRouter();
+  // const router = useRouter();
 
   const [joinUsToggle, setjoinUsToggle] = useState(false);
   const [langToggle, setLangToggle] = useState(false);
@@ -80,27 +80,6 @@ export default function SimpleAppBar() {
                 </ListItem>
               </Link>
             );
-          } else {
-          //   return (
-          //     <>
-          //       <ListItem button onClick={handleJoinUsToggle}>
-          //         <ListItemText primary={menu.NAME} />
-          //         {joinUsToggle ? <ExpandMore /> : <KeyboardArrowRight />}
-          //       </ListItem>
-          //       <Collapse in={joinUsToggle} timeout="auto" unmountOnExit>
-          //         <List component="div" disablePadding>
-          //           {menu.REF.map((button, index) => (
-          //             <ListItem key={index} button className={classes.nested}>
-          //               <ListItemIcon>
-          //                 <img src={button.ICON} alt={button.MENU} />
-          //               </ListItemIcon>
-          //               <ListItemText primary={button.MENU} />
-          //             </ListItem>
-          //           ))}
-          //         </List>
-          //       </Collapse>
-          //     </>
-          //   );
           }
         })}
 
@@ -184,9 +163,9 @@ export default function SimpleAppBar() {
                 {NAVBAR_MENU.map((menu, index) => {
                   if (index > 0 && index < 5) {
                     return (
-                      <Grid item key={index}>
+                      <Grid item key={menu.NAME}>
                         <Typography className={classes.menus} variant="h6" color="inherit">
-                          <Link href={menu.URL}>
+                          <Link className={classes.menuURL} href={menu.URL}>
                             <p className={classes.menuWord}>{menu.NAME}</p>
                           </Link>
                         </Typography>
@@ -201,13 +180,14 @@ export default function SimpleAppBar() {
                 <Grid item>
                   <Button color="primary" variant="outlined" className={classes.joinAsMerchantButton}>
                     <span className={classes.joinAsMerchantWordingSpace}>{NAVBAR_MENU[5].NAME}</span>
-                    <img src="https://img.icons8.com/ios/15/000000/expand-arrow--v2.png" alt="down-arrow-icon" />
+                    {/* <img src="https://img.icons8.com/ios/15/000000/expand-arrow--v2.png" alt="down-arrow-icon" /> */}
+                    <ExpandMore className={classes.joinAsMerchantIcon} />
                   </Button>
                 </Grid>
                 <Grid item className={classes.borderLangButton}>
                   <Button color="primary" disableRipple className={classes.langButton} >
                     <span className={classes.langText}>{LANG_CODES.LANG_1}</span>
-                    <img src="https://img.icons8.com/ios/15/000000/expand-arrow--v2.png" alt="down-arrow-icon" />
+                    <ExpandMore />
                   </Button>
                 </Grid>
               </Grid>

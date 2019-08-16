@@ -45,7 +45,7 @@ const useStyles = makeStyles(theme => ({
   },
   knowMoreHereLinkContainer: {
     marginTop: 15
-  }
+  },
 }));
 
 export default useStyles;

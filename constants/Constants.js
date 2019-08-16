@@ -8,16 +8,16 @@ const Constants = {
       URL: "/about"
     }, {
       NAME: "Services",
-      URL: "/"
+      URL: "/comingsoon"
     }, {
       NAME: "Blog",
-      URL: "/"
+      URL: "/comingsoon"
     }, {
       NAME: "FAQ",
       URL: "/faq"
     }, {
       NAME: "Join As Merchant",
-      URL: "/"
+      URL: "/comingsoon"
     }, {
       NAME: "ENG",
       URL: "/"
@@ -355,7 +355,17 @@ const Constants = {
     }, {
       TESTIMONIAL: "Limitless game and quiz experience",
       USER: "User"
-    }]
+    }],
+  SOCIAL_MEDIAS: {
+    FACEBOOK: "https://www.facebook.com/AxiataDigitalServicesIndonesia/",
+    WHATSAPP: "",
+    INSTAGRAM: "https://instagram.com/myboost_id/"
+  },
+  COMING_SOON: {
+    TITLE: "THIS PAGE IS COMING SOON",
+    DESCRIPTION: "We are preparing something amazing and exciting for you on this page. Keep exploring other menu from homepage to see other information.",
+    BUTTON: "Back to homepage"
+  }
 };
 
 export { Constants };

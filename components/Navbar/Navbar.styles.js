@@ -12,6 +12,14 @@ const useStyles = makeStyles({
   menus: {
     cursor: 'pointer'
   },
+  menuURL: {
+    "&:hover": {
+      textDecoration: 'none'
+    }
+  },
+  joinAsMerchantIcon: {
+    color: 'rgb(220, 68, 51)'
+  },
   joinAsMerchantButton: {
     height: 42,
     width: 200,
@@ -48,7 +56,10 @@ const useStyles = makeStyles({
     textDecoration: 'none',
     color: '#565e6b',
     textTransform: 'uppercase',
-    fontSize: 16
+    fontSize: 16,
+    "&:hover": {
+      color: 'red'
+    }
   },
   toolbarConf: {
     height: 80

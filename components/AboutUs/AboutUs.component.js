@@ -15,15 +15,17 @@ export default function AboutUs() {
 
   const leftComponent = (classes, HOME_ABOUT_US) => (
     <div className={classes.descriptionLeft}>
-      <Typography variant="h4" color="inherit" gutterBottom>
+      <Typography variant="h4" color="inherit" gutterBottom className={classes.title}>
         {HOME_ABOUT_US.HEADER}
       </Typography>
-      <Typography variant="body1" paragraph={true}>
+      <Typography variant="body1" paragraph={true} className={classes.descriptionText}>
         {HOME_ABOUT_US.DESCRIPTION}
       </Typography>
-      <Typography variant="h5">
-        <Link href="/about">{HOME_ABOUT_US.MORE_BUTTON}</Link>
-      </Typography>
+      <Link href="/about">
+        <Typography variant="h5" className={classes.linkText}>
+          {HOME_ABOUT_US.MORE_BUTTON}
+        </Typography>
+      </Link>
     </div>
   );
 
@@ -41,7 +43,7 @@ export default function AboutUs() {
   return (
     <Container maxWidth="xl" className={classes.container}>
       <MiniInformation
-        leftGrid={8}
+        leftGrid={7}
         leftComponent={leftComponent}
         rightComponent={rightComponent}
         constants={HOME_ABOUT_US}
