@@ -17,6 +17,7 @@ const {
 
 const LeftButton = () => {
   const classes = useStyles();
+
   return (
     <div className={classes.buttonContainer}>
       <Button

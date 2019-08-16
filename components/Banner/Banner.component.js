@@ -16,27 +16,41 @@ function Banner({
 }) {
   const classes = styles();
   const matches = useMediaQuery('(min-width:960px)');
-  const windowSize = matches ? contentPosition : "center";
+  const windowSize = matches ? contentPosition : 'center';
 
   return (
-    <div className={classes.bannerContainer} style={backgroundImage}>
+    <div className={classes.bannerContainer} style={{ backgroundImage }}>
       <Container maxWidth="lg">
         <Grid container justify={windowSize}>
           <Grid item xs={10} lg={5}>
-            <Grid container className={classes.homeJumbotron} direction="column" justify="center">
+            <Grid
+              container
+              className={classes.homeJumbotron}
+              direction="column"
+              justify="center"
+            >
               <Grid item>
-                <Typography className={classes.headerJumbotron} variant="h3" component="h1" color="secondary" gutterBottom>
+                <Typography
+                  className={classes.headerJumbotron}
+                  variant="h3"
+                  component="h1"
+                  color="secondary"
+                  gutterBottom
+                >
                   <span>{header}</span>
                 </Typography>
               </Grid>
               <Grid item>
-                <Typography className={classes.description} variant="h5" color="secondary" gutterBottom>
+                <Typography
+                  className={classes.description}
+                  variant="h5"
+                  color="secondary"
+                  gutterBottom
+                >
                   <span>{description}</span>
                 </Typography>
               </Grid>
-              <Grid item>
-                {props.children}
-              </Grid>
+              <Grid item>{props.children}</Grid>
             </Grid>
           </Grid>
         </Grid>
@@ -49,7 +63,7 @@ Banner.propTypes = {
   contentPosition: PropTypes.string,
   header: PropTypes.string,
   description: PropTypes.string,
-  backgroundImage: PropTypes.object
+  backgroundImage: PropTypes.string
 };
 
 export default Banner;

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import BackgroundProductSlider from './BackgroundProductSlider';
 import ProductSliderItem from './ProductSliderItem';
 import boostPlay from '../../static/assets/products/boost-play.png';
@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
       fontSize: 35
     },
     '& .slick-next': {
-      right: 30,
+      right: 30
     },
     '& .slick-prev': {
       left: 30,

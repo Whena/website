@@ -6,13 +6,15 @@ dotenvLoad();
 
 const withNextEnv = nextEnv();
 
-module.exports = withImages(withNextEnv({
-  webpack(config) {
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ['@svgr/webpack', 'url-loader']
-    });
+module.exports = withImages(
+  withNextEnv({
+    webpack(config) {
+      config.module.rules.push({
+        test: /\.svg$/,
+        use: ['@svgr/webpack', 'url-loader']
+      });
 
-    return config;
-  }
-}));
+      return config;
+    }
+  })
+);

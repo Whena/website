@@ -6,12 +6,9 @@ import Banner from '../../components/Banner/Banner.component';
 import Benefits from '../../components/Benefits/Benefits.component';
 import { Constants } from '../../constants';
 
+const { BEING_A_BOOSTPRENEUR, BOOSTPRENEUR_BANNER, BANNER_BUTTONS } = Constants;
+
 export default function Index() {
-  const {
-    BEING_A_BOOSTPRENEUR,
-    BOOSTPRENEUR_BANNER,
-    BANNER_BUTTONS
-  } = Constants;
   const classes = useStyles();
 
   return (
@@ -21,12 +18,25 @@ export default function Index() {
         header={BOOSTPRENEUR_BANNER.HEADER}
         description={BOOSTPRENEUR_BANNER.DESCRIPTION}
       >
-        <Grid container className={classes.downloadButtonContainer} justify="flex-start" spacing={3}>
+        <Grid
+          container
+          className={classes.downloadButtonContainer}
+          justify="flex-start"
+          spacing={3}
+        >
           <Grid item xs={3} sm={5} md={5}>
-            <img className={classes.imageDownloadButton} src={BANNER_BUTTONS.GOOGLE_PLAY} alt="Google Play" />
+            <img
+              className={classes.imageDownloadButton}
+              src={BANNER_BUTTONS.GOOGLE_PLAY}
+              alt="Google Play"
+            />
           </Grid>
           <Grid item xs={3} sm={5} md={5}>
-            <img className={classes.imageDownloadButton} src={BANNER_BUTTONS.APP_STORE} alt="App Store" />
+            <img
+              className={classes.imageDownloadButton}
+              src={BANNER_BUTTONS.APP_STORE}
+              alt="App Store"
+            />
           </Grid>
         </Grid>
       </Banner>
@@ -38,8 +48,7 @@ export default function Index() {
   );
 }
 
-
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1
   },
@@ -48,12 +57,13 @@ const useStyles = makeStyles(theme => ({
   },
   bannerContainer: {
     backgroundColor: 'rgb(237, 237, 237)',
-    backgroundImage: 'url(https://icon-library.net/images/no-image-available-icon/no-image-available-icon-6.jpg)',
+    backgroundImage:
+      'url(https://icon-library.net/images/no-image-available-icon/no-image-available-icon-6.jpg)',
     backgroundSize: 'cover',
     height: 600
   },
   bannerMenu: {
-    marginLeft: 100,
+    marginLeft: 100
   },
   head: {
     marginBottom: 40,
@@ -86,11 +96,11 @@ const useStyles = makeStyles(theme => ({
     height: '90%',
     [theme.breakpoints.down('md')]: {
       width: 150,
-      height: 45,
+      height: 45
     },
     [theme.breakpoints.down('sm')]: {
       width: 125,
-      height: 40,
-    },
+      height: 40
+    }
   }
 }));

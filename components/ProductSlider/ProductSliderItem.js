@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   imageContainer: {
     display: 'inline-block',
     padding: '10px',
-    textAlign: 'right',
+    textAlign: 'right'
   },
   title: {
     color: '#FFF',

@@ -1,9 +1,9 @@
 import { makeStyles } from '@material-ui/core/styles';
-// import ImageBackground from ''
+import backgroundImage from '../../static/assets/bg-header-homepage.png';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   bannerContainer: {
-    backgroundImage: `url(/static/assets/bg-header-homepage.png)`,//'url(https://icon-library.net/images/no-image-available-icon/no-image-available-icon-6.jpg)',
+    backgroundImage: `url(${backgroundImage})`, //'url(https://icon-library.net/images/no-image-available-icon/no-image-available-icon-6.jpg)',
     backgroundSize: 'cover',
     marginBottom: '3.5rem',
     width: '100vw'
@@ -26,12 +26,12 @@ const useStyles = makeStyles(theme => ({
     },
     [theme.breakpoints.down('md')]: {
       width: 200,
-      height: 68,
+      height: 68
     },
     [theme.breakpoints.down('xs')]: {
       width: 175,
-      height: 63,
-    },
+      height: 63
+    }
   },
   buttonSeeVideo: {
     width: 250,
@@ -43,15 +43,15 @@ const useStyles = makeStyles(theme => ({
     },
     [theme.breakpoints.down('md')]: {
       width: 200,
-      height: 68,
+      height: 68
     },
     [theme.breakpoints.down('xs')]: {
       width: 175,
-      height: 63,
-    },
+      height: 63
+    }
   },
   homeJumbotron: {
-    height: '600px',
+    height: '600px'
   },
   playIcon: {
     marginRight: 10
@@ -62,7 +62,7 @@ const useStyles = makeStyles(theme => ({
       fontSize: 17
     },
     color: '#fff'
-  },
+  }
 }));
 
 export default useStyles;
