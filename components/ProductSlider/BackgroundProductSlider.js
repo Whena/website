@@ -12,14 +12,18 @@ function BackgroundProductSlider({ className, ...props }) {
 
 const useStyles = makeStyles((theme) => ({
   background: {
+    marginBottom: 15,
     backgroundImage: `url(${backgroundImage})`,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     padding: '100px 0',
     backgroundOrigin: 'content-box',
-    [theme.breakpoints.down('sm')]: {
-      padding: 0
+    [theme.breakpoints.down('lg')]: {
+      padding: '37px 0'
+    },
+    [theme.breakpoints.down('md')]: {
+      padding: '0'
     }
   }
 }));

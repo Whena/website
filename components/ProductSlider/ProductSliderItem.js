@@ -14,12 +14,15 @@ const useStyles = makeStyles((theme) => ({
     display: 'inline-block !important',
     width: '100%',
     height: 'auto',
-    maxWidth: 170
+    maxWidth: 200
   },
   imageContainer: {
     display: 'inline-block',
     padding: '10px',
-    textAlign: 'right'
+    textAlign: 'right',
+    [theme.breakpoints.up('sm')]: {
+      marginRight: 30
+    }
   },
   descriptionContainer: {
     display: 'flex',
