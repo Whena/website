@@ -11,11 +11,13 @@ import CardPersona from '../Reusable/CardPersona/CardPersona.component';
 import styles from './BoostPersonas.styles';
 
 const settings = {
-  arrows: true,
+  arrows: false,
   dots: false,
   speed: 500,
+  autoplay: true,
+  autoplaySpeed: 3000,
   slidesToShow: 2,
-  slidesToScroll: 2
+  slidesToScroll: 1
 };
 
 function BoostPersonas({ personas }) {

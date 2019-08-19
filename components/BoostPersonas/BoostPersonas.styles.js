@@ -24,9 +24,9 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.only('sm')]: {
       height: 300
     },
-    [theme.breakpoints.down('xs')]: {
-      height: 400
-    }
+    // [theme.breakpoints.down('xs')]: {
+    //   height: 400
+    // }
   }
 }));
 
