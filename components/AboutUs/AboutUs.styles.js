@@ -9,16 +9,7 @@ const useStyles = makeStyles({
     backgroundImage: `url(${background})`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'bottom',
-    // '&::after': {
-    //   opacity: 0.1,
-    //   top: 0,
-    //   left: 0,
-    //   bottom: 0,
-    //   right: 0,
-    //   position: 'absolute',
-    //   zIndex: -1,  
-    // }
+    backgroundPosition: 'bottom'
   },
   // container: {
   //   marginBottom: '3.5rem',

@@ -13,7 +13,7 @@ export default function HomeContent() {
   const { HOME_CONTENT } = Constants;
 
   const leftComponent = (classes) => (
-    <div className={classes.infoImageContainer}>
+    <div className={classes.infoContainer}>
       <img
         className={classes.infoImage}
         src="/static/assets/asset-digitaleconomy-homepage@3x.jpg"

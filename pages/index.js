@@ -7,6 +7,7 @@ import Layout from '../components/Layout';
 import Banner from '../components/Banner/Banner.component';
 import HomeContent from '../components/HomeContent/HomeContent.component';
 import AboutUs from '../components/AboutUs/AboutUs.component';
+import BoostPersonas from '../components/BoostPersonas/BoostPersonas.component';
 import PlayCircleFilled from '@material-ui/icons/PlayCircleFilled';
 import Link from '../components/Link';
 import { Constants } from '../constants';
@@ -20,8 +21,8 @@ const { HOME_BANNER } = Constants;
 function Index(props) {
   const classes = useStyles();
   const { data } = props;
-
   const products = getLodash(data, 'fields.services', []);
+  const personas = getLodash(data, 'fields.personas', []);
 
   return (
     <Layout title={'My Boost'}>
@@ -69,6 +70,7 @@ function Index(props) {
       </Banner>
       <HomeContent />
       <AboutUs />
+      <BoostPersonas personas={personas} />
       <AsNumber />
       {products.length > 0 && <ProductSlider products={products} />}
     </Layout>

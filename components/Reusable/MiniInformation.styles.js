@@ -21,12 +21,12 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('md')]: {
       padding: theme.spacing(6),
       paddingLeft: 0
-    },
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center'
+    }
+    // display: 'flex',
+    // flexDirection: 'column',
+    // justifyContent: 'center'
   },
-  infoImageContainer: {
+  infoContainer: {
     display: 'flex',
     justifyContent: 'center',
   },
