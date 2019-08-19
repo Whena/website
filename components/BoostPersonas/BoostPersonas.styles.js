@@ -20,7 +20,13 @@ const useStyles = makeStyles(theme => ({
   eachCard: {
     marginBottom: "75px",
     display: 'flex',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    [theme.breakpoints.only('sm')]: {
+      height: 300
+    },
+    [theme.breakpoints.down('xs')]: {
+      height: 400
+    }
   }
 }));
 
