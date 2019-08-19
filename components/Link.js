@@ -19,7 +19,7 @@ const NextComposed = React.forwardRef(function NextComposed(props, ref) {
 NextComposed.propTypes = {
   as: PropTypes.string,
   href: PropTypes.string,
-  prefetch: PropTypes.bool,
+  prefetch: PropTypes.bool
 };
 
 // A styled version of the Next.js Link component:
@@ -35,14 +35,22 @@ function Link(props) {
   } = props;
 
   const className = clsx(classNameProps, {
-    [activeClassName]: router.pathname === props.href && activeClassName,
+    [activeClassName]: router.pathname === props.href && activeClassName
   });
 
   if (naked) {
     return <NextComposed className={className} ref={innerRef} {...other} />;
   }
 
-  return <MuiLink component={NextComposed} className={className} ref={innerRef} {...other} />;
+  return (
+    <MuiLink
+      component={NextComposed}
+      underline="none"
+      className={className}
+      ref={innerRef}
+      {...other}
+    />
+  );
 }
 
 Link.propTypes = {
@@ -55,10 +63,12 @@ Link.propTypes = {
   onClick: PropTypes.func,
   prefetch: PropTypes.bool,
   router: PropTypes.shape({
-    pathname: PropTypes.string.isRequired,
-  }).isRequired,
+    pathname: PropTypes.string.isRequired
+  }).isRequired
 };
 
 const RouterLink = withRouter(Link);
 
-export default React.forwardRef((props, ref) => <RouterLink {...props} innerRef={ref} />);
+export default React.forwardRef((props, ref) => (
+  <RouterLink {...props} innerRef={ref} />
+));

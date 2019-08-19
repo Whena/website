@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import classNames from 'classnames';
+import classNames from 'clsx';
 import backgroundImage from '../../static/assets/bg-section-5-homepage.svg';
 
 function BackgroundProductSlider({ className, ...props }) {

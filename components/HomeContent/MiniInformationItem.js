@@ -3,7 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import clsx from 'clsx';
 import { resizeUrlButterImage, getYoutubeId } from '../../utils/helpers';
 import Link from '../Link';
 
@@ -74,7 +74,7 @@ const MediaContent = React.memo(
             src={resizeUrl}
             alt={alt}
             {...props}
-            className={classnames(className, classes.image)}
+            className={clsx(className, classes.image)}
           />
         )}
         {videoId && (
@@ -110,7 +110,7 @@ function MiniInformationItem({
       xs={12}
       spacing={3}
       alignItems="center"
-      className={classnames(classes.container, {
+      className={clsx(classes.container, {
         [classes.reverseContent]: rightContent
       })}
     >

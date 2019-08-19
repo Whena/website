@@ -75,6 +75,11 @@ function Index(props) {
 }
 
 Index.getInitialProps = async ({ err, req, res, query, ...others }) => {
+
+  if (res) {
+    res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+  }
+
   try {
     const data = await getHomePageData();
     return { data };

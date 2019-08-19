@@ -1,9 +1,11 @@
 import React from 'react';
 import App, { Container } from 'next/app';
+import Router from 'next/router';
 import Head from 'next/head';
 import ThemeProvider from '@material-ui/styles/ThemeProvider';
 import { responsiveFontSizes } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import getLodash from 'lodash/get';
 import theme from '../components/theme';
 
 class MyApp extends App {
@@ -13,6 +15,26 @@ class MyApp extends App {
     if (jssStyles) {
       jssStyles.parentNode.removeChild(jssStyles);
     }
+
+    Router.beforePopState(({ url, as, options }) => {
+      const components = getLodash(this.props, 'router.components', {});
+      const keys = Object.keys(components);
+
+      for (let index = 0; index < keys.length; index++) {
+        const value = components[keys[index]];
+        if (
+          keys[index] !== '/_app' &&
+          value &&
+          value.Component &&
+          value.Component.getInitialProps
+        ) {
+          window.location.href = as;
+          return false;
+        }
+      }
+
+      return true;
+    });
   }
 
   render() {
