@@ -8,7 +8,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start -p $PORT",
-    "local": "PORT=3000 npm run start",
+    "local": "dotenv-load NODE_ENV=production PORT=3000 npm run start",
     "lint": "eslint ./**.js"
   },
   "repository": {
