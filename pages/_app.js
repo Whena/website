@@ -17,6 +17,13 @@ class MyApp extends App {
     }
 
     Router.beforePopState(({ url, as, options }) => {
+      const component = getLodash(this.props, 'Component');
+
+      if (component && component.getInitialProps) {
+        window.location.href = as;
+        return false;
+      }
+
       const components = getLodash(this.props, 'router.components', {});
       const keys = Object.keys(components);
 
