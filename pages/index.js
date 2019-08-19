@@ -5,8 +5,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import getLodash from 'lodash/get';
 import Layout from '../components/Layout';
 import Banner from '../components/Banner/Banner.component';
-import HomeContent from '../components/HomeContent/HomeContent.component';
-import AboutUs from '../components/AboutUs/AboutUs.component';
 import BoostPersonas from '../components/BoostPersonas/BoostPersonas.component';
 import PlayCircleFilled from '@material-ui/icons/PlayCircleFilled';
 import Link from '../components/Link';
@@ -15,6 +13,7 @@ import AsNumber from '../components/AsNumber/AsNumber.component';
 import ProductSlider from '../components/ProductSlider/ProductSlider';
 import { getHomePageData } from '../services/page';
 import backgroundBanner from '../static/assets/bg-header-homepage.png';
+import MiniInformation from '../components/HomeContent/MiniInformation';
 
 const { HOME_BANNER } = Constants;
 
@@ -23,6 +22,7 @@ function Index(props) {
   const { data } = props;
   const products = getLodash(data, 'fields.services', []);
   const personas = getLodash(data, 'fields.personas', []);
+  const miniInformations = getLodash(data, 'fields.mini_informations', []);
 
   return (
     <Layout title={'My Boost'}>
@@ -55,9 +55,7 @@ function Index(props) {
                     component="span"
                     className={classes.buttonSeeVideo}
                   >
-                    <PlayCircleFilled  
-                      className={classes.playIcon}
-                    />
+                    <PlayCircleFilled className={classes.playIcon} />
                     <span className={classes.buttonText}>
                       {HOME_BANNER.RIGHT_BUTTON}
                     </span>
@@ -68,8 +66,7 @@ function Index(props) {
           </Grid>
         </Grid>
       </Banner>
-      <HomeContent />
-      <AboutUs />
+      <MiniInformation contents={miniInformations} />
       <BoostPersonas personas={personas} />
       <AsNumber />
       {products.length > 0 && <ProductSlider products={products} />}
@@ -115,12 +112,12 @@ const useStyles = makeStyles((theme) => ({
       width: 175,
       height: 63
     },
-    "&:hover": {
+    '&:hover': {
       backgroundColor: 'rgb(240, 68, 51)'
     }
   },
   links: {
-    "&:hover": {
+    '&:hover': {
       textDecoration: 'none',
       color: 'black'
     }
@@ -143,7 +140,7 @@ const useStyles = makeStyles((theme) => ({
       width: 175,
       height: 63
     },
-    "&:hover": {
+    '&:hover': {
       backgroundColor: 'rgba(7, 7, 7, 0.6)'
     }
   },

@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/styles';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   container: {
     marginBottom: '3.5rem'
     // backgroundImage: 'url(/static/assets/bg-section-2-homepage.svg)',
@@ -28,17 +28,17 @@ const useStyles = makeStyles(theme => ({
   },
   infoContainer: {
     display: 'flex',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   infoImage: {
-    width: "284px",
-    height: "254px",
-    objectFit: "contain",
+    width: '284px',
+    height: '254px',
+    objectFit: 'contain',
     [theme.breakpoints.down('md')]: {
       display: 'block',
       width: '90%',
       marginRight: 'auto',
-      marginLeft: 'auto',
+      marginLeft: 'auto'
     }
   },
   box: {
@@ -46,33 +46,29 @@ const useStyles = makeStyles(theme => ({
     // paddingLeft: 40,
     // paddingRight: 40,
     [theme.breakpoints.down('md')]: {
-      padding: theme.spacing(6),
+      padding: theme.spacing(6)
     }
   },
   title: {
-    width: "484px",
-    height: "43px",
     // backgroundColor: "#181818",
-    fontFamily: "Raleway",
-    fontSize: "22px",
+    fontFamily: 'Raleway',
+    fontSize: '22px',
     fontWeight: 800,
-    fontStyle: "normal",
-    fontStretch: "normal",
-    lineHeight: "1.79",
-    letterSpacing: "normal",
-    color: "#181818"
+    fontStyle: 'normal',
+    fontStretch: 'normal',
+    lineHeight: '1.79',
+    letterSpacing: 'normal',
+    color: '#181818'
   },
   descriptionText: {
-    width: "522px",
-    height: "137px",
-    fontFamily: "Raleway",
-    fontSize: "18px",
+    fontFamily: 'Raleway',
+    fontSize: '18px',
     fontWeight: 500,
-    fontStyle: "normal",
-    fontStretch: "normal",
-    lineHeight: "1.56",
-    letterSpacing: "normal",
-    color: "#565656"
+    fontStyle: 'normal',
+    fontStretch: 'normal',
+    lineHeight: '1.56',
+    letterSpacing: 'normal',
+    color: '#565656'
   },
   // link: {
   //   "&:hover": {
@@ -80,16 +76,14 @@ const useStyles = makeStyles(theme => ({
   //   }
   // },
   linkText: {
-    color: "#ee3124",
-    letterSpacing: "normal",
-    width: "200px",
-    height: "24px",
-    fontFamily: "Raleway",
-    fontSize: "20px",
+    color: '#ee3124',
+    letterSpacing: 'normal',
+    fontFamily: 'Raleway',
+    fontSize: '20px',
     fontWeight: 600,
-    fontStyle: "normal",
-    fontStretch: "normal",
-    lineHeight: "normal"
+    fontStyle: 'normal',
+    fontStretch: 'normal',
+    lineHeight: 'normal'
   }
 }));
 

@@ -13,7 +13,7 @@ const useStyles = makeStyles({
     cursor: 'pointer'
   },
   menuURL: {
-    "&:hover": {
+    '&:hover': {
       textDecoration: 'none'
     }
   },
@@ -28,9 +28,9 @@ const useStyles = makeStyles({
     border: '2px solid rgb(220, 68, 51)',
     marginRight: 20,
 
-    "&:hover": {
+    '&:hover': {
       backgroundColor: '#fff',
-      border: '2px solid rgb(220, 68, 51)',
+      border: '2px solid rgb(220, 68, 51)'
     }
   },
   joinAsMerchantWordingSpace: {
@@ -45,19 +45,19 @@ const useStyles = makeStyles({
     fontSize: 18,
     fontWeight: 800,
     color: '#000',
-    "&:hover": {
+    '&:hover': {
       backgroundColor: 'transparent'
     }
   },
   borderLangButton: {
-    borderLeft: '2px solid rgb(70,70,70)',
+    borderLeft: '2px solid rgb(70,70,70)'
   },
   menuWord: {
     textDecoration: 'none',
     color: '#565e6b',
     textTransform: 'uppercase',
     fontSize: 16,
-    "&:hover": {
+    '&:hover': {
       color: 'red'
     }
   },
@@ -73,7 +73,7 @@ const useStyles = makeStyles({
     marginLeft: 10
   },
   minifiedLogoButton: {
-    "&:hover": {
+    '&:hover': {
       backgroundColor: 'transparent'
     }
   },
@@ -81,7 +81,7 @@ const useStyles = makeStyles({
     height: 24
   },
   toggleContainer: {
-    "&:hover": {
+    '&:hover': {
       backgroundColor: 'transparent'
     }
   },

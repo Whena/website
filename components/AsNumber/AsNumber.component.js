@@ -1,18 +1,11 @@
 import React from 'react';
-import {
-  Typography,
-  Card,
-  Button,
-  CardActions,
-  CardContent,
-  Box,
-} from '@material-ui/core';
-import { Constant } from '../../constants';
-
+import Typography from '@material-ui/core/Typography';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Box from '@material-ui/core/Box';
 import MiniInformation from '../Reusable/MiniInformation.component';
 
 export default function AsNumber() {
-
   const leftComponent = (classes) => (
     <>
       <Box px={5} mb={'3.5rem'}>
@@ -41,7 +34,8 @@ export default function AsNumber() {
             </Box>
             <Box mt={5}>
               <Typography variant="subtitle1" gutterBottom>
-                Yogyakarta (75.000) and Bandung (75.000) with the top high merchanta
+                Yogyakarta (75.000) and Bandung (75.000) with the top high
+                merchanta
               </Typography>
             </Box>
           </CardContent>
@@ -56,17 +50,21 @@ export default function AsNumber() {
         We As A Number
       </Typography>
       <Typography variant="subtitle1">
-        Spreading digital financial service throughout the nation.
-        Boost is growing from urban cities, sub-urban to rural areas to cater the
-        digital financial needs of every layers of Indonesia society.
-        550.000 merchants in over 20 provinces Bali 53.000 merchants.
+        Spreading digital financial service throughout the nation. Boost is
+        growing from urban cities, sub-urban to rural areas to cater the digital
+        financial needs of every layers of Indonesia society. 550.000 merchants
+        in over 20 provinces Bali 53.000 merchants.
       </Typography>
     </div>
   );
 
   return (
     <>
-      <MiniInformation leftGrid={6} leftComponent={leftComponent} rightComponent={rightComponent} />
+      <MiniInformation
+        leftGrid={6}
+        leftComponent={leftComponent}
+        rightComponent={rightComponent}
+      />
     </>
   );
 }
