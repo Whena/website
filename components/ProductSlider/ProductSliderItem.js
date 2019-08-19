@@ -31,9 +31,11 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     color: '#FFF',
-    fontSize: '2.5rem',
+    fontSize: '3rem',
+    fontWeight: '900',
     [theme.breakpoints.down('xs')]: {
       fontSize: '1.5rem',
+      fontWeight: '700',
       overflow: 'hidden'
     }
   },
@@ -53,10 +55,14 @@ const useStyles = makeStyles((theme) => ({
   },
   body: {
     color: '#FFF',
+    fontSize: '1.5rem',
+    display: '-webkit-box',
+    '-webkit-line-clamp': 5,
+    '-webkit-box-orient': 'vertical',
+    overflow: 'hidden',
     [theme.breakpoints.down('xs')]: {
-      fontSize: '0.6rem',
-      overflow: 'hidden',
-      maxHeight: 40
+      fontSize: '0.75rem',
+      maxHeight: 100
     }
   }
 }));

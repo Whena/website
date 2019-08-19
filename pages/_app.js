@@ -5,6 +5,7 @@ import ThemeProvider from '@material-ui/styles/ThemeProvider';
 import { responsiveFontSizes } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../components/theme';
+import PageLoaderProvider from '../components/Providers/PageLoaderProvider';
 
 class MyApp extends App {
   static async getInitialProps({ Component, router, ctx }) {
@@ -40,9 +41,11 @@ class MyApp extends App {
           <title>Boost Indonesia</title>
         </Head>
         <ThemeProvider theme={responsiveFontSizes(theme)}>
-          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-          <CssBaseline />
-          <Component {...pageProps} />
+          <PageLoaderProvider>
+            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+            <CssBaseline />
+            <Component {...pageProps} />
+          </PageLoaderProvider>
         </ThemeProvider>
       </Container>
     );

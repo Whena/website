@@ -137,7 +137,7 @@ function Footer() {
                 </Link>
               </Typography>
             </Grid>
-            <Grid item xs={6} sm={4}>
+            <Grid item xs={10} sm={4}>
               <Typography
                 variant="h5"
                 color="secondary"
