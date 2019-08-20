@@ -5,7 +5,9 @@ import Footer from './Footer/Footer.component';
 const Layout = (props) => (
   <>
     <Navbar />
-    {props.children}
+    <div style={{paddingTop: 80}}>
+      {props.children}
+    </div>
     <Footer />
   </>
 );

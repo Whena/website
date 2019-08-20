@@ -1,25 +1,49 @@
 import React from 'react';
-import Box from '@material-ui/core/Box';
+// import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
+import Box from '@material-ui/core/Box';
 import Layout from '../components/Layout';
-import DigitalEconomyAboutUs from '../components/DigitalEconomyAboutUs/DigitalEconomy.component';
-import MiniInformation from '../components/Reusable/MiniInformation.component';
+// import DigitalEconomyAboutUs from '../components/DigitalEconomyAboutUs/DigitalEconomy.component';
+// import MiniInformation from '../components/Reusable/MiniInformation.component';
+import MiniInformationItem from '../components/HomeContent/MiniInformationItem';
 import BottomBanner from '../components/Reusable/BottomBanner/BottomBanner.component';
 import makeStyles from '@material-ui/styles/makeStyles';
 
-import getLodash from 'lodash/get';
+// import getLodash from 'lodash/get';
 import { getAboutUsData } from '../services/page';
-import miniInformationStyles from '../components/Reusable/MiniInformation.styles';
+// import miniInformationStyles from '../components/Reusable/MiniInformation.styles';
+
+const Section = ({content}) => {
+  const classes = useStyles();
+
+  return (
+    <Container maxWidth="lg" className={classes.secondSectionContainer}>
+      <Grid container spacing={3} justify="space-between">
+        <MiniInformationItem
+          classes={{mediaContent: content.sectionItem}}
+          key={content.title}
+          rightContent={content.reverse}
+          title={content.title}
+          imageUrl={content.image}
+          videoUrl={content.video}
+          description={content.description}
+          actionUrl={content.action_url}
+          actionLabel={content.action_label}
+          height={content.height}
+        />        
+      </Grid>
+    </Container>
+  )
+};
 
 export default function Index(props) {
   const classes = useStyles();
-  const styles = miniInformationStyles();
   const { data } = props;
   const { fields } = data;
-  console.log(fields)
+  console.log(fields);
   const LeftButton = () => (
     <div className={classes.buttonContainer}>
       <Button variant="contained" component="span" className={classes.joinNowButton}>
@@ -34,59 +58,6 @@ export default function Index(props) {
     </Typography>
   );
 
-  const FirstSectionLeft = () => (
-    <>
-      <Typography variant="h4" className={classes.title}>
-        {fields.first_title}
-      </Typography>
-      <Typography variant="h6" className={classes.description}>
-        {fields.first_description}
-      </Typography>
-    </>
-  );
-
-  const FirstSectionRight = () => (
-    <div>
-      <img src={fields.first_media} alt={fields.first_title} width="240px" />
-    </div>
-  );
-
-  const SecondSectionLeft = () => (
-    <img src={fields.second_media} alt={fields.second_title} width="284px" />
-  );
-
-  const SecondSectionRight = () => (
-    <>
-      <Typography variant="h4" className={classes.title}>
-        {fields.second_title}
-      </Typography>
-      <Typography variant="h6" className={classes.description}>
-        {fields.second_description}
-      </Typography>
-    </>
-  );
-
-  const MissionComponent = () => (
-    <Container maxWidth="lg" style={{ marginBottom: '3.5rem' }}>
-      <Box py={4}>
-        <Typography variant="h4" style={{ fontWeight: 700 }}>
-          Mission
-        </Typography>
-      </Box>
-      <Box py={5}>
-        <Typography variant="h5">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </Typography>
-      </Box>
-    </Container>
-  );
-
   const ThirdSection = () => (
     <Container maxWidth={false} className={classes.thirdSectionContainer} style={{backgroundImage: `url(${fields.third_media})`, backgroundSize: 'cover'}}>
       <Container maxWidth="lg" className={classes.thirdSectionInnerContainer}>
@@ -98,22 +69,31 @@ export default function Index(props) {
         </Typography>
       </Container>
     </Container>
-  )
+  );
 
   return (
     <Layout title={"About Boost"}>
-      {/* <MissionComponent />
-      <DigitalEconomyAboutUs /> */}
-      <MiniInformation
-        style={{paddingTop: 20}}
-        leftGrid={8}
-        leftComponent={FirstSectionLeft}
-        rightComponent={FirstSectionRight}
-      />
-      <MiniInformation
-        leftGrid={4}
-        leftComponent={SecondSectionLeft}
-        rightComponent={SecondSectionRight}
+      <Box pt={7}>
+        <Section
+          content={{
+            title: fields.first_title,
+            image: fields.first_media,
+            description: fields.first_description,
+            reverse: true,
+            height: 240,
+            sectionItem: classes.firstSectionItem
+          }}
+        />
+      </Box>
+      <Section
+        content={{
+          title: fields.second_title,
+          image: fields.second_media,
+          description: fields.second_description,
+          reverse: false,
+          height: 284,
+          sectionItem: classes.secondSectionItem
+        }}
       />
       <ThirdSection />
       <BottomBanner
@@ -153,11 +133,13 @@ const useStyles = makeStyles(theme => ({
     height: "340px",
     backgroundColor: "#ffffff"
   },
-  thirdSectionInnerContainer: {
-    height: '100%',
+  secondSectionItem: {
     display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center'
+    justifyContent: 'flex-start'
+  },
+  firstSectionItem: {
+    display: 'flex',
+    justifyContent: 'flex-end'
   },
   title: {
     // "width": "87px",
@@ -245,5 +227,15 @@ const useStyles = makeStyles(theme => ({
     "lineHeight": "1.78",
     "letterSpacing": "normal",
     "color": "#565656"
+  },
+  secondSectionContainer: {
+    paddingBottom: theme.spacing(8),
+    marginBottom: theme.spacing(8),
+    paddingLeft: theme.spacing(2),
+    paddingRight: theme.spacing(2),
+    [theme.breakpoints.up('sm')]: {
+      paddingLeft: theme.spacing(8),
+      paddingRight: theme.spacing(8)
+    }    
   }
 }));

@@ -45,19 +45,19 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const resizeImage = (url) => {
+const resizeImage = (url, height) => {
   return resizeUrlButterImage(url, {
     compress: true,
     resize: {
-      h: 255
+      h: height//255
     }
   });
 };
 
 const MediaContent = React.memo(
-  ({ imageUrl, videoUrl, alt, className, ...props }) => {
+  ({ imageUrl, videoUrl, alt, className, height, ...props }) => {
     const classes = useStyles();
-    const resizeUrl = useMemo(() => resizeImage(imageUrl), [imageUrl]);
+    const resizeUrl = useMemo(() => resizeImage(imageUrl, height), [imageUrl, height]);
     const videoId = useMemo(() => getYoutubeId(videoUrl), [videoUrl]);
 
     return (
@@ -67,14 +67,14 @@ const MediaContent = React.memo(
         item
         xs={12}
         sm={5}
-        className={classes.mediaContainer}
+        className={clsx(classes.mediaContainer, className)}
       >
         {resizeUrl && (
           <img
             src={resizeUrl}
             alt={alt}
             {...props}
-            className={clsx(className, classes.image)}
+            className={classes.image}
           />
         )}
         {videoId && (
@@ -100,7 +100,9 @@ function MiniInformationItem({
   title,
   actionUrl,
   actionLabel,
-  description
+  description,
+  height,
+  classes: propClasses = {}
 }) {
   const classes = useStyles();
   return (
@@ -110,11 +112,11 @@ function MiniInformationItem({
       xs={12}
       spacing={3}
       alignItems="center"
-      className={clsx(classes.container, {
+      className={clsx(classes.container, propClasses.container, {
         [classes.reverseContent]: rightContent
       })}
     >
-      <MediaContent imageUrl={imageUrl} videoUrl={videoUrl} alt={title} />
+      <MediaContent imageUrl={imageUrl} videoUrl={videoUrl} alt={title} height={height} className={propClasses.mediaContent} />
       <Grid item xs={12} sm={7}>
         <Typography
           variant="h1"
@@ -123,7 +125,6 @@ function MiniInformationItem({
           gutterBottom
           className={classes.title}
         >
-          hehe
           {title}
         </Typography>
         <Typography

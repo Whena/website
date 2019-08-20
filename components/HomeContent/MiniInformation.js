@@ -38,6 +38,7 @@ function MiniInformation({ contents = [] }) {
             description={content.description}
             actionUrl={content.action_url}
             actionLabel={content.action_label}
+            height={255}
           />
         ))}
       </Grid>

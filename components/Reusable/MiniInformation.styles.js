@@ -43,8 +43,6 @@ const useStyles = makeStyles((theme) => ({
   },
   box: {
     marginBottom: '3.5rem',
-    // paddingLeft: 40,
-    // paddingRight: 40,
     [theme.breakpoints.down('md')]: {
       padding: theme.spacing(6)
     }
