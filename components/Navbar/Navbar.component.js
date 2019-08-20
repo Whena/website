@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import LinearProgress from '@material-ui/core/LinearProgress';
 import Hidden from '@material-ui/core/Hidden';
 import MobileNavbar from './MobileNavbar';
 import DesktopNavbar from './DesktopNavbar';
-import styles from './Navbar.styles';
+import useStyles from './Navbar.styles';
+import { PageLoaderContext } from '../../utils/context';
 
 export default function Navbar() {
-  const classes = styles();
+  const classes = useStyles();
+  const LoaderContext = useContext(PageLoaderContext);
 
   return (
     <div className={classes.root}>
+      {LoaderContext.loading && (
+        <LinearProgress
+          classes={{
+            barColorPrimary: classes.loaderColor,
+            root: classes.loaderContainer
+          }}
+        />
+      )}
       <Hidden implementation="css" only={['xs', 'sm']}>
         <DesktopNavbar />
       </Hidden>

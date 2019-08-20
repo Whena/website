@@ -1,9 +1,11 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     height: 80,
-    width: '100vw'
+    width: '100%',
+    position: 'fixed',
+    zIndex: theme.zIndex.appBar
   },
   minifiedAppBar: {
     paddingBottom: 10,
@@ -87,7 +89,14 @@ const useStyles = makeStyles({
   },
   hamburgerList: {
     width: '100vw'
+  },
+  loaderColor: {
+    backgroundColor: '#dc004e'
+  },
+  loaderContainer: {
+    position: 'absolute',
+    width: '100%'
   }
-});
+}));
 
 export default useStyles;

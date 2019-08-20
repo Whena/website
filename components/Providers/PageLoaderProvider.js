@@ -1,22 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import LinearProgress from '@material-ui/core/LinearProgress';
 import Router from 'next/router';
-import { makeStyles } from '@material-ui/core/styles';
 import { PageLoaderContext } from '../../utils/context';
 
-const useStyles = makeStyles((theme) => ({
-  loaderColor: {
-    backgroundColor: '#dc004e'
-  },
-  loaderContainer: {
-    position: 'absolute',
-    width: '100%'
-  }
-}));
-
-export default function PageLoaderProvider({ children }) {
+export default function PageLoaderProvider(props) {
   const [loading, setLoading] = useState(false);
-  const classes = useStyles();
 
   const handleStartLoading = useCallback(() => {
     setLoading(true);
@@ -41,16 +28,7 @@ export default function PageLoaderProvider({ children }) {
   return (
     <PageLoaderContext.Provider
       value={{ loading, show: handleStartLoading, hide: handleStopLoading }}
-    >
-      {loading && (
-        <LinearProgress
-          classes={{
-            barColorPrimary: classes.loaderColor,
-            root: classes.loaderContainer
-          }}
-        />
-      )}
-      {children}
-    </PageLoaderContext.Provider>
+      {...props}
+    />
   );
 }
