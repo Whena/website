@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 18,
     fontStyle: 'normal',
     fontStretch: 'normal',
-    fontWight: 500,
+    fontWeight: 500,
     letterSpacing: 'normal',
     marginBottom: theme.spacing(2)
   },
@@ -123,6 +123,7 @@ function MiniInformationItem({
           gutterBottom
           className={classes.title}
         >
+          hehe
           {title}
         </Typography>
         <Typography

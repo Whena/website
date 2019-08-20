@@ -9,6 +9,10 @@ import { Constants } from '../constants';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
+import getLodash from 'lodash/get';
+import { getBoostPlay } from '../services/page';
+import { resizeUrlButterImage } from '../utils/helpers';
+
 import backgroundBanner from '../static/assets/boostplay/banner/header-boostplay@3x.png';
 
 const {
@@ -18,8 +22,14 @@ const {
   BOOSTPLAY_FEATURES
 } = Constants;
 
-export default function Index() {
+export default function Index(props) {
   const classes = useStyles();
+  const { data } = props;
+  const banner = getLodash(data, 'fields.banner', []);
+  const benefits = getLodash(data, 'fields.benefits', []);
+  const howto = getLodash(data, 'fields.how_to_activate', []);
+  const featured = getLodash(data, 'fields.featured', []);
+  const faqs = getLodash(data, 'fields.faqs', []);
 
   return (
     <Layout>
@@ -60,6 +70,15 @@ export default function Index() {
     </Layout>
   );
 }
+
+Index.getInitialProps = async ({ err, req, res, query, ...others }) => {
+  try {
+    const data = await getBoostPlay();
+    return { data };
+  } catch (error) {
+    return { data: {}, error };
+  }
+};
 
 const useStyles = makeStyles((theme) => ({
   buttonConfiguration: {

@@ -24,6 +24,7 @@ function Index(props) {
   const personas = getLodash(data, 'fields.personas', []);
   const banner = getLodash(data, 'fields.banner', {});
   const miniInformations = getLodash(data, 'fields.mini_informations', []);
+  console.log(miniInformations)
 
   return (
     <Layout title={'My Boost'}>
@@ -112,7 +113,7 @@ const useStyles = makeStyles((theme) => ({
       height: 68
     },
     [theme.breakpoints.down('xs')]: {
-      width: 175,
+      width: '100%',//175,
       height: 63
     },
     '&:hover': {
@@ -140,7 +141,7 @@ const useStyles = makeStyles((theme) => ({
       height: 68
     },
     [theme.breakpoints.down('xs')]: {
-      width: 175,
+      width: '100%',//175,
       height: 63
     },
     '&:hover': {
@@ -157,7 +158,7 @@ const useStyles = makeStyles((theme) => ({
   buttonText: {
     fontSize: 24,
     [theme.breakpoints.down('xs')]: {
-      fontSize: 16
+      fontSize: 25//16
     },
     // "&:hover": {
     //   color: 'black'

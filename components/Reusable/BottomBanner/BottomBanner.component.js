@@ -9,13 +9,14 @@ function BottomBanner({
   leftGrid,
   containerHeight,
   layoutColor,
+  background,
   ...props
 }) {
   const classes = styles();
 
   return (
     // <Grid container direction="column" justify="center" className={classes.container} style={{backgroundColor: props.background, height: containerHeight}}>
-    <Grid container justify="space-around" alignItems="center" className={classes.container} style={{backgroundColor: props.background, height: containerHeight, backgroundColor: layoutColor}}>
+    <Grid container justify="space-around" alignItems="center" className={classes.container} style={{backgroundImage: `url(${background})`, height: containerHeight, backgroundSize: 'cover' }}>
       <Grid item xs={12} sm={leftGrid} className={classes.alignment}>
         {props.left}
       </Grid>
