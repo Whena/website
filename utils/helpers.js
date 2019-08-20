@@ -14,6 +14,11 @@ export const getButterImageId = (url = '') => {
   return null;
 };
 
+const defaultOptions = {
+  compress: true,
+  auto_image: true
+};
+
 export const resizeUrlButterImage = (url = '', options = {}) => {
   if (isButterImage(url) === false) {
     return url;
@@ -25,8 +30,11 @@ export const resizeUrlButterImage = (url = '', options = {}) => {
     return url;
   }
 
-  const pathUrl = Object.keys(options).map((optKey) => {
-    const value = options[optKey];
+  const combineOptions = { ...defaultOptions, ...options };
+
+  const pathUrl = Object.keys(combineOptions).map((optKey) => {
+    const value = combineOptions[optKey];
+
     switch (typeof value) {
       case 'object':
         return `${optKey}=${Object.keys(value)

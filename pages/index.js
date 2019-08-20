@@ -12,8 +12,8 @@ import { Constants } from '../constants';
 import AsNumber from '../components/AsNumber/AsNumber.component';
 import ProductSlider from '../components/ProductSlider/ProductSlider';
 import { getHomePageData } from '../services/page';
-import backgroundBanner from '../static/assets/bg-header-homepage.png';
 import MiniInformation from '../components/HomeContent/MiniInformation';
+import { resizeUrlButterImage } from '../utils/helpers';
 
 const { HOME_BANNER } = Constants;
 
@@ -22,6 +22,7 @@ function Index(props) {
   const { data } = props;
   const products = getLodash(data, 'fields.services', []);
   const personas = getLodash(data, 'fields.personas', []);
+  const banner = getLodash(data, 'fields.banner', {});
   const miniInformations = getLodash(data, 'fields.mini_informations', []);
 
   return (
@@ -30,7 +31,9 @@ function Index(props) {
         contentPosition="flex-end"
         header={HOME_BANNER.HEADER}
         description={HOME_BANNER.DESCRIPTION}
-        backgroundImage={backgroundBanner}
+        backgroundImage={resizeUrlButterImage(banner.image_banner, {
+          resize: { h: 400 }
+        })}
       >
         <Grid container justify="flex-start">
           <Grid item>

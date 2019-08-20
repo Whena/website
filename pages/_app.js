@@ -1,11 +1,13 @@
 import React from 'react';
 import App, { Container } from 'next/app';
 import Head from 'next/head';
-import ThemeProvider from '@material-ui/styles/ThemeProvider';
+import { MuiThemeProvider } from '@material-ui/core/styles';
 import { responsiveFontSizes } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../components/theme';
 import PageLoaderProvider from '../components/Providers/PageLoaderProvider';
+
+const responsiveTheme = responsiveFontSizes(theme);
 
 class MyApp extends App {
   static async getInitialProps({ Component, router, ctx }) {
@@ -40,13 +42,13 @@ class MyApp extends App {
         <Head>
           <title>Boost Indonesia</title>
         </Head>
-        <ThemeProvider theme={responsiveFontSizes(theme)}>
+        <MuiThemeProvider theme={responsiveTheme}>
           <PageLoaderProvider>
             {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
             <CssBaseline />
             <Component {...pageProps} />
           </PageLoaderProvider>
-        </ThemeProvider>
+        </MuiThemeProvider>
       </Container>
     );
   }

@@ -14,12 +14,12 @@ function Banner({
   backgroundImage,
   ...props
 }) {
-  const classes = styles();
+  const classes = styles({ backgroundImage });
   const matches = useMediaQuery('(min-width:960px)');
   const windowSize = matches ? contentPosition : 'center';
 
   return (
-    <div className={classes.bannerContainer} style={{ backgroundImage }}>
+    <div className={classes.bannerContainer}>
       <Container maxWidth="lg">
         <Grid container justify={windowSize}>
           <Grid item xs={10} lg={5}>

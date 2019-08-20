@@ -1,9 +1,10 @@
 import { makeStyles } from '@material-ui/core/styles';
-import backgroundImage from '../../static/assets/bg-header-homepage.png';
+import defaultBackgroundImage from '../../static/assets/bg-header-homepage.png';
 
 const useStyles = makeStyles((theme) => ({
   bannerContainer: {
-    backgroundImage: `url(${backgroundImage})`, //'url(https://icon-library.net/images/no-image-available-icon/no-image-available-icon-6.jpg)',
+    backgroundImage: ({ backgroundImage }) =>
+      `url(${backgroundImage ? backgroundImage : defaultBackgroundImage})`,
     backgroundSize: 'cover',
     marginBottom: '3.5rem',
     width: '100vw'

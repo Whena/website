@@ -20,6 +20,9 @@ const useStyles = makeStyles((theme) => ({
   footer: {
     backgroundColor: 'black'
   },
+  container: {
+    paddingTop: theme.spacing(6)
+  },
   headingFooter: {
     fontWeight: 700,
     marginBottom: theme.spacing(4),
@@ -53,138 +56,136 @@ function Footer() {
 
   return (
     <div className={classes.footer}>
-      <Container maxWidth="lg">
-        <Box>
-          <Grid container spacing={4}>
-            <Grid item xs={6} sm={4}>
-              <Typography
-                variant="h5"
-                color="secondary"
-                className={classes.headingFooter}
-              >
-                INFORMATION
-              </Typography>
-              <Typography
-                variant="h5"
-                color="secondary"
-                className={classes.textFooter}
-              >
-                <Link className={classes.links} href="/comingsoon">
-                  Our Contacts
-                </Link>
-              </Typography>
-              <Typography
-                variant="h5"
-                color="secondary"
-                className={classes.textFooter}
-              >
-                <Link className={classes.links} href="/comingsoon">
-                  Career
-                </Link>
-              </Typography>
-              <Typography
-                variant="h5"
-                color="secondary"
-                className={classes.textFooter}
-              >
-                <Link className={classes.links} href="/gallery">
-                  Media Gallery
-                </Link>
-              </Typography>
-              <Typography
-                variant="h5"
-                color="secondary"
-                className={classes.textFooter}
-              >
-                <Link className={classes.links} href="/FAQ">
-                  FAQs
-                </Link>
-              </Typography>
-            </Grid>
-            <Grid item xs={6} sm={4}>
-              <Typography
-                variant="h5"
-                color="secondary"
-                className={cx(classes.headingFooter)}
-              >
-                SERVICES
-              </Typography>
-              <Typography
-                variant="h5"
-                color="secondary"
-                className={classes.textFooter}
-              >
-                <Link className={classes.links} href="/boostplay">
-                  BoostPlay
-                </Link>
-              </Typography>
-              <Typography
-                variant="h5"
-                color="secondary"
-                className={classes.textFooter}
-              >
-                <Link className={classes.links} href="/boostpenjual">
-                  BoostPenjual
-                </Link>
-              </Typography>
-              <Typography
-                variant="h5"
-                color="secondary"
-                className={classes.textFooter}
-              >
-                <Link className={classes.links} href="/boostpreneur">
-                  BoostPreneur
-                </Link>
-              </Typography>
-            </Grid>
-            <Grid item xs={10} sm={4}>
-              <Typography
-                variant="h5"
-                color="secondary"
-                className={classes.headingFooter}
-              >
-                SOCIAL MEDIA
-              </Typography>
-              <Grid container>
-                <Grid item xs={4} md={3}>
-                  <a href={SOCIAL_MEDIAS.FACEBOOK} target="__blank">
-                    <img
-                      src={facebookIcon}
-                      className={classes.image}
-                      alt="whatsapp"
-                    />
-                  </a>
-                </Grid>
-                <Grid item xs={4} md={3}>
+      <Container maxWidth="lg" className={classes.container}>
+        <Grid container spacing={4}>
+          <Grid item xs={6} sm={4}>
+            <Typography
+              variant="h5"
+              color="secondary"
+              className={classes.headingFooter}
+            >
+              INFORMATION
+            </Typography>
+            <Typography
+              variant="h5"
+              color="secondary"
+              className={classes.textFooter}
+            >
+              <Link className={classes.links} href="/comingsoon">
+                Our Contacts
+              </Link>
+            </Typography>
+            <Typography
+              variant="h5"
+              color="secondary"
+              className={classes.textFooter}
+            >
+              <Link className={classes.links} href="/comingsoon">
+                Career
+              </Link>
+            </Typography>
+            <Typography
+              variant="h5"
+              color="secondary"
+              className={classes.textFooter}
+            >
+              <Link className={classes.links} href="/gallery">
+                Media Gallery
+              </Link>
+            </Typography>
+            <Typography
+              variant="h5"
+              color="secondary"
+              className={classes.textFooter}
+            >
+              <Link className={classes.links} href="/FAQ">
+                FAQs
+              </Link>
+            </Typography>
+          </Grid>
+          <Grid item xs={6} sm={4}>
+            <Typography
+              variant="h5"
+              color="secondary"
+              className={cx(classes.headingFooter)}
+            >
+              SERVICES
+            </Typography>
+            <Typography
+              variant="h5"
+              color="secondary"
+              className={classes.textFooter}
+            >
+              <Link className={classes.links} href="/boostplay">
+                BoostPlay
+              </Link>
+            </Typography>
+            <Typography
+              variant="h5"
+              color="secondary"
+              className={classes.textFooter}
+            >
+              <Link className={classes.links} href="/boostpenjual">
+                BoostPenjual
+              </Link>
+            </Typography>
+            <Typography
+              variant="h5"
+              color="secondary"
+              className={classes.textFooter}
+            >
+              <Link className={classes.links} href="/boostpreneur">
+                BoostPreneur
+              </Link>
+            </Typography>
+          </Grid>
+          <Grid item xs={10} sm={4}>
+            <Typography
+              variant="h5"
+              color="secondary"
+              className={classes.headingFooter}
+            >
+              SOCIAL MEDIA
+            </Typography>
+            <Grid container>
+              <Grid item xs={4} md={3}>
+                <a href={SOCIAL_MEDIAS.FACEBOOK} target="__blank">
                   <img
-                    src={whatsappIcon}
+                    src={facebookIcon}
                     className={classes.image}
                     alt="whatsapp"
                   />
-                </Grid>
-                <Grid item xs={4} md={3}>
-                  <a href={SOCIAL_MEDIAS.INSTAGRAM} target="__blank">
-                    <img
-                      src={instagramIcon}
-                      className={classes.image}
-                      alt="instagram"
-                    />
-                  </a>
-                </Grid>
+                </a>
+              </Grid>
+              <Grid item xs={4} md={3}>
+                <img
+                  src={whatsappIcon}
+                  className={classes.image}
+                  alt="whatsapp"
+                />
+              </Grid>
+              <Grid item xs={4} md={3}>
+                <a href={SOCIAL_MEDIAS.INSTAGRAM} target="__blank">
+                  <img
+                    src={instagramIcon}
+                    className={classes.image}
+                    alt="instagram"
+                  />
+                </a>
               </Grid>
             </Grid>
           </Grid>
-          <Box py={4}>
-            <div>
-              <Typography
-                variant="h4"
-                align="right"
-                className={classes.ngeBoostBentar}
-              >
-                #NGEBOOSTBENTAR
-              </Typography>
-            </div>
-          </Box>
+        </Grid>
+        <Box py={4}>
+          <div>
+            <Typography
+              variant="h4"
+              align="right"
+              className={classes.ngeBoostBentar}
+            >
+              #NGEBOOSTBENTAR
+            </Typography>
+          </div>
         </Box>
       </Container>
     </div>

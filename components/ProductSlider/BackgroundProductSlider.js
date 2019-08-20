@@ -11,7 +11,6 @@ function BackgroundProductSlider({ className, ...props }) {
 const useStyles = makeStyles((theme) => ({
   background: {
     '& > .slick-slider': {
-      marginBottom: 15,
       backgroundImage: `url(${backgroundImage})`,
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center',
