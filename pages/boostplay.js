@@ -11,9 +11,9 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import getLodash from 'lodash/get';
 import { getBoostPlay } from '../services/page';
-import { resizeUrlButterImage } from '../utils/helpers';
 
 import backgroundBanner from '../static/assets/boostplay/banner/header-boostplay@3x.png';
+import HowToSliderContainer from '../components/HowToSlider';
 
 const {
   BOOSTPLAY_FOR_YOU,
@@ -22,12 +22,11 @@ const {
   BOOSTPLAY_FEATURES
 } = Constants;
 
-export default function Index(props) {
+export default function BoostPlay({ data = {} }) {
   const classes = useStyles();
-  const { data } = props;
-  const banner = getLodash(data, 'fields.banner', []);
+  const banner = getLodash(data, 'fields.banner', {});
   const benefits = getLodash(data, 'fields.benefits', []);
-  const howto = getLodash(data, 'fields.how_to_activate', []);
+  const howto = getLodash(data, 'fields.how_to_activate', {});
   const featured = getLodash(data, 'fields.featured', []);
   const faqs = getLodash(data, 'fields.faqs', []);
 
@@ -35,12 +34,12 @@ export default function Index(props) {
     <Layout>
       <Banner
         contentPosition="flex-start"
-        header={BOOSTPLAY_BANNER.HEADER}
-        description={BOOSTPLAY_BANNER.DESCRIPTION}
+        header={banner.title}
+        description={banner.description}
         backgroundImage={backgroundBanner}
       >
         <Grid container justify="flex-start">
-          <Grid item xs={12} md={3} lg={6}>
+          <Grid item xs={12} sm={3} md={3}>
             <Button disableRipple className={classes.buttonConfiguration}>
               <img
                 className={classes.imageDownloadButton}
@@ -49,7 +48,7 @@ export default function Index(props) {
               />
             </Button>
           </Grid>
-          <Grid item xs={12} md={3} lg={6}>
+          <Grid item xs={12} sm={3} md={3}>
             <Button disableRipple className={classes.buttonConfiguration}>
               <img
                 className={classes.imageDownloadButton}
@@ -65,13 +64,16 @@ export default function Index(props) {
         menus={[...BOOSTPLAY_FOR_YOU[1]]}
       />
       {/* <HowToActivate /> */}
+      {howto.header && (
+        <HowToSliderContainer sliders={howto.banners} title={howto.header} />
+      )}
       <PersonaFeatures features={BOOSTPLAY_FEATURES} />
       <BoostPlayFAQs />
     </Layout>
   );
 }
 
-Index.getInitialProps = async ({ err, req, res, query, ...others }) => {
+BoostPlay.getInitialProps = async ({ err, req, res, query, ...others }) => {
   try {
     const data = await getBoostPlay();
     return { data };

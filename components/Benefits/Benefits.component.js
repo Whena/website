@@ -1,19 +1,11 @@
 import React from 'react';
-import {
-  Grid,
-  Box,
-  Typography,
-  Container
-} from '@material-ui/core';
+import { Grid, Box, Typography, Container } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import BottomLiner from '../BottomLiner/BottomLiner.component';
 
 import styles from './Benefits.styles';
 
-function Benefits({
-  heading,
-  menus
-}) {
+function Benefits({ heading, menus }) {
   const classes = styles();
 
   return (
@@ -27,9 +19,18 @@ function Benefits({
       <Grid container justify="space-around">
         {menus.map((menu, index) => (
           <Grid item key={index} xs={12} md={3}>
-            <Grid container justify="center" alignItems="center" className={classes.iconContainer}>
+            <Grid
+              container
+              justify="center"
+              alignItems="center"
+              className={classes.iconContainer}
+            >
               <Grid item>
-                <img className={classes.icon} src={menu.ICON} alt={menu.TITLE} />
+                <img
+                  className={classes.icon}
+                  src={menu.ICON}
+                  alt={menu.TITLE}
+                />
               </Grid>
             </Grid>
             <Box component="span">

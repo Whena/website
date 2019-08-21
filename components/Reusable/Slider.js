@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import ReactSlider from 'react-slick';
 
-export default function Slider(props) {
+export default React.forwardRef(function Slider(props, ref) {
   return (
     <React.Fragment>
       <Head>
@@ -17,7 +17,7 @@ export default function Slider(props) {
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
         />
       </Head>
-      <ReactSlider {...props} />
+      <ReactSlider {...props} ref={ref} />
     </React.Fragment>
   );
-}
+});

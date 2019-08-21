@@ -1,25 +1,20 @@
 import React from 'react';
-import {
-  Grid,
-  Typography,
-  // Button,
-  Container,
-  ExpansionPanel,
-  ExpansionPanelSummary,
-  ExpansionPanelDetails
-} from '@material-ui/core';
-
-import BottomLiner from '../BottomLiner/BottomLiner.component';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
+import ExpansionPanel from '@material-ui/core/ExpansionPanel';
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import BottomLiner from '../BottomLiner/BottomLiner.component';
 import { Constants } from '../../constants';
 
 import styles from './BoostPlayFAQs.styles';
 
-export default function BoostPlayFAQs() {
+const QuestionBox = ({ question, details }) => {
   const classes = styles();
-  const { BOOSTPLAY_FAQ, FAQ_BOOSTPRENEUR } = Constants;
 
-  const QuestionBox = ({question, details}) => (
+  return (
     <ExpansionPanel className={classes.expansionPanel}>
       <ExpansionPanelSummary
         expandIcon={<ExpandMoreIcon />}
@@ -35,16 +30,19 @@ export default function BoostPlayFAQs() {
         </Grid>
       </ExpansionPanelSummary>
       <ExpansionPanelDetails>
-        <Typography>
-          {details}
-        </Typography>
+        <Typography>{details}</Typography>
       </ExpansionPanelDetails>
     </ExpansionPanel>
   );
+};
+
+export default function BoostPlayFAQs() {
+  const classes = styles();
+  const { BOOSTPLAY_FAQ, FAQ_BOOSTPRENEUR } = Constants;
 
   return (
     <Container maxWidth="lg">
-      <Typography variant="h3" className={classes.headerContainer} >
+      <Typography variant="h3" className={classes.headerContainer}>
         <span className={classes.header}>{BOOSTPLAY_FAQ.HEADER}</span>
         <BottomLiner />
       </Typography>
@@ -55,7 +53,7 @@ export default function BoostPlayFAQs() {
               <QuestionBox
                 question={faq.QUESTION}
                 details={faq.ANSWER}
-                key={index}
+                key={faq.QUESTION}
               />
             ))}
             {/* <QuestionBox question={BOOSTPLAY_FAQ.QUESTION_1} details="HEHEHEH" />
