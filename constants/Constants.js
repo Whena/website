@@ -365,6 +365,11 @@ const Constants = {
     TITLE: "THIS PAGE IS COMING SOON",
     DESCRIPTION: "We are preparing something amazing and exciting for you on this page. Keep exploring other menu from homepage to see other information.",
     BUTTON: "Back to homepage"
+  },
+  PAGE_NOT_FOUND: {
+    TITLE: "OOPS, SORRY..",
+    DESCRIPTION: "We can’t seem find the page you’re looking for",
+    BUTTON: "Back to homepage"
   }
 };
 
