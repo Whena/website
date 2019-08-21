@@ -11,12 +11,36 @@ import Layout from '../components/Layout';
 import MiniInformationItem from '../components/HomeContent/MiniInformationItem';
 import BottomBanner from '../components/Reusable/BottomBanner/BottomBanner.component';
 import makeStyles from '@material-ui/styles/makeStyles';
+import { resizeUrlButterImage } from '../utils/helpers';
 
 // import getLodash from 'lodash/get';
 import { getAboutUsData } from '../services/page';
-// import miniInformationStyles from '../components/Reusable/MiniInformation.styles';
 
-const Section = ({content}) => {
+const ThirdSection = ({ fields }) => {
+  const classes = useStyles();
+  const backgroundImage = resizeUrlButterImage(fields.third_media, {
+    resize: { h: 340 }
+  })
+
+  return (
+    <Container maxWidth={false} className={classes.thirdSectionContainer} style={{backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover'}}>
+      <Container maxWidth="lg" className={classes.thirdSectionInnerContainer}>
+        <Grid container justifyContent="flex-start">
+          <Grid item xs={12} lg={9}>
+            <Typography variant="h4" className={classes.thirdTitle}>
+              {fields.third_title}
+            </Typography>
+            <Typography variant="h6" className={classes.thirdDescription}>
+              {fields.third_description}
+            </Typography>
+          </Grid>
+        </Grid>
+      </Container>
+    </Container>
+  );
+}
+
+const Section = ({ content }) => {
   const classes = useStyles();
 
   return (
@@ -58,19 +82,6 @@ export default function Index(props) {
     </Typography>
   );
 
-  const ThirdSection = () => (
-    <Container maxWidth={false} className={classes.thirdSectionContainer} style={{backgroundImage: `url(${fields.third_media})`, backgroundSize: 'cover'}}>
-      <Container maxWidth="lg" className={classes.thirdSectionInnerContainer}>
-        <Typography variant="h4" className={classes.thirdTitle}>
-          {fields.third_title}
-        </Typography>
-        <Typography variant="h6" className={classes.thirdDescription}>
-          {fields.third_description}
-        </Typography>
-      </Container>
-    </Container>
-  );
-
   return (
     <Layout title={"About Boost"}>
       <Box pt={7}>
@@ -95,7 +106,7 @@ export default function Index(props) {
           sectionItem: classes.secondSectionItem
         }}
       />
-      <ThirdSection />
+      <ThirdSection fields={fields} />
       <BottomBanner
         leftGrid={4}
         left={<LeftButton />}
@@ -129,17 +140,41 @@ const useStyles = makeStyles(theme => ({
     paddingLeft: theme.spacing(3)
   },
   thirdSectionContainer: {
-    width: "100vw",//"1024px",
+    width: "100vw",
     height: "340px",
-    backgroundColor: "#ffffff"
+    border: "2px solid #ececec",
+    backgroundColor: "#ffffff",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    backgroundSize: "800px",
+    [theme.breakpoints.down('sm')]: {
+      backgroundSize: "500px"
+    },
+    backgroundPositionX: "right",
+    backgroundRepeat: "no-repeat",
+    backgroundPositionY: "bottom"
+  },
+  thirdSectionInnerContainer: {
+    // maxWidth: 900
+    // backgroundColor: 'black',
+    // [theme.breakpoints.down('sm')]: {
+    //   justifyContent: 'center'
+    // }
   },
   secondSectionItem: {
     display: 'flex',
-    justifyContent: 'flex-start'
+    justifyContent: 'flex-start',
+    [theme.breakpoints.down('xs')]: {
+      justifyContent: 'center'
+    }
   },
   firstSectionItem: {
     display: 'flex',
-    justifyContent: 'flex-end'
+    justifyContent: 'flex-end',
+    [theme.breakpoints.down('xs')]: {
+      justifyContent: 'center'
+    }
   },
   title: {
     // "width": "87px",
@@ -204,7 +239,7 @@ const useStyles = makeStyles(theme => ({
     marginLeft: 20
   },
   thirdTitle: {
-    "width": "350px",
+    // "width": "350px",
     "marginBottom": "30px",
     "height": "29px",
     "fontFamily": "Raleway",
@@ -217,8 +252,6 @@ const useStyles = makeStyles(theme => ({
     "color": "#181818"
   },
   thirdDescription: {
-    "width": "814px",
-    "height": "122px",
     "fontFamily": "Raleway",
     "fontSize": "18px",
     "fontWeight": "500",

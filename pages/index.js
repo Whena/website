@@ -24,7 +24,6 @@ function Index(props) {
   const personas = getLodash(data, 'fields.personas', []);
   const banner = getLodash(data, 'fields.banner', {});
   const miniInformations = getLodash(data, 'fields.mini_informations', []);
-  console.log(miniInformations)
 
   return (
     <Layout title={'My Boost'}>
