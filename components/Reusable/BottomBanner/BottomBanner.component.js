@@ -15,16 +15,14 @@ function BottomBanner({
   const classes = styles();
 
   return (
-    // <Grid container direction="column" justify="center" className={classes.container} style={{backgroundColor: props.background, height: containerHeight}}>
-    <Grid container justify="space-around" alignItems="center" className={classes.container} style={{backgroundImage: `url(${background})`, height: containerHeight, backgroundSize: 'cover' }}>
-      <Grid item xs={12} sm={leftGrid} className={classes.alignment}>
-        {props.left}
-      </Grid>
+    <Grid container direction="row-reverse" justify="space-around" alignItems="center" className={classes.container} style={{backgroundImage: `url(${background})`, backgroundSize: 'cover' }}>
       <Grid item xs={12} sm={12 - leftGrid} className={classes.alignment}>
         {props.right}
       </Grid>
+      <Grid item xs={12} sm={leftGrid} className={classes.alignment}>
+        {props.left}
+      </Grid>
     </Grid>
-    // </Grid>
   );
 }
 
