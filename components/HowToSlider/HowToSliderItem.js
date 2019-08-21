@@ -1,4 +1,4 @@
-\import React, { useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { resizeUrlButterImage } from '../../utils/helpers';
 const useStyles = makeStyles((theme) => ({

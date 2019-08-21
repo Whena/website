@@ -40,21 +40,18 @@ const MobileLayoutPersonas = ({ personas }) => {
   }, []);
 
   return (
-    <>
-      <Title />
-      <Slider ref={sliderRef} {...settings} className={classes.slider}>
-        {personas.map((eachPersona) => (
-          <Grid item xs={12} sm={6} md={3} className={classes.eachCard} key={eachPersona.persona}>
-            <CardPersona
-              icon={eachPersona.icon}
-              persona={eachPersona.persona}
-              description={eachPersona.description}
-              actionURL={eachPersona.action_url}
-            />
-          </Grid>
-        ))}
-      </Slider>
-    </>
+    <Slider ref={sliderRef} {...settings} className={classes.slider}>
+      {personas.map((eachPersona) => (
+        <Grid item xs={12} sm={6} md={3} className={classes.eachCard} key={eachPersona.persona}>
+          <CardPersona
+            icon={eachPersona.icon}
+            persona={eachPersona.persona}
+            description={eachPersona.description}
+            actionURL={eachPersona.action_url}
+          />
+        </Grid>
+      ))}
+    </Slider>
   )
 };
 
@@ -88,8 +85,8 @@ function BoostPersonas({ personas }) {
 
   return (
     <Container maxWidth="lg" className={classes.container}>
+      <Title />
       <Hidden only="xs">
-        <Title />
         <Grid container justify="space-around">
           <PersonaCards 
             personas={personas}
