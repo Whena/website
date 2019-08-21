@@ -23,10 +23,10 @@ const ThirdSection = ({ fields }) => {
   })
 
   return (
-    <Container maxWidth={false} className={classes.thirdSectionContainer} style={{backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover'}}>
+    <Container maxWidth={false} className={classes.thirdSectionContainer} style={{backgroundImage: `url(${backgroundImage})`}}>
       <Container maxWidth="lg" className={classes.thirdSectionInnerContainer}>
-        <Grid container justifyContent="flex-start">
-          <Grid item xs={12} lg={9}>
+        <Grid container justify="flex-start">
+          <Grid item xs={12} sm={10} md={9} lg={9}>
             <Typography variant="h4" className={classes.thirdTitle}>
               {fields.third_title}
             </Typography>
@@ -67,7 +67,7 @@ export default function Index(props) {
   const classes = useStyles();
   const { data } = props;
   const { fields } = data;
-  console.log(fields);
+  
   const LeftButton = () => (
     <div className={classes.buttonContainer}>
       <Button variant="contained" component="span" className={classes.joinNowButton}>
@@ -141,14 +141,17 @@ const useStyles = makeStyles(theme => ({
   },
   thirdSectionContainer: {
     width: "100vw",
-    height: "340px",
     border: "2px solid #ececec",
     backgroundColor: "#ffffff",
     display: "flex",
+    padding: "100px 0px",
     flexDirection: "column",
     justifyContent: "center",
-    backgroundSize: "800px",
+    backgroundSize: "1000px",
     [theme.breakpoints.down('sm')]: {
+      backgroundSize: "700px"
+    },
+    [theme.breakpoints.down('xs')]: {
       backgroundSize: "500px"
     },
     backgroundPositionX: "right",
@@ -179,7 +182,7 @@ const useStyles = makeStyles(theme => ({
   title: {
     // "width": "87px",
     "marginBottom": "30px",
-    "height": "29px",
+    // "height": "29px",
     "fontFamily": "Raleway",
     "fontSize": "24px",
     "fontWeight": "800",
@@ -191,7 +194,7 @@ const useStyles = makeStyles(theme => ({
   },
   description: {
     // "width": "520px",
-    "height": "144px",
+    // "height": "144px",
     "fontFamily": "Raleway",
     "fontSize": "18px",
     "fontWeight": "500",
@@ -239,9 +242,7 @@ const useStyles = makeStyles(theme => ({
     marginLeft: 20
   },
   thirdTitle: {
-    // "width": "350px",
     "marginBottom": "30px",
-    "height": "29px",
     "fontFamily": "Raleway",
     "fontSize": "24px",
     "fontWeight": "800",
@@ -263,7 +264,7 @@ const useStyles = makeStyles(theme => ({
   },
   secondSectionContainer: {
     paddingBottom: theme.spacing(8),
-    marginBottom: theme.spacing(8),
+    // marginBottom: theme.spacing(8),
     paddingLeft: theme.spacing(2),
     paddingRight: theme.spacing(2),
     [theme.breakpoints.up('sm')]: {

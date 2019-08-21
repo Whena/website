@@ -23,10 +23,7 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'center',
     [theme.breakpoints.only('sm')]: {
       height: 300
-    },
-    // [theme.breakpoints.down('xs')]: {
-    //   height: 400
-    // }
+    }
   }
 }));
 
