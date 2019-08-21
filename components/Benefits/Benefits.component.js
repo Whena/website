@@ -5,7 +5,7 @@ import BottomLiner from '../BottomLiner/BottomLiner.component';
 
 import styles from './Benefits.styles';
 
-function Benefits({ heading, menus }) {
+function Benefits({ heading, contents = [] }) {
   const classes = styles();
 
   return (
@@ -16,31 +16,28 @@ function Benefits({ heading, menus }) {
           <BottomLiner />
         </Box>
       </Typography>
-      <Grid container justify="space-around">
-        {menus.map((menu, index) => (
-          <Grid item key={index} xs={12} md={3}>
-            <Grid
-              container
-              justify="center"
-              alignItems="center"
-              className={classes.iconContainer}
-            >
-              <Grid item>
-                <img
-                  className={classes.icon}
-                  src={menu.ICON}
-                  alt={menu.TITLE}
-                />
-              </Grid>
-            </Grid>
-            <Box component="span">
-              <Typography variant="h5" className={classes.title}>
-                {menu.TITLE}
-              </Typography>
-              <Typography className={classes.description}>
-                {menu.DESCRIPTION}
-              </Typography>
-            </Box>
+      <Grid container spacing={2} justify="space-around" alignItems="flex-start">
+        {contents.map((content) => (
+          <Grid
+            item
+            container
+            direction="column"
+            justify="center"
+            key={content.title}
+            xs={12}
+            sm={4}
+            md={4}
+            lg={3}
+          >
+            <div className={classes.iconContainer}>
+              <img src={content.image_banner} alt={content.title} />
+            </div>
+            <Typography display="block" variant="h5" className={classes.title}>
+              {content.title}
+            </Typography>
+            <Typography display="block" className={classes.description}>
+              {content.description}
+            </Typography>
           </Grid>
         ))}
       </Grid>

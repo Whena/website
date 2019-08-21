@@ -2,12 +2,30 @@ import { makeStyles } from '@material-ui/core/styles';
 import defaultBackgroundImage from '../../static/assets/bg-header-homepage.png';
 
 const useStyles = makeStyles((theme) => ({
+  container: {
+    justifyContent: ({ contentPosition }) =>
+      contentPosition ? contentPosition : 'flex-start',
+    [theme.breakpoints.down('sm')]: {
+      justifyContent: 'center'
+    }
+  },
   bannerContainer: {
     backgroundImage: ({ backgroundImage }) =>
       `url(${backgroundImage ? backgroundImage : defaultBackgroundImage})`,
     backgroundSize: 'cover',
-    marginBottom: '3.5rem',
-    width: '100vw'
+    marginBottom: '3.5rem'
+  },
+  actionButton: {
+    '& > a': {
+      height: 45,
+      '&:not(:last-child)': {
+        marginRight: 10
+      }
+    },
+    [theme.breakpoints.down('xs')]: {
+      display: 'flex',
+      justifyContent: 'space-around'
+    }
   },
   headerJumbotron: {
     marginBottom: 40,
@@ -30,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
       height: 68
     },
     [theme.breakpoints.down('xs')]: {
-      width: '100%',//175,
+      width: '100%',
       height: 63
     }
   },

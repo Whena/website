@@ -6,17 +6,21 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     textAlign: 'center',
-    fontWeight: 500
+    fontWeight: 500,
+    margin: '20px 0'
   },
   description: {
     textAlign: 'center',
     // color: '#fff'
   },
   icon: {
-    width: 100
+    width: 100,
+    margin: 'auto'
   },
   iconContainer: {
-    height: 102,
+    height: 65,
+    display: 'flex',
+    justifyContent: 'center',
     width: '100%'
   },
   heading: {
