@@ -1,10 +1,9 @@
 import { butterApi } from '../utils/api';
 import getLodash from 'lodash/get';
-const butter = butterApi();
 
-const getHomePageData = () => {
-  return butter.page
-    .retrieve('*', 'home', { locale: 'en' })
+export const getHomePageData = () => {
+  return butterApi()
+    .page.retrieve('*', 'home', { locale: 'en' })
     .then(function(response) {
       return getLodash(response, 'data.data');
     })
@@ -14,9 +13,9 @@ const getHomePageData = () => {
     });
 };
 
-const getAboutUsData = () => {
-  return butter.page
-    .retrieve('*', 'about-us', { locale: 'en' })
+export const getAboutUsData = () => {
+  return butterApi()
+    .page.retrieve('*', 'about-us', { locale: 'en' })
     .then(function(response) {
       return getLodash(response, 'data.data');
     })
@@ -24,11 +23,11 @@ const getAboutUsData = () => {
       console.log(error);
       return error;
     });
-}
+};
 
-const getBoostPlay = () => {
-  return butter.page
-    .retrieve('*', 'boostplay', { locale: 'en', levels: 3 })
+export const getBoostPlay = () => {
+  return butterApi()
+    .page.retrieve('*', 'boostplay', { locale: 'en', levels: 3 })
     .then(function(response) {
       return getLodash(response, 'data.data');
     })
@@ -36,11 +35,11 @@ const getBoostPlay = () => {
       console.log(error);
       return error;
     });
-}
+};
 
-const getBoostPenjual = () => {
-  return butter.page
-    .retrieve('*', 'boostpenjual', { locale: 'en', levels: 3 })
+export const getBoostPenjual = () => {
+  return butterApi()
+    .page.retrieve('*', 'boostpenjual', { locale: 'en', levels: 3 })
     .then(function(response) {
       return getLodash(response, 'data.data');
     })
@@ -48,11 +47,4 @@ const getBoostPenjual = () => {
       console.log(error);
       return error;
     });
-}
-
-export {
-  getHomePageData,
-  getAboutUsData,
-  getBoostPlay,
-  getBoostPenjual
-}
+};
