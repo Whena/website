@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/styles';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   container: {
     marginBottom: '3.5rem'
   },
@@ -10,7 +10,7 @@ const useStyles = makeStyles(theme => ({
     margin: '20px 0'
   },
   description: {
-    textAlign: 'center',
+    textAlign: 'center'
     // color: '#fff'
   },
   icon: {

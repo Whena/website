@@ -5,17 +5,14 @@ import Banner from '../components/Banner/Banner.component';
 import BoostPlayFAQs from '../components/BoostPlayFAQs/BoostPlayFAQs.component';
 import Benefits from '../components/Benefits/Benefits.component';
 import PersonaFeatures from '../components/Reusable/PersonaFeatures/PersonaFeatures.component';
-import { Constants } from '../constants';
 import { getBoostPlay } from '../services/page';
 import HowToSliderContainer from '../components/HowToSlider';
-
-const { BOOSTPLAY_FEATURES } = Constants;
 
 function BoostPlay({ data = {} }) {
   const banner = getLodash(data, 'fields.banner', {});
   const howto = getLodash(data, 'fields.how_to_activate', {});
   const benefits = getLodash(data, 'fields.benefits', {});
-  // const featured = getLodash(data, 'fields.featured', []);
+  const featured = getLodash(data, 'fields.featured', {});
   // const faqs = getLodash(data, 'fields.faqs', []);
 
   return (
@@ -32,7 +29,13 @@ function BoostPlay({ data = {} }) {
       {howto.header && (
         <HowToSliderContainer sliders={howto.banners} title={howto.header} />
       )}
-      <PersonaFeatures features={BOOSTPLAY_FEATURES} />
+      {featured.header && (
+        <PersonaFeatures
+          title={featured.header}
+          description={featured.description}
+          features={featured.banners}
+        />
+      )}
       <BoostPlayFAQs />
     </Layout>
   );
