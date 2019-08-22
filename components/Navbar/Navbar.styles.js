@@ -7,16 +7,71 @@ const useStyles = makeStyles((theme) => ({
     position: 'fixed',
     zIndex: theme.zIndex.appBar
   },
+  iconMenu: {
+    height: 24
+  },
+  leftIcon: {
+    minWidth: 30,
+    display: 'flex'
+  },
+  poppperMenu: {
+    zIndex: theme.zIndex.appBar + 1,
+    top: '-15px !important',
+    left: '-4px !important'
+  },
+  subLink: {
+    '& li': {
+      fontSize: 16,
+      fontWeight: 500
+    },
+    '& li:hover': {
+      backgroundColor: 'transparent',
+      color: '#ee3124'
+    }
+  },
+  popperArrow: {
+    '&:after': {
+      top: '-10px',
+      right: '2px',
+      content: "''",
+      display: 'block',
+      zIndex: '1',
+      position: 'absolute',
+      borderLeft: '10px solid transparent',
+      borderRight: '10px solid transparent',
+      borderBottom: '10px solid #FFF',
+      width: '0',
+      height: '0'
+    }
+  },
   minifiedAppBar: {
     paddingBottom: 10,
     borderBottom: '1px solid rgb(220, 68, 51)'
   },
-  menus: {
-    cursor: 'pointer'
+  menu: {
+    cursor: 'pointer',
+    height: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    marginRight: 5,
+    whiteSpace: 'nowrap'
+  },
+  navContainer: {
+    height: '100%'
   },
   menuURL: {
+    height: '100%',
+    margin: '0 22px !important',
+    fontSize: '16px',
+    fontWeight: '600',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    '& svg': {
+      cursor: 'pointer'
+    },
     '&:hover': {
-      textDecoration: 'none'
+      color: 'red'
     }
   },
   joinAsMerchantIcon: {
@@ -57,7 +112,7 @@ const useStyles = makeStyles((theme) => ({
   menuWord: {
     textDecoration: 'none',
     color: '#565e6b',
-    textTransform: 'uppercase',
+    // textTransform: 'uppercase',
     fontSize: 16,
     '&:hover': {
       color: 'red'

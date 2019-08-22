@@ -47,6 +47,7 @@ function Link(props) {
       component={NextComposed}
       underline="none"
       className={className}
+      color="inherit"
       ref={innerRef}
       {...other}
     />
