@@ -3,68 +3,82 @@ import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Box from '@material-ui/core/Box';
-import MiniInformation from '../Reusable/MiniInformation.component';
+import Grid from '@material-ui/core/Grid';
+import Container from '@material-ui/core/Container';
+import clsx from 'clsx';
+// import MiniInformation from '../Reusable/MiniInformation.component';
+// import MiniInformationItem from '../../components/HomeContent/MiniInformationItem';
+import styles from './AsNumber.styles';
 
-export default function AsNumber() {
-  const leftComponent = (classes) => (
-    <>
-      <Box px={5} mb={'3.5rem'}>
-        <Card className={classes.card}>
-          <CardContent>
-            <Box mt={3}>
-              <Typography variant="h5" gutterBottom>
-                550,000+
-              </Typography>
-            </Box>
-            <Box mt={5}>
-              <Typography variant="subtitle1" gutterBottom>
-                Total merchants around of Indonesia
-              </Typography>
-            </Box>
-          </CardContent>
-        </Card>
-      </Box>
-      <Box px={5} mb={'3.5rem'}>
-        <Card className={classes.card}>
-          <CardContent>
-            <Box mt={3}>
-              <Typography variant="h5" gutterBottom>
-                +20 Provinces
-              </Typography>
-            </Box>
-            <Box mt={5}>
-              <Typography variant="subtitle1" gutterBottom>
-                Yogyakarta (75.000) and Bandung (75.000) with the top high
-                merchanta
-              </Typography>
-            </Box>
-          </CardContent>
-        </Card>
-      </Box>
-    </>
-  );
+const LeftComponent = ({ data }) => {
+  const classes = styles();
+  
+  return (
+    <Grid item xs={12} md={6}>
+      {data.map((stat) => (
+        <Box mb={'3.5rem'} key={stat.title}>
+          <Card className={classes.card}>
+            <CardContent>
+              <Box mt={3}>
+                <Typography variant="h5" gutterBottom className={classes.title}>
+                  {stat.title}
+                </Typography>
+              </Box>
+              <Box mt={5}>
+                <Typography variant="subtitle1" gutterBottom className={classes.description}>
+                  {stat.description}
+                </Typography>
+              </Box>
+            </CardContent>
+          </Card>
+        </Box>
+      ))}
+    </Grid>
+  )
+};
 
-  const rightComponent = (classes) => (
-    <div className={classes.description}>
-      <Typography variant="h5" style={{ fontWeight: 700 }} gutterBottom>
-        We As A Number
-      </Typography>
-      <Typography variant="subtitle1">
-        Spreading digital financial service throughout the nation. Boost is
-        growing from urban cities, sub-urban to rural areas to cater the digital
-        financial needs of every layers of Indonesia society. 550.000 merchants
-        in over 20 provinces Bali 53.000 merchants.
-      </Typography>
-    </div>
-  );
+const RightComponent = ({title, description}) => {
+  const classes = styles();
 
   return (
-    <>
-      <MiniInformation
-        leftGrid={6}
-        leftComponent={leftComponent}
-        rightComponent={rightComponent}
-      />
-    </>
+    <Grid item xs={11} md={5} className={classes.description}>
+      <Typography 
+        variant="h5" 
+        gutterBottom 
+        className={classes.rightComponentTitle}
+      >
+        {title}
+      </Typography>
+      <Typography
+        variant="subtitle1"
+        className={clsx(classes.description, classes.rightComponentDescription)}
+      >
+        {description}
+      </Typography>
+    </Grid>
+  );
+};
+
+function AsNumber({
+  title,
+  description,
+  data
+}) {
+  const classes = styles();
+
+  return (
+    <Container maxWidth="lg">
+      <Grid container className={classes.gridContainer} direction="row-reverse">
+        <RightComponent
+          title={title}
+          description={description}
+        />
+        <LeftComponent
+          data={data}
+        />
+      </Grid>
+    </Container>
   );
 }
+
+export default AsNumber;

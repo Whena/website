@@ -7,9 +7,8 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import BottomLiner from '../BottomLiner/BottomLiner.component';
-import { Constants } from '../../constants';
 
-import styles from './BoostPlayFAQs.styles';
+import styles from './FAQs.styles';
 
 const QuestionBox = ({ question, details }) => {
   const classes = styles();
@@ -36,33 +35,30 @@ const QuestionBox = ({ question, details }) => {
   );
 };
 
-export default function BoostPlayFAQs() {
+function BoostPlayFAQs({ header, questions }) {
   const classes = styles();
-  const { BOOSTPLAY_FAQ, FAQ_BOOSTPRENEUR } = Constants;
-
+  
   return (
     <Container maxWidth="lg">
       <Typography variant="h3" className={classes.headerContainer}>
-        <span className={classes.header}>{BOOSTPLAY_FAQ.HEADER}</span>
+        <span className={classes.header}>{header}</span>
         <BottomLiner />
       </Typography>
       <Grid container justify="center" className={classes.container}>
-        <Grid item xs={8}>
+        <Grid item xs={12} md={8}>
           <div className={classes.questionBox}>
-            {FAQ_BOOSTPRENEUR.map((faq, index) => (
+            {questions.map((faq) => (
               <QuestionBox
-                question={faq.QUESTION}
-                details={faq.ANSWER}
-                key={faq.QUESTION}
+                question={faq.title_or_question}
+                details={faq.answer_or_description}
+                key={faq.title_or_question}
               />
             ))}
-            {/* <QuestionBox question={BOOSTPLAY_FAQ.QUESTION_1} details="HEHEHEH" />
-            <QuestionBox question={BOOSTPLAY_FAQ.QUESTION_2} details="HEHEHEH2" />
-            <QuestionBox question={BOOSTPLAY_FAQ.QUESTION_3} details="HEHEHEH3" />
-            <QuestionBox question={BOOSTPLAY_FAQ.QUESTION_4} details="HEHEHEH4" /> */}
           </div>
         </Grid>
       </Grid>
     </Container>
   );
 }
+
+export default BoostPlayFAQs;

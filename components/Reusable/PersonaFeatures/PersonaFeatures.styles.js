@@ -1,13 +1,29 @@
 import makeStyles from '@material-ui/styles/makeStyles';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   container: {
     borderTop: '1.25px solid rgb(236, 236, 236)',
     borderBottom: '1.25px solid rgb(236, 236, 236)',
     height: '100%'
-    // backgroundImage: '/static/assets/featured-background/bg-section-4-boostplay.svg',
-    // backgroundSize: 'cover',
-    // backgroundColor: 'black'
+  },
+  slider: {
+    maxWidth: '100%',
+    height: 260,
+    overflow: 'hidden',
+    display: 'flex',
+    '& .slick-slide': {
+      minWidth: 290
+    },
+    '& .slick-track': {
+      display: 'flex'
+    }
+  },
+  card: {
+    maxWidth: 284,
+    margin: '0 20px',
+    '&:first-child': {
+      marginLeft: 0
+    }
   },
   leftSide: {
     height: '100%',
@@ -17,24 +33,10 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'center',
     [theme.breakpoints.down('md')]: {
       margin: '30px auto'
-    },
-  },
-  rightSide: {
-    // height: '100%'
-    // width: 100
+    }
   },
   headerContainer: {
     height: '100%'
-  },
-  slider: {
-    height: '100%',
-    width: 820,
-    [theme.breakpoints.down('md')]: {
-      width: '100%'
-    },
-    [theme.breakpoints.down('xs')]: {
-      width: 700//'100%'
-    }
   },
   gridContainer: {
     height: '100% !important',
@@ -59,24 +61,6 @@ const useStyles = makeStyles(theme => ({
   titleDescription: {
     fontSize: '1.3rem'
   },
-  card: {
-    height: 310,// '100%',
-    width: '284px !important',
-    [theme.breakpoints.down('md')]: {
-      width:'400px !important'
-    },
-    [theme.breakpoints.down('sm')]: {
-      width:'90% !important'
-    },
-    [theme.breakpoints.down('xs')]: {
-      width:'80% !important'
-    }
-  },
-  // cardAction: {
-  //   "&:hover": {
-  //     backgroundColor: 'rgba(255,255,255,0.9)'
-  //   }
-  // },
   cardActionHighlight: {
     opacity: 0,
     backgroundColor: '#fff'

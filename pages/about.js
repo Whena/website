@@ -57,7 +57,7 @@ const Section = ({ content }) => {
           actionUrl={content.action_url}
           actionLabel={content.action_label}
           height={content.height}
-        />        
+        />
       </Grid>
     </Container>
   )
@@ -66,8 +66,8 @@ const Section = ({ content }) => {
 export default function Index(props) {
   const classes = useStyles();
   const { data } = props;
-  const { fields } = data;
-  
+  const { fields = {} } = data;
+
   const LeftButton = () => (
     <div className={classes.buttonContainer}>
       <Button variant="contained" component="span" className={classes.joinNowButton}>
@@ -270,6 +270,6 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('sm')]: {
       paddingLeft: theme.spacing(8),
       paddingRight: theme.spacing(8)
-    }    
+    }
   }
 }));

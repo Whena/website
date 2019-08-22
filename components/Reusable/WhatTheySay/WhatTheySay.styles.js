@@ -2,10 +2,18 @@ import makeStyles from '@material-ui/styles/makeStyles';
 
 const useStyles = makeStyles(theme => ({
   container: {
-    marginBottom: '3.5rem',
+    margin: '3.5rem auto'
   },
   title: {
-    textAlign: 'center'
+    "textAlign": "center",
+    "fontFamily": "Raleway",
+    "fontSize": "24px",
+    "fontWeight": "800",
+    "fontStyle": "normal",
+    "fontStretch": "normal",
+    "lineHeight": "normal",
+    "letterSpacing": "normal",
+    "color": "#181818"
   },
   cards: {
     width: '95% !important',
@@ -13,7 +21,11 @@ const useStyles = makeStyles(theme => ({
       width: '80% !important'
     },
     margin: '20px 20px !important',
-    height: 200
+    height: 200,
+    outline: 'none'
+    // "&:focus": {
+    //   borderStyle: "outset"
+    // }
   },
   cardContainer: {
     width: 100
@@ -26,12 +38,28 @@ const useStyles = makeStyles(theme => ({
     marginRight: 20
   },
   usernameContainer: {
-    textAlign: 'center',
-    color: 'red',
-    marginTop: 25
+    "textAlign": "center",
+    "marginTop": 25,
+    "fontFamily": "Raleway",
+    "fontSize": "20px",
+    "fontWeight": "600",
+    "fontStyle": "normal",
+    "fontStretch": "normal",
+    "lineHeight": "normal",
+    "letterSpacing": "normal",
+    "color": "#ee3124"
   },
   commentContainer: {
-    textAlign: 'center',
+    "textAlign": "center",
+    "fontFamily": "Raleway",
+    "fontSize": "18px",
+    "fontWeight": "normal",
+    "fontStyle": "normal",
+    "fontStretch": "normal",
+    "lineHeight": "1.33",
+    "letterSpacing": "normal",
+    "textAlign": "center",
+    "color": "#000000"
   }
 }));
 

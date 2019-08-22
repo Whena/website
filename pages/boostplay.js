@@ -1,33 +1,19 @@
 import React from 'react';
+import getLodash from 'lodash/get';
 import Layout from '../components/Layout';
 import Banner from '../components/Banner/Banner.component';
-import BoostPlayFAQs from '../components/BoostPlayFAQs/BoostPlayFAQs.component';
+import Faqs from '../components/FAQs/FAQs.component';
 import Benefits from '../components/Benefits/Benefits.component';
-// import HowToActivate from '../components/HowToActivate/HowToActivate.component';
 import PersonaFeatures from '../components/Reusable/PersonaFeatures/PersonaFeatures.component';
-import { Constants } from '../constants';
-import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
-import { makeStyles } from '@material-ui/core/styles';
-import getLodash from 'lodash/get';
 import { getBoostPlay } from '../services/page';
-
-import backgroundBanner from '../static/assets/boostplay/banner/header-boostplay@3x.png';
 import HowToSliderContainer from '../components/HowToSlider';
 
-const {
-  BOOSTPLAY_FOR_YOU,
-  BOOSTPLAY_BANNER,
-  BANNER_BUTTONS,
-  BOOSTPLAY_FEATURES
-} = Constants;
-
-export default function BoostPlay({ data = {} }) {
-  const classes = useStyles();
+function BoostPlay({ data = {} }) {
   const banner = getLodash(data, 'fields.banner', {});
-  const benefits = getLodash(data, 'fields.benefits', []);
   const howto = getLodash(data, 'fields.how_to_activate', {});
-  const featured = getLodash(data, 'fields.featured', []);
+  const benefits = getLodash(data, 'fields.benefits', {});
+  const featured = getLodash(data, 'fields.featured', {});
+  const faq_header = getLodash(data, 'fields.faq_header', []);
   const faqs = getLodash(data, 'fields.faqs', []);
 
   return (
@@ -36,39 +22,28 @@ export default function BoostPlay({ data = {} }) {
         contentPosition="flex-start"
         header={banner.title}
         description={banner.description}
-        backgroundImage={backgroundBanner}
-      >
-        <Grid container justify="flex-start">
-          <Grid item xs={12} sm={3} md={3}>
-            <Button disableRipple className={classes.buttonConfiguration}>
-              <img
-                className={classes.imageDownloadButton}
-                src={BANNER_BUTTONS.GOOGLE_PLAY}
-                alt={BOOSTPLAY_BANNER.LEFT_BUTTON}
-              />
-            </Button>
-          </Grid>
-          <Grid item xs={12} sm={3} md={3}>
-            <Button disableRipple className={classes.buttonConfiguration}>
-              <img
-                className={classes.imageDownloadButton}
-                src={BANNER_BUTTONS.APP_STORE}
-                alt={BOOSTPLAY_BANNER.RIGHT_BUTTON}
-              />
-            </Button>
-          </Grid>
-        </Grid>
-      </Banner>
-      <Benefits
-        heading={BOOSTPLAY_FOR_YOU[0]}
-        menus={[...BOOSTPLAY_FOR_YOU[1]]}
+        backgroundImage={banner.image_banner}
+        googlePlayUrl={banner.google_play_url}
+        appStoreUrl={banner.app_store_url}
       />
-      {/* <HowToActivate /> */}
+      <Benefits 
+        heading={benefits.header} 
+        contents={benefits.banners} 
+      />
       {howto.header && (
         <HowToSliderContainer sliders={howto.banners} title={howto.header} />
       )}
-      <PersonaFeatures features={BOOSTPLAY_FEATURES} />
-      <BoostPlayFAQs />
+      {featured.header && (
+        <PersonaFeatures
+          title={featured.header}
+          description={featured.description}
+          features={featured.banners}
+        />
+      )}
+      <Faqs 
+        header={faq_header}
+        questions={faqs}
+      />
     </Layout>
   );
 }
@@ -82,24 +57,4 @@ BoostPlay.getInitialProps = async ({ err, req, res, query, ...others }) => {
   }
 };
 
-const useStyles = makeStyles((theme) => ({
-  buttonConfiguration: {
-    // width: '80%'
-    '&:hover': {
-      backgroundColor: 'transparent'
-    }
-  },
-  imageDownloadButton: {
-    width: '80%',
-    height: '90%',
-    margin: '5px auto',
-    [theme.breakpoints.down('md')]: {
-      width: 150,
-      height: 45
-    },
-    [theme.breakpoints.down('sm')]: {
-      width: 125,
-      height: 40
-    }
-  }
-}));
+export default BoostPlay;

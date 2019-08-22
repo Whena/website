@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import appleStoreImage from '../../static/assets/banner-buttons/app-store/asset-appstore-homepage@3x.png';
-import googlePlayImage from '../../static/assets/banner-buttons/google-play/asset-playstore-homepage@3x.png';
+import GooglePlayButton from '../Reusable/GooglePlayButton';
+import AppStoreButton from '../Reusable/GooglePlayButton';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
   image: {
     display: 'inline-block !important',
     width: '100%',
+
     height: 'auto',
     maxWidth: 200
   },
@@ -96,15 +97,9 @@ function ProductSliderItem(props) {
         </Typography>
         <div className={classes.appLink}>
           {props.googlePlayUrl && (
-            <a href={props.googlePlayUrl} target="__blank">
-              <img src={googlePlayImage} alt="GooglePlay Link" />
-            </a>
+            <GooglePlayButton url={props.googlePlayUrl} />
           )}
-          {props.appleStoreUrl && (
-            <a href={props.appleStoreUrl} target="__blank">
-              <img src={appleStoreImage} alt="Apple Store Link" />
-            </a>
-          )}
+          {props.appleStoreUrl && <AppStoreButton url={props.appleStoreUrl} />}
         </div>
       </Grid>
     </Grid>

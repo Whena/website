@@ -13,6 +13,7 @@ const useStyles = makeStyles(theme => ({
   heading: {
     fontSize: theme.typography.pxToRem(15),
     fontWeight: theme.typography.fontWeightRegular,
+    textAlign: 'center'
   },
   header: {
     fontSize: 40,
@@ -42,8 +43,7 @@ const useStyles = makeStyles(theme => ({
   questionButton: {
     width: '100%',
     flexShrink: 1,
-    height: 50,
-    // border: '1px solid blue'
+    height: 50
   }
 }));
 
