@@ -12,7 +12,17 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'hidden',
     display: 'flex',
     '& .slick-slide': {
-      minWidth: 284
+      minWidth: 290
+    },
+    '& .slick-track': {
+      display: 'flex'
+    }
+  },
+  card: {
+    maxWidth: 284,
+    margin: '0 20px',
+    '&:first-child': {
+      marginLeft: 0
     }
   },
   leftSide: {
@@ -50,13 +60,6 @@ const useStyles = makeStyles((theme) => ({
   },
   titleDescription: {
     fontSize: '1.3rem'
-  },
-  card: {
-    maxWidth: 284,
-    margin: '0 10px',
-    '&:first-child': {
-      marginLeft: 0
-    }
   },
   cardActionHighlight: {
     opacity: 0,
