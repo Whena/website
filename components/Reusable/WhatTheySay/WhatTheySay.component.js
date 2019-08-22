@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
@@ -16,13 +16,29 @@ const settings = {
   arrows: false,
   speed: 500,
   autoplay: true,
-  autoplaySpeed: 3000,
+  autoplaySpeed: 4000,
   slidesToShow: 2,
-  slidesToScroll: 2
+  slidesToScroll: 2,
+  responsive: [{
+    breakpoint: 850,
+    settings: {
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      centerMode: true,
+      pauseOnHover: true
+    }
+  }]
 };
 
 function WhatTheySay({ header, testimonials }) {
   const classes = styles();
+  const sliderRef = useRef();
+
+  useEffect(() => {
+    return () => {
+      sliderRef && sliderRef.current.slickPause()
+    }
+  }, []);
 
   return (
     <Container maxWidth="lg" className={classes.container}>
@@ -30,7 +46,7 @@ function WhatTheySay({ header, testimonials }) {
         {header}
       </Typography>
       <BottomLiner />
-      <Slider {...settings}>
+      <Slider ref={sliderRef} {...settings}>
         {testimonials.map((comment, index) => (
           <Card component="div" className={classes.cards} key={comment.description}>
             <Grid

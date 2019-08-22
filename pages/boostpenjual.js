@@ -3,59 +3,14 @@ import Layout from '../components/Layout';
 import { Constants } from '../constants';
 import Banner from '../components/Banner/Banner.component';
 import Benefits from '../components/Benefits/Benefits.component';
-import BottomBanner from '../components/Reusable/BottomBanner/BottomBanner.component';
-// import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+import Faqs from '../components/FAQs/FAQs.component';
+import makeStyles from '@material-ui/core/styles/makeStyles';
+import MerchantShortExplanation from '../components/MerchantShortExplanation/MerchantShortExplanation.component.js' 
 
-import MiniInformationItem from '../components/HomeContent/MiniInformationItem';
 import getLodash from 'lodash/get';
 import { getBoostPenjual } from '../services/page';
 import PersonaFeatures from '../components/Reusable/PersonaFeatures/PersonaFeatures.component';
 import WhatTheySay from '../components/Reusable/WhatTheySay/WhatTheySay.component';
-
-// const { } = Constants;
-
-const LeftButton = () => {
-  const classes = useStyles();
-
-  return (
-    <div className={classes.buttonContainer}>
-      <Button
-        variant="contained"
-        component="span"
-        className={classes.joinNowButton}
-      >
-        <span className={classes.buttonText}>Join Now</span>
-      </Button>
-    </div>
-  );
-};
-
-const RightInfo = () => {
-  const classes = useStyles();
-
-  return (
-    <Typography className={classes.wordingContainer} variant="h6" gutterBottom>
-      <p className={classes.wording}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur.
-      </p>
-    </Typography>
-  );
-};
-
-// const MiniDescription = ({ image, description }) => {
-//   const styles = useStyles();
-
-//   return (
-
-//   );
-// };
 
 export default function Boostpenjual(props) {
   const classes = useStyles();
@@ -83,7 +38,10 @@ export default function Boostpenjual(props) {
         heading={benefits.header}
         contents={benefits.banners}
       />
-      {/* <p>{short_description.title}</p> */}
+      <MerchantShortExplanation
+        header={short_description.title}
+        content={short_description}
+      />
       {featured.header && (
         <PersonaFeatures
           title={featured.header}
@@ -94,6 +52,10 @@ export default function Boostpenjual(props) {
       <WhatTheySay
         header={testimonials.header}
         testimonials={testimonials.banners}
+      />
+      <Faqs
+        header={faq_header}
+        questions={faqs}
       />
     </Layout>
   );
