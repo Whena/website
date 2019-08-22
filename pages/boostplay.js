@@ -25,7 +25,10 @@ function BoostPlay({ data = {} }) {
         googlePlayUrl={banner.google_play_url}
         appStoreUrl={banner.app_store_url}
       />
-      <Benefits heading={benefits.header} contents={benefits.banners} />
+      <Benefits 
+        heading={benefits.header} 
+        contents={benefits.banners} 
+      />
       {howto.header && (
         <HowToSliderContainer sliders={howto.banners} title={howto.header} />
       )}

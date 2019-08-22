@@ -24,6 +24,9 @@ function Index(props) {
   const personas = getLodash(data, 'fields.personas', []);
   const banner = getLodash(data, 'fields.banner', {});
   const miniInformations = getLodash(data, 'fields.mini_informations', []);
+  const statistic_title = getLodash(data, 'fields.statistic_title', []);
+  const statistic_description = getLodash(data, 'fields.statistic_description', []);
+  const statistic_data = getLodash(data, 'fields.statistics', []);
 
   return (
     <Layout title={'My Boost'}>
@@ -71,7 +74,11 @@ function Index(props) {
       </Banner>
       <MiniInformation contents={miniInformations} />
       <BoostPersonas personas={personas} />
-      <AsNumber />
+      <AsNumber
+        title={statistic_title}
+        description={statistic_description}
+        data={statistic_data}
+      />
       {products.length > 0 && <ProductSlider products={products} />}
     </Layout>
   );

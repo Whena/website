@@ -4,16 +4,18 @@ import { Constants } from '../constants';
 import Banner from '../components/Banner/Banner.component';
 import Benefits from '../components/Benefits/Benefits.component';
 import BottomBanner from '../components/Reusable/BottomBanner/BottomBanner.component';
-import Grid from '@material-ui/core/Grid';
+// import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
-const {
-  BOOST_PENJUAL_BANNER,
-  BOOST_PENJUAL_BENEFITS,
-  BANNER_BUTTONS
-} = Constants;
+import MiniInformationItem from '../components/HomeContent/MiniInformationItem';
+import getLodash from 'lodash/get';
+import { getBoostPenjual } from '../services/page';
+import PersonaFeatures from '../components/Reusable/PersonaFeatures/PersonaFeatures.component';
+import WhatTheySay from '../components/Reusable/WhatTheySay/WhatTheySay.component';
+
+// const { } = Constants;
 
 const LeftButton = () => {
   const classes = useStyles();
@@ -47,50 +49,63 @@ const RightInfo = () => {
   );
 };
 
-export default function Boostpenjual() {
+// const MiniDescription = ({ image, description }) => {
+//   const styles = useStyles();
+
+//   return (
+
+//   );
+// };
+
+export default function Boostpenjual(props) {
   const classes = useStyles();
+  const { data } = props
+  const banner = getLodash(data, 'fields.banner');
+  const benefits = getLodash(data, 'fields.benefits');
+  const short_description = getLodash(data, 'fields.short_description');
+  const featured = getLodash(data, 'fields.featured');
+  const testimonials = getLodash(data, 'fields.testimonials');
+  const faq_header = getLodash(data, 'fields.faqs_header');
+  const faqs = getLodash(data, 'fields.faqs')
+  console.log(data)
 
   return (
     <Layout>
       <Banner
         contentPosition="flex-start"
-        header={BOOST_PENJUAL_BANNER.HEADER}
-        description={BOOST_PENJUAL_BANNER.DESCRIPTION}
-      >
-        <Grid container justify="flex-start" spacing={3}>
-          <Grid item xs={12} md={3} lg={6}>
-            <Button disableRipple className={classes.buttonConfiguration}>
-              <img
-                className={classes.imageDownloadButton}
-                src={BANNER_BUTTONS.GOOGLE_PLAY}
-                alt={BOOST_PENJUAL_BANNER.LEFT_BUTTON}
-              />
-            </Button>
-          </Grid>
-          <Grid item xs={12} md={3} lg={6}>
-            <Button disableRipple className={classes.buttonConfiguration}>
-              <img
-                className={classes.imageDownloadButton}
-                src={BANNER_BUTTONS.APP_STORE}
-                alt={BOOST_PENJUAL_BANNER.RIGHT_BUTTON}
-              />
-            </Button>
-          </Grid>
-        </Grid>
-      </Banner>
-      <Benefits
-        heading={BOOST_PENJUAL_BENEFITS[0]}
-        menus={[...BOOST_PENJUAL_BENEFITS[1]]}
+        header={banner.title}
+        description={banner.description}
+        backgroundImage={banner.image_banner}
+        googlePlayUrl={banner.google_play_url}
+        appStoreUrl={banner.app_store_url}
       />
-      <BottomBanner
-        leftGrid={4}
-        left={<LeftButton />}
-        right={<RightInfo />}
-        containerHeight={200}
-        layoutColor="red"
+      <Benefits
+        heading={benefits.header}
+        contents={benefits.banners}
+      />
+      {/* <p>{short_description.title}</p> */}
+      {featured.header && (
+        <PersonaFeatures
+          title={featured.header}
+          description={featured.description}
+          features={featured.banners}
+        />
+      )}
+      <WhatTheySay
+        header={testimonials.header}
+        testimonials={testimonials.banners}
       />
     </Layout>
   );
+}
+
+Boostpenjual.getInitialProps = async({ err, req, res, query }) => {
+  try {
+    const data = await getBoostPenjual();
+    return { data }
+  } catch (error) {
+    return { data: {}, error }
+  }
 }
 
 const useStyles = makeStyles((theme) => ({
