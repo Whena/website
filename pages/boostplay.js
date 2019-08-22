@@ -2,7 +2,7 @@ import React from 'react';
 import getLodash from 'lodash/get';
 import Layout from '../components/Layout';
 import Banner from '../components/Banner/Banner.component';
-import BoostPlayFAQs from '../components/BoostPlayFAQs/BoostPlayFAQs.component';
+import Faqs from '../components/FAQs/FAQs.component';
 import Benefits from '../components/Benefits/Benefits.component';
 import PersonaFeatures from '../components/Reusable/PersonaFeatures/PersonaFeatures.component';
 import { getBoostPlay } from '../services/page';
@@ -13,7 +13,8 @@ function BoostPlay({ data = {} }) {
   const howto = getLodash(data, 'fields.how_to_activate', {});
   const benefits = getLodash(data, 'fields.benefits', {});
   const featured = getLodash(data, 'fields.featured', {});
-  // const faqs = getLodash(data, 'fields.faqs', []);
+  const faq_header = getLodash(data, 'fields.faq_header', []);
+  const faqs = getLodash(data, 'fields.faqs', []);
 
   return (
     <Layout>
@@ -39,7 +40,10 @@ function BoostPlay({ data = {} }) {
           features={featured.banners}
         />
       )}
-      <BoostPlayFAQs />
+      <Faqs 
+        header={faq_header}
+        questions={faqs}
+      />
     </Layout>
   );
 }
