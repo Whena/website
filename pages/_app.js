@@ -8,7 +8,7 @@ import { responsiveFontSizes } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../components/theme';
 import PageLoaderProvider from '../components/Providers/PageLoaderProvider';
-import { LANG_KEY } from '../utils/helpers';
+import { LANG_KEY, DEFAULT_LANG } from '../utils/helpers';
 import { LayoutContext } from '../utils/context';
 
 const responsiveTheme = responsiveFontSizes(theme);
@@ -16,7 +16,7 @@ const responsiveTheme = responsiveFontSizes(theme);
 class MyApp extends App {
   static async getInitialProps({ Component, router, ctx }) {
     let pageProps = {};
-    const lang = getLodash(nextCookie(ctx), LANG_KEY);
+    const lang = getLodash(nextCookie(ctx), LANG_KEY, DEFAULT_LANG);
 
     if (Component.getInitialProps) {
       if (ctx && ctx.res) {
