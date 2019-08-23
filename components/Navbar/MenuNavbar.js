@@ -8,21 +8,33 @@ import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import MenuList from '@material-ui/core/MenuList';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import ExpandLess from '@material-ui/icons/ExpandLess';
+import getLodash from 'lodash/get';
 import Link from '../Link';
 import useSyles from './Navbar.styles';
 
-export default function MenuNavbar({ menu, currentLang = 'en' }) {
+export default function MenuNavbar({
+  menu,
+  currentLang = 'en',
+  onClickSubMenu
+}) {
   const classes = useSyles();
   const [anchorEl, setAnchorEl] = useState(null);
-  const handleOpenSubMenu = useCallback(
-    (event) => {
-      setAnchorEl(anchorEl ? null : event.currentTarget);
-    },
-    [anchorEl]
-  );
+
+  const handleOpenSubMenu = useCallback((event) => {
+    setAnchorEl((prevState) => (prevState ? null : event.currentTarget));
+  }, []);
+
   const handleCloseSubMenu = useCallback(() => {
     setAnchorEl(null);
   }, []);
+
+  const handleClickSubMenu = useCallback(
+    (event) => {
+      onClickSubMenu &&
+        onClickSubMenu(getLodash(event, 'currentTarget.dataset.menu', {}));
+    },
+    [onClickSubMenu]
+  );
 
   if (menu.nodes) {
     const openSubMenu = Boolean(anchorEl);
@@ -37,7 +49,8 @@ export default function MenuNavbar({ menu, currentLang = 'en' }) {
           aria-describedby={popperId}
           onClick={handleOpenSubMenu}
           onKeyPress={handleOpenSubMenu}
-          role="presentation"
+          tabIndex="0"
+          role="button"
         >
           {menu.icon && (
             <div className={classes.leftIcon}>
@@ -70,6 +83,8 @@ export default function MenuNavbar({ menu, currentLang = 'en' }) {
                           disableRipple
                           disableTouchRipple
                           divider={index < menu.nodes.length - 1}
+                          onClick={handleClickSubMenu}
+                          data-menu={node.id}
                         >
                           {node.icon && (
                             <ListItemIcon>
