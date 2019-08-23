@@ -41,7 +41,10 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 600,
     fontStyle: 'normal',
     fontStretch: 'normal',
-    lineHeight: 'normal'
+    lineHeight: 'normal',
+    "&:hover": {
+      color: '#f25e53'
+    }
   }
 }));
 

@@ -6,31 +6,42 @@ import MiniInformationItem from './MiniInformationItem';
 import background from '../../static/assets/bg-section-2-homepage.svg';
 
 const useStyles = makeStyles((theme) => ({
-  container: {
+  innerContainer: {
     paddingBottom: theme.spacing(8),
-    marginBottom: theme.spacing(8),
-    backgroundImage: `url(${background})`,
-    backgroundPosition: 'bottom',
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
     paddingLeft: theme.spacing(2),
     paddingRight: theme.spacing(2),
     [theme.breakpoints.up('sm')]: {
       paddingLeft: theme.spacing(8),
       paddingRight: theme.spacing(8)
     }
+  },
+  container: {
+    backgroundImage: `url(${background})`,
+    backgroundPosition: 'bottom',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    marginBottom: theme.spacing(8)
   }
 }));
 
-function MiniInformation({ contents = [] }) {
+const InfoContainer = (props) => {
   const classes = useStyles();
 
   return (
     <Container maxWidth={false} className={classes.container}>
-      <Grid spacing={3} justify="center" container>
-        {contents.map((content, index) => (
+      {props.children}
+    </Container>
+  )
+}
+
+function MiniInformation({ contents = [] }) {
+  const classes = useStyles();
+
+  return <InfoContainer>
+    {contents.map((content, index) => (
+      <Container maxWidth="lg" key={content.title} className={classes.innerContainer}>
+        <Grid spacing={3} justify="center" container>
           <MiniInformationItem
-            key={content.title}
             rightContent={index % 2 === 1}
             title={content.title}
             imageUrl={content.image}
@@ -40,10 +51,10 @@ function MiniInformation({ contents = [] }) {
             actionLabel={content.action_label}
             height={255}
           />
-        ))}
-      </Grid>
-    </Container>
-  );
+        </Grid>
+      </Container>
+    ))}
+  </InfoContainer>
 }
 
 export default MiniInformation;

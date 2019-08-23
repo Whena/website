@@ -83,7 +83,7 @@ export default function Index(props) {
   );
 
   return (
-    <Layout title={"About Boost"}>
+    <Layout>
       <Box pt={7}>
         <Section
           content={{
