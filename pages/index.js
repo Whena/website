@@ -25,15 +25,19 @@ function Index(props) {
   const banner = getLodash(data, 'fields.banner', {});
   const miniInformations = getLodash(data, 'fields.mini_informations', []);
   const statistic_title = getLodash(data, 'fields.statistic_title', []);
-  const statistic_description = getLodash(data, 'fields.statistic_description', []);
+  const statistic_description = getLodash(
+    data,
+    'fields.statistic_description',
+    []
+  );
   const statistic_data = getLodash(data, 'fields.statistics', []);
 
   return (
-    <Layout title={'My Boost'}>
+    <Layout>
       <Banner
         contentPosition="flex-end"
-        header={HOME_BANNER.HEADER}
-        description={HOME_BANNER.DESCRIPTION}
+        header={banner.title}
+        description={banner.description}
         backgroundImage={resizeUrlButterImage(banner.image_banner, {
           resize: { h: 400 }
         })}
@@ -84,9 +88,9 @@ function Index(props) {
   );
 }
 
-Index.getInitialProps = async ({ err, req, res, query, ...others }) => {
+Index.getInitialProps = async ({ err, req, res, query, ...others }, locale) => {
   try {
-    const data = await getHomePageData();
+    const data = await getHomePageData({ locale });
     return { data };
   } catch (error) {
     return { data: {}, error };
@@ -119,7 +123,7 @@ const useStyles = makeStyles((theme) => ({
       height: 68
     },
     [theme.breakpoints.down('xs')]: {
-      width: '100%',//175,
+      width: '100%', //175,
       height: 63
     },
     '&:hover': {
@@ -147,7 +151,7 @@ const useStyles = makeStyles((theme) => ({
       height: 68
     },
     [theme.breakpoints.down('xs')]: {
-      width: '100%',//175,
+      width: '100%', //175,
       height: 63
     },
     '&:hover': {
@@ -164,7 +168,7 @@ const useStyles = makeStyles((theme) => ({
   buttonText: {
     fontSize: 24,
     [theme.breakpoints.down('xs')]: {
-      fontSize: 25//16
+      fontSize: 25 //16
     },
     // "&:hover": {
     //   color: 'black'

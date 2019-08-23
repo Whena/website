@@ -1,17 +1,22 @@
 import React from 'react';
 import App, { Container } from 'next/app';
 import Head from 'next/head';
+import nextCookie from 'next-cookies';
+import getLodash from 'lodash/get';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import { responsiveFontSizes } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../components/theme';
 import PageLoaderProvider from '../components/Providers/PageLoaderProvider';
+import { LANG_KEY } from '../utils/helpers';
+import { LayoutContext } from '../utils/context';
 
 const responsiveTheme = responsiveFontSizes(theme);
 
 class MyApp extends App {
   static async getInitialProps({ Component, router, ctx }) {
     let pageProps = {};
+    const lang = getLodash(nextCookie(ctx), LANG_KEY);
 
     if (Component.getInitialProps) {
       if (ctx && ctx.res) {
@@ -20,10 +25,10 @@ class MyApp extends App {
           'no-cache, no-store, must-revalidate'
         );
       }
-      pageProps = await Component.getInitialProps(ctx);
+      pageProps = await Component.getInitialProps(ctx, lang);
     }
 
-    return { pageProps };
+    return { pageProps, lang };
   }
 
   componentDidMount() {
@@ -35,7 +40,8 @@ class MyApp extends App {
   }
 
   render() {
-    const { Component, pageProps } = this.props;
+    const { Component, pageProps, lang } = this.props;
+    const title = getLodash(pageProps, 'data.fields.title');
 
     return (
       <Container>
@@ -43,11 +49,13 @@ class MyApp extends App {
           <title>Boost Indonesia</title>
         </Head>
         <MuiThemeProvider theme={responsiveTheme}>
-          <PageLoaderProvider>
-            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-            <CssBaseline />
-            <Component {...pageProps} />
-          </PageLoaderProvider>
+          <LayoutContext.Provider value={{ title, lang }}>
+            <PageLoaderProvider>
+              {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+              <CssBaseline />
+              <Component lang={lang} {...pageProps} />
+            </PageLoaderProvider>
+          </LayoutContext.Provider>
         </MuiThemeProvider>
       </Container>
     );

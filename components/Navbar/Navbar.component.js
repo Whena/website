@@ -6,7 +6,7 @@ import DesktopNavbar from './DesktopNavbar';
 import useStyles from './Navbar.styles';
 import { PageLoaderContext } from '../../utils/context';
 
-export default function Navbar() {
+export default function Navbar({ lang }) {
   const classes = useStyles();
   const LoaderContext = useContext(PageLoaderContext);
 
@@ -21,7 +21,7 @@ export default function Navbar() {
         />
       )}
       <Hidden implementation="css" only={['xs', 'sm']}>
-        <DesktopNavbar />
+        <DesktopNavbar lang={lang} />
       </Hidden>
       <Hidden implementation="css" mdUp>
         <MobileNavbar />

@@ -2,7 +2,7 @@ import getConfig from 'next/config';
 import cookie from 'js-cookie';
 
 export const LANG_KEY = '_lang';
-export const DEFAULT_LANG = 'en';
+export const DEFAULT_LANG = 'id';
 
 export const isButterImage = (url = '') => {
   return String(url).indexOf('cdn.buttercms.com') !== -1;

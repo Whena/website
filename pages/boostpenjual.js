@@ -5,7 +5,7 @@ import Banner from '../components/Banner/Banner.component';
 import Benefits from '../components/Benefits/Benefits.component';
 import Faqs from '../components/FAQs/FAQs.component';
 import makeStyles from '@material-ui/core/styles/makeStyles';
-import MerchantShortExplanation from '../components/MerchantShortExplanation/MerchantShortExplanation.component.js' 
+import MerchantShortExplanation from '../components/MerchantShortExplanation/MerchantShortExplanation.component.js'
 
 import getLodash from 'lodash/get';
 import { getBoostPenjual } from '../services/page';
