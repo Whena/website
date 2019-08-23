@@ -48,3 +48,17 @@ export const getBoostPenjual = () => {
       return error;
     });
 };
+
+
+export const getBoostPreneur = () => {
+  return butterApi()
+    .page.retrieve('*', 'boostpreneur', { locale: 'en', levels: 3 })
+    .then(function(response) {
+      console.log(response)
+      return getLodash(response, 'data.data');
+    })
+    .catch(function(error) {
+      console.log(error);
+      return error;
+    });
+};

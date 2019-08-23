@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { resizeUrlButterImage } from '../../utils/helpers';
+
 const useStyles = makeStyles((theme) => ({
   container: {
     width: '100%',
@@ -8,8 +9,9 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center'
   },
   img: {
-    height: 'auto',
-    width: '80%'
+    height: '100%',
+    maxHeight: '500px',
+    width: 'auto'//'80%'
   }
 }));
 
