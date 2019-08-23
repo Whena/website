@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Grid from '@material-ui/core/Grid';
@@ -9,13 +9,15 @@ import useStyles from './Navbar.styles';
 import MenuNavbar from './MenuNavbar';
 import boostLogo from '../../static/assets/boost_logo/asset-logoboost@3x.png';
 import { HeaderMenu, LangList } from '../../constants';
+import { setLanguage, getLanguage } from '../../utils/helpers';
 
 export default function DesktopNavbar() {
   const classes = useStyles();
-  const currentLang = 'en';
+  const currentLang = useMemo(() => getLanguage(), []);
 
-  const handleChangeLanguage = () => {
-    // todo
+  const handleChangeLanguage = (id) => {
+    setLanguage(id);
+    window && window.location.reload();
   };
 
   return (
@@ -67,7 +69,7 @@ export default function DesktopNavbar() {
             <MenuNavbar
               menu={LangList}
               currentLang={currentLang}
-              onChange={handleChangeLanguage}
+              onClickSubMenu={handleChangeLanguage}
             />
           </Grid>
         </Grid>

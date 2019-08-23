@@ -54,7 +54,10 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     marginRight: 5,
-    whiteSpace: 'nowrap'
+    whiteSpace: 'nowrap',
+    '&:focus': {
+      outline: 'none'
+    }
   },
   navContainer: {
     height: '100%'
@@ -67,11 +70,15 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
     '& svg': {
       cursor: 'pointer'
     },
     '&:hover': {
       color: 'red'
+    },
+    '&:focus': {
+      outline: 'none'
     }
   },
   joinAsMerchantIcon: {

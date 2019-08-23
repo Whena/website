@@ -107,6 +107,7 @@ export const LangList = {
   },
   nodes: [
     {
+      id: 'en',
       icon: englishIcon,
       name: {
         en: 'English',
@@ -114,6 +115,7 @@ export const LangList = {
       }
     },
     {
+      id: 'id',
       icon: indonesiaIcon,
       name: {
         en: 'Bahasa Indonesia',
