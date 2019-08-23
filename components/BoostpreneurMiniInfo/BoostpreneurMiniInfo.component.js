@@ -11,16 +11,21 @@ function BoostpreneurMiniInfo({ contents = [] }) {
   return (
     <Container maxWidth="lg" className={classes.container}>
       <Grid spacing={3} justify="center" container>
-        {contents.map((content, index) => (
-          <MiniInformationItem
-            key={content.title}
-            rightContent={index % 2 === 1}
-            title={content.title}
-            imageUrl={content.image_banner}
-            description={content.description}
-            height={246}
-          />
-        ))}
+        {contents.map((content, index) => {
+          const mediaPosition = index % 2 === 0 ? "mediaOnTheLeftSection" : "mediaOnTheRightSection"
+          
+          return (
+            <MiniInformationItem
+              classes={{mediaContent: classes[mediaPosition]}}
+              key={content.title}
+              rightContent={index % 2 === 1}
+              title={content.title}
+              imageUrl={content.image_banner}
+              description={content.description}
+              height={246}
+            />
+          )
+        })}
       </Grid>
     </Container>
   );
