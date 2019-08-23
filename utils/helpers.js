@@ -1,4 +1,8 @@
 import getConfig from 'next/config';
+import cookie from 'js-cookie';
+
+export const LANG_KEY = '_lang';
+export const DEFAULT_LANG = 'en';
 
 export const isButterImage = (url = '') => {
   return String(url).indexOf('cdn.buttercms.com') !== -1;
@@ -71,4 +75,14 @@ export const getYoutubeId = (url) => {
   }
 
   return null;
+};
+
+export const setLanguage = (value = DEFAULT_LANG) => {
+  cookie.set(LANG_KEY, value, { expires: 365 });
+};
+
+export const getLanguage = () => {
+  const lang = cookie.get(LANG_KEY);
+
+  return lang ? lang : DEFAULT_LANG;
 };
