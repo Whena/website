@@ -58,7 +58,7 @@ export const HeaderMenu = [
     nodes: [
       {
         icon: joinMerchantIcon,
-        url: '/commingsoon',
+        url: '/comingsoon',
         name: {
           en: 'Merchant',
           id: 'Penjual'
@@ -66,7 +66,7 @@ export const HeaderMenu = [
       },
       {
         icon: joinPreneurIcon,
-        url: '/commingsoon',
+        url: '/comingsoon',
         name: {
           en: 'Boostpreneur',
           id: 'Boostpreneur'
@@ -74,7 +74,7 @@ export const HeaderMenu = [
       },
       {
         icon: joinBtpIcon,
-        url: '/commingsoon',
+        url: '/comingsoon',
         name: {
           en: 'Territory Partner',
           id: 'Territory Partner'
@@ -82,7 +82,7 @@ export const HeaderMenu = [
       },
       {
         icon: joinSupplierIcon,
-        url: '/commingsoon',
+        url: '/comingsoon',
         name: {
           en: 'Supplier',
           id: 'Supplier'

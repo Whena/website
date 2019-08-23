@@ -24,7 +24,7 @@ function CardPersona({ persona, description, icon, actionURL }) {
   );
 
   return (
-    <Link href={actionURL} className={classes.linkContainer}>
+    <Link title={description} href={actionURL} className={classes.linkContainer}>
       <Card className={classes.cardContainer}>
         <CardMedia className={classes.icon} image={imageUrl} title={persona} />
         <CardContent className={classes.cardContent}>
