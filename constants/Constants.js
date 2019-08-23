@@ -5,6 +5,9 @@ import joinSupplierIcon from '../static/assets/menu/ic-joinassupplier.png';
 import englishIcon from '../static/assets/menu/ic-english.svg';
 import indonesiaIcon from '../static/assets/menu/ic-indonesia.svg';
 import globalIcon from '../static/assets/menu/ic-global.svg';
+import facebookIcon from '../static/assets/asset-fb-homepage.svg';
+import whatsAppIcon from '../static/assets/asset-whatsapp-homepage.svg';
+import instagramIcon from '../static/assets/asset-homepage-instagram.svg';
 
 export const HeaderMenu = [
   {
@@ -124,6 +127,98 @@ export const LangList = {
     }
   ]
 };
+
+export const FooterMenu = [
+  {
+    name: {
+      en: 'Information',
+      id: 'Informasi'
+    },
+    nodes: [
+      {
+        name: {
+          en: 'Our Contacts',
+          id: 'Kontak Kami'
+        },
+        url: '/comingsoon'
+      }, {
+        name: {
+          en: 'Career',
+          id: 'Karir'
+        },
+        url: '/comingsoon'
+      }, {
+        name: {
+          en: 'Media Gallery',
+          id: 'Galeri'
+        },
+        url: '/comingsoon'
+      }, {
+        name: {
+          en: 'FAQs',
+          id: 'FAQs'
+        },
+        url: '/faq'
+      }
+    ]
+  }, {
+    name: {
+      en: 'Services',
+      id: 'Layanan'
+    },
+    nodes: [
+      {
+        name: {
+          en: 'BoostPlay',
+          id: 'BoostPlay'
+        },
+        url: '/boostplay'
+      }, {
+        name: {
+          en: 'BoostPenjual',
+          id: 'BoostPenjual'
+        },
+        url: '/boostpenjual'
+      }, {
+        name: {
+          en: 'BoostPreneur',
+          id: 'BoostPreneur'
+        },
+        url: '/boostpreneur'
+      }
+    ]
+  }
+]
+
+export const SocialMedia =
+{
+  name: {
+    id: 'Media Sosial',
+    en: 'Social Media Follow',
+  },
+  nodes: [{
+    name: {
+      id: 'Facebook',
+      en: 'Facebook'
+    },
+    icon: facebookIcon,
+    url: 'https://www.facebook.com/AxiataDigitalServicesIndonesia/'
+  }, {
+    name: {
+      id: 'WhatsApp',
+      en: 'WhatsApp'
+    },
+    icon: whatsAppIcon,
+    url: '/'
+  }, {
+    name: {
+      id: 'Instagram',
+      en: 'Instagram'
+    },
+    icon: instagramIcon,
+    url: 'https://instagram.com/myboost_id/'
+  }]
+}
 
 export const Constants = {
   NAVBAR_MENU: [

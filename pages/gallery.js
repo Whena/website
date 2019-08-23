@@ -22,7 +22,6 @@ Gallery.getInitialProps = async () => {
         locale: 'en',
       },
     });
-    console.log(res.data);
     return { content: res.data };
   } catch (error) {
     console.log(error.response);

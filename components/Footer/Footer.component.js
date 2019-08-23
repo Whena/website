@@ -1,19 +1,13 @@
-import React from 'react';
+import React, { useMemo, useContext } from 'react';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import makeStyles from '@material-ui/styles/makeStyles';
-import facebookIcon from '../../static/assets/asset-fb-homepage.svg';
-import whatsappIcon from '../../static/assets/asset-whatsapp-homepage.svg';
-import instagramIcon from '../../static/assets/asset-homepage-instagram.svg';
 import Link from '../Link';
-import { Constants } from '../../constants';
-
-// Externals
-import cx from 'clsx';
-
-const { SOCIAL_MEDIAS } = Constants;
+import { getLanguage } from '../../utils/helpers';
+import { LayoutContext } from '../../utils/context';
+import { FooterMenu, SocialMedia } from '../../constants';
 
 // Component styles
 const useStyles = makeStyles((theme) => ({
@@ -51,128 +45,60 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-function Footer() {
+function Footer({ lang }) {
   const classes = useStyles();
+  const appLayout = useContext(LayoutContext);
+  const currentLang = useMemo(() => appLayout.lang || getLanguage(), [
+    appLayout
+  ]);
 
   return (
     <div className={classes.footer}>
       <Container maxWidth="lg" className={classes.container}>
         <Grid container spacing={4}>
-          <Grid item xs={6} sm={4}>
-            <Typography
-              variant="h5"
-              color="secondary"
-              className={classes.headingFooter}
-            >
-              INFORMATION
-            </Typography>
-            <Typography
-              variant="h5"
-              color="secondary"
-              className={classes.textFooter}
-            >
-              <Link className={classes.links} href="/comingsoon">
-                Our Contacts
-              </Link>
-            </Typography>
-            <Typography
-              variant="h5"
-              color="secondary"
-              className={classes.textFooter}
-            >
-              <Link className={classes.links} href="/comingsoon">
-                Career
-              </Link>
-            </Typography>
-            <Typography
-              variant="h5"
-              color="secondary"
-              className={classes.textFooter}
-            >
-              <Link className={classes.links} href="/gallery">
-                Media Gallery
-              </Link>
-            </Typography>
-            <Typography
-              variant="h5"
-              color="secondary"
-              className={classes.textFooter}
-            >
-              <Link className={classes.links} href="/FAQ">
-                FAQs
-              </Link>
-            </Typography>
-          </Grid>
-          <Grid item xs={6} sm={4}>
-            <Typography
-              variant="h5"
-              color="secondary"
-              className={cx(classes.headingFooter)}
-            >
-              SERVICES
-            </Typography>
-            <Typography
-              variant="h5"
-              color="secondary"
-              className={classes.textFooter}
-            >
-              <Link className={classes.links} href="/boostplay">
-                BoostPlay
-              </Link>
-            </Typography>
-            <Typography
-              variant="h5"
-              color="secondary"
-              className={classes.textFooter}
-            >
-              <Link className={classes.links} href="/boostpenjual">
-                BoostPenjual
-              </Link>
-            </Typography>
-            <Typography
-              variant="h5"
-              color="secondary"
-              className={classes.textFooter}
-            >
-              <Link className={classes.links} href="/boostpreneur">
-                BoostPreneur
-              </Link>
-            </Typography>
-          </Grid>
+          {FooterMenu.map((footerMenu) => (
+            <Grid item xs={6} sm={4} key={footerMenu.name.en}>
+              <Typography
+                variant="h5"
+                color="secondary"
+                className={classes.headingFooter}
+              >
+                {footerMenu.name[currentLang]}
+              </Typography>
+              {footerMenu.nodes.map((footerMenuContent) => (
+                <Typography
+                  variant="h5"
+                  color="secondary"
+                  className={classes.textFooter}
+                  key={footerMenuContent.name.id}
+                >
+                  <Link className={classes.links} href={footerMenuContent.url}>
+                    {footerMenuContent.name[currentLang]}
+                  </Link>
+                </Typography>                
+              ))}
+            </Grid>
+          ))}
           <Grid item xs={10} sm={4}>
             <Typography
               variant="h5"
               color="secondary"
               className={classes.headingFooter}
             >
-              SOCIAL MEDIA
+              {SocialMedia.name[currentLang]}
             </Typography>
             <Grid container>
-              <Grid item xs={4} md={3}>
-                <a href={SOCIAL_MEDIAS.FACEBOOK} target="__blank">
-                  <img
-                    src={facebookIcon}
-                    className={classes.image}
-                    alt="whatsapp"
-                  />
-                </a>
-              </Grid>
-              <Grid item xs={4} md={3}>
-                <img
-                  src={whatsappIcon}
-                  className={classes.image}
-                  alt="whatsapp"
-                />
-              </Grid>
-              <Grid item xs={4} md={3}>
-                <a href={SOCIAL_MEDIAS.INSTAGRAM} target="__blank">
-                  <img
-                    src={instagramIcon}
-                    className={classes.image}
-                    alt="instagram"
-                  />
-                </a>
-              </Grid>
+              {SocialMedia.nodes.map((linkIcon) => (
+                <Grid item xs={4} md={3} key={linkIcon.name[currentLang]}>
+                  <a href={linkIcon.url} target="__blank">
+                    <img
+                      src={linkIcon.icon}
+                      className={classes.image}
+                      alt={linkIcon.name[currentLang]}
+                    />
+                  </a>
+                </Grid>
+              ))}
             </Grid>
           </Grid>
         </Grid>
