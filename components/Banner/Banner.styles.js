@@ -3,8 +3,7 @@ import defaultBackgroundImage from '../../static/assets/bg-header-homepage.png';
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    justifyContent: ({ contentPosition }) =>
-      contentPosition ? contentPosition : 'flex-start',
+    justifyContent: ({ contentPosition }) => contentPosition,
     [theme.breakpoints.down('sm')]: {
       justifyContent: 'center'
     }
@@ -12,6 +11,9 @@ const useStyles = makeStyles((theme) => ({
   bannerContainer: {
     backgroundImage: ({ backgroundImage }) =>
       `url(${backgroundImage ? backgroundImage : defaultBackgroundImage})`,
+    backgroundPosition: ({ backgroundPosition }) =>
+      backgroundPosition === 'left' ? 'left' : 'right',
+    backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     marginBottom: '3.5rem'
   },
@@ -29,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   },
   headerJumbotron: {
     marginBottom: 40,
-    fontWeight: 700
+    fontWeight: 900
   },
   description: {
     marginBottom: 40
