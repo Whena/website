@@ -25,10 +25,7 @@ function BoostPlay({ data = {} }) {
         googlePlayUrl={banner.google_play_url}
         appStoreUrl={banner.app_store_url}
       />
-      <Benefits
-        heading={benefits.header}
-        contents={benefits.banners}
-      />
+      <Benefits heading={benefits.header} contents={benefits.banners} />
       {howto.header && (
         <HowToSlider sliders={howto.banners} title={howto.header} />
       )}
@@ -39,17 +36,17 @@ function BoostPlay({ data = {} }) {
           features={featured.banners}
         />
       )}
-      <Faqs
-        header={faq_header}
-        questions={faqs}
-      />
+      <Faqs header={faq_header} questions={faqs} />
     </Layout>
   );
 }
 
-BoostPlay.getInitialProps = async ({ err, req, res, query, ...others }) => {
+BoostPlay.getInitialProps = async (
+  { err, req, res, query, ...others },
+  locale
+) => {
   try {
-    const data = await getBoostPlay();
+    const data = await getBoostPlay({ locale });
     return { data };
   } catch (error) {
     return { data: {}, error };

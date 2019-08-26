@@ -36,8 +36,9 @@ const MobileLayoutPersonas = ({ personas = [] }) => {
   const sliderRef = useRef();
 
   useEffect(() => {
+    const slider = sliderRef.current;
     return () => {
-      sliderRef && sliderRef.current.slickPause()
+      slider && slider.slickPause();
     }
   }, [sliderRef]);
 
@@ -85,13 +86,13 @@ const Title = () => {
 
 function BoostPersonas({ personas = [] }) {
   const classes = styles();
-  
+
   return (
     <Container maxWidth="lg" className={classes.container}>
       <Title />
       <Hidden only="xs">
         <Grid container justify="space-around">
-          <PersonaCards 
+          <PersonaCards
             personas={personas}
           />
         </Grid>

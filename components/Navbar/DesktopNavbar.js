@@ -25,7 +25,7 @@ export default function DesktopNavbar({ lang }) {
   };
 
   return (
-    <AppBar position="static" color="default">
+    <AppBar position="relative" color="default">
       <Toolbar className={classes.toolbarConf}>
         <Grid
           container

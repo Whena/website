@@ -19,15 +19,17 @@ const settings = {
   autoplaySpeed: 4000,
   slidesToShow: 2,
   slidesToScroll: 2,
-  responsive: [{
-    breakpoint: 850,
-    settings: {
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      centerMode: true,
-      pauseOnHover: true
+  responsive: [
+    {
+      breakpoint: 850,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: true,
+        pauseOnHover: true
+      }
     }
-  }]
+  ]
 };
 
 function WhatTheySay({ header, testimonials = [] }) {
@@ -35,9 +37,11 @@ function WhatTheySay({ header, testimonials = [] }) {
   const sliderRef = useRef();
 
   useEffect(() => {
+    const slider = sliderRef.current;
+
     return () => {
-      sliderRef && sliderRef.current.slickPause()
-    }
+      slider && slider.slickPause();
+    };
   }, [sliderRef]);
 
   return (
@@ -48,7 +52,11 @@ function WhatTheySay({ header, testimonials = [] }) {
       <BottomLiner />
       <Slider ref={sliderRef} {...settings}>
         {testimonials.map((comment, index) => (
-          <Card component="div" className={classes.cards} key={comment.description}>
+          <Card
+            component="div"
+            className={classes.cards}
+            key={comment.description}
+          >
             <Grid
               container
               justify="center"
@@ -83,10 +91,7 @@ function WhatTheySay({ header, testimonials = [] }) {
                 <Typography variant="h6" className={classes.commentContainer}>
                   Limitless
                 </Typography>
-                <Typography
-                  variant="h5"
-                  className={classes.usernameContainer}
-                >
+                <Typography variant="h5" className={classes.usernameContainer}>
                   -User
                 </Typography>
               </CardContent>

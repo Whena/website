@@ -19,6 +19,13 @@ const theme = createMuiTheme({
     background: {
       default: '#fff'
     }
+  },
+  overrides: {
+    MuiAppBar: {
+      colorDefault: {
+        backgroundColor: '#FFF'
+      }
+    }
   }
 });
 

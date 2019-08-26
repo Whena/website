@@ -4,8 +4,10 @@ const useStyles = makeStyles((theme) => ({
   root: {
     height: 80,
     width: '100%',
-    position: 'fixed',
-    zIndex: theme.zIndex.appBar
+    zIndex: theme.zIndex.appBar,
+    [theme.breakpoints.up('xs')]: {
+      position: 'fixed'
+    }
   },
   iconMenu: {
     height: 24
@@ -157,7 +159,8 @@ const useStyles = makeStyles((theme) => ({
   },
   loaderContainer: {
     position: 'absolute',
-    width: '100%'
+    width: '100%',
+    zIndex: theme.zIndex.modal
   }
 }));
 

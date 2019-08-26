@@ -1,7 +1,8 @@
 import React, { useMemo } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { resizeUrlButterImage } from '../../utils/helpers';
 import PropTypes from 'prop-types';
+import clsx from 'clsx';
+import { resizeUrlButterImage } from '../../utils/helpers';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -10,14 +11,20 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center'
   },
   img: {
-    height: '100%',
+    height: 'auto',
+    width: 'auto',
     maxHeight: '500px',
-    width: 'auto'//'80%'
+    maxWidth: '100%'
+  },
+  hidden: {
+    display: 'none'
   }
 }));
 
-function HowToSliderItem({ 
-  imageUrl 
+function HowToSliderItem({
+  imageUrl,
+  hidden = false,
+  ...others
 }) {
   const resizeImage = useMemo(
     () =>
@@ -30,14 +37,18 @@ function HowToSliderItem({
   );
   const classes = useStyles();
   return (
-    <div className={classes.container}>
+    <div
+      className={clsx(classes.container, { [classes.hidden]: hidden })}
+      {...others}
+    >
       <img src={resizeImage} alt="How To" className={classes.img} />
     </div>
   );
 }
 
 HowToSliderItem.propTypes = {
-  imageUrl: PropTypes.string
+  imageUrl: PropTypes.string,
+  hidden: PropTypes.bool
 };
 
 export default HowToSliderItem;

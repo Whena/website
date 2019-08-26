@@ -117,9 +117,9 @@ export default function Index(props) {
   );
 }
 
-Index.getInitialProps = async ({ err, req, res, query, ...others }) => {
+Index.getInitialProps = async ({ err, req, res, query, ...others }, locale) => {
   try {
-    const data = await getAboutUsData();
+    const data = await getAboutUsData({ locale });
     return { data };
   } catch (error) {
     return { data: {}, error };

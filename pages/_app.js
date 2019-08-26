@@ -26,6 +26,10 @@ class MyApp extends App {
         );
       }
       pageProps = await Component.getInitialProps(ctx, lang);
+
+      if (pageProps.error) {
+        ctx.res.status(500);
+      }
     }
 
     return { pageProps, lang };
