@@ -23,7 +23,7 @@ export default function BoostPreneur({ data = {} }) {
   );
   const how_to = getLodash(data, 'fields.how_to', []);
   const boostpreneur_quest = getLodash(data, 'fields.boostpreneur_quest', []);
-  const faqs_header = getLodash(data, 'fields.faqs_header', []);
+  const faqs_header = getLodash(data, 'fields.faqs_header', '');
   const faqs = getLodash(data, 'fields.faqs', []);
 
   return (

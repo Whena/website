@@ -154,7 +154,7 @@ const useStyles = makeStyles((theme) => ({
       height: 63
     },
     '&:hover': {
-      backgroundColor: 'rgba(7, 7, 7, 0.6)'
+      backgroundColor: 'rgba(7, 7, 7, 0.4)'
     }
   },
   homeJumbotron: {
@@ -162,16 +162,14 @@ const useStyles = makeStyles((theme) => ({
   },
   playIcon: {
     marginRight: 10,
-    fontSize: 34
+    fontSize: 34,
+    color: 'white'
   },
   buttonText: {
     fontSize: 24,
     [theme.breakpoints.down('xs')]: {
       fontSize: 25 //16
     },
-    // "&:hover": {
-    //   color: 'black'
-    // },
     color: '#fff'
   }
 }));

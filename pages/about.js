@@ -20,7 +20,7 @@ const ThirdSection = ({ fields }) => {
   const backgroundImage = resizeUrlButterImage(fields.third_media, {
     resize: { h: 340 }
   })
-
+  
   return (
     <Container maxWidth={false} className={classes.thirdSectionContainer} style={{backgroundImage: `url(${backgroundImage})`}}>
       <Container maxWidth="lg" className={classes.thirdSectionInnerContainer}>

@@ -3,7 +3,7 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import MiniInformationItem from './MiniInformationItem';
-import background from '../../static/assets/bg-section-2-homepage.svg';
+import background from '../../static/assets/MiniInfoBackground/bg-section-2-homepage@3x.png';
 import PropTypes from 'prop-types';
 
 const useStyles = makeStyles((theme) => ({
