@@ -1,5 +1,8 @@
 import React from 'react';
-import { Grid, Box, Typography, Container } from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
+import Box from '@material-ui/core/Box';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
 import PropTypes from 'prop-types';
 import BottomLiner from '../BottomLiner/BottomLiner.component';
 

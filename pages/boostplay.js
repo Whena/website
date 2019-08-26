@@ -6,7 +6,7 @@ import Faqs from '../components/FAQs/FAQs.component';
 import Benefits from '../components/Benefits/Benefits.component';
 import PersonaFeatures from '../components/Reusable/PersonaFeatures/PersonaFeatures.component';
 import { getBoostPlay } from '../services/page';
-import HowToSliderContainer from '../components/HowToSlider';
+import HowToSlider from '../components/HowToSlider';
 
 function BoostPlay({ data = {} }) {
   const banner = getLodash(data, 'fields.banner', {});
@@ -30,7 +30,7 @@ function BoostPlay({ data = {} }) {
         contents={benefits.banners}
       />
       {howto.header && (
-        <HowToSliderContainer sliders={howto.banners} title={howto.header} />
+        <HowToSlider sliders={howto.banners} title={howto.header} />
       )}
       {featured.header && (
         <PersonaFeatures

@@ -4,9 +4,10 @@ import Hidden from '@material-ui/core/Hidden';
 import MobileNavbar from './MobileNavbar';
 import DesktopNavbar from './DesktopNavbar';
 import useStyles from './Navbar.styles';
+import PropTypes from 'prop-types';
 import { PageLoaderContext } from '../../utils/context';
 
-export default function Navbar({ lang }) {
+function Navbar({ lang }) {
   const classes = useStyles();
   const LoaderContext = useContext(PageLoaderContext);
 
@@ -29,3 +30,9 @@ export default function Navbar({ lang }) {
     </div>
   );
 }
+
+Navbar.propTypes = {
+  lang: PropTypes.string
+}
+
+export default Navbar;

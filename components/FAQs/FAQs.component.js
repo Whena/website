@@ -8,9 +8,13 @@ import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import BottomLiner from '../BottomLiner/BottomLiner.component';
 
+import PropTypes from 'prop-types';
 import styles from './FAQs.styles';
 
-const QuestionBox = ({ question, details }) => {
+const QuestionBox = ({ 
+  question, 
+  details 
+}) => {
   const classes = styles();
 
   return (
@@ -35,7 +39,7 @@ const QuestionBox = ({ question, details }) => {
   );
 };
 
-function BoostPlayFAQs({ header, questions }) {
+function Faqs({ header, questions }) {
   const classes = styles();
   
   return (
@@ -61,4 +65,9 @@ function BoostPlayFAQs({ header, questions }) {
   );
 }
 
-export default BoostPlayFAQs;
+Faqs.propTypes = {
+  header: PropTypes.string,
+  questions: PropTypes.arrayOf(PropTypes.object)
+};
+
+export default Faqs;

@@ -5,6 +5,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import getLodash from 'lodash/get';
+import PropTypes from 'prop-types';
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -38,7 +39,11 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const NumberAction = function({ index, isActive, ...others }) {
+const NumberAction = function({ 
+  index,
+  isActive,
+  ...others
+}) {
   const classes = useStyles({ isActive });
   return (
     <span className={classes.number} {...others}>
@@ -47,7 +52,7 @@ const NumberAction = function({ index, isActive, ...others }) {
   );
 };
 
-export default function HowToSliderNavigation({
+function HowToSliderNavigation({
   sliders = [],
   onChange,
   current = 0
@@ -90,3 +95,11 @@ export default function HowToSliderNavigation({
     </List>
   );
 }
+
+HowToSliderNavigation.propTypes = {
+  sliders: PropTypes.arrayOf(PropTypes.object), 
+  onChange: PropTypes.func,
+  current: PropTypes.number
+};
+
+export default HowToSliderNavigation;

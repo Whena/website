@@ -30,7 +30,7 @@ const settings = {
   }]
 };
 
-function WhatTheySay({ header, testimonials }) {
+function WhatTheySay({ header, testimonials = [] }) {
   const classes = styles();
   const sliderRef = useRef();
 
@@ -38,7 +38,7 @@ function WhatTheySay({ header, testimonials }) {
     return () => {
       sliderRef && sliderRef.current.slickPause()
     }
-  }, []);
+  }, [sliderRef]);
 
   return (
     <Container maxWidth="lg" className={classes.container}>

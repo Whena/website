@@ -4,7 +4,7 @@ import Layout from '../components/Layout';
 import Banner from '../components/Banner/Banner.component';
 import Benefits from '../components/Benefits/Benefits.component';
 import BoostpreneurMiniInfo from '../components/BoostpreneurMiniInfo/BoostpreneurMiniInfo.component';
-import HowToSliderContainer from '../components/HowToSlider/HowToSliderContainer';
+import HowToSlider from '../components/HowToSlider';
 import Faqs from '../components/FAQs/FAQs.component';
 import PersonaFeatures from '../components/Reusable/PersonaFeatures/PersonaFeatures.component';
 import { Constants } from '../constants';
@@ -38,7 +38,7 @@ export default function BoostPreneur({ data = {} }) {
       <Benefits heading={benefits.header} contents={benefits.banners} />
       <BoostpreneurMiniInfo contents={boostpreneur_information.banners} />
       {how_to.header && (
-        <HowToSliderContainer sliders={how_to.banners} title={how_to.header} />
+        <HowToSlider sliders={how_to.banners} title={how_to.header} />
       )}
       {boostpreneur_quest.header && (
         <PersonaFeatures

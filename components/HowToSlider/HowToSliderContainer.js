@@ -7,6 +7,7 @@ import Slider from '../Reusable/Slider';
 import HowToSliderItem from './HowToSliderItem';
 import BottomLiner from '../BottomLiner/BottomLiner.component';
 import HowToSliderNavigation from './HowToSliderNavigation';
+import PropTypes from 'prop-types';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -29,7 +30,7 @@ const settings = {
   swipe: false
 };
 
-export default function HowToSliderContainer({ sliders = [], title }) {
+function HowToSliderContainer({ sliders = [], title }) {
   const classes = useStyles();
   const [slideIndex, setSlideIndex] = useState(0);
   const sliderRef = useRef();
@@ -71,3 +72,10 @@ export default function HowToSliderContainer({ sliders = [], title }) {
     </Container>
   );
 }
+
+HowToSliderContainer.propTypes = {
+  title: PropTypes.string,
+  sliders: PropTypes.arrayOf(PropTypes.object)
+};
+
+export default HowToSliderContainer;

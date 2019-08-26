@@ -29,7 +29,7 @@ export const getAboutUsData = () => {
     });
 };
 
-export const getBoostPlay = () => {
+export const getBoostPlay = (options = {}) => {
   return butterApi()
     .page.retrieve('*', 'boostplay', { ...defaultOptions, levels: 3 })
     .then(function(response) {

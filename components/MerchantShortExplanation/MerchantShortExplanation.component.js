@@ -1,14 +1,18 @@
 import React from 'react';
 import Container from '@material-ui/core/Container';
-import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import MiniInformationItem from '../HomeContent/MiniInformationItem';
 import BottomLiner from '../BottomLiner/BottomLiner.component';
+import PropTypes from 'prop-types';
 import styles from './MerchantShortExplanation.styles';
 
-function MerchantShortExplanation({ header, description, content=[] }) {
+function MerchantShortExplanation({ 
+  header,
+  description,
+  content = {}
+}) {
   const classes = styles();
-
+  
   return (
     <Container maxWidth="lg" className={classes.container}>
       <Typography variant="h4" className={classes.header}>
@@ -33,5 +37,11 @@ function MerchantShortExplanation({ header, description, content=[] }) {
     </Container>
   );
 }
+
+MerchantShortExplanation.propTypes = {
+  header: PropTypes.string,
+  description: PropTypes.string,
+  content: PropTypes.objectOf(PropTypes.string)
+};
 
 export default MerchantShortExplanation;

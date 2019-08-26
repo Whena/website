@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { resizeUrlButterImage } from '../../utils/helpers';
+import PropTypes from 'prop-types';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -15,7 +16,9 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function HowToSliderItem({ imageUrl }) {
+function HowToSliderItem({ 
+  imageUrl 
+}) {
   const resizeImage = useMemo(
     () =>
       resizeUrlButterImage(imageUrl, {
@@ -32,3 +35,9 @@ export default function HowToSliderItem({ imageUrl }) {
     </div>
   );
 }
+
+HowToSliderItem.propTypes = {
+  imageUrl: PropTypes.string
+};
+
+export default HowToSliderItem;

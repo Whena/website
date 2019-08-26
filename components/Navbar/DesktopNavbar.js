@@ -18,7 +18,7 @@ export default function DesktopNavbar({ lang }) {
   const currentLang = useMemo(() => appLayout.lang || getLanguage(), [
     appLayout
   ]);
-
+  
   const handleChangeLanguage = (id) => {
     setLanguage(id);
     window && window.location.reload();

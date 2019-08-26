@@ -17,9 +17,8 @@ import { resizeUrlButterImage } from '../utils/helpers';
 
 const { HOME_BANNER } = Constants;
 
-function Index(props) {
+function Index({ data = {} }) {
   const classes = useStyles();
-  const { data } = props;
   const products = getLodash(data, 'fields.services', []);
   const personas = getLodash(data, 'fields.personas', []);
   const banner = getLodash(data, 'fields.banner', {});

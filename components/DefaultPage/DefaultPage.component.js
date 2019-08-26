@@ -5,6 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Link from '../Link';
 
+import PropTypes from 'prop-types';
 import styles from './DefaultPage.styles';
 
 function DefaultPage({ 
@@ -38,5 +39,12 @@ function DefaultPage({
     </Container>    
   );
 }
+
+DefaultPage.propTypes = {
+  imageURL: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  button: PropTypes.string
+};
 
 export default DefaultPage;

@@ -2,7 +2,7 @@ import React from 'react';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import styles from './BoostpreneurMiniInfo.styles';
-
+import PropTypes from 'prop-types';
 import MiniInformationItem from '../HomeContent/MiniInformationItem';
 
 function BoostpreneurMiniInfo({ contents = [] }) {
@@ -29,6 +29,10 @@ function BoostpreneurMiniInfo({ contents = [] }) {
       </Grid>
     </Container>
   );
+}
+
+BoostpreneurMiniInfo.propTypes = {
+  contents: PropTypes.arrayOf(PropTypes.object)
 }
 
 export default BoostpreneurMiniInfo;

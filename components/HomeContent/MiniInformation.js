@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import MiniInformationItem from './MiniInformationItem';
 import background from '../../static/assets/bg-section-2-homepage.svg';
+import PropTypes from 'prop-types';
 
 const useStyles = makeStyles((theme) => ({
   innerContainer: {
@@ -28,15 +29,13 @@ const InfoContainer = (props) => {
   const classes = useStyles();
 
   return (
-    <Container maxWidth={false} className={classes.container}>
-      {props.children}
-    </Container>
+    <Container maxWidth={false} className={classes.container} {...props} />
   )
 }
 
 function MiniInformation({ contents = [] }) {
   const classes = useStyles();
-
+  
   return <InfoContainer>
     {contents.map((content, index) => (
       <Container maxWidth="lg" key={content.title} className={classes.innerContainer}>
@@ -56,5 +55,9 @@ function MiniInformation({ contents = [] }) {
     ))}
   </InfoContainer>
 }
+
+MiniInformation.propTypes = {
+  contents: PropTypes.arrayOf(PropTypes.object)
+};
 
 export default MiniInformation;

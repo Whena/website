@@ -6,7 +6,6 @@ import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Layout from '../components/Layout';
-// import DigitalEconomyAboutUs from '../components/DigitalEconomyAboutUs/DigitalEconomy.component';
 // import MiniInformation from '../components/Reusable/MiniInformation.component';
 import MiniInformationItem from '../components/HomeContent/MiniInformationItem';
 import BottomBanner from '../components/Reusable/BottomBanner/BottomBanner.component';

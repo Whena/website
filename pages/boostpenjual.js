@@ -8,9 +8,8 @@ import MerchantShortExplanation from '../components/MerchantShortExplanation/Mer
 import { getBoostPenjual } from '../services/page';
 import PersonaFeatures from '../components/Reusable/PersonaFeatures/PersonaFeatures.component';
 import WhatTheySay from '../components/Reusable/WhatTheySay/WhatTheySay.component';
-
-export default function Boostpenjual(props) {
-  const { data } = props;
+// 
+export default function Boostpenjual({ data = {} }) {
   const banner = getLodash(data, 'fields.banner', {});
   const benefits = getLodash(data, 'fields.benefits', {});
   const short_description = getLodash(data, 'fields.short_description', {});
