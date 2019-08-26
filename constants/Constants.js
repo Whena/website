@@ -98,7 +98,7 @@ export const HeaderMenu = [
       en: 'FAQ',
       id: 'FAQ'
     },
-    url: '/faq'
+    url: '/comingsoon'
   }
 ];
 
@@ -141,27 +141,31 @@ export const FooterMenu = [
           id: 'Kontak Kami'
         },
         url: '/comingsoon'
-      }, {
+      },
+      {
         name: {
           en: 'Career',
           id: 'Karir'
         },
         url: '/comingsoon'
-      }, {
+      },
+      {
         name: {
           en: 'Media Gallery',
           id: 'Galeri'
         },
         url: '/comingsoon'
-      }, {
+      },
+      {
         name: {
           en: 'FAQs',
           id: 'FAQs'
         },
-        url: '/faq'
+        url: '/comingsoon'
       }
     ]
-  }, {
+  },
+  {
     name: {
       en: 'Services',
       id: 'Layanan'
@@ -173,13 +177,15 @@ export const FooterMenu = [
           id: 'BoostPlay'
         },
         url: '/boostplay'
-      }, {
+      },
+      {
         name: {
           en: 'BoostPenjual',
           id: 'BoostPenjual'
         },
         url: '/boostpenjual'
-      }, {
+      },
+      {
         name: {
           en: 'BoostPreneur',
           id: 'BoostPreneur'
@@ -188,37 +194,40 @@ export const FooterMenu = [
       }
     ]
   }
-]
+];
 
-export const SocialMedia =
-{
+export const SocialMedia = {
   name: {
     id: 'Media Sosial',
-    en: 'Social Media Follow',
+    en: 'Social Media Follow'
   },
-  nodes: [{
-    name: {
-      id: 'Facebook',
-      en: 'Facebook'
+  nodes: [
+    {
+      name: {
+        id: 'Facebook',
+        en: 'Facebook'
+      },
+      icon: facebookIcon,
+      url: 'https://www.facebook.com/AxiataDigitalServicesIndonesia/'
     },
-    icon: facebookIcon,
-    url: 'https://www.facebook.com/AxiataDigitalServicesIndonesia/'
-  }, {
-    name: {
-      id: 'WhatsApp',
-      en: 'WhatsApp'
+    {
+      name: {
+        id: 'WhatsApp',
+        en: 'WhatsApp'
+      },
+      icon: whatsAppIcon,
+      url: 'https://api.whatsapp.com/send?phone=628558200369'
     },
-    icon: whatsAppIcon,
-    url: '/'
-  }, {
-    name: {
-      id: 'Instagram',
-      en: 'Instagram'
-    },
-    icon: instagramIcon,
-    url: 'https://instagram.com/myboost_id/'
-  }]
-}
+    {
+      name: {
+        id: 'Instagram',
+        en: 'Instagram'
+      },
+      icon: instagramIcon,
+      url: 'https://instagram.com/myboost_id/'
+    }
+  ]
+};
 
 export const Constants = {
   NAVBAR_MENU: [
