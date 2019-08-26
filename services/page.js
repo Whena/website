@@ -2,7 +2,7 @@ import getLodash from 'lodash/get';
 import { butterApi } from '../utils/api';
 
 const defaultOptions = {
-  locale: 'en'
+  locale: 'id'
 };
 
 export const getHomePageData = (options = {}) => {
@@ -17,9 +17,9 @@ export const getHomePageData = (options = {}) => {
     });
 };
 
-export const getAboutUsData = () => {
+export const getAboutUsData = (options = {}) => {
   return butterApi()
-    .page.retrieve('*', 'about-us', { ...defaultOptions })
+    .page.retrieve('*', 'about-us', { ...defaultOptions, ...options })
     .then(function(response) {
       return getLodash(response, 'data.data');
     })
@@ -29,9 +29,13 @@ export const getAboutUsData = () => {
     });
 };
 
-export const getBoostPlay = () => {
+export const getBoostPlay = (options = {}) => {
   return butterApi()
-    .page.retrieve('*', 'boostplay', { ...defaultOptions, levels: 3 })
+    .page.retrieve('*', 'boostplay', {
+      ...defaultOptions,
+      levels: 3,
+      ...options
+    })
     .then(function(response) {
       return getLodash(response, 'data.data');
     })
@@ -41,9 +45,13 @@ export const getBoostPlay = () => {
     });
 };
 
-export const getBoostPenjual = () => {
+export const getBoostPenjual = (options = {}) => {
   return butterApi()
-    .page.retrieve('*', 'boostpenjual', { ...defaultOptions, levels: 3 })
+    .page.retrieve('*', 'boostpenjual', {
+      ...defaultOptions,
+      levels: 3,
+      ...options
+    })
     .then(function(response) {
       return getLodash(response, 'data.data');
     })
@@ -53,11 +61,14 @@ export const getBoostPenjual = () => {
     });
 };
 
-export const getBoostPreneur = () => {
+export const getBoostPreneur = (options = {}) => {
   return butterApi()
-    .page.retrieve('*', 'boostpreneur', { ...defaultOptions, levels: 3 })
+    .page.retrieve('*', 'boostpreneur', {
+      ...defaultOptions,
+      levels: 3,
+      ...options
+    })
     .then(function(response) {
-      console.log(response);
       return getLodash(response, 'data.data');
     })
     .catch(function(error) {

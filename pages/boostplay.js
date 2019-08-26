@@ -19,16 +19,15 @@ function BoostPlay({ data = {} }) {
   return (
     <Layout>
       <Banner
-        contentPosition="flex-start"
         header={banner.title}
         description={banner.description}
         backgroundImage={banner.image_banner}
         googlePlayUrl={banner.google_play_url}
         appStoreUrl={banner.app_store_url}
       />
-      <Benefits 
-        heading={benefits.header} 
-        contents={benefits.banners} 
+      <Benefits
+        heading={benefits.header}
+        contents={benefits.banners}
       />
       {howto.header && (
         <HowToSliderContainer sliders={howto.banners} title={howto.header} />
@@ -40,7 +39,7 @@ function BoostPlay({ data = {} }) {
           features={featured.banners}
         />
       )}
-      <Faqs 
+      <Faqs
         header={faq_header}
         questions={faqs}
       />

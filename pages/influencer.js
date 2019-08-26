@@ -14,11 +14,7 @@ export default function Influencer() {
 
   return (
     <Layout>
-      <Banner
-        contentPosition="flex-start"
-        header={KOL_BANNER.HEADER}
-        description={KOL_BANNER.DESCRIPTION}
-      >
+      <Banner header={KOL_BANNER.HEADER} description={KOL_BANNER.DESCRIPTION}>
         <Button
           variant="outlined"
           component="span"
