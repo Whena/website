@@ -1,17 +1,19 @@
 import React, { useContext } from 'react';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Hidden from '@material-ui/core/Hidden';
+import clsx from 'clsx';
 import MobileNavbar from './MobileNavbar';
 import DesktopNavbar from './DesktopNavbar';
 import useStyles from './Navbar.styles';
+import PropTypes from 'prop-types';
 import { PageLoaderContext } from '../../utils/context';
 
-export default function Navbar({ lang }) {
+function Navbar({ lang, className }) {
   const classes = useStyles();
   const LoaderContext = useContext(PageLoaderContext);
 
   return (
-    <div className={classes.root}>
+    <div className={clsx(classes.root, className)}>
       {LoaderContext.loading && (
         <LinearProgress
           classes={{
@@ -29,3 +31,10 @@ export default function Navbar({ lang }) {
     </div>
   );
 }
+
+Navbar.propTypes = {
+  lang: PropTypes.string,
+  className: PropTypes.string
+};
+
+export default Navbar;

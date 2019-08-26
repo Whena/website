@@ -11,15 +11,16 @@ import ExpandLess from '@material-ui/icons/ExpandLess';
 import getLodash from 'lodash/get';
 import Link from '../Link';
 import useSyles from './Navbar.styles';
+import PropTypes from 'prop-types';
 
-export default function MenuNavbar({
+function MenuNavbar({
   menu,
   currentLang = 'en',
   onClickSubMenu
 }) {
   const classes = useSyles();
   const [anchorEl, setAnchorEl] = useState(null);
-
+  
   const handleOpenSubMenu = useCallback((event) => {
     setAnchorEl((prevState) => (prevState ? null : event.currentTarget));
   }, []);
@@ -118,3 +119,15 @@ export default function MenuNavbar({
     </Link>
   );
 }
+
+MenuNavbar.propTypes = {
+  menu: PropTypes.objectOf(PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array,
+    PropTypes.object
+  ])),
+  currentLang: PropTypes.string,
+  onClickSubMenu: PropTypes.func
+};
+
+export default MenuNavbar;

@@ -23,13 +23,14 @@ export default function MobileNavbar() {
   }, []);
 
   return (
-    <AppBar
-      position="static"
-      color="default"
-      className={classes.minifiedAppBar}
-    >
+    <AppBar position="relative" color="default">
       <Toolbar className={classes.toolbarConf}>
-        <Grid container spacing={5} justify="space-between" alignItems="center">
+        <Grid
+          container
+          spacing={5}
+          justify="space-between"
+          alignItems="center"
+        >
           <Grid item xs={1}>
             <Button
               disableRipple

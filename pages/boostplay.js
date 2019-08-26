@@ -6,7 +6,7 @@ import Faqs from '../components/FAQs/FAQs.component';
 import Benefits from '../components/Benefits/Benefits.component';
 import PersonaFeatures from '../components/Reusable/PersonaFeatures/PersonaFeatures.component';
 import { getBoostPlay } from '../services/page';
-import HowToSliderContainer from '../components/HowToSlider';
+import HowToSlider from '../components/HowToSlider';
 
 function BoostPlay({ data = {} }) {
   const banner = getLodash(data, 'fields.banner', {});
@@ -25,12 +25,9 @@ function BoostPlay({ data = {} }) {
         googlePlayUrl={banner.google_play_url}
         appStoreUrl={banner.app_store_url}
       />
-      <Benefits
-        heading={benefits.header}
-        contents={benefits.banners}
-      />
+      <Benefits heading={benefits.header} contents={benefits.banners} />
       {howto.header && (
-        <HowToSliderContainer sliders={howto.banners} title={howto.header} />
+        <HowToSlider sliders={howto.banners} title={howto.header} />
       )}
       {featured.header && (
         <PersonaFeatures
@@ -39,17 +36,17 @@ function BoostPlay({ data = {} }) {
           features={featured.banners}
         />
       )}
-      <Faqs
-        header={faq_header}
-        questions={faqs}
-      />
+      <Faqs header={faq_header} questions={faqs} />
     </Layout>
   );
 }
 
-BoostPlay.getInitialProps = async ({ err, req, res, query, ...others }) => {
+BoostPlay.getInitialProps = async (
+  { err, req, res, query, ...others },
+  locale
+) => {
   try {
-    const data = await getBoostPlay();
+    const data = await getBoostPlay({ locale });
     return { data };
   } catch (error) {
     return { data: {}, error };

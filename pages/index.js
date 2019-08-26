@@ -17,9 +17,8 @@ import { resizeUrlButterImage } from '../utils/helpers';
 
 const { HOME_BANNER } = Constants;
 
-function Index(props) {
+function Index({ data = {} }) {
   const classes = useStyles();
-  const { data } = props;
   const products = getLodash(data, 'fields.services', []);
   const personas = getLodash(data, 'fields.personas', []);
   const banner = getLodash(data, 'fields.banner', {});
@@ -155,7 +154,7 @@ const useStyles = makeStyles((theme) => ({
       height: 63
     },
     '&:hover': {
-      backgroundColor: 'rgba(7, 7, 7, 0.6)'
+      backgroundColor: 'rgba(7, 7, 7, 0.4)'
     }
   },
   homeJumbotron: {
@@ -163,16 +162,14 @@ const useStyles = makeStyles((theme) => ({
   },
   playIcon: {
     marginRight: 10,
-    fontSize: 34
+    fontSize: 34,
+    color: 'white'
   },
   buttonText: {
     fontSize: 24,
     [theme.breakpoints.down('xs')]: {
       fontSize: 25 //16
     },
-    // "&:hover": {
-    //   color: 'black'
-    // },
     color: '#fff'
   }
 }));

@@ -6,7 +6,6 @@ import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Layout from '../components/Layout';
-// import DigitalEconomyAboutUs from '../components/DigitalEconomyAboutUs/DigitalEconomy.component';
 // import MiniInformation from '../components/Reusable/MiniInformation.component';
 import MiniInformationItem from '../components/HomeContent/MiniInformationItem';
 import BottomBanner from '../components/Reusable/BottomBanner/BottomBanner.component';
@@ -21,7 +20,7 @@ const ThirdSection = ({ fields }) => {
   const backgroundImage = resizeUrlButterImage(fields.third_media, {
     resize: { h: 340 }
   })
-
+  
   return (
     <Container maxWidth={false} className={classes.thirdSectionContainer} style={{backgroundImage: `url(${backgroundImage})`}}>
       <Container maxWidth="lg" className={classes.thirdSectionInnerContainer}>
@@ -118,9 +117,9 @@ export default function Index(props) {
   );
 }
 
-Index.getInitialProps = async ({ err, req, res, query, ...others }) => {
+Index.getInitialProps = async ({ err, req, res, query, ...others }, locale) => {
   try {
-    const data = await getAboutUsData();
+    const data = await getAboutUsData({ locale });
     return { data };
   } catch (error) {
     return { data: {}, error };

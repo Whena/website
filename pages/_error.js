@@ -30,14 +30,14 @@ class ErrorPage extends React.Component {
       case 200: // Also display a 404 if someone requests /_error explicitly
       case 404:
         response = (
-          <Layout title={"Page Not Found"}>
-            <DefaultPage
-              imageURL={NotFoundImage}
-              title={PAGE_NOT_FOUND.TITLE}
-              description={PAGE_NOT_FOUND.DESCRIPTION}
-              button={PAGE_NOT_FOUND.BUTTON}
-            />
-          </Layout>
+          // <Layout title={"Page Not Found"}>
+          <DefaultPage
+            imageURL={NotFoundImage}
+            title={PAGE_NOT_FOUND.TITLE}
+            description={PAGE_NOT_FOUND.DESCRIPTION}
+            button={PAGE_NOT_FOUND.BUTTON}
+          />
+          // </Layout>
         )
         break
       case 500:
@@ -53,17 +53,14 @@ class ErrorPage extends React.Component {
       default:
         response = (
           <>
-            <Head>
-              {/* <style dangerouslySetInnerHTML={{__html: Styles}}/> */}
-            </Head>
-            <Layout title={"Page Not Found"}>
-              <DefaultPage
-                imageURL={NotFoundImage}
-                title={PAGE_NOT_FOUND.TITLE}
-                description={PAGE_NOT_FOUND.DESCRIPTION}
-                button={PAGE_NOT_FOUND.BUTTON}
-              />
-            </Layout>
+            {/* <Layout title={"Page Not Found"}> */}
+            <DefaultPage
+              imageURL={NotFoundImage}
+              title={PAGE_NOT_FOUND.TITLE}
+              description={PAGE_NOT_FOUND.DESCRIPTION}
+              button={PAGE_NOT_FOUND.BUTTON}
+            />
+            {/* </Layout> */}
           </>
         )
     }

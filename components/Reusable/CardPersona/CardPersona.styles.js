@@ -2,18 +2,22 @@ import makeStyles from '@material-ui/styles/makeStyles';
 
 const useStyles = makeStyles(theme => ({
   linkContainer: {
-    "width": "166px",
-    "height": "243px",
+    "width": "220px",//"166px",
+    "height": "320px",//"243px",
+    // "-webkit-transition": "width 0.2s ease-out",
+    // "-ms-transition": "width 0.2s ease-out",
+    // transition: "width 0.2s ease-out",
     [theme.breakpoints.only('sm')]: {
       "width": "220px",
-      "height": "100%"
+      "height": "320px"//"100%"
     },
     "&:hover": {
       "textDecoration": "none",
       //grow
       "-webkit-transform": "scale(1.3)",
       "-ms-transform": "scale(1.3)",
-      "transform": "scale(1.3)"
+      "transform": "scale(1.3)",
+      // "transition": "3s"
       //rotate
       // "-webkit-transform": "rotateZ(30deg)",
       // "-ms-transform": "rotateZ(30deg)",
@@ -21,21 +25,28 @@ const useStyles = makeStyles(theme => ({
     },
   },
   cardContainer: {
-    "width": "166px",
-    "height": "243px",
-    "borderRadius": "24px",
+    width: "100%",
+    height: "100%",
+    // "min-width": "166px",
+    // "max-width": "calc(100% - 100px)",
+    // "height": "243px",
+    "borderRadius": "40px",
     "boxShadow": "0 0 5px 0 rgba(0, 0, 0, 0.16)",
     "backgroundColor": "#ffffff",
     [theme.breakpoints.only('sm')]: {
       "width": "100%",
-      "height": "100%",
+      "height": "100%"
+    },
+    [theme.breakpoints.down('xs')]: {
+      borderRadius: '35px'
     }
   },
   icon: {
     "width": '100%',//'166px',
-    "height": '112px',
+    "minHeight": "112px",
+    // "height": '112px',
     [theme.breakpoints.only('sm')]: {
-      height: "150px",
+      height: "149px",
       width: '100%'
     },
     "objectFit": 'contain'
@@ -58,6 +69,9 @@ const useStyles = makeStyles(theme => ({
     "width": "100%",
     "marginTop": "6.5px",
     "padding": "0px 5px",
+    [theme.breakpoints.down('xs')]: {
+      "padding": "0px 0px",
+    },
     "height": "100%"
   },
   description: {

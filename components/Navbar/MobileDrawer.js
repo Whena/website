@@ -9,8 +9,11 @@ import logoBoost from '../../static/assets/boost_logo/asset-logoboost@3x.png';
 import closeImage from '../../static/assets/navbar_toggle_close/ic-close-24-px.png';
 import { LayoutContext } from '../../utils/context';
 import { setLanguage } from '../../utils/helpers';
+import PropTypes from 'prop-types';
 
-export default function MobileDrawer({ onCloseDrawer }) {
+function MobileDrawer({ 
+  onCloseDrawer 
+}) {
   const classes = useStyles();
   const appLayout = useContext(LayoutContext);
 
@@ -63,3 +66,9 @@ export default function MobileDrawer({ onCloseDrawer }) {
     </div>
   );
 }
+
+MobileDrawer.propTypes = {
+  onCloseDrawer: PropTypes.func
+};
+
+export default MobileDrawer;

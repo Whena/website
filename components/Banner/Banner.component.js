@@ -15,7 +15,7 @@ function Banner({
   backgroundImage,
   googlePlayUrl,
   appStoreUrl,
-  ...props
+  children
 }) {
   const justifyContent = contentPosition === 'left' ? 'flex-start' : 'flex-end';
   const classes = styles({
@@ -62,7 +62,7 @@ function Banner({
             <Grid item className={classes.actionButton}>
               {googlePlayUrl && <GooglePlayButton url={googlePlayUrl} />}
               {appStoreUrl && <AppStoreButton url={appStoreUrl} />}
-              {props.children}
+              {children}
             </Grid>
           </Grid>
         </Grid>
@@ -75,7 +75,10 @@ Banner.propTypes = {
   contentPosition: PropTypes.string,
   header: PropTypes.string,
   description: PropTypes.string,
-  backgroundImage: PropTypes.string
+  backgroundImage: PropTypes.string,
+  googlePlayUrl: PropTypes.string,
+  appStoreUrl: PropTypes.string,
+  children: PropTypes.node
 };
 
 export default Banner;

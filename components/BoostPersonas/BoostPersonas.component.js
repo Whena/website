@@ -4,9 +4,11 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Slider from '../Reusable/Slider';
 import Hidden from '@material-ui/core/Hidden';
+import PropTypes from 'prop-types';
 
 //components
 import CardPersona from '../Reusable/CardPersona/CardPersona.component';
+// import { resizeUrlButterImage } from '../../utils/helpers';
 
 import styles from './BoostPersonas.styles';
 
@@ -29,20 +31,22 @@ let settings = {
   ]
 };
 
-const MobileLayoutPersonas = ({ personas }) => {
+const MobileLayoutPersonas = ({ personas = [] }) => {
   const classes = styles();
   const sliderRef = useRef();
 
   useEffect(() => {
+    const slider = sliderRef.current;
     return () => {
-      sliderRef && sliderRef.current.slickPause()
+      slider && slider.slickPause();
     }
-  }, []);
+  }, [sliderRef]);
 
   return (
     <Slider ref={sliderRef} {...settings} className={classes.slider}>
       {personas.map((eachPersona) => (
-        <Grid item xs={12} sm={6} md={3} className={classes.eachCard} key={eachPersona.persona}>
+        <Grid item xs={11} sm={6} md={3} className={classes.eachCard} key={eachPersona.persona}>
+          {/* <img src={eachPersona.icon} alt={eachPersona.persona} /> */}
           <CardPersona
             icon={eachPersona.icon}
             persona={eachPersona.persona}
@@ -80,7 +84,7 @@ const Title = () => {
   )
 };
 
-function BoostPersonas({ personas }) {
+function BoostPersonas({ personas = [] }) {
   const classes = styles();
 
   return (
@@ -88,7 +92,7 @@ function BoostPersonas({ personas }) {
       <Title />
       <Hidden only="xs">
         <Grid container justify="space-around">
-          <PersonaCards 
+          <PersonaCards
             personas={personas}
           />
         </Grid>
@@ -98,6 +102,10 @@ function BoostPersonas({ personas }) {
       </Hidden>
     </Container>
   );
+}
+
+BoostPersonas.propTypes = {
+  personas: PropTypes.arrayOf(PropTypes.object)
 }
 
 export default BoostPersonas;

@@ -6,11 +6,12 @@ import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import clsx from 'clsx';
+import PropTypes from 'prop-types';
 // import MiniInformation from '../Reusable/MiniInformation.component';
 // import MiniInformationItem from '../../components/HomeContent/MiniInformationItem';
 import styles from './AsNumber.styles';
 
-const LeftComponent = ({ data }) => {
+const LeftComponent = ({ data = [] }) => {
   const classes = styles();
   
   return (
@@ -62,7 +63,7 @@ const RightComponent = ({title, description}) => {
 function AsNumber({
   title,
   description,
-  data
+  data = []
 }) {
   const classes = styles();
 
@@ -80,5 +81,11 @@ function AsNumber({
     </Container>
   );
 }
+
+AsNumber.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  data: PropTypes.arrayOf(PropTypes.object)
+};
 
 export default AsNumber;

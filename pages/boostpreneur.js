@@ -4,7 +4,7 @@ import Layout from '../components/Layout';
 import Banner from '../components/Banner/Banner.component';
 import Benefits from '../components/Benefits/Benefits.component';
 import BoostpreneurMiniInfo from '../components/BoostpreneurMiniInfo/BoostpreneurMiniInfo.component';
-import HowToSliderContainer from '../components/HowToSlider/HowToSliderContainer';
+import HowToSlider from '../components/HowToSlider';
 import Faqs from '../components/FAQs/FAQs.component';
 import PersonaFeatures from '../components/Reusable/PersonaFeatures/PersonaFeatures.component';
 import { Constants } from '../constants';
@@ -23,7 +23,7 @@ export default function BoostPreneur({ data = {} }) {
   );
   const how_to = getLodash(data, 'fields.how_to', []);
   const boostpreneur_quest = getLodash(data, 'fields.boostpreneur_quest', []);
-  const faqs_header = getLodash(data, 'fields.faqs_header', []);
+  const faqs_header = getLodash(data, 'fields.faqs_header', '');
   const faqs = getLodash(data, 'fields.faqs', []);
 
   return (
@@ -38,7 +38,7 @@ export default function BoostPreneur({ data = {} }) {
       <Benefits heading={benefits.header} contents={benefits.banners} />
       <BoostpreneurMiniInfo contents={boostpreneur_information.banners} />
       {how_to.header && (
-        <HowToSliderContainer sliders={how_to.banners} title={how_to.header} />
+        <HowToSlider sliders={how_to.banners} title={how_to.header} />
       )}
       {boostpreneur_quest.header && (
         <PersonaFeatures

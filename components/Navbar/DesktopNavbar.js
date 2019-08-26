@@ -18,14 +18,14 @@ export default function DesktopNavbar({ lang }) {
   const currentLang = useMemo(() => appLayout.lang || getLanguage(), [
     appLayout
   ]);
-
+  
   const handleChangeLanguage = (id) => {
     setLanguage(id);
     window && window.location.reload();
   };
 
   return (
-    <AppBar position="static" color="default">
+    <AppBar position="relative" color="default">
       <Toolbar className={classes.toolbarConf}>
         <Grid
           container

@@ -58,7 +58,6 @@ const useStyles = makeStyles(theme => ({
     "fontStretch": "normal",
     "lineHeight": "1.33",
     "letterSpacing": "normal",
-    "textAlign": "center",
     "color": "#000000"
   }
 }));
