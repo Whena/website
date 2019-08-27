@@ -15,7 +15,6 @@ export default function SearchBar() {
       <Grid item>
         <FormControl className={classes.margin}>
           <BootstrapInput
-            // defaultValue="react-bootstrap"
             placeholder="Cari Bantuan"
             id="bootstrap-input"
           />

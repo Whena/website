@@ -6,6 +6,7 @@ import Footer from './Footer/Footer.component';
 import { LayoutContext } from '../utils/context';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
+import PropTypes from 'prop-types';
 
 let prevScrollpos;
 
@@ -27,11 +28,13 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Layout = ({ title, children }) => {
+const Layout = ({ 
+  title = '',
+  children
+}) => {
   const classes = useStyles();
   const appLayout = useContext(LayoutContext);
   const appTitle = title || appLayout.title;
-
   const [hiddenNavbar, setHiddenNavbar] = useState(false);
 
   const handleScroll = useCallback(
@@ -67,6 +70,11 @@ const Layout = ({ title, children }) => {
       <Footer />
     </>
   );
+};
+
+Layout.propTypes = {
+  title: PropTypes.string,
+  children: PropTypes.node
 };
 
 export default Layout;

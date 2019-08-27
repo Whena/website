@@ -68,7 +68,13 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-function ProductSliderItem(props) {
+function ProductSliderItem({
+  imageUrl,
+  title,
+  description,
+  googlePlayUrl,
+  appleStoreUrl
+}) {
   const classes = useStyles();
 
   return (
@@ -79,7 +85,7 @@ function ProductSliderItem(props) {
       justify="center"
     >
       <Grid item xs={3} sm={3} className={classes.imageContainer}>
-        <img className={classes.image} src={props.imageUrl} alt={props.title} />
+        <img className={classes.image} src={imageUrl} alt={title} />
       </Grid>
       <Grid
         item
@@ -90,16 +96,16 @@ function ProductSliderItem(props) {
         className={classes.descriptionContainer}
       >
         <Typography variant="h1" gutterBottom className={classes.title}>
-          {props.title}
+          {title}
         </Typography>
         <Typography variant="body1" gutterBottom className={classes.body}>
-          {props.description}
+          {description}
         </Typography>
         <div className={classes.appLink}>
-          {props.googlePlayUrl && (
-            <GooglePlayButton url={props.googlePlayUrl} />
+          {googlePlayUrl && (
+            <GooglePlayButton url={googlePlayUrl} />
           )}
-          {props.appleStoreUrl && <AppStoreButton url={props.appleStoreUrl} />}
+          {appleStoreUrl && <AppStoreButton url={appleStoreUrl} />}
         </div>
       </Grid>
     </Grid>

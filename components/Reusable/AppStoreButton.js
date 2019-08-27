@@ -2,8 +2,13 @@ import React from 'react';
 import clsx from 'clsx';
 import appleStoreImage from '../../static/assets/banner-buttons/app-store/asset-appstore-homepage@3x.png';
 import { useStyles } from './GooglePlayButton';
+import PropTypes from 'prop-types';
 
-export default function AppStoreButton({ url = '#!', className, ...props }) {
+function AppStoreButton({ 
+  url = '#!',
+  className,
+  ...props
+}) {
   const classes = useStyles();
   return (
     <a
@@ -16,3 +21,15 @@ export default function AppStoreButton({ url = '#!', className, ...props }) {
     </a>
   );
 }
+
+AppStoreButton.propTypes = {
+  url: PropTypes.string,
+  className: PropTypes.string,
+  props: PropTypes.objectOf(PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array,
+    PropTypes.object
+  ]))
+};
+
+export default AppStoreButton;

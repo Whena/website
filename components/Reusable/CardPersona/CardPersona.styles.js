@@ -36,9 +36,6 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.only('sm')]: {
       width: '100%',
       height: '100%'
-    },
-    [theme.breakpoints.down('xs')]: {
-      borderRadius: '35px'
     }
   },
   icon: {
