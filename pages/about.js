@@ -214,24 +214,27 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('md')]: {
       fontSize: '1.7em'
     },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1.3em'
+    },
     [theme.breakpoints.down('xs')]: {
       fontSize: '1.7em'
     }
   },
   joinNowButton: {
     backgroundColor: '#fff',
-    width: 250,
+    minWidth: 250,
     [theme.breakpoints.down('md')]: {
-      width: 230,
+      minWidth: 230,
       height: 70
     },
     [theme.breakpoints.down('sm')]: {
-      width: 200,
+      minWidth: 200,
       height: 50
     },
     [theme.breakpoints.down('xs')]: {
       marginTop: 10,
-      width: 180,
+      minWidth: 180,
       height: 50
     },
     marginLeft: 20

@@ -41,7 +41,7 @@ const QuestionBox = ({
 
 function Faqs({ header, questions }) {
   const classes = styles();
-  console.log(header)
+  
   return (
     <Container maxWidth="lg">
       <Typography variant="h3" className={classes.headerContainer}>

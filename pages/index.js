@@ -23,12 +23,8 @@ function Index({ data = {} }) {
   const personas = getLodash(data, 'fields.personas', []);
   const banner = getLodash(data, 'fields.banner', {});
   const miniInformations = getLodash(data, 'fields.mini_informations', []);
-  const statistic_title = getLodash(data, 'fields.statistic_title', []);
-  const statistic_description = getLodash(
-    data,
-    'fields.statistic_description',
-    []
-  );
+  const statistic_title = getLodash(data, 'fields.statistic_title', '');
+  const statistic_description = getLodash(data, 'fields.statistic_description', '');
   const statistic_data = getLodash(data, 'fields.statistics', []);
 
   return (
