@@ -18,7 +18,7 @@ const images = [
   '/static/assets/boost.jpg',
   '/static/assets/boost.jpg',
   '/static/assets/boost.jpg',
-  '/static/assets/boost.jpg',
+  '/static/assets/boost.jpg'
 ];
 
 function ImageGallery() {
@@ -53,7 +53,7 @@ function ImageGallery() {
       <Box py={4}>
         <Grid container spacing={4}>
           {images.map((image, index) => (
-            <Grid item xs={12} md={6} lg={4} key={index}>
+            <Grid item xs={12} md={6} lg={4} key={image.substr(index)}>
               <Grid container justify="center">
                 <Card className={classes.card}>
                   <CardMedia

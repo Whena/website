@@ -8,7 +8,7 @@ function Gallery() {
   return (
     <Layout>
       <Container maxWidth="lg">
-        <ImageGallery/>
+        <ImageGallery />
       </Container>
     </Layout>
   );
@@ -16,12 +16,15 @@ function Gallery() {
 
 Gallery.getInitialProps = async () => {
   try {
-    const res = await axios.get('https://api.buttercms.com/v2/pages/*/homepage/', {
-      params: {
-        'auth_token': process.env.BUTTER_TOKEN,
-        locale: 'en',
-      },
-    });
+    const res = await axios.get(
+      'https://api.buttercms.com/v2/pages/*/homepage/',
+      {
+        params: {
+          auth_token: process.env.BUTTER_TOKEN,
+          locale: 'en'
+        }
+      }
+    );
     return { content: res.data };
   } catch (error) {
     console.log(error.response);

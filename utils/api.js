@@ -5,5 +5,5 @@ export const butterApi = () => {
   const { publicRuntimeConfig } = getConfig();
   const token = publicRuntimeConfig.NEXT_PUBLIC_BUTTER_TOKEN;
 
-  return Buttercms(token);
+  return Buttercms(token, false, 10000);
 };

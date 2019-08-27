@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import GooglePlayButton from '../Reusable/GooglePlayButton';
-import AppStoreButton from '../Reusable/GooglePlayButton';
+import AppStoreButton from '../Reusable/AppStoreButton';
 
 const useStyles = makeStyles((theme) => ({
   container: {

@@ -1,91 +1,91 @@
 import makeStyles from '@material-ui/styles/makeStyles';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   linkContainer: {
-    "width": "220px",//"166px",
-    "height": "320px",//"243px",
+    width: '220px', //"166px",
+    height: '320px', //"243px",
     // "-webkit-transition": "width 0.2s ease-out",
     // "-ms-transition": "width 0.2s ease-out",
     // transition: "width 0.2s ease-out",
     [theme.breakpoints.only('sm')]: {
-      "width": "220px",
-      "height": "320px"//"100%"
+      width: '220px',
+      height: '320px' //"100%"
     },
-    "&:hover": {
-      "textDecoration": "none",
+    '&:hover': {
+      textDecoration: 'none',
       //grow
-      "-webkit-transform": "scale(1.3)",
-      "-ms-transform": "scale(1.3)",
-      "transform": "scale(1.3)",
+      '-webkit-transform': 'scale(1.3)',
+      '-ms-transform': 'scale(1.3)',
+      transform: 'scale(1.3)'
       // "transition": "3s"
       //rotate
       // "-webkit-transform": "rotateZ(30deg)",
       // "-ms-transform": "rotateZ(30deg)",
       // "transform": "rotateZ(30deg)"
-    },
+    }
   },
   cardContainer: {
-    width: "100%",
-    height: "100%",
+    width: '100%',
+    height: '100%',
     // "min-width": "166px",
     // "max-width": "calc(100% - 100px)",
     // "height": "243px",
-    "borderRadius": "40px",
-    "boxShadow": "0 0 5px 0 rgba(0, 0, 0, 0.16)",
-    "backgroundColor": "#ffffff",
+    borderRadius: '40px',
+    boxShadow: '0 0 5px 0 rgba(0, 0, 0, 0.16)',
+    backgroundColor: '#ffffff',
     [theme.breakpoints.only('sm')]: {
-      "width": "100%",
-      "height": "100%"
+      width: '100%',
+      height: '100%'
     },
     [theme.breakpoints.down('xs')]: {
       borderRadius: '35px'
     }
   },
   icon: {
-    "width": '100%',//'166px',
-    "minHeight": "112px",
+    width: '100%', //'166px',
+    minHeight: '112px',
     // "height": '112px',
     [theme.breakpoints.only('sm')]: {
-      height: "149px",
+      height: '149px',
       width: '100%'
     },
-    "objectFit": 'contain'
+    objectFit: 'contain'
   },
   persona: {
-    "width": "100%",
-    "height": "16px",
-    "fontFamily": "Raleway",
-    "fontSize": "14px",
-    "fontWeight": "800",
-    "fontStyle": "normal",
-    "fontStretch": "normal",
-    "lineHeight": "normal",
-    "letterSpacing": "normal",
-    "color": "#181818",
-    "textAlign": "center",
-    "margin": "10px auto"
+    width: '100%',
+    height: '16px',
+    fontFamily: 'Raleway',
+    fontSize: '14px',
+    fontWeight: '800',
+    fontStyle: 'normal',
+    fontStretch: 'normal',
+    lineHeight: 'normal',
+    letterSpacing: 'normal',
+    color: '#181818',
+    textAlign: 'center',
+    margin: '10px auto'
   },
   cardContent: {
-    "width": "100%",
-    "marginTop": "6.5px",
-    "padding": "0px 5px",
+    width: '100%',
+    marginTop: '6.5px',
+    padding: '0px 5px',
     [theme.breakpoints.down('xs')]: {
-      "padding": "0px 0px",
+      padding: '0px 0px'
     },
-    "height": "100%"
+    height: '100%'
   },
   description: {
-    "width": "100%",
-    "height": "90px",
-    "fontFamily": "Raleway",
-    "fontSize": "12px",
-    "fontWeight": "500",
-    "fontStyle": "normal",
-    "fontStretch": "normal",
-    "lineHeight": "2",
-    "letterSpacing": "normal",
-    "textAlign": "center",
-    "color": "#565656"
+    width: '100%',
+    height: '90px',
+    fontFamily: 'Raleway',
+    fontSize: '12px',
+    fontWeight: '500',
+    fontStyle: 'normal',
+    fontStretch: 'normal',
+    lineHeight: '2',
+    letterSpacing: 'normal',
+    textAlign: 'center',
+    color: '#565656'
   }
 }));
 

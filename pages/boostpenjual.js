@@ -17,7 +17,7 @@ export default function Boostpenjual({ data = {} }) {
   const testimonials = getLodash(data, 'fields.testimonials', {});
   const faq_header = getLodash(data, 'fields.faqs_header', '');
   const faqs = getLodash(data, 'fields.faqs', []);
-
+  
   return (
     <Layout>
       <Banner
@@ -48,7 +48,9 @@ export default function Boostpenjual({ data = {} }) {
   );
 }
 
-Boostpenjual.getInitialProps = async ({ err, req, res, query }, locale) => {
+Boostpenjual.getInitialProps = async ({ err, req, res, query },
+  locale
+) => {
   try {
     const data = await getBoostPenjual({ locale });
     return { data };

@@ -1,11 +1,11 @@
 import { makeStyles } from '@material-ui/styles';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   container: {
     marginBottom: 50
   },
   questionBox: {
-    width: '100%',
+    width: '100%'
   },
   expansionPanel: {
     marginTop: 10
@@ -31,14 +31,14 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(2),
     // Selects every two elements among any group of siblings.
     '&:nth-child(2n)': {
-      marginRight: theme.spacing(3),
-    },
+      marginRight: theme.spacing(3)
+    }
   },
   paper: {
     position: 'absolute',
     top: 36,
     right: 0,
-    left: 0,
+    left: 0
   },
   questionButton: {
     width: '100%',
