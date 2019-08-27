@@ -7,13 +7,11 @@ import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
-// import MiniInformation from '../Reusable/MiniInformation.component';
-// import MiniInformationItem from '../../components/HomeContent/MiniInformationItem';
 import styles from './AsNumber.styles';
 
 const LeftComponent = ({ data = [] }) => {
   const classes = styles();
-  
+
   return (
     <Grid item xs={12} md={6}>
       {data.map((stat) => (
@@ -43,9 +41,9 @@ const RightComponent = ({title, description}) => {
 
   return (
     <Grid item xs={11} md={5} className={classes.description}>
-      <Typography 
-        variant="h5" 
-        gutterBottom 
+      <Typography
+        variant="h5"
+        gutterBottom
         className={classes.rightComponentTitle}
       >
         {title}

@@ -1,18 +1,14 @@
 import React from 'react';
-// import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Layout from '../components/Layout';
-// import MiniInformation from '../components/Reusable/MiniInformation.component';
 import MiniInformationItem from '../components/HomeContent/MiniInformationItem';
 import BottomBanner from '../components/Reusable/BottomBanner/BottomBanner.component';
 import makeStyles from '@material-ui/styles/makeStyles';
 import { resizeUrlButterImage } from '../utils/helpers';
-
-// import getLodash from 'lodash/get';
 import { getAboutUsData } from '../services/page';
 
 const ThirdSection = ({ fields }) => {
@@ -20,7 +16,7 @@ const ThirdSection = ({ fields }) => {
   const backgroundImage = resizeUrlButterImage(fields.third_media, {
     resize: { h: 340 }
   })
-  
+
   return (
     <Container maxWidth={false} className={classes.thirdSectionContainer} style={{backgroundImage: `url(${backgroundImage})`}}>
       <Container maxWidth="lg" className={classes.thirdSectionInnerContainer}>
