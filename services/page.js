@@ -76,3 +76,19 @@ export const getBoostPreneur = (options = {}) => {
       return error;
     });
 };
+
+export const getBoostSupplier = (options = {}) => {
+  return butterApi()
+    .page.retrieve('*', 'supplier', {
+      ...defaultOptions,
+      levels: 3,
+      ...options
+    })
+    .then(function(response) {
+      return getLodash(response, 'data.data');
+    })
+    .catch(function(error) {
+      console.log(error);
+      return error;
+    });
+};

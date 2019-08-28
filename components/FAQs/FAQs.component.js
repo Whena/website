@@ -12,8 +12,8 @@ import PropTypes from 'prop-types';
 import styles from './FAQs.styles';
 
 const QuestionBox = ({ 
-  question, 
-  details 
+  question,
+  details
 }) => {
   const classes = styles();
 

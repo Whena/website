@@ -25,7 +25,8 @@ const useStyles = makeStyles((theme) => ({
   },
   heading: {
     textAlign: 'center',
-    fontWeight: 700,
+    fontSize: 24,
+    fontWeight: 800,
     // width: '30%',
     // borderBottom: '2px solid red',
     paddingBottom: '1.25%',
