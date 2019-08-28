@@ -16,7 +16,8 @@ const useStyles = makeStyles((theme) => ({
   title: {
     fontSize: 24,
     fontWeight: 800,
-    marginBottom: theme.spacing(2)
+    marginBottom: theme.spacing(2),
+    fontFamily: 'Raleway'
   },
   image: {
     maxHeight: 300,

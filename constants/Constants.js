@@ -55,8 +55,8 @@ export const HeaderMenu = [
   },
   {
     name: {
-      en: 'Join as Merchant',
-      id: 'Gabung sebagai'
+      en: 'Join Now',
+      id: 'Gabung Sekarang'
     },
     nodes: [
       {

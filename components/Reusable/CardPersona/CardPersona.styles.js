@@ -65,11 +65,11 @@ const useStyles = makeStyles((theme) => ({
   cardContent: {
     width: '100%',
     marginTop: '6.5px',
-    padding: '0px 5px',
+    padding: '0px 15px',
     [theme.breakpoints.down('xs')]: {
       padding: '0px 0px'
     },
-    height: '100%'
+    maxHeight: '220px'
   },
   description: {
     width: '100%',
