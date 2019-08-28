@@ -4,17 +4,19 @@ import Typography from '@material-ui/core/Typography';
 import MiniInformationItem from '../HomeContent/MiniInformationItem';
 import BottomLiner from '../BottomLiner/BottomLiner.component';
 import PropTypes from 'prop-types';
+import clsx from 'clsx';
 import styles from './MerchantShortExplanation.styles';
 
 function MerchantShortExplanation({ 
   header,
   description,
-  content = {}
+  content,
+  className
 }) {
   const classes = styles();
   
   return (
-    <Container maxWidth="lg" className={classes.container}>
+    <Container maxWidth="lg" className={clsx(classes.container, className)}>
       <Typography variant="h4" className={classes.header}>
         {header}
       </Typography>
@@ -29,11 +31,13 @@ function MerchantShortExplanation({
         }
       </div>
 
-      <MiniInformationItem
-        imageUrl={content.image_banner}
-        description={content.description}
-        height={246}
-      />
+      {content &&
+        <MiniInformationItem
+          imageUrl={content.image_banner}
+          description={content.description}
+          height={246}
+        />
+      }
     </Container>
   );
 }

@@ -8,6 +8,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Hidden from '@material-ui/core/Hidden';
 import CardActionArea from '@material-ui/core/CardActionArea';
+import PropTypes from 'prop-types';
 import BottomLiner from '../../BottomLiner/BottomLiner.component';
 import styles from './PersonaFeatures.styles';
 
@@ -22,9 +23,13 @@ const settings = {
   adaptiveHeight: true
 };
 
-function PersonaFeatures({ features = [], title, description }) {
+function PersonaFeatures({
+  features = [],
+  title,
+  description
+}) {
   const classes = styles();
-
+  
   return (
     <div className={classes.container}>
       <Container maxWidth="lg" className={classes.headerContainer}>
@@ -94,5 +99,11 @@ function PersonaFeatures({ features = [], title, description }) {
     </div>
   );
 }
+
+PersonaFeatures.propTypes = {
+  features: PropTypes.arrayOf(PropTypes.object),
+  title: PropTypes.string,
+  description: PropTypes.string
+};
 
 export default PersonaFeatures;

@@ -40,9 +40,8 @@ const sliderOptions = {
   infinite: true
 };
 
-function ProductSlider(props) {
+function ProductSlider({ products = [] }) {
   const classes = useStyles();
-  const { products } = props;
 
   return (
     <BackgroundProductSlider className={classes.slider}>

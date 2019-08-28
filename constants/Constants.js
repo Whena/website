@@ -696,5 +696,10 @@ export const Constants = {
     TITLE: 'OOPS, SORRY..',
     DESCRIPTION: 'We can’t seem find the page you’re looking for',
     BUTTON: 'Back to homepage'
+  },
+  SERVER_ERROR: {
+    TITLE: 'OOPS, SORRY..',
+    DESCRIPTION: 'An internal server error occurred. Please try again later.',
+    BUTTON: 'Back to homepage'
   }
 };

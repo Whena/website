@@ -4,12 +4,10 @@ import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import PropTypes from 'prop-types';
 import styles from './WhatTheySay.styles';
 import Slider from '../Slider';
-// import { Constants } from '../../../constants';
 import BottomLiner from '../../BottomLiner/BottomLiner.component';
-
-// const { WHATTHEYSAY } = Constants;
 
 const settings = {
   dots: true,
@@ -32,13 +30,16 @@ const settings = {
   ]
 };
 
-function WhatTheySay({ header, testimonials = [] }) {
+function WhatTheySay({ 
+  header,
+  testimonials = []
+}) {
   const classes = styles();
   const sliderRef = useRef();
-
+  
   useEffect(() => {
     const slider = sliderRef.current;
-
+  
     return () => {
       slider && slider.slickPause();
     };
@@ -102,5 +103,10 @@ function WhatTheySay({ header, testimonials = [] }) {
     </Container>
   );
 }
+
+WhatTheySay.propTypes = {
+  header: PropTypes.string,
+  testimonials: PropTypes.arrayOf(PropTypes.object)
+};
 
 export default WhatTheySay;

@@ -1,18 +1,16 @@
 import React from 'react';
-import Container from '@material-ui/core/Container';
-import { withRouter } from 'next/router';
-// import Link from '../components/Link'
+import PropTypes from 'prop-types';
 import NotFoundImage from '../static/assets/page-not-found/asset-personabtp-pagenotfound@3x.jpg';
 import DefaultPage from '../components/DefaultPage/DefaultPage.component';
 import { Constants } from '../constants';
 
-const { PAGE_NOT_FOUND } = Constants;
+const { PAGE_NOT_FOUND, SERVER_ERROR } = Constants;
 
 class ErrorPage extends React.Component {
   static propTypes() {
     return {
-      errorCode: React.PropTypes.number.isRequired,
-      url: React.PropTypes.string.isRequired
+      errorCode: PropTypes.number.isRequired,
+      url: PropTypes.string.isRequired
     };
   }
 
@@ -22,11 +20,10 @@ class ErrorPage extends React.Component {
   }
 
   render() {
-    var response;
     switch (this.props.errorCode) {
       case 200: // Also display a 404 if someone requests /_error explicitly
       case 404:
-        response = (
+        return (
           <DefaultPage
             imageURL={NotFoundImage}
             title={PAGE_NOT_FOUND.TITLE}
@@ -34,17 +31,17 @@ class ErrorPage extends React.Component {
             button={PAGE_NOT_FOUND.BUTTON}
           />
         );
-        break;
       case 500:
-        response = (
-          <Container>
-            <h1 className="display-4">Internal Server Error </h1>
-            <p>An internal server error occurred.</p>
-          </Container>
+        return (
+          <DefaultPage
+            imageURL={NotFoundImage}
+            title={SERVER_ERROR.TITLE}
+            description={SERVER_ERROR.DESCRIPTION}
+            button={SERVER_ERROR.BUTTON}
+          />
         );
-        break;
       default:
-        response = (
+        return (
           <DefaultPage
             imageURL={NotFoundImage}
             title={PAGE_NOT_FOUND.TITLE}
@@ -53,9 +50,7 @@ class ErrorPage extends React.Component {
           />
         );
     }
-
-    return response;
   }
 }
 
-export default withRouter(ErrorPage);
+export default ErrorPage;

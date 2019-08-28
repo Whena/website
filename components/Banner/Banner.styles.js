@@ -18,8 +18,8 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '3.5rem'
   },
   actionButton: {
-    '& > a': {
-      height: 45,
+    '& > *:first-child': {
+      height: 50,
       '&:not(:last-child)': {
         marginRight: 10
       }

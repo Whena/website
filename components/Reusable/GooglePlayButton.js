@@ -2,6 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import googlePlayImage from '../../static/assets/banner-buttons/google-play/asset-playstore-homepage@3x.png';
 import { makeStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
 
 export const useStyles = makeStyles((theme) => ({
   img: {
@@ -13,7 +14,11 @@ export const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function GooglePlayButton({ url = '#!', className, ...props }) {
+function GooglePlayButton({
+  url = '#!',
+  className,
+  ...props
+}) {
   const classes = useStyles();
   return (
     <a
@@ -30,3 +35,15 @@ export default function GooglePlayButton({ url = '#!', className, ...props }) {
     </a>
   );
 }
+
+GooglePlayButton.propTypes = {
+  url: PropTypes.string,
+  className: PropTypes.string,
+  props: PropTypes.objectOf(PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array,
+    PropTypes.object
+  ]))
+};
+
+export default GooglePlayButton;

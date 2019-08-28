@@ -7,6 +7,8 @@ import PropTypes from 'prop-types';
 import styles from './Banner.styles';
 import GooglePlayButton from '../Reusable/GooglePlayButton';
 import AppStoreButton from '../Reusable/AppStoreButton';
+import PlayVideoButton from './PlayVideoButton';
+import ActionBannerButton from './ActionBannerButton';
 
 function Banner({
   contentPosition = 'left',
@@ -15,6 +17,10 @@ function Banner({
   backgroundImage,
   googlePlayUrl,
   appStoreUrl,
+  actionUrl,
+  actionButtonText,
+  videoUrl,
+  videoButtonText,
   children
 }) {
   const justifyContent = contentPosition === 'left' ? 'flex-start' : 'flex-end';
@@ -59,9 +65,33 @@ function Banner({
                 <span>{description}</span>
               </Typography>
             </Grid>
-            <Grid item className={classes.actionButton}>
-              {googlePlayUrl && <GooglePlayButton url={googlePlayUrl} />}
-              {appStoreUrl && <AppStoreButton url={appStoreUrl} />}
+            <Grid container justify="flex-start" spacing={1} wrap="wrap" item>
+              {googlePlayUrl && (
+                <Grid item xs={6} sm={4} className={classes.actionButton}>
+                  <GooglePlayButton url={googlePlayUrl} />
+                </Grid>
+              )}
+              {appStoreUrl && (
+                <Grid item xs={6} sm={4} className={classes.actionButton}>
+                  <AppStoreButton url={appStoreUrl} />
+                </Grid>
+              )}
+              {actionUrl && (
+                <Grid item xs={12} sm={5} className={classes.actionButton}>
+                  <ActionBannerButton
+                    actionUrl={actionUrl}
+                    actionButtonText={actionButtonText}
+                  />
+                </Grid>
+              )}
+              {videoUrl && (
+                <Grid item xs={12} sm={5} className={classes.actionButton}>
+                  <PlayVideoButton
+                    videoUrl={videoUrl}
+                    videoButtonText={videoButtonText}
+                  />
+                </Grid>
+              )}
               {children}
             </Grid>
           </Grid>

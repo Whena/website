@@ -15,9 +15,7 @@ function Benefits({ heading, contents = [] }) {
     <Container maxWidth="lg" className={classes.container}>
       <Typography variant="h4" className={classes.heading}>
         <span>{heading}</span>
-        <Box component="span">
-          <BottomLiner />
-        </Box>
+        <div><BottomLiner /></div>
       </Typography>
       <Grid container spacing={2} justify="space-around" alignItems="flex-start">
         {contents.map((content) => (

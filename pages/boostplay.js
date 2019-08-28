@@ -13,11 +13,11 @@ function BoostPlay({ data = {} }) {
   const howto = getLodash(data, 'fields.how_to_activate', {});
   const benefits = getLodash(data, 'fields.benefits', {});
   const featured = getLodash(data, 'fields.featured', {});
-  const faq_header = getLodash(data, 'fields.faq_header', []);
+  const faq_header = getLodash(data, 'fields.faq_header', '');
   const faqs = getLodash(data, 'fields.faqs', []);
 
   return (
-    <Layout>
+    <Layout title="BoostPlay">
       <Banner
         header={banner.title}
         description={banner.description}

@@ -9,7 +9,12 @@ import { resizeUrlButterImage } from '../../../utils/helpers';
 import Link from '../../Link';
 import styles from './CardPersona.styles';
 
-function CardPersona({ persona, description, icon, actionURL }) {
+function CardPersona({ 
+  persona,
+  description,
+  icon,
+  actionURL
+}) {
   const classes = styles();
   const imageUrl = useMemo(
     () =>

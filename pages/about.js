@@ -106,7 +106,6 @@ export default function Index(props) {
         leftGrid={4}
         left={<LeftButton />}
         right={<RightInfo />}
-        containerHeight={200}
         background={fields.bottom_banner_background}
       />
     </Layout>
