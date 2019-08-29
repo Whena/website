@@ -10,7 +10,7 @@ import useStyles from './Navbar.styles';
 import MobileDrawer from './MobileDrawer';
 import { Constants } from '../../constants';
 
-export default function MobileNavbar() {
+export default function MobileNavbar({ logo }) {
   const classes = useStyles();
   const [openDrawer, setOpenDrawer] = useState(false);
 
@@ -39,7 +39,7 @@ export default function MobileNavbar() {
             >
               <img
                 className={classes.minifiedLogoConfiguration}
-                src={Constants.NAVBAR_MENU[0].BRAND_LOGO}
+                src={logo}//{Constants.NAVBAR_MENU[0].BRAND_LOGO}
                 alt={Constants.NAVBAR_MENU[0].CAPTION}
               />
             </Button>
