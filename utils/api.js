@@ -1,9 +1,7 @@
 import Buttercms from 'buttercms';
-import getConfig from 'next/config';
 
 export const butterApi = () => {
-  const { publicRuntimeConfig } = getConfig();
-  const token = publicRuntimeConfig.NEXT_PUBLIC_BUTTER_TOKEN;
+  const token = process.env.NEXT_SERVER_BUTTER_TOKEN;
 
-  return Buttercms(token, false, 10000);
+  return Buttercms(token, false, 30000);
 };

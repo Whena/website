@@ -1,13 +1,18 @@
 import getLodash from 'lodash/get';
-import { butterApi } from '../utils/api';
+import Axios from 'axios';
 
 const defaultOptions = {
   locale: 'id'
 };
 
+const pageApi = (pageType = '*', slug = '', params = defaultOptions) => {
+  return Axios.get(`/api/page/${pageType}/${slug}`, {
+    params
+  });
+};
+
 export const getHomePageData = (options = {}) => {
-  return butterApi()
-    .page.retrieve('*', 'home', { ...defaultOptions, ...options })
+  return pageApi('*', 'home', { ...defaultOptions, ...options })
     .then(function(response) {
       return getLodash(response, 'data.data');
     })
@@ -18,8 +23,7 @@ export const getHomePageData = (options = {}) => {
 };
 
 export const getAboutUsData = (options = {}) => {
-  return butterApi()
-    .page.retrieve('*', 'about-us', { ...defaultOptions, ...options })
+  return pageApi('*', 'about-us', { ...defaultOptions, ...options })
     .then(function(response) {
       return getLodash(response, 'data.data');
     })
@@ -30,12 +34,11 @@ export const getAboutUsData = (options = {}) => {
 };
 
 export const getBoostPlay = (options = {}) => {
-  return butterApi()
-    .page.retrieve('*', 'boostplay', {
-      ...defaultOptions,
-      levels: 3,
-      ...options
-    })
+  return pageApi('*', 'boostplay', {
+    ...defaultOptions,
+    levels: 3,
+    ...options
+  })
     .then(function(response) {
       return getLodash(response, 'data.data');
     })
@@ -46,12 +49,11 @@ export const getBoostPlay = (options = {}) => {
 };
 
 export const getBoostPenjual = (options = {}) => {
-  return butterApi()
-    .page.retrieve('*', 'boostpenjual', {
-      ...defaultOptions,
-      levels: 3,
-      ...options
-    })
+  return pageApi('*', 'boostpenjual', {
+    ...defaultOptions,
+    levels: 3,
+    ...options
+  })
     .then(function(response) {
       return getLodash(response, 'data.data');
     })
@@ -62,12 +64,11 @@ export const getBoostPenjual = (options = {}) => {
 };
 
 export const getBoostPreneur = (options = {}) => {
-  return butterApi()
-    .page.retrieve('*', 'boostpreneur', {
-      ...defaultOptions,
-      levels: 3,
-      ...options
-    })
+  return pageApi('*', 'boostpreneur', {
+    ...defaultOptions,
+    levels: 3,
+    ...options
+  })
     .then(function(response) {
       return getLodash(response, 'data.data');
     })
@@ -78,12 +79,11 @@ export const getBoostPreneur = (options = {}) => {
 };
 
 export const getBoostSupplier = (options = {}) => {
-  return butterApi()
-    .page.retrieve('*', 'supplier', {
-      ...defaultOptions,
-      levels: 3,
-      ...options
-    })
+  return pageApi('*', 'supplier', {
+    ...defaultOptions,
+    levels: 3,
+    ...options
+  })
     .then(function(response) {
       return getLodash(response, 'data.data');
     })

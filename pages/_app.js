@@ -2,6 +2,7 @@ import React from 'react';
 import App, { Container } from 'next/app';
 import Head from 'next/head';
 import nextCookie from 'next-cookies';
+import Axios from 'axios';
 import getLodash from 'lodash/get';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import { responsiveFontSizes } from '@material-ui/core/styles';
@@ -19,14 +20,18 @@ class MyApp extends App {
     const lang = getLodash(nextCookie(ctx), LANG_KEY, DEFAULT_LANG);
 
     if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx, lang);
+      if (ctx && ctx.res && ctx.req) {
+        const host = ctx.req.headers.host;
+        let protocol = 'https';
 
-      if (ctx && ctx.res) {
-        ctx.res.setHeader(
-          'Cache-Control',
-          'no-cache, no-store, must-revalidate'
-        );
+        if (host.indexOf('localhost') > -1) {
+          protocol = 'http';
+        }
+
+        Axios.defaults.baseURL = `${protocol}://${host}`;
       }
+
+      pageProps = await Component.getInitialProps(ctx, lang);
     }
 
     return { pageProps, lang };
