@@ -19,7 +19,6 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-
 function HowToSliderContainer({ sliders = [], title }) {
   const classes = useStyles();
   const [slideIndex, setSlideIndex] = useState(0);
@@ -27,7 +26,7 @@ function HowToSliderContainer({ sliders = [], title }) {
   const handleChangeSlider = useCallback((index) => {
     setSlideIndex(index);
   }, []);
-
+  
   return (
     <Container className={classes.container}>
       <Typography variant="h4" align="center" className={classes.title}>

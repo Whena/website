@@ -11,6 +11,7 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import PropTypes from 'prop-types';
 import BottomLiner from '../../BottomLiner/BottomLiner.component';
 import styles from './PersonaFeatures.styles';
+import { resizeUrlButterImage } from '../../../utils/helpers';
 
 const settings = {
   arrows: false,
@@ -57,41 +58,49 @@ function PersonaFeatures({
           </Grid>
           <Grid item xs={12} lg={8}>
             <Slider {...settings} className={classes.slider}>
-              {features.map((feature) => (
-                <Card
-                  component="div"
-                  key={feature.title}
-                  className={classes.card}
-                >
-                  <CardActionArea
-                    disableRipple
-                    disableTouchRipple
-                    className={classes.cardAction}
-                    classes={{
-                      focusHighlight: classes.cardActionHighlight,
-                      focusVisible: classes.cardActionHighlight
-                    }}
+              {features.map((feature) => {
+                let headerImage = resizeUrlButterImage(feature.image_banner, {
+                  resize: {
+                    h: 100
+                  }
+                })
+
+                return (
+                  <Card
+                    component="div"
+                    key={feature.title}
+                    className={classes.card}
                   >
-                    <CardMedia
-                      className={classes.media}
-                      image={feature.image_banner}
-                      title={feature.title}
-                    />
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="h2">
-                        {feature.title}
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        color="textSecondary"
-                        component="p"
-                      >
-                        {feature.description}
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                </Card>
-              ))}
+                    <CardActionArea
+                      disableRipple
+                      disableTouchRipple
+                      className={classes.cardAction}
+                      classes={{
+                        focusHighlight: classes.cardActionHighlight,
+                        focusVisible: classes.cardActionHighlight
+                      }}
+                    >
+                      <CardMedia
+                        className={classes.media}
+                        image={headerImage}
+                        title={feature.title}
+                      />
+                      <CardContent>
+                        <Typography gutterBottom variant="h5" component="h2">
+                          {feature.title}
+                        </Typography>
+                        <Typography
+                          variant="body2"
+                          color="textSecondary"
+                          component="p"
+                        >
+                          {feature.description}
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                  </Card>
+                )
+              })}
             </Slider>
           </Grid>
         </Grid>

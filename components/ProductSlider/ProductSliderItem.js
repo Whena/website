@@ -5,6 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import GooglePlayButton from '../Reusable/GooglePlayButton';
 import AppStoreButton from '../Reusable/AppStoreButton';
+import { resizeUrlButterImage } from '../../utils/helpers';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -76,6 +77,11 @@ function ProductSliderItem({
   appleStoreUrl
 }) {
   const classes = useStyles();
+  const phoneDisplay = resizeUrlButterImage(imageUrl, {
+    resize: {
+      w: 200
+    }
+  })
 
   return (
     <Grid
@@ -85,7 +91,7 @@ function ProductSliderItem({
       justify="center"
     >
       <Grid item xs={3} sm={3} className={classes.imageContainer}>
-        <img className={classes.image} src={imageUrl} alt={title} />
+        <img className={classes.image} src={phoneDisplay} alt={title} />
       </Grid>
       <Grid
         item

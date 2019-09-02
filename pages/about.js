@@ -12,7 +12,6 @@ import RightInfo from '../components/about/RightInfo';
 export default function Index({ data = {} }) {
   const classes = useStyles();
   const { fields = {} } = data;
-  console.log(fields)
 
   return (
     <Layout>
@@ -34,7 +33,7 @@ export default function Index({ data = {} }) {
           image: fields.second_media,
           description: fields.second_description,
           reverse: false,
-          height: 284,
+          height: 250,
           sectionItem: classes.secondSectionItem
         }}
       />

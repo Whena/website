@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
@@ -9,6 +9,7 @@ import GooglePlayButton from '../Reusable/GooglePlayButton';
 import AppStoreButton from '../Reusable/AppStoreButton';
 import PlayVideoButton from './PlayVideoButton';
 import ActionBannerButton from './ActionBannerButton';
+import { resizeUrlButterImage } from '../../utils/helpers';
 
 function Banner({
   contentPosition = 'left',
@@ -24,8 +25,15 @@ function Banner({
   children
 }) {
   const justifyContent = contentPosition === 'left' ? 'flex-start' : 'flex-end';
+  const bannerImage = useMemo(
+    () =>
+      resizeUrlButterImage(backgroundImage, {
+        resize: { h: 400 }
+      }),
+    [backgroundImage]
+  );
   const classes = styles({
-    backgroundImage,
+    bannerImage,
     backgroundPosition: contentPosition,
     contentPosition: justifyContent
   });
