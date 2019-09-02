@@ -9,8 +9,9 @@ import { responsiveFontSizes } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../components/theme';
 import PageLoaderProvider from '../components/Providers/PageLoaderProvider';
-import { LANG_KEY, DEFAULT_LANG } from '../utils/helpers';
+import { LANG_KEY, DEFAULT_LANG, initGoogleAnalytics } from '../utils/helpers';
 import { LayoutContext } from '../utils/context';
+import getConfig from 'next/config';
 
 const responsiveTheme = responsiveFontSizes(theme);
 
@@ -48,6 +49,10 @@ class MyApp extends App {
   render() {
     const { Component, pageProps, lang } = this.props;
     const title = getLodash(pageProps, 'data.fields.title');
+
+    if (process.env.NODE_ENV === 'production') {
+      initGoogleAnalytics(getConfig.NEXT_STATIC_GOOGLE_ANALYTIC);
+    }
 
     return (
       <Container>
