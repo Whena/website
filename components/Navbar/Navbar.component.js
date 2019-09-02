@@ -7,6 +7,7 @@ import DesktopNavbar from './DesktopNavbar';
 import useStyles from './Navbar.styles';
 import PropTypes from 'prop-types';
 import { PageLoaderContext } from '../../utils/context';
+import boostLogo from '../../static/assets/boost_logo/asset-logoboost@3x.png';
 
 function Navbar({ lang, className }) {
   const classes = useStyles();
@@ -23,10 +24,10 @@ function Navbar({ lang, className }) {
         />
       )}
       <Hidden implementation="css" only={['xs', 'sm']}>
-        <DesktopNavbar lang={lang} />
+        <DesktopNavbar lang={lang} logo={boostLogo} />
       </Hidden>
       <Hidden implementation="css" mdUp>
-        <MobileNavbar />
+        <MobileNavbar logo={boostLogo} />
       </Hidden>
     </div>
   );

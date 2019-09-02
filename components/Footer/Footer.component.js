@@ -12,7 +12,7 @@ import { FooterMenu, SocialMedia } from '../../constants';
 // Component styles
 const useStyles = makeStyles((theme) => ({
   footer: {
-    backgroundColor: 'black'
+    backgroundColor: '#181818'
   },
   container: {
     paddingTop: theme.spacing(6)

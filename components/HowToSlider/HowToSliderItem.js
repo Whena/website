@@ -30,7 +30,8 @@ function HowToSliderItem({
     () =>
       resizeUrlButterImage(imageUrl, {
         resize: {
-          w: 800
+          w: 650//800,
+          // f: 'scale'
         }
       }),
     [imageUrl]

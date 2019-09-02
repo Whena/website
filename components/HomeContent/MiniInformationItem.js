@@ -69,7 +69,8 @@ const resizeImage = (url, height) => {
     compress: true,
     resize: {
       h: height //255
-    }
+    },
+    auto_image: true
   });
 };
 
@@ -92,7 +93,7 @@ const MediaContent = React.memo(
         className={clsx(classes.mediaContainer, className)}
       >
         {resizeUrl && (
-          <img src={resizeUrl} alt={alt} {...props} className={classes.image} />
+          <img src={resizeUrl} alt={alt} {...props} height="255px" className={classes.image} />
         )}
         {videoId && <YoutubeComponent videoId={videoId} />}
       </Grid>

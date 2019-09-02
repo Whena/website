@@ -9,8 +9,8 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   bannerContainer: {
-    backgroundImage: ({ backgroundImage }) =>
-      `url(${backgroundImage ? backgroundImage : defaultBackgroundImage})`,
+    backgroundImage: ({ bannerImage }) =>
+      `url(${bannerImage ? bannerImage : defaultBackgroundImage})`,
     backgroundPosition: ({ backgroundPosition }) =>
       backgroundPosition === 'left' ? 'left' : 'right',
     backgroundRepeat: 'no-repeat',

@@ -21,7 +21,7 @@ function CardPersona({
       resizeUrlButterImage(icon, {
         compress: true,
         resize: {
-          w: 250
+          w: 180
         },
         auto_image: true
       }),

@@ -4,9 +4,6 @@ const useStyles = makeStyles((theme) => ({
   linkContainer: {
     width: '220px', //"166px",
     height: '320px', //"243px",
-    // "-webkit-transition": "width 0.2s ease-out",
-    // "-ms-transition": "width 0.2s ease-out",
-    // transition: "width 0.2s ease-out",
     [theme.breakpoints.only('sm')]: {
       width: '220px',
       height: '320px' //"100%"
@@ -18,10 +15,6 @@ const useStyles = makeStyles((theme) => ({
       '-ms-transform': 'scale(1.3)',
       transform: 'scale(1.3)'
       // "transition": "3s"
-      //rotate
-      // "-webkit-transform": "rotateZ(30deg)",
-      // "-ms-transform": "rotateZ(30deg)",
-      // "transform": "rotateZ(30deg)"
     }
   },
   cardContainer: {

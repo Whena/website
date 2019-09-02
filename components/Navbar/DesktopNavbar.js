@@ -7,12 +7,11 @@ import Button from '@material-ui/core/Button';
 import Link from '../Link';
 import useStyles from './Navbar.styles';
 import MenuNavbar from './MenuNavbar';
-import boostLogo from '../../static/assets/boost_logo/asset-logoboost@3x.png';
 import { HeaderMenu, LangList } from '../../constants';
 import { setLanguage, getLanguage } from '../../utils/helpers';
 import { LayoutContext } from '../../utils/context';
 
-export default function DesktopNavbar({ lang }) {
+export default function DesktopNavbar({ lang, logo }) {
   const classes = useStyles();
   const appLayout = useContext(LayoutContext);
   const currentLang = useMemo(() => appLayout.lang || getLanguage(), [
@@ -23,7 +22,7 @@ export default function DesktopNavbar({ lang }) {
     setLanguage(id);
     window && window.location.reload();
   };
-
+  
   return (
     <AppBar position="relative" color="default">
       <Toolbar className={classes.toolbarConf}>
@@ -39,7 +38,7 @@ export default function DesktopNavbar({ lang }) {
                 <Link href="/">
                   <img
                     className={classes.minifiedLogoConfiguration}
-                    src={boostLogo}
+                    src={logo}
                     alt="Boost Indonesia"
                   />
                 </Link>
