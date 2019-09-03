@@ -50,7 +50,7 @@ class MyApp extends App {
     const { Component, pageProps, lang } = this.props;
     const title = getLodash(pageProps, 'data.fields.title');
 
-    if (process.env.NODE_ENV === 'production') {
+    if (process.env.NODE_ENV === 'production' && typeof window !== 'undefined') {
       initGoogleAnalytics(getConfig.NEXT_STATIC_GOOGLE_ANALYTIC);
     }
 
