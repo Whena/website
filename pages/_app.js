@@ -54,9 +54,9 @@ class MyApp extends App {
       const { publicRuntimeConfig } = getConfig();
       initGoogleAnalytics(publicRuntimeConfig.NEXT_PUBLIC_GOOGLE_ANALYTIC);
 
-      Router.onRouteChangeComplete((url) => {
+      Router.onRouteChangeComplete = (url) => {
         ReactGA.pageview(url);
-      });
+      };
     }
   }
 
