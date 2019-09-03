@@ -1,5 +1,6 @@
 import getConfig from 'next/config';
 import cookie from 'js-cookie';
+import ReactGA from 'react-ga';
 
 export const LANG_KEY = '_lang';
 export const DEFAULT_LANG = 'id';
@@ -63,6 +64,14 @@ export const resizeUrlButterImage = (url = '', options = {}) => {
   );
 
   return resizeUrl.toString();
+};
+
+export const initGoogleAnalytics = (GAKey) => {
+  ReactGA.initialize(GAKey, {
+    debug: process.env.NODE_ENV !== 'production'
+  });
+
+  ReactGA.pageview(window.location.pathname);
 };
 
 export const getYoutubeId = (url) => {

@@ -36,6 +36,16 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(2)
   },
   linkText: {
+    background: "linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(220,68,51,1) 2%)",
+    backgroundPosition: "0 100%",
+    backgroundRepeat: "repeat-x",
+    backgroundSize: "4px 4px",
+    textDecoration: "none",
+    maxWidth: "fit-content",
+    transition: [
+      "background-size .7s",
+      "color .7s"
+    ],
     color: '#ee3124',
     letterSpacing: 'normal',
     fontFamily: 'Raleway',
@@ -44,8 +54,10 @@ const useStyles = makeStyles((theme) => ({
     fontStyle: 'normal',
     fontStretch: 'normal',
     lineHeight: 'normal',
+    paddingBottom: "5px",
     '&:hover': {
-      color: '#f25e53'
+      backgroundSize: "4px 50px",
+      color: '#fff'
     }
   },
   ytButton: {
@@ -185,11 +197,11 @@ function MiniInformationItem({
           {description}
         </Typography>
         {actionUrl && (
-          <Link href={actionUrl} className={classes.link}>
-            <Typography variant="h5" className={classes.linkText}>
+          <Typography variant="h5" className={classes.linkText}>
+            <Link href={actionUrl}>
               {actionLabel} ->
-            </Typography>
-          </Link>
+            </Link>
+          </Typography>
         )}
       </Grid>
     </Grid>

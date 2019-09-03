@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheets } from '@material-ui/styles';
 import postcss from 'postcss';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 import theme from '../components/theme';
+import getConfig from 'next/config';
+// import ReactGA from 'react-ga';
 
 // You can find a benchmark of the available CSS minifiers under
 // https://github.com/GoalSmashers/css-minification-benchmark
@@ -14,8 +16,26 @@ import theme from '../components/theme';
 const prefixer = postcss([autoprefixer]);
 const minifier = postcss([cssnano]);
 
+const googleTags = {
+  __html: `
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '${getConfig.NEXT_STATIC_GOOGLE_ANALYTIC}');
+  `
+};
+
 class MyDocument extends Document {
+  static async getInitialProps(ctx) {
+    const isProduction = process.env.NODE_ENV === 'production';
+    const initialProps = await Document.getInitialProps(ctx);
+    // Pass isProduction flag back through props
+    return { ...initialProps, isProduction };
+  }
+
   render() {
+    const { isProduction } = this.props;
+
     return (
       <html lang="en">
         <Head>
@@ -33,6 +53,17 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+
+          {isProduction && (
+            <Fragment>
+              <script
+                async
+                src={`https://www.googletagmanager.com/gtag/js?id=${getConfig.NEXT_STATIC_GOOGLE_ANALYTIC}`}
+              />
+              {/* We call the function above to inject the contents of the script tag */}
+              <script dangerouslySetInnerHTML={googleTags} />
+            </Fragment>
+          )}
         </body>
       </html>
     );

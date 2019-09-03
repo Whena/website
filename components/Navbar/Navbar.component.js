@@ -12,7 +12,7 @@ import boostLogo from '../../static/assets/boost_logo/asset-logoboost@3x.png';
 function Navbar({ lang, className }) {
   const classes = useStyles();
   const LoaderContext = useContext(PageLoaderContext);
-
+  
   return (
     <div className={clsx(classes.root, className)}>
       {LoaderContext.loading && (
