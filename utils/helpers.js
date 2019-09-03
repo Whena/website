@@ -70,8 +70,6 @@ export const initGoogleAnalytics = (GAKey) => {
   ReactGA.initialize(GAKey, {
     debug: process.env.NODE_ENV !== 'production'
   });
-
-  ReactGA.pageview(window.location.pathname);
 };
 
 export const getYoutubeId = (url) => {
