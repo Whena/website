@@ -1,4 +1,6 @@
 import React from 'react';
+import Router from 'next/router';
+import ReactGA from 'react-ga';
 import App, { Container } from 'next/app';
 import Head from 'next/head';
 import nextCookie from 'next-cookies';
@@ -44,15 +46,22 @@ class MyApp extends App {
     if (jssStyles) {
       jssStyles.parentNode.removeChild(jssStyles);
     }
+
+    if (
+      process.env.NODE_ENV === 'production' &&
+      typeof window !== 'undefined'
+    ) {
+      initGoogleAnalytics(getConfig.NEXT_STATIC_GOOGLE_ANALYTIC);
+
+      Router.onRouteChangeComplete((url) => {
+        ReactGA.pageview(url);
+      });
+    }
   }
 
   render() {
     const { Component, pageProps, lang } = this.props;
     const title = getLodash(pageProps, 'data.fields.title');
-
-    if (process.env.NODE_ENV === 'production' && typeof window !== 'undefined') {
-      initGoogleAnalytics(getConfig.NEXT_STATIC_GOOGLE_ANALYTIC);
-    }
 
     return (
       <Container>
