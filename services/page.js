@@ -92,3 +92,18 @@ export const getBoostSupplier = (options = {}) => {
       return error;
     });
 };
+
+export const getBoostInfluencer = (options = {}) => {
+  return pageApi('*', 'influencer', {
+    ...defaultOptions,
+    levels: 3,
+    ...options
+  })
+    .then(function(response) {
+      return getLodash(response, 'data.data');
+    })
+    .catch(function(error) {
+      console.log(error);
+      return error;
+    });
+};

@@ -36,15 +36,15 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(2)
   },
   linkText: {
-    background: "linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(220,68,51,1) 2%)",
+    background: "linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(220,68,51,0.4) 2%)",
     backgroundPosition: "0 100%",
     backgroundRepeat: "repeat-x",
-    backgroundSize: "4px 4px",
+    backgroundSize: "2px 2px",
     textDecoration: "none",
     maxWidth: "fit-content",
     transition: [
-      "background-size .7s",
-      "color .7s"
+      "background-size .3s",
+      "color .3s"
     ],
     color: '#ee3124',
     letterSpacing: 'normal',
@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: "5px",
     '&:hover': {
       backgroundSize: "4px 50px",
-      color: '#fff'
+      color: '#fcfcfc'
     }
   },
   ytButton: {
