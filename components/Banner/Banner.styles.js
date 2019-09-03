@@ -19,14 +19,13 @@ const useStyles = makeStyles((theme) => ({
   },
   actionButton: {
     '& > *:first-child': {
-      height: 50,
+      height: 48,
       '&:not(:last-child)': {
         marginRight: 10
+      },
+      [theme.breakpoints.down('xs')]: {
+        height: 45
       }
-    },
-    [theme.breakpoints.down('xs')]: {
-      display: 'flex',
-      justifyContent: 'space-around'
     }
   },
   headerJumbotron: {
