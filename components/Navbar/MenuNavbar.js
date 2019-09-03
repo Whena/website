@@ -10,7 +10,7 @@ import ExpandMore from '@material-ui/icons/ExpandMore';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import getLodash from 'lodash/get';
 import Link from '../Link';
-import useSyles from './Navbar.styles';
+import useStyles from './Navbar.styles';
 import PropTypes from 'prop-types';
 
 function MenuNavbar({
@@ -18,7 +18,7 @@ function MenuNavbar({
   currentLang = 'en',
   onClickSubMenu
 }) {
-  const classes = useSyles();
+  const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
   
   const handleOpenSubMenu = useCallback((event) => {

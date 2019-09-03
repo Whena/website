@@ -144,4 +144,3 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default Supplier;
-

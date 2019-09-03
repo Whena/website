@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
     left: '-4px !important'
   },
   subLink: {
+    // transition: "color .5s ease-in-out;",
     '& li': {
       fontSize: 16,
       fontWeight: 500
@@ -73,6 +74,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
+    transition: "color .5s ease-in-out",
     '& svg': {
       cursor: 'pointer'
     },

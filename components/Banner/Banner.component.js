@@ -75,12 +75,12 @@ function Banner({
             </Grid>
             <Grid container justify="flex-start" spacing={1} wrap="wrap" item>
               {googlePlayUrl && (
-                <Grid item xs={6} sm={4} className={classes.actionButton}>
+                <Grid item xs={6} sm={5} md={4} className={classes.actionButton}>
                   <GooglePlayButton url={googlePlayUrl} />
                 </Grid>
               )}
               {appStoreUrl && (
-                <Grid item xs={6} sm={4} className={classes.actionButton}>
+                <Grid item xs={6} sm={5} md={4} className={classes.actionButton}>
                   <AppStoreButton url={appStoreUrl} />
                 </Grid>
               )}
