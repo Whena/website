@@ -17,6 +17,11 @@ import getConfig from 'next/config';
 
 const responsiveTheme = responsiveFontSizes(theme);
 
+if (process.env.NODE_ENV === 'production') {
+  const { publicRuntimeConfig } = getConfig();
+  initGoogleAnalytics(publicRuntimeConfig.NEXT_PUBLIC_GOOGLE_ANALYTIC);
+}
+
 class MyApp extends App {
   static async getInitialProps({ Component, router, ctx }) {
     let pageProps = {};
@@ -51,12 +56,11 @@ class MyApp extends App {
       process.env.NODE_ENV === 'production' &&
       typeof window !== 'undefined'
     ) {
-      const { publicRuntimeConfig } = getConfig();
-      initGoogleAnalytics(publicRuntimeConfig.NEXT_PUBLIC_GOOGLE_ANALYTIC);
-
       Router.onRouteChangeComplete = (url) => {
         ReactGA.pageview(url);
       };
+
+      ReactGA.pageview(window.location.pathname);
     }
   }
 

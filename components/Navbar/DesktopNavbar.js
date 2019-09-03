@@ -17,12 +17,12 @@ export default function DesktopNavbar({ lang, logo }) {
   const currentLang = useMemo(() => appLayout.lang || getLanguage(), [
     appLayout
   ]);
-  
+
   const handleChangeLanguage = (id) => {
     setLanguage(id);
     window && window.location.reload();
   };
-  
+
   return (
     <AppBar position="relative" color="default">
       <Toolbar className={classes.toolbarConf}>
@@ -34,14 +34,17 @@ export default function DesktopNavbar({ lang, logo }) {
         >
           <Grid container justify="flex-start" alignItems="center" item xs={2}>
             <Typography variant="h6" color="inherit">
-              <Button disableRipple className={classes.minifiedLogoButton}>
-                <Link href="/">
-                  <img
-                    className={classes.minifiedLogoConfiguration}
-                    src={logo}
-                    alt="Boost Indonesia"
-                  />
-                </Link>
+              <Button
+                component={Link}
+                href="/"
+                disableRipple
+                className={classes.minifiedLogoButton}
+              >
+                <img
+                  className={classes.minifiedLogoConfiguration}
+                  src={logo}
+                  alt="Boost Indonesia"
+                />
               </Button>
             </Typography>
           </Grid>
