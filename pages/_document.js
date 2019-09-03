@@ -58,7 +58,7 @@ class MyDocument extends Document {
             <Fragment>
               <script
                 async
-                src="https://www.googletagmanager.com/gtag/js?id=${getConfig.NEXT_STATIC_GOOGLE_ANALYTIC}"
+                src={`https://www.googletagmanager.com/gtag/js?id=${getConfig.NEXT_STATIC_GOOGLE_ANALYTIC}`}
               />
               {/* We call the function above to inject the contents of the script tag */}
               <script dangerouslySetInnerHTML={googleTags} />
