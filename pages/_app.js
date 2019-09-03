@@ -51,7 +51,8 @@ class MyApp extends App {
       process.env.NODE_ENV === 'production' &&
       typeof window !== 'undefined'
     ) {
-      initGoogleAnalytics(getConfig.NEXT_STATIC_GOOGLE_ANALYTIC);
+      const { publicRuntimeConfig } = getConfig();
+      initGoogleAnalytics(publicRuntimeConfig.NEXT_PUBLIC_GOOGLE_ANALYTIC);
 
       Router.onRouteChangeComplete((url) => {
         ReactGA.pageview(url);
