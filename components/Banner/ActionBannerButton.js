@@ -2,8 +2,13 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import Link from '../Link';
 import { makeStyles } from '@material-ui/styles';
+import clsx from 'clsx';
 
-function ActionBannerButton({ actionUrl, actionButtonText }) {
+function ActionBannerButton({ 
+  actionUrl,
+  actionButtonText,
+  buttonClass
+}) {
   const classes = useStyles();
 
   return (
@@ -11,7 +16,7 @@ function ActionBannerButton({ actionUrl, actionButtonText }) {
       href={actionUrl}
       variant="contained"
       component={Link}
-      className={classes.buttonViewMore}
+      className={clsx(classes.buttonViewMore, buttonClass)}
     >
       {actionButtonText}
     </Button>

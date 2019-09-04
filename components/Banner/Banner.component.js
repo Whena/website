@@ -3,6 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import PropTypes from 'prop-types';
+import clsx from 'clsx'
 
 import styles from './Banner.styles';
 import GooglePlayButton from '../Reusable/GooglePlayButton';
@@ -19,6 +20,7 @@ function Banner({
   googlePlayUrl,
   appStoreUrl,
   actionUrl,
+  actionButtonStyles, //
   actionButtonText,
   videoUrl,
   videoButtonText,
@@ -89,6 +91,7 @@ function Banner({
                   <ActionBannerButton
                     actionUrl={actionUrl}
                     actionButtonText={actionButtonText}
+                    buttonClass={actionButtonStyles}
                   />
                 </Grid>
               )}
