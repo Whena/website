@@ -1,19 +1,13 @@
 import React from 'react';
 import getLodash from 'lodash/get';
 import Layout from '../components/Layout';
-import { Constants } from '../constants';
 import Banner from '../components/Banner/Banner.component';
 import Benefits from '../components/Benefits/Benefits.component';
 import ShortExplanation from '../components/MerchantShortExplanation/MerchantShortExplanation.component';
 import WhatTheySay from '../components/Reusable/WhatTheySay/WhatTheySay.component';
 import Faqs from '../components/FAQs/FAQs.component';
-// import ActionBannerButton from '../components/Banner/ActionBannerButton';
-import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import { getBoostInfluencer } from '../services/page';
-import Link from '../components/Link';
-
-const { KOL_BANNER, KOL_BENEFITS } = Constants;
 
 export default function Influencer({ data = {} }) {
   const classes = useStyles();
@@ -30,20 +24,10 @@ export default function Influencer({ data = {} }) {
         header={banner.title}
         description={banner.description}
         backgroundImage={banner.image_banner}
-      >
-        <Button
-          component={Link}
-          href={banner.action_url}
-          variant="outlined"
-          className={classes.button}
-        >
-          {banner.action_button_text}
-        </Button>
-        {/* <ActionBannerButton
-          actionUrl={banner.action_url}
-          actionButtonText={banner.action_button_text}
-        /> */}
-      </Banner>
+        actionUrl={banner.action_url}
+        actionButtonText={banner.action_button_text}
+        actionButtonStyles={classes.button}
+      />
       <Benefits heading={benefits.header} contents={benefits.banners} />
       <ShortExplanation
         header={WhyUs.title_or_question}
@@ -85,14 +69,18 @@ const useStyles = makeStyles((theme) => ({
     textTransform: 'none'
   },
   button: {
-    minWidth: 275,
+    width: 275,
     minHeight: 60,
     border: "1px solid white",
     color: '#fff',
     fontWeight: 800,
     fontFamily: 'raleway',
     fontSize: 20,
-    textTransform: 'none'
+    textTransform: 'none',
+    backgroundColor: 'unset',
+    '&:hover': {
+      // backgroundColor: '#c2bebe'
+    }
   },
   containerMission: {
     marginTop: theme.spacing(10),
