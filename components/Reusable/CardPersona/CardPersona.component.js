@@ -4,10 +4,11 @@ import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Hidden from '@material-ui/core/Hidden';
-// import CardMedia from '@material-ui/core/CardMedia';
 import { resizeUrlButterImage } from '../../../utils/helpers';
 import Link from '../../Link';
 import styles from './CardPersona.styles';
+
+import ImageLazyLoad from '../../Reusable/ImageLazyLoad';
 
 function CardPersona({ 
   persona,
@@ -16,23 +17,29 @@ function CardPersona({
   actionURL
 }) {
   const classes = styles();
-  const imageUrl = useMemo(
-    () =>
-      resizeUrlButterImage(icon, {
-        compress: true,
-        resize: {
-          w: 180
-        },
-        auto_image: true
-      }),
-    [icon]
-  );
+  // const imageUrl = useMemo(
+  //   () =>
+  //     resizeUrlButterImage(icon, {
+  //       compress: true,
+  //       resize: {
+  //         w: 180
+  //       },
+  //       auto_image: true
+  //     }),
+  //   [icon]
+  // );
 
   return (
     <Link title={description} href={actionURL} className={classes.linkContainer}>
       <Card className={classes.cardContainer}>
-        {/* <CardMedia className={classes.icon} image={imageUrl} title={persona} /> */}
-        <img src={imageUrl} className={classes.icon} alt={persona} />
+        {/* <img src={imageUrl} className={classes.icon} alt={persona} /> */}
+        <ImageLazyLoad 
+          imageUrl={icon}
+          caption={persona}
+          placeHolderHeight={50}
+          imageStyle={classes.icon}
+          showedImageHeight={500}
+        />
         <CardContent className={classes.cardContent}>
           <Typography variant="h6" className={classes.persona}>
             {persona}

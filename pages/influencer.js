@@ -1,12 +1,12 @@
 import React from 'react';
 import getLodash from 'lodash/get';
+import makeStyles from '@material-ui/styles/makeStyles';
 import Layout from '../components/Layout';
 import Banner from '../components/Banner/Banner.component';
 import Benefits from '../components/Benefits/Benefits.component';
 import ShortExplanation from '../components/MerchantShortExplanation/MerchantShortExplanation.component';
 import WhatTheySay from '../components/Reusable/WhatTheySay/WhatTheySay.component';
 import Faqs from '../components/FAQs/FAQs.component';
-import { makeStyles } from '@material-ui/core/styles';
 import { getBoostInfluencer } from '../services/page';
 
 export default function Influencer({ data = {} }) {
@@ -77,13 +77,10 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'raleway',
     fontSize: 20,
     textTransform: 'none',
-    backgroundColor: 'unset',
-    '&:hover': {
-      // backgroundColor: '#c2bebe'
-    }
+    backgroundColor: 'unset'
   },
   containerMission: {
     marginTop: theme.spacing(10),
     marginBottom: theme.spacing(10)
-  },
+  }
 }));
