@@ -107,3 +107,48 @@ export const getBoostInfluencer = (options = {}) => {
       return error;
     });
 };
+
+export const getTerritoryPartner = (options = {}) => {
+  return pageApi('*', 'territory-partner', {
+    ...defaultOptions,
+    levels: 3,
+    ...options
+  })
+    .then(function(response) {
+      return getLodash(response, 'data.data');
+    })
+    .catch(function(error) {
+      console.log(error);
+      return error;
+    });
+};
+
+export const getBusinessPartner = (options = {}) => {
+  return pageApi('*', 'business-partner', {
+    ...defaultOptions,
+    levels: 3,
+    ...options
+  })
+    .then(function(response) {
+      return getLodash(response, 'data.data');
+    })
+    .catch(function(error) {
+      console.log(error);
+      return error;
+    });
+};
+
+export const getFinancialServices = (options = {}) => {
+  return pageApi('*', 'financial-services', {
+    ...defaultOptions,
+    levels: 3,
+    ...options
+  })
+    .then(function(response) {
+      return getLodash(response, 'data.data');
+    })
+    .catch(function(error) {
+      console.log(error);
+      return error;
+    });
+};
