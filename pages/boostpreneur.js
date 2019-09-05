@@ -23,20 +23,24 @@ export default function BoostPreneur({ data = {} }) {
   );
   const how_to = getLodash(data, 'fields.how_to', []);
   const boostpreneur_quest = getLodash(data, 'fields.boostpreneur_quest', []);
-  const faqs_header = getLodash(data, 'fields.faqs_header', '');
+  const faq_header = getLodash(data, 'fields.faqs_header', '');
   const faqs = getLodash(data, 'fields.faqs', []);
-
+  console.log(banner)
   return (
     <Layout>
       <Banner
         header={banner.title}
         description={banner.description}
         backgroundImage={resizeUrlButterImage(banner.image_banner)}
-        googlePlayUrl={BANNER_BUTTONS.GOOGLE_PLAY}
-        appStoreUrl={BANNER_BUTTONS.APP_STORE}
+        googlePlayUrl={banner.google_play_url}
+        appStoreUrl={banner.app_store_url}
       />
-      <Benefits heading={benefits.header} contents={benefits.banners} />
-      <BoostpreneurMiniInfo contents={boostpreneur_information.banners} />
+      {benefits.header && (
+        <Benefits heading={benefits.header} contents={benefits.banners} />
+      )}
+      {boostpreneur_information.banners && (
+        <BoostpreneurMiniInfo contents={boostpreneur_information.banners} />
+      )}
       {how_to.header && (
         <HowToSlider sliders={how_to.banners} title={how_to.header} />
       )}
@@ -47,7 +51,9 @@ export default function BoostPreneur({ data = {} }) {
           features={boostpreneur_quest.banners}
         />
       )}
-      <Faqs header={faqs_header} questions={faqs} />
+      {faqs.length > 0 && (
+        <Faqs header={faq_header} questions={faqs} />
+      )}
     </Layout>
   );
 }

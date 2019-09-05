@@ -27,11 +27,15 @@ export default function Boostpenjual({ data = {} }) {
         googlePlayUrl={banner.google_play_url}
         appStoreUrl={banner.app_store_url}
       />
-      <Benefits heading={benefits.header} contents={benefits.banners} />
-      <MerchantShortExplanation
-        header={short_description.title}
-        content={short_description}
-      />
+      {benefits.header && (
+        <Benefits heading={benefits.header} contents={benefits.banners} />
+      )}
+      {short_description.title && (
+        <MerchantShortExplanation
+          header={short_description.title}
+          content={short_description}
+        />
+      )}
       {featured.header && (
         <PersonaFeatures
           title={featured.header}
@@ -39,11 +43,15 @@ export default function Boostpenjual({ data = {} }) {
           features={featured.banners}
         />
       )}
-      <WhatTheySay
-        header={testimonials.header}
-        testimonials={testimonials.banners}
-      />
-      <Faqs header={faq_header} questions={faqs} />
+      {testimonials.header && (
+        <WhatTheySay
+          header={testimonials.header}
+          testimonials={testimonials.banners}
+        />
+      )}
+      {faqs.length > 0 && (
+        <Faqs header={faq_header} questions={faqs} />
+      )}
     </Layout>
   );
 }

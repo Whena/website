@@ -1,7 +1,6 @@
 import React from 'react';
 import getLodash from 'lodash/get';
 import makeStyles from '@material-ui/styles/makeStyles';
-import Button from '@material-ui/core/Button';
 import Layout from '../components/Layout';
 import { getBoostSupplier } from '../services/page';
 import Banner from '../components/Banner/Banner.component';
@@ -32,36 +31,45 @@ function Supplier({ data = {} }) {
         backgroundImage={resizeUrlButterImage(banner.image_banner, {
           resize: { h: 400 }
         })}
-      >
-        <Button variant="outlined" className={classes.button}>
-          {banner.action_button_text}
-        </Button>
-      </Banner>
-      <Benefits
-        heading={benefits.header}
-        contents={benefits.banners}
+        actionUrl={banner.action_url}
+        actionButtonText={banner.action_button_text}
+        actionButtonStyles={classes.button}
       />
-      <ShortExplanation
-        header={mission.title_or_question}
-        description={mission.answer_or_description}
-        className={classes.containerMission}
-      />
-      <WhatTheySay
-        header={testimonials.header}
-        testimonials={testimonials.banners}
-      />
-      <Faqs header={faq_header} questions={faqs} />
-      <BottomBanner
-        leftGrid={4}
-        left={
-          <LeftButton 
-            url={bottombanner.action_url} 
-            buttonText={bottombanner.action_button_text} 
-          />
-        }
-        right={<RightInfo description={bottombanner.description} />}
-        background={bottombanner.image_banner}
-      />
+      {benefits.banners && (
+        <Benefits
+          heading={benefits.header}
+          contents={benefits.banners}
+        />
+      )}
+      {mission.title_or_question && (
+        <ShortExplanation
+          header={mission.title_or_question}
+          description={mission.answer_or_description}
+          className={classes.containerMission}
+        />
+      )}
+      {testimonials.header && (
+        <WhatTheySay
+          header={testimonials.header}
+          testimonials={testimonials.banners}
+        />
+      )}
+      {faqs.length > 0 && (
+        <Faqs header={faq_header} questions={faqs} />
+      )}
+      {bottombanner.description && (
+        <BottomBanner
+          leftGrid={4}
+          left={
+            <LeftButton 
+              url={bottombanner.action_url} 
+              buttonText={bottombanner.action_button_text} 
+            />
+          }
+          right={<RightInfo description={bottombanner.description} />}
+          background={bottombanner.image_banner}
+        />
+      )}
     </Layout>
   );
 }

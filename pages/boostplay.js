@@ -25,7 +25,9 @@ function BoostPlay({ data = {} }) {
         googlePlayUrl={banner.google_play_url}
         appStoreUrl={banner.app_store_url}
       />
-      <Benefits heading={benefits.header} contents={benefits.banners} />
+      {benefits.header && (
+        <Benefits heading={benefits.header} contents={benefits.banners} />
+      )}
       {howto.header && (
         <HowToSlider sliders={howto.banners} title={howto.header} />
       )}
@@ -36,7 +38,9 @@ function BoostPlay({ data = {} }) {
           features={featured.banners}
         />
       )}
-      <Faqs header={faq_header} questions={faqs} />
+      {faqs.length > 0 && (
+        <Faqs header={faq_header} questions={faqs} />
+      )}
     </Layout>
   );
 }
