@@ -34,11 +34,13 @@ function CardPersona({
       <Card className={classes.cardContainer}>
         {/* <img src={imageUrl} className={classes.icon} alt={persona} /> */}
         <ImageLazyLoad 
+          height={200}
           imageUrl={icon}
           caption={persona}
           placeHolderHeight={50}
           imageStyle={classes.icon}
-          showedImageHeight={500}
+          placeHolderStyles={classes.iconPlaceholder}
+          showedImageHeight={220}
         />
         <CardContent className={classes.cardContent}>
           <Typography variant="h6" className={classes.persona}>

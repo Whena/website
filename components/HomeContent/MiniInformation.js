@@ -49,6 +49,7 @@ function MiniInformation({ contents = [] }) {
             actionUrl={content.action_url}
             actionLabel={content.action_label}
             height={200}
+            offsetLoader={-100}
           />
         </Grid>
       </Container>
