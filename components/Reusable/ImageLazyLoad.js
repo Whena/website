@@ -3,7 +3,7 @@ import makeStyles from '@material-ui/styles/makeStyles';
 import Img from 'react-image';
 import LazyLoad from 'react-lazyload';
 import clsx from 'clsx';
-
+import boostLogo from '../../static/assets/boost.jpg';
 import { resizeUrlButterImage } from '../../utils/helpers';
 
 const resizeImage = (url, height) => {
@@ -16,7 +16,7 @@ const resizeImage = (url, height) => {
   });
 };
 
-const Placeholder = ({ 
+const Placeholder = ({
   placeHolderImage,
   caption,
   placeholderStyles = {}
@@ -26,7 +26,6 @@ const Placeholder = ({
     <img
       src={placeHolderImage}
       alt={caption}
-      // style={{width: "100vw", height: "100vh"}}
       className={clsx(placeholderStyles)}
     />
   );
@@ -39,12 +38,15 @@ function ImageLazyLoad({
   imageStyle = {},
   placeHolderHeight,
   placeHolderStyles = {},
-  showedImageHeight
+  showedImageHeight,
+  logo = boostLogo,
+  showPlaceholder = true,
+  ...props
 }) {
 
   const classes = useStyles();
-  const placeHolderImage = useMemo(() => resizeImage(imageUrl, placeHolderHeight), [
-    imageUrl,
+  const placeholderImg = useMemo(() => resizeImage(logo, placeHolderHeight), [
+    logo,
     placeHolderHeight
   ]);
 
@@ -52,20 +54,35 @@ function ImageLazyLoad({
     imageUrl,
     showedImageHeight
   ]);
-  
+
   return (
-    <LazyLoad height={height}>
-      <Img
-        src={showedImage}
-        loader={
-          <Placeholder 
-            placeHolderImage={placeHolderImage}
+    <LazyLoad
+      height={height}
+      placeholder={
+        showPlaceholder
+          ?
+          <Placeholder
+            placeHolderImage={showPlaceholder ? placeholderImg : ""}
             caption={caption}
-            placeholderStyles={imageStyle}
+            placeholderStyles={placeHolderStyles}
           />
-        }
+          :
+          <div
+            className={(clsx(placeHolderStyles))}
+          />
+      }
+      {...props}
+    >
+      <img
+        src={showedImage}
+        alt={caption}
         className={clsx(imageStyle)}
       />
+      {/* <img
+        src={placeholderImg}
+        alt={caption}
+        className={clsx(placeHolderStyles)}
+      /> */}
     </LazyLoad>
   );
 }

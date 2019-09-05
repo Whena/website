@@ -6,6 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import GooglePlayButton from '../Reusable/GooglePlayButton';
 import AppStoreButton from '../Reusable/AppStoreButton';
 import { resizeUrlButterImage } from '../../utils/helpers';
+import ImageLazyLoad from '../Reusable/ImageLazyLoad';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -91,7 +92,17 @@ function ProductSliderItem({
       justify="center"
     >
       <Grid item xs={3} sm={3} className={classes.imageContainer}>
-        <img className={classes.image} src={phoneDisplay} alt={title} />
+        {/* <img className={classes.image} src={phoneDisplay} alt={title} /> */}
+        <ImageLazyLoad
+          height={431}
+          imageUrl={phoneDisplay}
+          caption={title}
+          placeHolderHeight={50}
+          imageStyle={classes.image}
+          placeHolderStyles={classes.image}
+          showedImageHeight={200}
+          showPlaceholder={false}
+        />
       </Grid>
       <Grid
         item

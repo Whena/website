@@ -41,6 +41,15 @@ const useStyles = makeStyles((theme) => ({
     },
     objectFit: 'contain'
   },
+  iconPlaceholder: {
+    width: '100%', //'166px',
+    height: '160px',
+    [theme.breakpoints.only('sm')]: {
+      height: '150px',
+      width: '100%'
+    },
+    objectFit: 'contain'
+  },
   persona: {
     width: '100%',
     height: '16px',

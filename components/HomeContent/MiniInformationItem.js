@@ -7,6 +7,7 @@ import clsx from 'clsx';
 import { resizeUrlButterImage, getYoutubeId } from '../../utils/helpers';
 import Link from '../Link';
 import { ReactComponent as YoutubeIcon } from '../../static/assets/youtube.svg';
+import ImageLazyLoad from '../../components/Reusable/ImageLazyLoad';
 
 const useStyles = makeStyles((theme) => ({
   container: {},
@@ -87,14 +88,14 @@ const resizeImage = (url, height) => {
 };
 
 const MediaContent = React.memo(
-  ({ imageUrl, videoUrl, alt, className, height, ...props }) => {
+  ({ imageUrl, videoUrl, alt, className, height, offsetLoader, ...props }) => {
     const classes = useStyles();
     const resizeUrl = useMemo(() => resizeImage(imageUrl, height), [
       imageUrl,
       height
     ]);
     const videoId = useMemo(() => getYoutubeId(videoUrl), [videoUrl]);
-
+    
     return (
       <Grid
         container
@@ -105,7 +106,17 @@ const MediaContent = React.memo(
         className={clsx(classes.mediaContainer, className)}
       >
         {resizeUrl && (
-          <img src={resizeUrl} alt={alt} {...props} height="255px" className={classes.image} />
+          // <img src={resizeUrl} alt={alt} {...props} height="255px" className={classes.image} />
+          <ImageLazyLoad
+            height={height}
+            imageUrl={imageUrl}
+            caption={alt}
+            placeHolderHeight={50}
+            imageStyle={classes.image}
+            placeHolderStyles={classes.image}
+            showedImageHeight={255}
+            offset={offsetLoader}
+          />
         )}
         {videoId && <YoutubeComponent videoId={videoId} />}
       </Grid>
@@ -156,6 +167,7 @@ function MiniInformationItem({
   actionLabel,
   description,
   height,
+  offsetLoader,
   classes: propClasses = {}
 }) {
   const classes = useStyles();
@@ -176,6 +188,7 @@ function MiniInformationItem({
         alt={title}
         height={height}
         className={propClasses.mediaContent}
+        offsetLoader={offsetLoader}
       />
       <Grid item xs={12} md={7}>
         <Typography
