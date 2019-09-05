@@ -28,20 +28,28 @@ export default function Influencer({ data = {} }) {
         actionButtonText={banner.action_button_text}
         actionButtonStyles={classes.button}
       />
-      <Benefits heading={benefits.header} contents={benefits.banners} />
-      <ShortExplanation
-        header={WhyUs.title_or_question}
-        description={WhyUs.answer_or_description}
-        className={classes.containerMission}
-      />
-      <WhatTheySay
-        header={testimonials.header}
-        testimonials={testimonials.banners}
-      />
-      <Faqs
-        header={faq_header}
-        questions={faqs}
-      />
+      {benefits.banners && (
+        <Benefits
+          heading={benefits.header}
+          contents={benefits.banners}
+        />
+      )}
+      {WhyUs.answer_or_description && (
+        <ShortExplanation
+          header={WhyUs.title_or_question}
+          description={WhyUs.answer_or_description}
+          className={classes.containerMission}
+        />
+      )}
+      {testimonials.banners && (
+        <WhatTheySay
+          header={testimonials.header}
+          testimonials={testimonials.banners}
+        />
+      )}
+      {faqs.length > 0 && (
+        <Faqs header={faq_header} questions={faqs} />
+      )}
     </Layout>
   );
 }
