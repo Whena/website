@@ -6,7 +6,6 @@ import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 import theme from '../components/theme';
 import getConfig from 'next/config';
-// import ReactGA from 'react-ga';
 
 // You can find a benchmark of the available CSS minifiers under
 // https://github.com/GoalSmashers/css-minification-benchmark
