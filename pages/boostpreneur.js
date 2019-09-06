@@ -7,11 +7,8 @@ import BoostpreneurMiniInfo from '../components/BoostpreneurMiniInfo/Boostpreneu
 import HowToSlider from '../components/HowToSlider';
 import Faqs from '../components/FAQs/FAQs.component';
 import PersonaFeatures from '../components/Reusable/PersonaFeatures/PersonaFeatures.component';
-import { Constants } from '../constants';
 import { getBoostPreneur } from '../services/page';
 import { resizeUrlButterImage } from '../utils/helpers';
-
-const { BANNER_BUTTONS } = Constants;
 
 export default function BoostPreneur({ data = {} }) {
   const banner = getLodash(data, 'fields.banner', []);
@@ -25,7 +22,7 @@ export default function BoostPreneur({ data = {} }) {
   const boostpreneur_quest = getLodash(data, 'fields.boostpreneur_quest', []);
   const faq_header = getLodash(data, 'fields.faqs_header', '');
   const faqs = getLodash(data, 'fields.faqs', []);
-  console.log(banner)
+
   return (
     <Layout>
       <Banner

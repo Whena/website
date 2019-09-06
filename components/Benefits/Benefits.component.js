@@ -1,11 +1,10 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import PropTypes from 'prop-types';
 import BottomLiner from '../BottomLiner/BottomLiner.component';
-
+import DefaultIcon from '../../static/assets/default-benefit-icon.svg'
 import styles from './Benefits.styles';
 
 function Benefits({ heading, contents = [] }) {
@@ -15,7 +14,7 @@ function Benefits({ heading, contents = [] }) {
     <Container maxWidth="lg" className={classes.container}>
       <Typography variant="h4" className={classes.heading}>
         <span>{heading}</span>
-        <div><BottomLiner /></div>
+        <BottomLiner />
       </Typography>
       <Grid container spacing={2} justify="space-around" alignItems="flex-start">
         {contents.map((content) => (
@@ -31,7 +30,11 @@ function Benefits({ heading, contents = [] }) {
             lg={3}
           >
             <div className={classes.iconContainer}>
-              <img src={content.image_banner} alt={content.title} />
+              {content.image_banner ?
+                <img src={content.image_banner} alt={content.title} />
+                :
+                <img src={DefaultIcon} alt={content.title} />
+              } 
             </div>
             <Typography display="block" variant="h5" className={classes.title}>
               {content.title}

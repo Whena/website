@@ -1,6 +1,4 @@
 import React, { useMemo } from 'react';
-import makeStyles from '@material-ui/styles/makeStyles';
-import Img from 'react-image';
 import LazyLoad from 'react-lazyload';
 import clsx from 'clsx';
 import boostLogo from '../../static/assets/boost.jpg';
@@ -44,7 +42,6 @@ function ImageLazyLoad({
   ...props
 }) {
 
-  const classes = useStyles();
   const placeholderImg = useMemo(() => resizeImage(logo, placeHolderHeight), [
     logo,
     placeHolderHeight
@@ -86,9 +83,5 @@ function ImageLazyLoad({
     </LazyLoad>
   );
 }
-
-const useStyles = makeStyles((theme) => ({
-
-}));
 
 export default ImageLazyLoad;
