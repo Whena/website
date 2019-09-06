@@ -15,7 +15,7 @@ export const HeaderMenu = [
       en: 'About us',
       id: 'Tentang Kami'
     },
-    url: '/about'
+    url: '/comingsoon'
   },
   {
     name: {

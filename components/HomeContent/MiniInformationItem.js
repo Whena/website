@@ -37,16 +37,16 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(2)
   },
   linkText: {
-    background: "linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(220,68,51,0.4) 2%)",
-    backgroundPosition: "0 100%",
-    backgroundRepeat: "repeat-x",
-    backgroundSize: "2px 2px",
+    // background: "linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(220,68,51,0.4) 2%)",
+    // backgroundPosition: "0 100%",
+    // backgroundRepeat: "repeat-x",
+    // backgroundSize: "2px 2px",
     textDecoration: "none",
     maxWidth: "fit-content",
-    transition: [
-      "background-size .3s",
-      "color .3s"
-    ],
+    // transition: [
+    //   "background-size .3s",
+    //   "color .3s"
+    // ],
     color: '#ee3124',
     letterSpacing: 'normal',
     fontFamily: 'Raleway',
@@ -57,8 +57,8 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: 'normal',
     paddingBottom: "5px",
     '&:hover': {
-      backgroundSize: "4px 50px",
-      color: '#fcfcfc'
+      // backgroundSize: "4px 50px",
+      color: '#cf1c10'
     }
   },
   ytButton: {
