@@ -41,6 +41,7 @@ class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           {/* Use minimum-scale=1 to enable GPU rasterization */}
+          <link rel="shortcut icon" href="/static/favicon.ico" />
           <meta
             name="viewport"
             content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"

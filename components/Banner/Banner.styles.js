@@ -11,10 +11,11 @@ const useStyles = makeStyles((theme) => ({
   bannerContainer: {
     backgroundImage: ({ bannerImage }) =>
       `url(${bannerImage ? bannerImage : defaultBackgroundImage})`,
-    backgroundPosition: ({ backgroundPosition }) =>
+    backgroundPositionX: ({ backgroundPosition }) =>
       backgroundPosition === 'left' ? 'left' : 'right',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
+    backgroundPositionY: "bottom",
     marginBottom: '3.5rem'
   },
   actionButton: {
